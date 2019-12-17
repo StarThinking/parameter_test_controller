@@ -105,8 +105,8 @@ public class Controller {
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(process.getInputStream()));
-            while ((buffer = reader.readLine()) != null)
-                System.out.println(buffer);
+//            while ((buffer = reader.readLine()) != null)
+//                System.out.println(buffer);
             process.waitFor();
             ret = process.exitValue();
             process.destroy();
