@@ -154,7 +154,7 @@ public class Controller {
         }
         
         System.out.println("reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2); 
-
+	System.out.println("thisTestList size " + thisTestList.size());
         int index = 1;
         for (String test : thisTestList) {
             cleanUpSharedFiles();
