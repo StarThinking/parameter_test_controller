@@ -19,11 +19,11 @@ public class Controller {
     public static String v2FileName = controllerRootDir + "shared/v2";
     
     /* static test and parameter per component */
-    public static String testListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
+    public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
     public static String parameterListFileName = controllerRootDir + "parameter_for_component/namenode_getBoolean.txt";
     
     public static List<String> parameterList = new ArrayList<String>(); // never used
-    public static List<String> testList = new ArrayList<String>();
+    public static List<String> allTestList = new ArrayList<String>();
   
     public static void setupTestTuple(String parameter, String reconfigMode, String v1, String v2) {
         try {
@@ -126,10 +126,10 @@ public class Controller {
 
     public static void loadStaticData() {
         try {
-            BufferedReader reader0 = new BufferedReader(new FileReader(new File(testListFileName)));
+            BufferedReader reader0 = new BufferedReader(new FileReader(new File(allTestListFileName)));
             String buffer0 = "";
             while ((buffer0 = reader0.readLine()) != null) {
-                testList.add(buffer0.trim());
+                allTestList.add(buffer0.trim());
             }
             reader0.close();
             
@@ -156,10 +156,10 @@ public class Controller {
         System.out.println("reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2); 
 
         int index = 1;
-        for (String test : testList) {
+        for (String test : thisTestList) {
             cleanUpSharedFiles();
             setupTestTuple(parameter, reconfigMode, v1, v2);
-            System.out.println("Running " + index + " of " + testList.size() + " test " 
+            System.out.println("Running " + index + " of " + thisTestList.size() + " test " 
                                 + test);
             int ret = runJunitTest(test);
             Integer res = waitForTestResult();
@@ -171,21 +171,12 @@ public class Controller {
         }
         return failedList;
     }
-    
-    public static void main(String[] args) {
-        long startTime, endTime, timeElapsed;
-        startTime = endTime = timeElapsed = 0; 
         
-        if (args.length > 1) {
-            System.exit(1);
-        }
-        String parameterToTest = args[0];
-        System.out.println("parameter to test: " + parameterToTest); 
-        loadStaticData();
-        startTime = System.nanoTime();
-        List<String> failedListv1v2 = testForTupleWithGivenTests(parameterToTest, "v1v2", "true", "false", testList); // all
-        List<String> failedListv1v1 = testForTupleWithGivenTests(parameterToTest, "v1v1", "true", "", failedListv1v2); 
-        List<String> failedListv2v2 = testForTupleWithGivenTests(parameterToTest, "v2v2", "", "false", failedListv1v2);
+    public static int testLogic(String parameter, String v1, String v2) {    
+        List<String> failedListv1v2 = testForTupleWithGivenTests(parameter, "v1v2", v1, v2, allTestList); // all
+        List<String> failedListv1v1 = testForTupleWithGivenTests(parameter, "v1v1", v1, "", failedListv1v2); 
+        List<String> failedListv2v2 = testForTupleWithGivenTests(parameter, "v2v2", "", v2, failedListv1v2);
+	int flag = 0;
 
         for (String v1v2Test : failedListv1v2) {
             boolean v1v1Failed, v2v2Failed;
@@ -205,13 +196,31 @@ public class Controller {
                 }
             }
             if (v1v1Failed == false && v2v2Failed == false) {
-                System.out.println("UNPARTIAL " + v1v2Test);
+                System.out.println("UNPARTIAL " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+		flag = 1;
             }
+	}
+	return flag;
+    }
+    
+    public static void main(String[] args) {
+        long startTime, endTime, timeElapsed;
+        startTime = endTime = timeElapsed = 0; 
+        
+        if (args.length > 1) {
+            System.exit(1);
         }
-
+        String parameterToTest = args[0];
+        System.out.println("parameter to test: " + parameterToTest); 
+        loadStaticData();
+        
+	startTime = System.nanoTime();
+	int ret = testLogic(parameterToTest, "true", "false");
+	if (ret == 0)
+	    testLogic(parameterToTest, "false", "true");
         endTime = System.nanoTime();
         
         timeElapsed = endTime - startTime;
-        System.out.println("Total execution time " + testList.size() + " in seconds : " + timeElapsed / 1000000000);
+        System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
     }
 }
