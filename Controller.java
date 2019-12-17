@@ -9,7 +9,7 @@ import java.util.*;
 public class Controller {
 
     public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs";
-    public static String controllerRootDir = "/root/storage/parameter_test_controller/";
+    public static String controllerRootDir = "/root/parameter_test_controller/";
     
     /* shared files*/
     public static String testSuccessFileName = controllerRootDir + "shared/test_success";
@@ -22,8 +22,8 @@ public class Controller {
     public static String testListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
     public static String parameterListFileName = controllerRootDir + "parameter_for_component/namenode_getBoolean.txt";
     
+    public static List<String> parameterList = new ArrayList<String>(); // never used
     public static List<String> testList = new ArrayList<String>();
-    public static List<String> parameterList = new ArrayList<String>();
   
     public static void setupTestTuple(String parameter, String reconfigMode, String v1, String v2) {
         try {
@@ -43,7 +43,8 @@ public class Controller {
             writer4.write(v2);
             writer4.close();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
+            e.printStackTrace();
             System.exit(1);
         }
     }
@@ -70,7 +71,8 @@ public class Controller {
             writer4.write("");
             writer4.close();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
+            e.printStackTrace();
             System.exit(1);
         }
     }
@@ -84,7 +86,9 @@ public class Controller {
             res = Integer.valueOf(buffer);
             reader.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
+            //System.out.println(e);
+            System.exit(1);
         }
         return res;
     }
@@ -101,8 +105,8 @@ public class Controller {
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(process.getInputStream()));
-            //while ((buffer = reader.readLine()) != null)
-            //    System.out.println(buffer);
+//            while ((buffer = reader.readLine()) != null)
+//                System.out.println(buffer);
             process.waitFor();
             ret = process.exitValue();
             process.destroy();
@@ -110,16 +114,17 @@ public class Controller {
             endTime = System.nanoTime();
 
             timeElapsed = endTime - startTime;
-            System.out.println("Execution time of test " + method + " in seconds : " + timeElapsed / 1000000000);
+            System.out.println("Execution time in seconds : " + timeElapsed / 1000000000);
 
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
+            e.printStackTrace();
             System.exit(1);
         }
         return ret;
     }
 
-    public static void load() {
+    public static void loadStaticData() {
         try {
             BufferedReader reader0 = new BufferedReader(new FileReader(new File(testListFileName)));
             String buffer0 = "";
@@ -133,40 +138,80 @@ public class Controller {
             while ((buffer1 = reader1.readLine()) != null) {
                 parameterList.add(buffer1.trim());
             }
+            //System.out.println("number of parameters = " + parameterList.size());
             reader0.close();
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
+            e.printStackTrace();
             System.exit(1);
         }
     }
 
+    public static List<String> testForTupleWithGivenTests(String parameter, String reconfigMode, String v1, String v2, List<String> thisTestList) {
+        List<String> failedList = new ArrayList<String>();
+        if (thisTestList == null) {
+            System.exit(1);
+        }
+        
+        System.out.println("reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2); 
+
+        int index = 1;
+        for (String test : testList) {
+            cleanUpSharedFiles();
+            setupTestTuple(parameter, reconfigMode, v1, v2);
+            System.out.println("Running " + index + " of " + testList.size() + " test " 
+                                + test);
+            int ret = runJunitTest(test);
+            Integer res = waitForTestResult();
+            if (res < 0) 
+                failedList.add(test);
+            System.out.println("Result: " +  res);
+            System.out.println();
+            index++;
+        }
+        return failedList;
+    }
+    
     public static void main(String[] args) {
         long startTime, endTime, timeElapsed;
-    
-        Controller.load();
-        System.out.println("number of tests = " + testList.size());
-        System.out.println("number of parameters = " + parameterList.size());
-    
-//        for (String parameter : parameterList) {
-            startTime = endTime = timeElapsed = 0;
-            startTime = System.nanoTime();
-            int i = 1;
-            for (String test : testList) {
-                cleanUpSharedFiles();
-                setupTestTuple("dfs.block.access.token.enable", "v1v1", "false", "false");
-                System.out.println("Running the " + i + " of " + testList.size() + " test " 
-                                    + test);
-                int ret = runJunitTest(test);
-                Integer res = waitForTestResult();
-                System.out.println("Result of the " + i + " of " + testList.size() + " test " + test
-                                    + " " + res);
-                System.out.println();
-                i++;
+        startTime = endTime = timeElapsed = 0; 
+        
+        if (args.length > 1) {
+            System.exit(1);
+        }
+        String parameterToTest = args[0];
+        System.out.println("parameter to test: " + parameterToTest); 
+        loadStaticData();
+        startTime = System.nanoTime();
+        List<String> failedListv1v2 = testForTupleWithGivenTests(parameterToTest, "v1v2", "true", "false", testList); // all
+        List<String> failedListv1v1 = testForTupleWithGivenTests(parameterToTest, "v1v1", "true", "", failedListv1v2); 
+        List<String> failedListv2v2 = testForTupleWithGivenTests(parameterToTest, "v2v2", "", "false", failedListv1v2);
+
+        for (String v1v2Test : failedListv1v2) {
+            boolean v1v1Failed, v2v2Failed;
+            v1v1Failed = v2v2Failed = false;
+            for (String v1v1Test : failedListv1v1) {
+                /* found */
+                if (v1v2Test.equals(v1v1Test)) {
+                    v1v1Failed = true;
+                    break;
+                }
             }
-            endTime = System.nanoTime();
-            
-            timeElapsed = endTime - startTime;
-            System.out.println("Execution time of all " + testList.size() + " tests in seconds : " + timeElapsed / 1000000000);
-//        }
+            for (String v2v2Test : failedListv2v2) {
+                /* found */
+                if (v1v2Test.equals(v2v2Test)) {
+                    v2v2Failed = true;
+                    break;
+                }
+            }
+            if (v1v1Failed == false && v2v2Failed == false) {
+                System.out.println("UNPARTIAL " + v1v2Test);
+            }
+        }
+
+        endTime = System.nanoTime();
+        
+        timeElapsed = endTime - startTime;
+        System.out.println("Total execution time " + testList.size() + " in seconds : " + timeElapsed / 1000000000);
     }
 }
