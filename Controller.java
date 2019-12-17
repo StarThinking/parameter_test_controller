@@ -107,10 +107,10 @@ public class Controller {
                 new InputStreamReader(process.getInputStream()));
 //            while ((buffer = reader.readLine()) != null)
 //                System.out.println(buffer);
+            reader.close();
             process.waitFor();
             ret = process.exitValue();
             process.destroy();
-            reader.close();
             endTime = System.nanoTime();
 
             timeElapsed = endTime - startTime;
