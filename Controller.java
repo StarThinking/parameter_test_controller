@@ -13,6 +13,7 @@ public class Controller {
     
     /* shared files*/
     public static String testSuccessFileName = controllerRootDir + "shared/test_success";
+    public static String failureMessageFileName = controllerRootDir + "shared/failure_message";
     public static String parameterFileName = controllerRootDir + "shared/parameter";
     public static String reconfigModeFileName = controllerRootDir + "shared/reconfig_mode";
     public static String v1FileName = controllerRootDir + "shared/v1";
@@ -55,21 +56,25 @@ public class Controller {
             writer0.write("");
             writer0.close();
             
-            BufferedWriter writer1 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
+            BufferedWriter writer1 = new BufferedWriter(new FileWriter(new File(failureMessageFileName)));
             writer1.write("");
             writer1.close();
             
-            BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(reconfigModeFileName)));
+            BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
             writer2.write("");
             writer2.close();
             
-            BufferedWriter writer3 = new BufferedWriter(new FileWriter(new File(v1FileName)));
+            BufferedWriter writer3 = new BufferedWriter(new FileWriter(new File(reconfigModeFileName)));
             writer3.write("");
             writer3.close();
             
-            BufferedWriter writer4 = new BufferedWriter(new FileWriter(new File(v2FileName)));
+            BufferedWriter writer4 = new BufferedWriter(new FileWriter(new File(v1FileName)));
             writer4.write("");
             writer4.close();
+            
+            BufferedWriter writer5 = new BufferedWriter(new FileWriter(new File(v2FileName)));
+            writer5.write("");
+            writer5.close();
         } catch (Exception e) {
             //System.out.println(e);
             e.printStackTrace();
@@ -147,36 +152,49 @@ public class Controller {
         }
     }
 
-    public static List<String> testForTupleWithGivenTests(String parameter, String reconfigMode, String v1, String v2, List<String> thisTestList) {
+    public static List<String> testForTupleWithGivenTests(String parameter, String reconfigMode, String v1, String v2, List<String> thisTestSet) {
         List<String> failedList = new ArrayList<String>();
-        if (thisTestList == null) {
+        if (thisTestSet == null) {
             System.exit(1);
         }
+
+        if (thisTestSet.size() == 0)
+            return failedList; // empty
         
         System.out.println("reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2); 
-	System.out.println("thisTestList size " + thisTestList.size());
+	System.out.println("thisTestSet size " + thisTestSet.size());
         int index = 1;
-        for (String test : thisTestList) {
+        for (String test : thisTestSet) {
             cleanUpSharedFiles();
             setupTestTuple(parameter, reconfigMode, v1, v2);
-            System.out.println("Running " + index + " of " + thisTestList.size() + " test " 
-                                + test);
+            System.out.println("Running " + index + " of " + thisTestSet.size() + " test " + test);
             int ret = runJunitTest(test);
             Integer res = waitForTestResult();
-            if (res < 0) 
-                failedList.add(test);
             System.out.println("Result: " +  res);
-            System.out.println();
+            if (res < 0) { 
+                failedList.add(test);
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader(new File(failureMessageFileName)));
+                    String buffer = "";
+                    while ((buffer = reader.readLine()) != null) {
+                        System.out.println(buffer);
+                    }
+                    reader.close();
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+            }
             index++;
         }
         return failedList;
     }
         
-    public static int testLogic(String parameter, String v1, String v2) {    
-        List<String> failedListv1v2 = testForTupleWithGivenTests(parameter, "v1v2", v1, v2, allTestList); // all
+    public static int testLogic(String parameter, String v1, String v2, List<String> testSet) {    
+        List<String> failedListv1v2 = testForTupleWithGivenTests(parameter, "v1v2", v1, v2, testSet); // all
         List<String> failedListv1v1 = testForTupleWithGivenTests(parameter, "v1v1", v1, "", failedListv1v2); 
         List<String> failedListv2v2 = testForTupleWithGivenTests(parameter, "v2v2", "", v2, failedListv1v2);
-	int flag = 0;
+        int unpartial = 0;
 
         for (String v1v2Test : failedListv1v2) {
             boolean v1v1Failed, v2v2Failed;
@@ -196,31 +214,62 @@ public class Controller {
                 }
             }
             if (v1v1Failed == false && v2v2Failed == false) {
-                System.out.println("UNPARTIAL " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
-		flag = 1;
+                System.out.println("UNPARTIAL suspicious " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+                // double check
+                int runs = 10;
+                int i = 0;
+                List<String> singleTest = new ArrayList<String>();
+                singleTest.add(v1v2Test);
+                for(; i<runs; i++) {
+                    List<String> failedList1 = testForTupleWithGivenTests(parameter, "v1v1", v1, "", singleTest);
+                    List<String> failedList2 = testForTupleWithGivenTests(parameter, "v2v2", "", v2, singleTest);
+                    if (failedList1.size() > 0 || failedList2.size() > 0) {
+                        System.out.println("UNPARTIAL false positive " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+                        break;
+                    }
+                }
+                if (i == runs) {
+                    System.out.println("UNPARTIAL foresure " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+        	    unpartial = 1;
+                }
             }
-	}
-	return flag;
+       	}
+	return unpartial;
     }
     
     public static void main(String[] args) {
+        String parameterToTest = "";
+        String oneTest = "";
+        List<String> testSet = null;
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
         
-        if (args.length > 1) {
+        if (args.length == 0 || args.length > 2) {
+            System.out.println("Error: args length is " + args.length);
             System.exit(1);
         }
-        String parameterToTest = args[0];
-        System.out.println("parameter to test: " + parameterToTest); 
+
+        /* load static data first */
         loadStaticData();
         
-	startTime = System.nanoTime();
-	int ret = testLogic(parameterToTest, "true", "false");
-	if (ret == 0)
-	    testLogic(parameterToTest, "false", "true");
-        endTime = System.nanoTime();
+        if (args.length == 2) { // only use a single test
+            oneTest = args[1];
+            testSet = new ArrayList<String>();
+            testSet.add(oneTest);
+        } else {
+            testSet = allTestList;
+        }
+        parameterToTest = args[0];
+        System.out.println("parameter to test: " + parameterToTest); 
+        System.out.println("size of testSet: " + testSet.size()); 
         
+	startTime = System.nanoTime();
+	int ret = testLogic(parameterToTest, "true", "false", testSet);
+	if (ret == 0)
+	    testLogic(parameterToTest, "false", "true", testSet);
+        endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
+        System.out.println();
     }
 }
