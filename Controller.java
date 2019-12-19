@@ -8,7 +8,8 @@ import java.util.*;
 
 public class Controller {
 
-    public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs";
+    //public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs";
+    public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
     
     /* shared files*/
@@ -20,7 +21,8 @@ public class Controller {
     public static String v2FileName = controllerRootDir + "shared/v2";
     
     /* static test and parameter per component */
-    public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
+    //public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
+    public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/start_namenode.txt";
     public static String parameterListFileName = controllerRootDir + "parameter_for_component/namenode_getBoolean.txt";
     
     public static List<String> parameterList = new ArrayList<String>(); // never used
@@ -110,8 +112,8 @@ public class Controller {
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(process.getInputStream()));
-//            while ((buffer = reader.readLine()) != null)
-//                System.out.println(buffer);
+            while ((buffer = reader.readLine()) != null)
+                System.out.println(buffer);
             reader.close();
             process.waitFor();
             ret = process.exitValue();
@@ -119,7 +121,7 @@ public class Controller {
             endTime = System.nanoTime();
 
             timeElapsed = endTime - startTime;
-            System.out.println("Execution time in seconds : " + timeElapsed / 1000000000);
+            System.out.print(" Execution time (sec) " + timeElapsed / 1000000000);
 
         } catch (Exception e) {
             //System.out.println(e);
@@ -167,10 +169,10 @@ public class Controller {
         for (String test : thisTestSet) {
             cleanUpSharedFiles();
             setupTestTuple(parameter, reconfigMode, v1, v2);
-            System.out.println("Running " + index + " of " + thisTestSet.size() + " test " + test);
+            System.out.print("Running " + index + " of " + thisTestSet.size() + " test " + test);
             int ret = runJunitTest(test);
             Integer res = waitForTestResult();
-            System.out.println("Result: " +  res);
+            System.out.print(" Result " +  res + "\n");
             if (res < 0) { 
                 failedList.add(test);
                 try {
@@ -189,7 +191,11 @@ public class Controller {
         }
         return failedList;
     }
-        
+
+    public static void testCorrectness(String parameter, String v1, String v2, List<String> testSet) {
+	List<String> failedListv1v2 = testForTupleWithGivenTests(parameter, "none", "", "", testSet); // all
+    }
+      
     public static int testLogic(String parameter, String v1, String v2, List<String> testSet) {    
         List<String> failedListv1v2 = testForTupleWithGivenTests(parameter, "v1v2", v1, v2, testSet); // all
         List<String> failedListv1v1 = testForTupleWithGivenTests(parameter, "v1v1", v1, "", failedListv1v2); 
@@ -264,6 +270,7 @@ public class Controller {
         System.out.println("size of testSet: " + testSet.size()); 
         
 	startTime = System.nanoTime();
+//	testCorrectness(parameterToTest, "", "", testSet);
 	int ret = testLogic(parameterToTest, "true", "false", testSet);
 	if (ret == 0)
 	    testLogic(parameterToTest, "false", "true", testSet);
