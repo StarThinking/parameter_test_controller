@@ -1,0 +1,23 @@
+[msx] testStarted testWithAllCorruptReplicas
+2019-12-19 18:28:16,972 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:28:17,111 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35004
+2019-12-19 18:28:17,123 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:17,169 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:17,184 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:17,237 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:17,255 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:17,350 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:17,548 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:17,631 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:17,722 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:17,735 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:17,863 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:17,932 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:17,943 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:18,075 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:28:18,140 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:28:24,152 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:24,201 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:24,251 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:28:24,415 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35004 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testWithAllCorruptReplicas testresult=1

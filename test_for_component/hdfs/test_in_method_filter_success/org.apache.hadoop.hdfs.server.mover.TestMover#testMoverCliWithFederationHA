@@ -1,0 +1,20 @@
+[msx] testStarted testMoverCliWithFederationHA
+2019-12-19 16:16:14,489 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:14,670 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42995
+2019-12-19 16:16:14,673 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:14,774 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43797
+2019-12-19 16:16:14,817 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:14,927 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38711
+2019-12-19 16:16:14,931 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:15,071 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36437
+2019-12-19 16:16:15,123 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:15,261 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39438
+2019-12-19 16:16:15,264 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:16:15,543 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34968
+2019-12-19 16:16:15,602 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:42995 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:16:15,641 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43797 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:16:15,676 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39438 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:16:15,702 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34968 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:16:15,730 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38711 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:16:15,758 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36437 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testMoverCliWithFederationHA testresult=1

@@ -1,0 +1,20 @@
+[msx] testStarted testProcessPendingReconstructions
+2019-12-19 16:03:50,860 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:03:50,960 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43119
+2019-12-19 16:03:50,972 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:03:51,010 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:03:51,018 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:03:51,052 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:03:51,060 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:03:51,111 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:03:51,122 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:03:51,193 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:03:51,214 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:03:51,273 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:03:57,005 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:03:57,059 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:03:57,116 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:03:57,171 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:03:57,235 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:03:57,413 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43119 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testProcessPendingReconstructions testresult=1

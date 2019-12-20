@@ -1,0 +1,14 @@
+[msx] testStarted testCheckPointDirsAreTrimmed
+2019-12-19 18:29:22,677 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:29:23,413 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34304
+2019-12-19 18:29:23,497 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:29:23,941 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:29:23,949 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:29:24,013 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:29:24,019 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:29:24,065 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:29:24,935 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:29:24,999 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:29:25,048 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:29:25,122 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34304 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testCheckPointDirsAreTrimmed testresult=1

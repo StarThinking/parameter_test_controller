@@ -1,0 +1,8 @@
+[msx] testStarted testDelegationTokensAfterFailover
+2019-12-19 17:49:04,814 [Thread-764] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:04,924 [Thread-764] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45317
+2019-12-19 17:49:04,927 [Thread-764] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:05,082 [Thread-764] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38977
+2019-12-19 17:49:05,168 [Thread-764] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45317 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:49:05,192 [Thread-764] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38977 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDelegationTokensAfterFailover testresult=1

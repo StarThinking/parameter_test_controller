@@ -1,0 +1,19 @@
+[msx] testStarted testNewNamenodeTakesOverWriter
+2019-12-19 18:47:38,556 [main] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:47:38,577 [main] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:47:39,429 [main] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:47:39,429 [main] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:47:39,499 [main] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:47:39,500 [main] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:47:40,777 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:47:41,363 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36571
+2019-12-19 18:47:41,674 [Thread-66] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36571 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:47:41,811 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:47:42,108 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42702
+2019-12-19 18:47:42,168 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:47:42,406 [Thread-66] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44204
+2019-12-19 18:47:42,440 [Thread-66] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44204 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:47:42,519 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+2019-12-19 18:47:42,527 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+2019-12-19 18:47:42,532 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+[msx] testFinished testNewNamenodeTakesOverWriter testresult=1

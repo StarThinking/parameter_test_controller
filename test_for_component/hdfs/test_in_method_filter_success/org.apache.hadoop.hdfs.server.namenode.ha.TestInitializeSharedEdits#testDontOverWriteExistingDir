@@ -1,0 +1,8 @@
+[msx] testStarted testDontOverWriteExistingDir
+2019-12-19 17:49:58,875 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:58,975 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:46749
+2019-12-19 17:49:58,977 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:59,076 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44321
+2019-12-19 17:49:59,504 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:46749 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:49:59,527 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44321 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDontOverWriteExistingDir testresult=1

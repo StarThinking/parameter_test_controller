@@ -1,0 +1,11 @@
+[msx] testStarted testDnRestartWithUnsavedReplicas
+2019-12-19 16:45:22,602 [Thread-128] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:45:22,741 [Thread-128] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43337
+2019-12-19 16:45:22,752 [Thread-128] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:45:22,806 [Thread-128] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:45:23,124 [Thread-128] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:45:23,203 [Thread-128] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:45:23,260 [Thread-128] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:45:23,481 [Thread-128] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:45:23,667 [Thread-128] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43337 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDnRestartWithUnsavedReplicas testresult=1

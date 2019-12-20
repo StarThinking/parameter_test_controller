@@ -1,0 +1,6 @@
+[msx] testStarted testTruncateOverQuota
+2019-12-19 18:15:09,838 [Thread-6750] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35566 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:15:09,876 [Thread-6750] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:15:10,113 [CacheReplicationMonitor(497855542)] INFO  blockmanagement.CacheReplicationMonitor (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35566
+2019-12-19 18:15:10,112 [Thread-6750] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35566
+[msx] testFinished testTruncateOverQuota testresult=1

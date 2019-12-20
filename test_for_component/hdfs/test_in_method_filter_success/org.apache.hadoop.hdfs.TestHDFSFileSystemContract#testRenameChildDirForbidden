@@ -1,0 +1,11 @@
+[msx] testStarted testRenameChildDirForbidden
+2019-12-19 14:27:43,268 [Thread-4244] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:27:43,395 [Thread-4244] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:46111
+2019-12-19 14:27:43,407 [Thread-4244] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:43,458 [Thread-4244] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:43,461 [Thread-4244] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:43,513 [Thread-4244] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:43,665 [Thread-4244] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:43,703 [Thread-4244] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:43,840 [Thread-4244] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:46111 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRenameChildDirForbidden testresult=1

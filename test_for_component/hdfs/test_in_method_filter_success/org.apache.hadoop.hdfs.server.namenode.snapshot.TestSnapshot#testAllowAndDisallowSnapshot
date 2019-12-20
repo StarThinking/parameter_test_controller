@@ -1,0 +1,5 @@
+[msx] testStarted testAllowAndDisallowSnapshot
+2019-12-19 18:11:15,127 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:11:15,273 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38402
+2019-12-19 18:11:15,940 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38402 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testAllowAndDisallowSnapshot testresult=1

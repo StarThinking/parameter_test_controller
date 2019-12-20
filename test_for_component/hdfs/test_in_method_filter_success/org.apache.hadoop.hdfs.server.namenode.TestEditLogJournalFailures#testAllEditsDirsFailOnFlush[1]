@@ -1,0 +1,5 @@
+[msx] testStarted testAllEditsDirsFailOnFlush[1]
+2019-12-19 18:28:36,769 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:28:36,879 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:33400
+2019-12-19 18:28:37,123 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33400 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testAllEditsDirsFailOnFlush[1] testresult=1

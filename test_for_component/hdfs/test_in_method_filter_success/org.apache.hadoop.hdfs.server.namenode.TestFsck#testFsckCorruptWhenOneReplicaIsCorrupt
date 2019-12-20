@@ -1,0 +1,18 @@
+[msx] testStarted testFsckCorruptWhenOneReplicaIsCorrupt
+2019-12-19 18:01:46,647 [Thread-3983] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:01:46,734 [Thread-3983] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41876
+2019-12-19 18:01:46,738 [Thread-3983] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:01:46,821 [Thread-3983] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40278
+2019-12-19 18:01:46,827 [Thread-3983] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:01:46,860 [Thread-3983] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:01:46,866 [Thread-3983] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:01:46,897 [Thread-3983] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:01:47,098 [Thread-3983] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:01:47,964 [Thread-3983] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:01:47,968 [Thread-3983] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:01:48,000 [Thread-3983] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:01:49,847 [Thread-3983] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:01:49,887 [Thread-3983] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:01:49,928 [Thread-3983] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41876 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:01:49,951 [Thread-3983] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40278 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testFsckCorruptWhenOneReplicaIsCorrupt testresult=1

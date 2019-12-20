@@ -1,0 +1,8 @@
+[msx] testStarted testEncryptionZonesOnRootPath
+2019-12-19 14:59:10,051 [Thread-2326] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:59:10,134 [Thread-2326] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35734
+2019-12-19 14:59:10,141 [Thread-2326] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:59:10,170 [Thread-2326] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:59:11,479 [Thread-2326] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:59:11,522 [Thread-2326] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35734 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testEncryptionZonesOnRootPath testresult=1

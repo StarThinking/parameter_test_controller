@@ -1,0 +1,8 @@
+[msx] testStarted testFallbackToDiskFull
+2019-12-19 16:44:42,547 [Thread-453] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:44:42,685 [Thread-453] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42454
+2019-12-19 16:44:42,697 [Thread-453] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:44:42,747 [Thread-453] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:44:44,049 [Thread-453] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:44:44,202 [Thread-453] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:42454 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testFallbackToDiskFull testresult=1

@@ -1,0 +1,11 @@
+[msx] testStarted testUpdateNeededReplicationsForAppendedFile
+2019-12-19 15:23:06,300 [Thread-440] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:23:06,492 [Thread-440] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45282
+2019-12-19 15:23:06,515 [Thread-440] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:23:06,579 [Thread-440] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:23:07,387 [Thread-440] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:23:07,450 [Thread-440] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:23:10,723 [Thread-440] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:23:10,776 [Thread-440] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:23:10,839 [Thread-440] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45282 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testUpdateNeededReplicationsForAppendedFile testresult=1

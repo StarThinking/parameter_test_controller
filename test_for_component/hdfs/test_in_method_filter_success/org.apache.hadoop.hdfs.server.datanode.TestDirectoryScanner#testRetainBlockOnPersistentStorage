@@ -1,0 +1,8 @@
+[msx] testStarted testRetainBlockOnPersistentStorage
+2019-12-19 16:31:29,438 [Thread-96] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:31:29,582 [Thread-96] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40554
+2019-12-19 16:31:29,591 [Thread-96] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:31:29,670 [Thread-96] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:31:29,849 [Thread-96] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:31:30,022 [Thread-96] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40554 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRetainBlockOnPersistentStorage testresult=1

@@ -1,0 +1,11 @@
+[msx] testStarted testRenameNonExistentPath
+2019-12-19 14:27:48,704 [Thread-5178] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:27:48,861 [Thread-5178] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37999
+2019-12-19 14:27:48,864 [Thread-5178] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:48,906 [Thread-5178] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:48,910 [Thread-5178] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:48,959 [Thread-5178] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:49,070 [Thread-5178] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:49,106 [Thread-5178] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:49,240 [Thread-5178] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37999 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRenameNonExistentPath testresult=1

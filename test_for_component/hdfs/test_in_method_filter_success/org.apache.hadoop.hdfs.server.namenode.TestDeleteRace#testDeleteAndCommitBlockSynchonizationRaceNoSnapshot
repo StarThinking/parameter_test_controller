@@ -1,0 +1,17 @@
+[msx] testStarted testDeleteAndCommitBlockSynchonizationRaceNoSnapshot
+2019-12-19 18:24:33,448 [Thread-215] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:24:33,608 [Thread-215] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34554
+2019-12-19 18:24:33,618 [Thread-215] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:24:33,678 [Thread-215] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:24:33,691 [Thread-215] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:24:33,771 [Thread-215] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:24:33,785 [Thread-215] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:24:33,881 [Thread-215] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:24:46,007 [Thread-215] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34554 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:24:46,038 [Thread-215] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:24:46,162 [Thread-215] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34554
+2019-12-19 18:24:51,844 [Thread-215] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:24:51,902 [Thread-215] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:24:51,955 [Thread-215] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:24:52,013 [Thread-215] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34554 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDeleteAndCommitBlockSynchonizationRaceNoSnapshot testresult=1

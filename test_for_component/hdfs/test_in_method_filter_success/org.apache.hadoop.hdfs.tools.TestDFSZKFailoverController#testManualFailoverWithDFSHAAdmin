@@ -1,0 +1,8 @@
+[msx] testStarted testManualFailoverWithDFSHAAdmin
+2019-12-19 18:52:44,290 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:52:45,043 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10021
+2019-12-19 18:52:45,045 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:52:45,155 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10022
+2019-12-19 18:52:46,223 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10021 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:52:46,289 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10022 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testManualFailoverWithDFSHAAdmin testresult=1

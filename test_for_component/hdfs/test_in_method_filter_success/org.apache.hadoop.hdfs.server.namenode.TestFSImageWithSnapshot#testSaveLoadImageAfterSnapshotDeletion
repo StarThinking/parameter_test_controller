@@ -1,0 +1,11 @@
+[msx] testStarted testSaveLoadImageAfterSnapshotDeletion
+2019-12-19 17:27:52,986 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:27:53,149 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44999
+2019-12-19 17:27:54,636 [Thread-1002] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44999 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:27:54,736 [Thread-1002] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:27:54,904 [Thread-1002] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44482
+2019-12-19 17:27:55,582 [Thread-1002] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44482 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:27:55,644 [Thread-1002] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:27:55,806 [Thread-1002] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40258
+2019-12-19 17:27:56,548 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40258 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testSaveLoadImageAfterSnapshotDeletion testresult=1

@@ -1,0 +1,5 @@
+[msx] testStarted testAddStoredBlockDoesNotCauseSkippedReplication[1]
+2019-12-19 16:04:21,248 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:04:21,305 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36104
+2019-12-19 16:04:21,323 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36104 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testAddStoredBlockDoesNotCauseSkippedReplication[1] testresult=1

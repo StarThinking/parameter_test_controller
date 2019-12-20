@@ -1,0 +1,8 @@
+[msx] testStarted testNoUserGiven
+2019-12-19 17:51:12,650 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:12,753 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43678
+2019-12-19 17:51:12,756 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:12,911 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36925
+2019-12-19 17:51:12,934 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43678 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:51:12,959 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36925 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testNoUserGiven testresult=1

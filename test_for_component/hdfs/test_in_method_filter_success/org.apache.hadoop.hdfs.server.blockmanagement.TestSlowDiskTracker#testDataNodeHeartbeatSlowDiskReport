@@ -1,0 +1,11 @@
+[msx] testStarted testDataNodeHeartbeatSlowDiskReport
+2019-12-19 15:57:15,909 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:57:16,565 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39770
+2019-12-19 15:57:16,655 [Thread-0] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:57:17,219 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:57:17,225 [Thread-0] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+Exception in thread "org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1@8e58151" 2019-12-19 15:57:17,294 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:57:19,693 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:57:19,762 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:57:19,914 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39770 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDataNodeHeartbeatSlowDiskReport testresult=1

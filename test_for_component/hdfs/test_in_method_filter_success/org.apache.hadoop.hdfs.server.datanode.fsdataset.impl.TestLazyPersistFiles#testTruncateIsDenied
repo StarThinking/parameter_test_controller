@@ -1,0 +1,8 @@
+[msx] testStarted testTruncateIsDenied
+2019-12-19 16:44:14,862 [Thread-562] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:44:14,974 [Thread-562] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45540
+2019-12-19 16:44:14,984 [Thread-562] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:44:15,030 [Thread-562] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:44:15,296 [Thread-562] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:44:15,346 [Thread-562] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45540 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testTruncateIsDenied testresult=1

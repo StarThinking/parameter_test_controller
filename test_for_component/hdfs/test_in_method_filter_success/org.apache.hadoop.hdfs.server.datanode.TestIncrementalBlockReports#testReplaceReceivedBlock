@@ -1,0 +1,8 @@
+[msx] testStarted testReplaceReceivedBlock
+2019-12-19 16:27:31,220 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:27:31,362 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:46125
+2019-12-19 16:27:31,372 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:27:31,452 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:27:33,585 [Thread-165] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:27:33,768 [Thread-165] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:46125 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testReplaceReceivedBlock testresult=1

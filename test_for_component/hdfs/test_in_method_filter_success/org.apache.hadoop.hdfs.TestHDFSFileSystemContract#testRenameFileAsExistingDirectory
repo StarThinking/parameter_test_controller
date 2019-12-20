@@ -1,0 +1,11 @@
+[msx] testStarted testRenameFileAsExistingDirectory
+2019-12-19 14:27:37,601 [Thread-3287] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:27:37,723 [Thread-3287] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36291
+2019-12-19 14:27:37,735 [Thread-3287] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:37,776 [Thread-3287] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:37,779 [Thread-3287] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:37,813 [Thread-3287] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:37,960 [Thread-3287] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:37,998 [Thread-3287] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:38,137 [Thread-3287] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36291 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRenameFileAsExistingDirectory testresult=1

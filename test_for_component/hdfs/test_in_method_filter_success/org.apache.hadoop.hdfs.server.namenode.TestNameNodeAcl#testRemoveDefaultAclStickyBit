@@ -1,0 +1,8 @@
+[msx] testStarted testRemoveDefaultAclStickyBit
+2019-12-19 18:18:15,243 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:18:15,313 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33718 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:18:15,383 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:18:15,524 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42341
+2019-12-19 18:18:15,529 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:18:15,604 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+[msx] testFinished testRemoveDefaultAclStickyBit testresult=1

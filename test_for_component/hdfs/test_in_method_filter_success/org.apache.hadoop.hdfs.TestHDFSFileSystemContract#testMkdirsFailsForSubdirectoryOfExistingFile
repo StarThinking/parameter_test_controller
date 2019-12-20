@@ -1,0 +1,11 @@
+[msx] testStarted testMkdirsFailsForSubdirectoryOfExistingFile
+2019-12-19 14:27:24,564 [Thread-1348] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:27:24,690 [Thread-1348] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45370
+2019-12-19 14:27:24,698 [Thread-1348] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:24,749 [Thread-1348] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:24,763 [Thread-1348] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:24,817 [Thread-1348] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:24,990 [Thread-1348] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:25,045 [Thread-1348] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:25,196 [Thread-1348] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45370 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testMkdirsFailsForSubdirectoryOfExistingFile testresult=1

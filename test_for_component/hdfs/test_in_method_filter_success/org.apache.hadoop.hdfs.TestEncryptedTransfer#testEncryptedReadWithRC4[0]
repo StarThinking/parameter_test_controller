@@ -1,0 +1,14 @@
+[msx] testStarted testEncryptedReadWithRC4[0]
+2019-12-19 18:39:45,081 [Thread-2301] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:39:45,215 [Thread-2301] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38179
+2019-12-19 18:39:45,238 [Thread-2301] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:39:45,284 [Thread-2301] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:39:45,448 [Thread-2301] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:39:45,496 [Thread-2301] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38179 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:39:45,529 [Thread-2301] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:39:45,677 [Thread-2301] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40343
+2019-12-19 18:39:45,685 [Thread-2301] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:39:45,732 [Thread-2301] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:39:45,874 [Thread-2301] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:39:45,922 [Thread-2301] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40343 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testEncryptedReadWithRC4[0] testresult=1

@@ -1,0 +1,14 @@
+[msx] testStarted testCleanupXAttrs
+2019-12-19 17:12:10,099 [Thread-557] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:12:10,397 [Thread-557] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:42125 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:12:10,452 [Thread-557] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:12:10,589 [Thread-557] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34297
+2019-12-19 17:12:10,597 [Thread-557] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:12:10,649 [Thread-557] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:12:10,789 [Thread-557] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:12:10,849 [Thread-557] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34297 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:12:10,916 [Thread-557] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:12:11,099 [Thread-557] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41467
+2019-12-19 17:12:11,106 [Thread-557] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:12:11,165 [Thread-557] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+[msx] testFinished testCleanupXAttrs testresult=1

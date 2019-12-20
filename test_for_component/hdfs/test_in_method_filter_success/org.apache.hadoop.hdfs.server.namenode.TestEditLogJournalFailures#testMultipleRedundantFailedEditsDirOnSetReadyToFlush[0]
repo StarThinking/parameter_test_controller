@@ -1,0 +1,8 @@
+[msx] testStarted testMultipleRedundantFailedEditsDirOnSetReadyToFlush[0]
+2019-12-19 18:28:33,126 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:28:33,240 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44759
+2019-12-19 18:28:33,472 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44759 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:28:33,581 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:28:33,725 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39131
+2019-12-19 18:28:34,082 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39131 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testMultipleRedundantFailedEditsDirOnSetReadyToFlush[0] testresult=1

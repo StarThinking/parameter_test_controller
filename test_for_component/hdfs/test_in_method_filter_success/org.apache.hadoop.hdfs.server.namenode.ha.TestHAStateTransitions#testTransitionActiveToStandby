@@ -1,0 +1,11 @@
+[msx] testStarted testTransitionActiveToStandby
+2019-12-19 17:49:06,929 [Thread-975] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:07,005 [Thread-975] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41823
+2019-12-19 17:49:07,007 [Thread-975] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:49:07,095 [Thread-975] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35269
+2019-12-19 17:49:07,101 [Thread-975] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:49:07,141 [Thread-975] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:49:07,773 [Thread-975] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:49:07,832 [Thread-975] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41823 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:49:07,862 [Thread-975] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35269 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testTransitionActiveToStandby testresult=1

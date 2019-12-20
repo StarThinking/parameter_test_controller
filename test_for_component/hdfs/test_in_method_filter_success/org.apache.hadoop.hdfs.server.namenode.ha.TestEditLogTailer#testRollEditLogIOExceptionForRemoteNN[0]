@@ -1,0 +1,11 @@
+[msx] testStarted testRollEditLogIOExceptionForRemoteNN[0]
+2019-12-19 17:50:27,826 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:50:27,930 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10228
+2019-12-19 17:50:27,933 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:50:28,097 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10230
+2019-12-19 17:50:28,100 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:50:28,195 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10232
+2019-12-19 17:50:28,341 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10228 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:50:28,371 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10230 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:50:28,397 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10232 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRollEditLogIOExceptionForRemoteNN[0] testresult=1

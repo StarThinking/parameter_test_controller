@@ -1,0 +1,5 @@
+[msx] testStarted testRereplicateOnBoundaryTopology
+2019-12-19 16:02:40,825 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:02:40,925 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42461
+2019-12-19 16:02:40,933 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:42461 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRereplicateOnBoundaryTopology testresult=1

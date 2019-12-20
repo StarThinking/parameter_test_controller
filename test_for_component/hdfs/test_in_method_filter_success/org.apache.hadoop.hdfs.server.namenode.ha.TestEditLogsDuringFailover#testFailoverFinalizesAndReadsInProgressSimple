@@ -1,0 +1,8 @@
+[msx] testStarted testFailoverFinalizesAndReadsInProgressSimple
+2019-12-19 17:51:25,335 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:25,424 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37923
+2019-12-19 17:51:25,426 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:25,510 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37002
+2019-12-19 17:51:25,766 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37923 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:51:25,796 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37002 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testFailoverFinalizesAndReadsInProgressSimple testresult=1

@@ -1,0 +1,8 @@
+[msx] testStarted testFailoverFinalizesAndReadsInProgressWithPartialTxAtEnd
+2019-12-19 17:51:23,284 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:23,984 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45085
+2019-12-19 17:51:23,986 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:24,102 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45447
+2019-12-19 17:51:25,177 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45085 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:51:25,243 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45447 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testFailoverFinalizesAndReadsInProgressWithPartialTxAtEnd testresult=1

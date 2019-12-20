@@ -1,0 +1,8 @@
+[msx] testStarted testThreadDumpCaptureAfterNNStateChange
+2019-12-19 18:53:02,625 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:53:02,718 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10021
+2019-12-19 18:53:02,721 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:53:02,804 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:10022
+2019-12-19 18:53:04,059 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10021 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:53:04,103 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:10022 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testThreadDumpCaptureAfterNNStateChange testresult=1

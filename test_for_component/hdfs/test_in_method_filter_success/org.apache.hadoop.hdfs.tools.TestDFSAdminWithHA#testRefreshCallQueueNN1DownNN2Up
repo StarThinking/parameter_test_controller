@@ -1,0 +1,23 @@
+[msx] testStarted testRefreshCallQueueNN1DownNN2Up
+2019-12-19 18:51:21,222 [Thread-6098] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:51:21,222 [Thread-6098] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:51:21,250 [Thread-6098] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:51:21,250 [Thread-6098] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:51:21,265 [Thread-6098] INFO  server.JournalNode (JournalNode.java:setConf(155)) - [msx-restart] JournalNode setConf conf
+2019-12-19 18:51:21,266 [Thread-6098] INFO  server.JournalNode (JournalNode.java:start(227)) - [msx-restart] JournalNode start
+2019-12-19 18:51:21,379 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:51:21,457 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:12444
+2019-12-19 18:51:21,458 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:51:21,533 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:12446
+2019-12-19 18:51:21,541 [Thread-6098] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:12444 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:51:21,560 [Thread-6098] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:12446 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:51:21,617 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:51:21,687 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:12444
+2019-12-19 18:51:21,687 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:51:21,757 [Thread-6098] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:12446
+2019-12-19 18:51:21,766 [Thread-6098] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:12444 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:51:23,503 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:12446 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:51:23,527 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+2019-12-19 18:51:23,530 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+2019-12-19 18:51:23,533 [main] INFO  server.JournalNode (JournalNode.java:stop(284)) - [msx-restart] JournalNode stop
+[msx] testFinished testRefreshCallQueueNN1DownNN2Up testresult=1

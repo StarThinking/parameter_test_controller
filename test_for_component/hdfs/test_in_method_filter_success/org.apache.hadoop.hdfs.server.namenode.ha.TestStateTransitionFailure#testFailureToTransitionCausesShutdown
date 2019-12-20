@@ -1,0 +1,8 @@
+[msx] testStarted testFailureToTransitionCausesShutdown
+2019-12-19 17:51:29,271 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:29,998 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:33787
+2019-12-19 17:51:30,001 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:51:30,114 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40591
+2019-12-19 17:51:31,226 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33787 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:51:31,297 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40591 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testFailureToTransitionCausesShutdown testresult=1

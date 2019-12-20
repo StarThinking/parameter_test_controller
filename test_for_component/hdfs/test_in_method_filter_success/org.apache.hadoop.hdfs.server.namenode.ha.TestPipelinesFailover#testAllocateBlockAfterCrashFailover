@@ -1,0 +1,23 @@
+[msx] testStarted testAllocateBlockAfterCrashFailover
+2019-12-19 17:41:45,939 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:41:46,079 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34121
+2019-12-19 17:41:46,083 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:41:46,215 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:46473
+2019-12-19 17:41:46,219 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:41:46,344 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39357
+2019-12-19 17:41:46,357 [Thread-7548] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:41:46,433 [Thread-7548] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:41:46,448 [Thread-7548] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:41:46,506 [Thread-7548] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:41:46,518 [Thread-7548] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:41:46,614 [Thread-7548] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:41:47,411 [Thread-7548] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34121 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:41:47,439 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:41:47,705 [Thread-7548] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34121
+2019-12-19 17:41:54,098 [Thread-7548] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:41:54,160 [Thread-7548] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:41:54,210 [Thread-7548] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:41:54,262 [Thread-7548] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34121 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:41:54,308 [Thread-7548] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:46473 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:41:54,349 [Thread-7548] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39357 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testAllocateBlockAfterCrashFailover testresult=1

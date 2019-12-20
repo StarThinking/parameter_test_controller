@@ -1,0 +1,14 @@
+[msx] testStarted testClientThatDoesNotSupportEncryption[1]
+2019-12-19 18:40:16,308 [Thread-4204] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:40:16,392 [Thread-4204] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43785
+2019-12-19 18:40:16,398 [Thread-4204] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:40:16,428 [Thread-4204] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:40:16,565 [Thread-4204] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:40:16,607 [Thread-4204] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43785 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:40:16,637 [Thread-4204] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:40:16,736 [Thread-4204] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:46782
+2019-12-19 18:40:16,741 [Thread-4204] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:40:16,858 [Thread-4204] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:40:16,987 [Thread-4204] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:40:17,031 [Thread-4204] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:46782 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testClientThatDoesNotSupportEncryption[1] testresult=1

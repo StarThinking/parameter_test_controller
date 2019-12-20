@@ -1,0 +1,8 @@
+[msx] testStarted testReadWriteUsingWebHdfs
+2019-12-19 14:25:56,907 [Thread-901] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:25:57,043 [Thread-901] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37613
+2019-12-19 14:25:57,051 [Thread-901] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:25:57,122 [Thread-901] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:26:00,132 [Thread-901] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:26:00,178 [Thread-901] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37613 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testReadWriteUsingWebHdfs testresult=1

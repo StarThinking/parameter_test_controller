@@ -1,0 +1,8 @@
+[msx] testStarted testRollbackCommand
+2019-12-19 14:48:38,181 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:48:38,973 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43288
+2019-12-19 14:48:40,021 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43288 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 14:48:40,099 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:48:40,228 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43288
+2019-12-19 14:48:40,229 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43288 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRollbackCommand testresult=1

@@ -1,0 +1,17 @@
+[msx] testStarted testClusterIdMismatchAtStartupWithHA
+2019-12-19 16:27:01,442 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:27:01,551 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:33522
+2019-12-19 16:27:01,553 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:27:01,663 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37058
+2019-12-19 16:27:01,722 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:27:01,818 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37019
+2019-12-19 16:27:01,819 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 16:27:02,021 [Thread-86] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:33208
+2019-12-19 16:27:02,476 [Thread-86] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 16:27:02,538 [Thread-86] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 16:27:07,689 [Thread-86] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 16:27:07,754 [Thread-86] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37019 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:27:07,777 [Thread-86] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33208 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:27:07,808 [Thread-86] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33522 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 16:27:07,832 [Thread-86] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37058 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testClusterIdMismatchAtStartupWithHA testresult=1

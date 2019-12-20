@@ -1,0 +1,8 @@
+[msx] testStarted testAllocShm
+2019-12-19 15:08:18,178 [Thread-104] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:08:18,319 [Thread-104] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45760
+2019-12-19 15:08:18,329 [Thread-104] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:08:18,406 [Thread-104] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:08:18,555 [Thread-104] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:08:18,808 [Thread-104] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45760 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testAllocShm testresult=1

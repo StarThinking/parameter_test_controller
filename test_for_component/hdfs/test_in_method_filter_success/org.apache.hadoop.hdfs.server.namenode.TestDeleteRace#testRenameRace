@@ -1,0 +1,11 @@
+[msx] testStarted testRenameRace
+2019-12-19 18:24:23,152 [Thread-90] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:24:23,294 [Thread-90] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37899
+2019-12-19 18:24:23,304 [Thread-90] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 18:24:23,380 [Thread-90] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 18:24:27,059 [Thread-90] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37899 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:24:27,089 [Thread-90] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:24:27,236 [Thread-90] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37899
+2019-12-19 18:24:33,295 [Thread-90] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 18:24:33,355 [Thread-90] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37899 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRenameRace testresult=1

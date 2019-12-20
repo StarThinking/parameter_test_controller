@@ -1,0 +1,5 @@
+[msx] testStarted testDTInInsecureClusterWithFallback
+2019-12-19 15:45:56,983 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:45:57,093 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43021
+2019-12-19 15:45:57,213 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43021 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDTInInsecureClusterWithFallback testresult=1

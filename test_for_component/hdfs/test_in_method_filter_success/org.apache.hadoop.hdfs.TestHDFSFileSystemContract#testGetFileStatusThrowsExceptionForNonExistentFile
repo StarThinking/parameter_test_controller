@@ -1,0 +1,11 @@
+[msx] testStarted testGetFileStatusThrowsExceptionForNonExistentFile
+2019-12-19 14:27:23,833 [Thread-1235] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:27:23,952 [Thread-1235] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44377
+2019-12-19 14:27:23,967 [Thread-1235] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:24,013 [Thread-1235] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:24,028 [Thread-1235] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:27:24,082 [Thread-1235] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:27:24,212 [Thread-1235] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:24,269 [Thread-1235] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:27:24,420 [Thread-1235] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44377 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testGetFileStatusThrowsExceptionForNonExistentFile testresult=1

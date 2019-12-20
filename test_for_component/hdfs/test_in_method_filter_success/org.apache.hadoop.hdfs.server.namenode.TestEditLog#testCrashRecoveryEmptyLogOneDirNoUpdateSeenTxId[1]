@@ -1,0 +1,8 @@
+[msx] testStarted testCrashRecoveryEmptyLogOneDirNoUpdateSeenTxId[1]
+2019-12-19 18:20:44,056 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:20:44,161 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43702
+2019-12-19 18:20:44,171 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43702 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:20:44,201 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:20:44,308 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38017
+2019-12-19 18:20:44,316 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38017 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testCrashRecoveryEmptyLogOneDirNoUpdateSeenTxId[1] testresult=1

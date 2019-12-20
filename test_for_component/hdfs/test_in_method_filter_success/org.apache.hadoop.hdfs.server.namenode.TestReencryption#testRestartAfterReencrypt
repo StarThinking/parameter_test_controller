@@ -1,0 +1,11 @@
+[msx] testStarted testRestartAfterReencrypt
+2019-12-19 17:14:08,127 [Thread-924] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:14:08,242 [Thread-924] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34275
+2019-12-19 17:14:08,251 [Thread-924] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 17:14:08,291 [Thread-924] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 17:14:16,016 [Thread-924] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34275 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:14:16,047 [Thread-924] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:14:16,156 [Thread-924] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34275
+2019-12-19 17:14:20,394 [Thread-924] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 17:14:20,448 [Thread-924] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:34275 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRestartAfterReencrypt testresult=1

@@ -1,0 +1,11 @@
+[msx] testStarted testRenameUCFileInSnapshot
+2019-12-19 18:13:17,921 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:13:18,098 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36049
+2019-12-19 18:13:18,676 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36049 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:13:18,704 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:13:18,960 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:33156
+2019-12-19 18:13:19,518 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:33156 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 18:13:19,563 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:13:19,735 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:40479
+2019-12-19 18:13:20,304 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:40479 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testRenameUCFileInSnapshot testresult=1

@@ -1,0 +1,6 @@
+[msx] testStarted testDataNodeAbortsIfNoSasl
+2019-12-19 15:50:16,244 [Thread-1233] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:50:16,427 [Thread-1233] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44438
+2019-12-19 15:50:16,451 [Thread-1233] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:50:16,452 [Thread-1233] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44438 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDataNodeAbortsIfNoSasl testresult=1

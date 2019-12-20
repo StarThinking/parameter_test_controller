@@ -1,0 +1,14 @@
+[msx] testStarted testStartingWithUpgradeInProgressSucceeds
+2019-12-19 17:52:14,638 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:52:14,717 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41582
+2019-12-19 17:52:14,719 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:52:14,792 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44656
+2019-12-19 17:52:14,803 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41582 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:52:14,826 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:52:14,908 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41582
+2019-12-19 17:52:14,909 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44656 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:52:14,932 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 17:52:15,098 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44656
+2019-12-19 17:52:15,104 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41582 double check before stop dfs.namenode.audit.log.async = false
+2019-12-19 17:52:15,126 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44656 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testStartingWithUpgradeInProgressSucceeds testresult=1

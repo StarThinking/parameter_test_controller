@@ -1,0 +1,8 @@
+[msx] testStarted testShortCircuitCacheUnbufferDisabled
+2019-12-19 14:28:36,022 [Thread-288] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:28:36,174 [Thread-288] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38909
+2019-12-19 14:28:36,186 [Thread-288] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:28:36,237 [Thread-288] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:28:36,572 [Thread-288] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:28:36,661 [Thread-288] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38909 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testShortCircuitCacheUnbufferDisabled testresult=1

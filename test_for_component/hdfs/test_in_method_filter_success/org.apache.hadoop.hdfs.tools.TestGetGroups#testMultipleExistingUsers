@@ -1,0 +1,5 @@
+[msx] testStarted testMultipleExistingUsers
+2019-12-19 18:51:42,056 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 18:51:42,835 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45410
+2019-12-19 18:51:43,532 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45410 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testMultipleExistingUsers testresult=1

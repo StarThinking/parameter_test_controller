@@ -1,0 +1,8 @@
+[msx] testStarted testConfigKeyDisabled
+2019-12-19 15:00:28,165 [Thread-596] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:00:28,352 [Thread-596] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37749
+2019-12-19 15:00:28,374 [Thread-596] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:00:28,544 [Thread-596] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:00:28,793 [Thread-596] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:00:28,869 [Thread-596] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37749 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testConfigKeyDisabled testresult=1

@@ -1,0 +1,12 @@
+[msx] testStarted testDataNodePorts
+2019-12-19 15:10:24,292 [Thread-93] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 15:10:24,411 [Thread-93] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort c220g5-120131.wisc.cloudlab.us:34443
+2019-12-19 15:10:24,602 [Thread-93] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:10:24,617 [Thread-93] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:10:24,620 [Thread-93] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:10:24,813 [Thread-93] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:10:24,842 [Thread-93] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 15:10:24,946 [Thread-93] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 15:10:24,949 [Thread-93] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 15:10:24,997 [Thread-93] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort c220g5-120131.wisc.cloudlab.us:34443 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testDataNodePorts testresult=1

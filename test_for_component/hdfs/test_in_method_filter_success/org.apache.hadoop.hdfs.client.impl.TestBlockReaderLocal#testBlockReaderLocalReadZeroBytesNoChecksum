@@ -1,0 +1,8 @@
+[msx] testStarted testBlockReaderLocalReadZeroBytesNoChecksum
+2019-12-19 14:28:59,130 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
+2019-12-19 14:28:59,285 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:32892
+2019-12-19 14:28:59,299 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
+2019-12-19 14:28:59,367 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
+2019-12-19 14:28:59,655 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
+2019-12-19 14:28:59,824 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:32892 double check before stop dfs.namenode.audit.log.async = false
+[msx] testFinished testBlockReaderLocalReadZeroBytesNoChecksum testresult=1
