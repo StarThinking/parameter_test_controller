@@ -225,6 +225,8 @@ public class Controller {
         List<String> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", failedListv1v2); 
         List<String> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, failedListv1v2);
         int unpartial = 0;
+	int numOfSuspicous = 0;
+	int thresholdOfSuspicous = 10;
 
         for (String v1v2Test : failedListv1v2) {
             boolean v1v1Failed, v2v2Failed;
@@ -245,6 +247,7 @@ public class Controller {
             }
             if (v1v1Failed == false && v2v2Failed == false) {
                 System.out.println("UNPARTIAL suspicious " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+		numOfSuspicous ++;
                 // double check
                 int runs = 10;
                 int i = 0;
@@ -258,6 +261,13 @@ public class Controller {
                         break;
                     }
                 }
+                if (numOfSuspicous > thresholdOfSuspicous) {
+		    System.out.println("numOfSuspicous " + numOfSuspicous + " > thresholdOfSuspicous " + thresholdOfSuspicous);
+                    System.out.println("UNPARTIAL foresure " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
+        	    unpartial = 1;
+		    return unpartial;
+                }
+		
                 if (i == runs) {
                     System.out.println("UNPARTIAL foresure " + v1v2Test + " for parameter " + parameter + " v1 " + v1 + " v2 " + v2);
         	    unpartial = 1;
