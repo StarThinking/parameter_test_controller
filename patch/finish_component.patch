@@ -1,0 +1,810 @@
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/pom.xml	2019-12-18 21:26:48.000000000 -0600
+@@ -36,6 +36,7 @@
+   </properties>
+ 
+   <dependencies>
++
+     <dependency>
+       <groupId>org.apache.hadoop</groupId>
+       <artifactId>hadoop-annotations</artifactId>
+@@ -228,7 +229,8 @@
+           <properties>
+             <property>
+               <name>listener</name>
+-              <value>org.apache.hadoop.test.TimedOutTestsListener</value>
++              <value>MyRunListener</value>
++              <!--<value>org.apache.hadoop.test.TimedOutTestsListener</value>-->
+             </property>
+           </properties>
+         </configuration>
+@@ -421,9 +423,24 @@
+           </filesets>
+         </configuration>
+       </plugin>
++<!--
++  <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
++-->
++
+     </plugins>
+   </build>
+-
+   <profiles>
+     <!-- profile that starts ApacheDS KDC server -->
+     <profile>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java
+--- ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java	2019-12-19 11:14:54.000000000 -0600
+@@ -59,6 +59,9 @@
+ import java.util.HashMap;
+ import java.util.Map;
+ 
++// msx
++import java.io.*;
++
+ /**
+  * The JournalNode is a daemon which allows namenodes using
+  * the QuorumJournalManager to log and retrieve edits stored
+@@ -149,7 +152,18 @@
+ 
+   @Override
+   public void setConf(Configuration conf) {
++    LOG.info("[msx-restart] JournalNode setConf conf");
+     this.conf = conf;
++    /*try {
++         File v1File = new File("/tmp/v1");
++         BufferedReader br = new BufferedReader(new FileReader(v1File));
++         String v1st;
++         while ((v1st = br.readLine()) != null) {
++             System.out.println("[msx] JournalNode v1 = " + v1st);
++         }
++     } catch(Exception e) {
++         ;
++     }*/
+ 
+     String journalNodeDir = null;
+     Collection<String> nameserviceIds;
+@@ -210,6 +224,7 @@
+    * Start listening for edits via RPC.
+    */
+   public void start() throws IOException {
++    LOG.info("[msx-restart] JournalNode start");
+     Preconditions.checkState(!isStarted(), "JN already running");
+ 
+     try {
+@@ -266,6 +281,7 @@
+    * should indicate an error)
+    */
+   public void stop(int rc) {
++    LOG.info("[msx-restart] JournalNode stop");
+     this.resultCode = rc;
+ 
+     for (JournalNodeSyncer jSyncer : journalSyncersById.values()) {
+@@ -312,6 +328,7 @@
+   }
+   
+   public void stopAndJoin(int rc) throws InterruptedException {
++    //System.out.println("[msx-restart] JournalNode stop");
+     stop(rc);
+     join();
+   }
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java
+--- ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java	2019-12-19 11:14:17.000000000 -0600
+@@ -228,6 +228,9 @@
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
++// msx
++import java.io.*;
++
+ /**********************************************************
+  * DataNode is a class (and program) that stores a set of
+  * blocks for a DFS deployment.  A single deployment can
+@@ -419,6 +422,18 @@
+   @InterfaceAudience.LimitedPrivate("HDFS")
+   DataNode(final Configuration conf) throws DiskErrorException {
+     super(conf);
++    LOG.info("[msx-restart] DataNode new conf");
++/*    try {
++        File v1File = new File("/tmp/v1");
++        BufferedReader br = new BufferedReader(new FileReader(v1File));
++        String v1st;
++        while ((v1st = br.readLine()) != null) {
++            System.out.println("[msx] DataNode v1 = " + v1st);
++        }
++    } catch(Exception e) {
++        ;
++    }
++*/
+     this.tracer = createTracer(conf);
+     this.tracerConfigurationManager =
+         new TracerConfigurationManager(DATANODE_HTRACE_PREFIX, conf);
+@@ -446,6 +461,7 @@
+            final StorageLocationChecker storageLocationChecker,
+            final SecureResources resources) throws IOException {
+     super(conf);
++    LOG.info("[msx-restart] DataNode new conf");
+     this.tracer = createTracer(conf);
+     this.tracerConfigurationManager =
+         new TracerConfigurationManager(DATANODE_HTRACE_PREFIX, conf);
+@@ -1976,6 +1992,7 @@
+    * Otherwise, deadlock might occur.
+    */
+   public void shutdown() {
++    LOG.info("[msx-restart] DataNode stop");
+     stopMetricsLogger();
+     if (plugins != null) {
+       for (ServicePlugin p : plugins) {
+@@ -2633,6 +2650,7 @@
+    *  If this thread is specifically interrupted, it will stop waiting.
+    */
+   public void runDatanodeDaemon() throws IOException {
++    LOG.info("[msx-restart] DataNode start");
+     blockPoolManager.startAll();
+ 
+     // start dataXceiveServer
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java
+--- ./hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java	2019-12-19 11:13:15.000000000 -0600
+@@ -166,6 +166,9 @@
+ import static org.apache.hadoop.fs.CommonConfigurationKeys.IPC_NAMESPACE;
+ import static org.apache.hadoop.fs.CommonConfigurationKeys.IPC_BACKOFF_ENABLE_DEFAULT;
+ 
++// msx
++import java.io.*;
++
+ /**********************************************************
+  * NameNode serves as both directory namespace manager and
+  * "inode table" for the Hadoop DFS.  There is a single NameNode
+@@ -910,9 +913,70 @@
+     this(conf, NamenodeRole.NAMENODE);
+   }
+ 
++  // msx
++  public static String parameterReconfig = "";
++  public static int hasStopped = 0;
++  public static int restartPerformed = 0;
++  public static Object hasStoppedLock = new Object();
++  public static Object restartPerformedLock = new Object();
++  public static String controllerRootDir = "/root/parameter_test_controller/";
++
++  public void recordNameNodeStopped() {
++      synchronized(hasStoppedLock) {
++          hasStopped = 1;
++      }
++  }
++
+   protected NameNode(Configuration conf, NamenodeRole role)
+       throws IOException {
+     super(conf);
++
++    BufferedReader reader0 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/parameter")));
++    BufferedReader reader1 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_mode")));
++    BufferedReader reader2 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v1")));
++    BufferedReader reader3 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v2")));
++    String parameter, reconfigMode, v1, v2;
++    parameter = reconfigMode = v1 = v2 = "";
++    parameter = reader0.readLine();
++    reconfigMode = reader1.readLine();
++    v1 = reader2.readLine();
++    v2 = reader3.readLine();
++    parameterReconfig = parameter;
++    if (reconfigMode.equals("none")) {
++	LOG.info("[msx-restart] reconfigMode is none, do nothing");
++    } else if (reconfigMode.equals("v1v1")) {
++        if (v1.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v1);
++        LOG.info("[msx-restart] NameNode new HostAndPort " + "" + 
++			   " parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++    } else if (reconfigMode.equals("v2v2")) {
++        if (v2.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v2);
++        LOG.info("[msx-restart] NameNode new HostAndPort " + "" + 
++			   " parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++    } else if (reconfigMode.equals("v1v2")) {
++        if (v1.equals("") || v2.equals(""))
++            System.exit(1);
++        synchronized(hasStoppedLock) {
++            synchronized(restartPerformedLock) {
++                if (restartPerformed == 0 && hasStopped == 1) {
++                    this.getConf().set(parameter, v2);
++                    LOG.info("[msx-restart] RECONFIG POINT!! NameNode new HostAndPort " + "" +
++				       " parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++                    restartPerformed = 1;
++                } else {
++                    this.getConf().set(parameter, v1);
++       		    LOG.info("[msx-restart] NameNode new HostAndPort " + "" + 
++			   		" parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++                }
++            }
++        }
++    } else {
++        LOG.info("[msx-restart] ERROR!!!");
++    }
++
+     this.tracer = new Tracer.Builder("NameNode").
+         conf(TraceUtils.wrapHadoopConf(NAMENODE_HTRACE_PREFIX, conf)).
+         build();
+@@ -949,6 +1013,7 @@
+       this.stopAtException(e);
+       throw e;
+     }
++    LOG.info("[msx-restart] NameNode start HostAndPort " + getHostAndPort());
+     this.started.set(true);
+   }
+ 
+@@ -990,6 +1055,9 @@
+    * Stop all NameNode threads and wait for all to finish.
+    */
+   public void stop() {
++    Configuration conf = this.getConf();
++    LOG.info("[msx-restart] NameNode stop HostAndPort " + getHostAndPort() + " double check before stop " + parameterReconfig + " = " + conf.get(parameterReconfig));
++    recordNameNodeStopped();
+     synchronized(this) {
+       if (stopRequested)
+         return;
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java
+--- ./hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java	1969-12-31 18:00:00.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java	2019-12-18 23:19:15.000000000 -0600
+@@ -0,0 +1,79 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++
++public class MyRunListener extends RunListener {
++
++    public static String controllerRootDir = "/root/parameter_test_controller/";
++    public static String sharedFileName = controllerRootDir + "shared/test_success";
++    public static String messageFileName = controllerRootDir + "shared/failure_message";
++    public static String res = "";
++    public static String failureMessage = "";
++
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++ 
++    // Called when an atomic test is about to be started.
++    public void testStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testStarted " + description.getMethodName());
++        // clean up
++        res = "1";
++    }
++ 
++    // Called when an atomic test has finished, whether the test succeeds or fails.
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testFinished " + description.getMethodName() + " testresult=" + res);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(sharedFileName));
++        writer.write(res);
++        writer.close();
++        
++        BufferedWriter writer1 = new BufferedWriter(new FileWriter(messageFileName));
++        System.out.println("[msx] failureMessage = " + failureMessage);
++        writer1.write(failureMessage);
++        writer1.close();
++    }
++ 
++    // Called when an atomic test fails.
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        System.out.println("[msx] testFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-1";
++        failureMessage += "\n" + failure.getMessage();
++    }
++ 
++    // Called when a test will not be run, generally because a test method is annotated with Ignore.
++    public void testIgnored(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testIgnored " + description.getMethodName());
++        res = "0";
++    }
++     
++    // Called when an atomic test flags that it assumes a condition that is false
++    public void testAssumptionFailure(Failure failure){
++        System.out.println("[msx] testAssumptionFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-2";
++        failureMessage += "\n" + failure.getMessage();
++    }
++}
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-client/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-client/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs-client/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-client/pom.xml	2019-12-18 22:36:47.000000000 -0600
+@@ -120,6 +120,15 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
+       </plugin>
+       <plugin>
+         <groupId>org.apache.rat</groupId>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java
+--- ./hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java	1969-12-31 18:00:00.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java	2019-12-18 23:19:25.000000000 -0600
+@@ -0,0 +1,79 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++
++public class MyRunListener extends RunListener {
++
++    public static String controllerRootDir = "/root/parameter_test_controller/";
++    public static String sharedFileName = controllerRootDir + "shared/test_success";
++    public static String messageFileName = controllerRootDir + "shared/failure_message";
++    public static String res = "";
++    public static String failureMessage = "";
++
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++ 
++    // Called when an atomic test is about to be started.
++    public void testStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testStarted " + description.getMethodName());
++        // clean up
++        res = "1";
++    }
++ 
++    // Called when an atomic test has finished, whether the test succeeds or fails.
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testFinished " + description.getMethodName() + " testresult=" + res);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(sharedFileName));
++        writer.write(res);
++        writer.close();
++        
++        BufferedWriter writer1 = new BufferedWriter(new FileWriter(messageFileName));
++        System.out.println("[msx] failureMessage = " + failureMessage);
++        writer1.write(failureMessage);
++        writer1.close();
++    }
++ 
++    // Called when an atomic test fails.
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        System.out.println("[msx] testFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-1";
++        failureMessage += "\n" + failure.getMessage();
++    }
++ 
++    // Called when a test will not be run, generally because a test method is annotated with Ignore.
++    public void testIgnored(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testIgnored " + description.getMethodName());
++        res = "0";
++    }
++     
++    // Called when an atomic test flags that it assumes a condition that is false
++    public void testAssumptionFailure(Failure failure){
++        System.out.println("[msx] testAssumptionFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-2";
++        failureMessage += "\n" + failure.getMessage();
++    }
++}
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml	2019-12-18 22:24:03.000000000 -0600
+@@ -43,6 +43,14 @@
+ 
+   <dependencies>
+     <dependency>
++      <groupId>org.apache.maven.surefire</groupId>
++      <artifactId>surefire-logger-api</artifactId>
++      <version>3.0.0-M4</version>
++      <!-- to get around bug https://github.com/junit-team/junit5/issues/1367 -->
++      <scope>test</scope>
++      <!--<optional>true</optional>-->
++    </dependency>
++    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <scope>test</scope>
+@@ -254,6 +262,7 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++	<version>3.0.0-M4</version>
+         <configuration>
+           <threadCount>1</threadCount>
+           <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+@@ -264,7 +273,8 @@
+           <properties>
+             <property>
+               <name>listener</name>
+-              <value>org.apache.hadoop.test.TimedOutTestsListener</value>
++              <!--<value>org.apache.hadoop.test.TimedOutTestsListener</value>-->
++              <value>MyRunListener</value>
+             </property>
+           </properties>
+           <excludes>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java
+--- ./hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java	1969-12-31 18:00:00.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java	2019-12-18 23:19:25.000000000 -0600
+@@ -0,0 +1,79 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++
++public class MyRunListener extends RunListener {
++
++    public static String controllerRootDir = "/root/parameter_test_controller/";
++    public static String sharedFileName = controllerRootDir + "shared/test_success";
++    public static String messageFileName = controllerRootDir + "shared/failure_message";
++    public static String res = "";
++    public static String failureMessage = "";
++
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++ 
++    // Called when an atomic test is about to be started.
++    public void testStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testStarted " + description.getMethodName());
++        // clean up
++        res = "1";
++    }
++ 
++    // Called when an atomic test has finished, whether the test succeeds or fails.
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testFinished " + description.getMethodName() + " testresult=" + res);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(sharedFileName));
++        writer.write(res);
++        writer.close();
++        
++        BufferedWriter writer1 = new BufferedWriter(new FileWriter(messageFileName));
++        System.out.println("[msx] failureMessage = " + failureMessage);
++        writer1.write(failureMessage);
++        writer1.close();
++    }
++ 
++    // Called when an atomic test fails.
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        System.out.println("[msx] testFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-1";
++        failureMessage += "\n" + failure.getMessage();
++    }
++ 
++    // Called when a test will not be run, generally because a test method is annotated with Ignore.
++    public void testIgnored(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testIgnored " + description.getMethodName());
++        res = "0";
++    }
++     
++    // Called when an atomic test flags that it assumes a condition that is false
++    public void testAssumptionFailure(Failure failure){
++        System.out.println("[msx] testAssumptionFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-2";
++        failureMessage += "\n" + failure.getMessage();
++    }
++}
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml	2019-12-18 21:56:37.000000000 -0600
+@@ -76,6 +76,19 @@
+ 
+   <build>
+     <plugins>
++  <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
+       <plugin>
+         <groupId>org.apache.rat</groupId>
+         <artifactId>apache-rat-plugin</artifactId>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml	2019-12-18 21:50:54.000000000 -0600
+@@ -174,7 +174,25 @@
+       <scope>test</scope>
+     </dependency>
+   </dependencies>
+-
++ 
++  <build>
++    <plugins>
++    <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
++   </plugins>
++  </build>
++ 
+   <profiles>
+     <profile>
+       <id>dist</id>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java
+--- ./hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java	1969-12-31 18:00:00.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java	2019-12-18 23:19:25.000000000 -0600
+@@ -0,0 +1,79 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++
++public class MyRunListener extends RunListener {
++
++    public static String controllerRootDir = "/root/parameter_test_controller/";
++    public static String sharedFileName = controllerRootDir + "shared/test_success";
++    public static String messageFileName = controllerRootDir + "shared/failure_message";
++    public static String res = "";
++    public static String failureMessage = "";
++
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++ 
++    // Called when an atomic test is about to be started.
++    public void testStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testStarted " + description.getMethodName());
++        // clean up
++        res = "1";
++    }
++ 
++    // Called when an atomic test has finished, whether the test succeeds or fails.
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testFinished " + description.getMethodName() + " testresult=" + res);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(sharedFileName));
++        writer.write(res);
++        writer.close();
++        
++        BufferedWriter writer1 = new BufferedWriter(new FileWriter(messageFileName));
++        System.out.println("[msx] failureMessage = " + failureMessage);
++        writer1.write(failureMessage);
++        writer1.close();
++    }
++ 
++    // Called when an atomic test fails.
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        System.out.println("[msx] testFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-1";
++        failureMessage += "\n" + failure.getMessage();
++    }
++ 
++    // Called when a test will not be run, generally because a test method is annotated with Ignore.
++    public void testIgnored(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testIgnored " + description.getMethodName());
++        res = "0";
++    }
++     
++    // Called when an atomic test flags that it assumes a condition that is false
++    public void testAssumptionFailure(Failure failure){
++        System.out.println("[msx] testAssumptionFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-2";
++        failureMessage += "\n" + failure.getMessage();
++    }
++}
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml
+--- ./hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml	2019-01-23 09:07:50.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml	2019-12-18 21:41:15.000000000 -0600
+@@ -111,6 +111,15 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++	<version>3.0.0-M4</version>
++        <configuration>
++          <properties>
++            <property>
++              <name>listener</name>
++              <value>MyRunListener</value>
++            </property>
++          </properties>
++    	</configuration>
+       </plugin>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+@@ -234,4 +243,4 @@
+       </plugin>
+     </plugins>
+   </build>
+-</project>
+\ No newline at end of file
++</project>
+diff -ruN ./hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java
+--- ./hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java	1969-12-31 18:00:00.000000000 -0600
++++ /root/hadoop-3.1.2-src-modified/hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java	2019-12-18 23:19:25.000000000 -0600
+@@ -0,0 +1,79 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++
++public class MyRunListener extends RunListener {
++
++    public static String controllerRootDir = "/root/parameter_test_controller/";
++    public static String sharedFileName = controllerRootDir + "shared/test_success";
++    public static String messageFileName = controllerRootDir + "shared/failure_message";
++    public static String res = "";
++    public static String failureMessage = "";
++
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++ 
++    // Called when an atomic test is about to be started.
++    public void testStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testStarted " + description.getMethodName());
++        // clean up
++        res = "1";
++    }
++ 
++    // Called when an atomic test has finished, whether the test succeeds or fails.
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testFinished " + description.getMethodName() + " testresult=" + res);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(sharedFileName));
++        writer.write(res);
++        writer.close();
++        
++        BufferedWriter writer1 = new BufferedWriter(new FileWriter(messageFileName));
++        System.out.println("[msx] failureMessage = " + failureMessage);
++        writer1.write(failureMessage);
++        writer1.close();
++    }
++ 
++    // Called when an atomic test fails.
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        System.out.println("[msx] testFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-1";
++        failureMessage += "\n" + failure.getMessage();
++    }
++ 
++    // Called when a test will not be run, generally because a test method is annotated with Ignore.
++    public void testIgnored(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testIgnored " + description.getMethodName());
++        res = "0";
++    }
++     
++    // Called when an atomic test flags that it assumes a condition that is false
++    public void testAssumptionFailure(Failure failure){
++        System.out.println("[msx] testAssumptionFailure " + failure.getMessage());
++        System.out.println("[msx] failure: " + failure.getException());
++        res = "-2";
++        failureMessage += "\n" + failure.getMessage();
++    }
++}
