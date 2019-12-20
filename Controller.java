@@ -22,12 +22,54 @@ public class Controller {
     public static String v2FileName = controllerRootDir + "shared/v2";
     
     /* static test and parameter per component */
-    public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
-    //public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/start_namenode.txt";
+    //public static String allTestListFileName = controllerRootDir + "test_for_component/hdfs/namenode/test_of_solely_restart_namenode_success.txt";
+    public static String testForNameNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_namenode.txt";
+    public static String testForDataNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_datanode.txt";
+    public static String testForJournalNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_journalnode.txt";
+    public static List<String> nameNodeTestList = new ArrayList<String>();
+    public static List<String> dataNodeTestList = new ArrayList<String>();
+    public static List<String> journalNodeTestList = new ArrayList<String>();
+    
     public static String parameterListFileName = controllerRootDir + "parameter_for_component/namenode_getBoolean.txt";
     
     public static List<String> parameterList = new ArrayList<String>(); // never used
-    public static List<String> allTestList = new ArrayList<String>();
+    
+    public static void loadStaticData() {
+        try {
+            BufferedReader reader0 = new BufferedReader(new FileReader(new File(testForNameNodeFileName)));
+            String buffer0 = "";
+            while ((buffer0 = reader0.readLine()) != null) {
+                nameNodeTestList.add(buffer0.trim());
+            }
+            reader0.close();
+            
+	    BufferedReader reader1 = new BufferedReader(new FileReader(new File(testForDataNodeFileName)));
+            String buffer1 = "";
+            while ((buffer1 = reader1.readLine()) != null) {
+                dataNodeTestList.add(buffer1.trim());
+            }
+            reader1.close();
+            
+	    BufferedReader reader2 = new BufferedReader(new FileReader(new File(testForJournalNodeFileName)));
+            String buffer2 = "";
+            while ((buffer2 = reader2.readLine()) != null) {
+                journalNodeTestList.add(buffer2.trim());
+            }
+            reader2.close();
+            /*
+            BufferedReader reader1 = new BufferedReader(new FileReader(new File(parameterListFileName)));
+            String buffer1 = "";
+            while ((buffer1 = reader1.readLine()) != null) {
+                parameterList.add(buffer1.trim());
+            }
+            reader1.close();*/
+            //System.out.println("number of parameters = " + parameterList.size());
+        } catch (Exception e) {
+            //System.out.println(e);
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
   
     public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2) {
 	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2")) {
@@ -150,29 +192,6 @@ public class Controller {
             System.exit(1);
         }
         return res;
-    }
-
-    public static void loadStaticData() {
-        try {
-            BufferedReader reader0 = new BufferedReader(new FileReader(new File(allTestListFileName)));
-            String buffer0 = "";
-            while ((buffer0 = reader0.readLine()) != null) {
-                allTestList.add(buffer0.trim());
-            }
-            reader0.close();
-            
-            BufferedReader reader1 = new BufferedReader(new FileReader(new File(parameterListFileName)));
-            String buffer1 = "";
-            while ((buffer1 = reader1.readLine()) != null) {
-                parameterList.add(buffer1.trim());
-            }
-            //System.out.println("number of parameters = " + parameterList.size());
-            reader0.close();
-        } catch (Exception e) {
-            //System.out.println(e);
-            e.printStackTrace();
-            System.exit(1);
-        }
     }
 
     public static List<String> testForTupleWithGivenTests(String parameter, String component, String reconfigMode, String v1, String v2, List<String> thisTestSet) {
@@ -303,7 +322,16 @@ public class Controller {
             testSet = new ArrayList<String>();
             testSet.add(oneTest);
         } else {
-            testSet = allTestList;
+	    if (componentFocused.equals("namenode")) 
+		testSet = nameNodeTestList;
+	    else if (componentFocused.equals("datanode"))  
+		testSet = dataNodeTestList;   
+	    else if (componentFocused.equals("journalnode"))
+		testSet = journalNodeTestList;
+	    else {
+		System.out.println("Error: wrong component " + componentFocused);
+		System.exit(1);
+	    }
         }
         System.out.println("parameter to test: " + parameterToTest); 
         System.out.println("component to reconfig: " + componentFocused); 
