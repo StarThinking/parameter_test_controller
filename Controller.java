@@ -9,7 +9,7 @@ import java.util.*;
 public class Controller {
 
     //public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs";
-    public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
+    public static String workingDir = "/root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
     
     /* shared files*/
