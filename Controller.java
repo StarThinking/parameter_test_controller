@@ -13,7 +13,7 @@ public class Controller {
     public static String controllerRootDir = "/root/parameter_test_controller/";
     
     /* shared files*/
-    public static String testSuccessFileName = controllerRootDir + "shared/test_success";
+    public static String testResultDirName = controllerRootDir + "shared/test_results";
     public static String parameterFileName = controllerRootDir + "shared/parameter";
     public static String reconfigModeFileName = controllerRootDir + "shared/reconfig_mode";
     public static String reconfigComponentFileName = controllerRootDir + "shared/reconfig_component";
@@ -46,6 +46,7 @@ public class Controller {
             this.component = component;
             this.v1 = v1;
             this.v2 = v2;
+            this.result = "1"; // some tests may not complete, so let's set it as success by default
         }
 
         @Override
@@ -72,6 +73,8 @@ public class Controller {
                 if (t.testName.equals(name))
                     return t;
             }
+            // error
+            System.out.println("Error: name " + name + " cannot be found in the list");
             return null;
         }
 
@@ -101,38 +104,61 @@ public class Controller {
         }
     }
 
-    public static void waitForTestResult(List<TestResult> testResultList) {
+    public static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(new File(testSuccessFileName)));
-            String buffer = "";
-            StringBuilder sb = new StringBuilder("");  
-            buffer = reader.readLine();
-	    while (buffer != null) {
-                sb.append(buffer + System.lineSeparator());
-	        buffer = reader.readLine();
-	    }
-            reader.close();
-            StringTokenizer tokenizer = new StringTokenizer(sb.toString(), SEPERATOR);
-            int count = 0;
-            TestResult testResult = null;
-            while (tokenizer.hasMoreTokens()) {
-                String content = tokenizer.nextToken();
-                int index = count % TestResult.NumOfFieldsFromFile;
-                if (index == 0) {
-                    testResult = TestResult.getTestResultByName(testResultList, content);
-                } else if (index == 1) {
-                    testResult.result = content;
-                } else if (index == 2) {
-                    testResult.failureMessage = content;
-                } else if (index == 3) {
-                    testResult.stackTrace = content;
+            File testResultDir = new File(testResultDirName);
+            List<String> updatedTests = new ArrayList<String>();
+            for (File f : testResultDir.listFiles()) {
+                if (f.isFile()) {
+                    System.out.println("updating test result for " + f.getName());
+                    BufferedReader reader = new BufferedReader(new FileReader(f));
+                    String buffer = "";
+                    StringBuilder sb = new StringBuilder("");  
+                    buffer = reader.readLine();
+	            while (buffer != null) {
+                        sb.append(buffer + System.lineSeparator());
+	                buffer = reader.readLine();
+	            }
+                    reader.close();
+                    String[] contents = sb.toString().trim().split(SEPERATOR);
+                    if (contents.length != TestResult.NumOfFieldsFromFile) {
+                        System.out.println("Error: the content for " + f.getName() + " is wrong, length = " + contents.length);
+                        System.out.println("Content: ");
+                        System.out.println(sb.toString());
+                        continue;
+                    } else {
+                        String testName = contents[0];
+                        TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
+                        if (testResult == null) {
+                            System.out.println("Error: cannot find testResult by test name " + testName);
+                            continue;
+                        } else {
+                            testResult.result = contents[1];
+                            testResult.failureMessage = contents[2];
+                            testResult.stackTrace = contents[3];
+                            updatedTests.add(testName);
+                            //System.out.println(testResult.completeInfo());
+                        }
+                    }
                 }
-                count ++;
+            }
+            List<String> allTestNames = TestResult.getTestNames(testResultList);
+            for (String t : allTestNames) {
+                boolean found = false;
+                for (String updated : updatedTests) {
+                    if (t.equals(updated)) {
+                        found = true;
+                    }
+                    if (found)
+                        break;
+                }
+                if (!found) {
+                    System.out.println("Warn: test " + t + " has not been updated !");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
-            //System.out.println(e);
             System.exit(1);
         }
     }
@@ -166,14 +192,13 @@ public class Controller {
             reader.close();
             process.waitFor();
             int ret = process.exitValue();
-	    waitForTestResult(testResultList);
+	    updateTestResult(testResultList);
             process.destroy();
             endTime = System.nanoTime();
 
             timeElapsed = endTime - startTime;
             System.out.println("Execution time (sec) " + timeElapsed / 1000000000);
         } catch (Exception e) {
-            //System.out.println(e);
             e.printStackTrace();
             System.exit(1);
         }
@@ -199,6 +224,7 @@ public class Controller {
         runMvnCmd(testResultList);
         
         for (TestResult t : testResultList) {
+            //System.out.println(t);
             if (Integer.valueOf(t.result) < 0)
                 failedTests.add(t);
         }
@@ -223,13 +249,13 @@ public class Controller {
             boolean v1v1Failed, v2v2Failed;
             v1v1Failed = v2v2Failed = false;
             for (TestResult v1v1Test : failedListv1v1) {
-                if (v1v2Test.testName.equals(v1v1Test)) {
+                if (v1v2Test.testName.equals(v1v1Test.testName)) {
                     v1v1Failed = true;
                     break;
                 }
             }
             for (TestResult v2v2Test : failedListv2v2) {
-                if (v1v2Test.testName.equals(v2v2Test)) {
+                if (v1v2Test.testName.equals(v2v2Test.testName)) {
                     v2v2Failed = true;
                     break;
                 }
@@ -246,7 +272,7 @@ public class Controller {
         System.out.println("test v1v1 v2v2 to filter suspicous");
         for (TestResult t : suspicousList) {
             System.out.println("suspicious " + t.testName + " v1 " + v1 + " v2 " + v2);
-            int runs = 1;
+            int runs = 3;
             int i = 0;
             List<String> singleTest = new ArrayList<String>();
             singleTest.add(t.testName);
@@ -321,7 +347,7 @@ public class Controller {
 	    System.exit(1);
 	}
         System.out.println("size of testSet: " + testSet.size()); 
-        TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_" + componentFocused + "_issue" +
+        TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_" + componentFocused + "_issue_" +
                 LocalDate.now() + ".txt");
 
 	startTime = System.nanoTime();
@@ -357,7 +383,6 @@ public class Controller {
             }
             reader2.close();
         } catch (Exception e) {
-            //System.out.println(e);
             e.printStackTrace();
             System.exit(1);
         }
@@ -389,7 +414,6 @@ public class Controller {
             writer5.write(v2);
             writer5.close();
         } catch (Exception e) {
-            //System.out.println(e);
             e.printStackTrace();
             System.exit(1);
         }
@@ -397,9 +421,12 @@ public class Controller {
 
     public static void cleanUpSharedFiles() {
         try {
-            BufferedWriter writer0 = new BufferedWriter(new FileWriter(new File(testSuccessFileName)));
-            writer0.write("");
-            writer0.close();
+            File testResultDir = new File(testResultDirName);
+            for (File testResult : testResultDir.listFiles()) {
+                if (testResult.isFile()) {
+                    testResult.delete();
+                }
+            }
             
             BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
             writer2.write("");
@@ -421,7 +448,6 @@ public class Controller {
             writer6.write("");
             writer6.close();
         } catch (Exception e) {
-            //System.out.println(e);
             e.printStackTrace();
             System.exit(1);
         }
