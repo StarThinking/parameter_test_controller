@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
 
 public class Controller {
 
@@ -322,33 +322,36 @@ public class Controller {
         loadStaticData();
         
 	parameterToTest = args[0];
+	System.out.println("parameter to test: " + parameterToTest); 
 	componentFocused = args[1];
+        System.out.println("component to reconfig: " + componentFocused); 
+	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode")) {
+	    System.out.println("Error: wrong component " + componentFocused);
+	    System.exit(1);
+	}
+
+	/* set test Set */
         if (args.length == onetestArgIndex+1) { // only use a single test
             oneTest = args[onetestArgIndex];
 	    System.out.println("onetest is " + oneTest);
             testSet = new ArrayList<String>();
             testSet.add(oneTest);
         } else {
-	    if (componentFocused.equals("namenode")) 
+	    if (componentFocused.equals("NameNode")) 
 		testSet = nameNodeTestList;
-	    else if (componentFocused.equals("datanode"))  
+	    if (componentFocused.equals("DataNode"))  
 		testSet = dataNodeTestList;   
-	    else if (componentFocused.equals("journalnode"))
+	    if (componentFocused.equals("JournalNode"))
 		testSet = journalNodeTestList;
-	    else {
-		System.out.println("Error: wrong component " + componentFocused);
-		System.exit(1);
-	    }
         }
-        System.out.println("parameter to test: " + parameterToTest); 
-        System.out.println("component to reconfig: " + componentFocused); 
-	if (!componentFocused.equals("namenode") && !componentFocused.equals("datanode") && !componentFocused.equals("journalnode")) {
-	    System.out.println("Error: wrong component " + componentFocused);
-	    System.exit(1);
-	}
         System.out.println("size of testSet: " + testSet.size()); 
-        TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_" + componentFocused + "_issue_" +
-                LocalDate.now() + ".txt");
+       
+	/* set issue report file path */ 
+        Date date = new Date();
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+	String dateTime = formatter.format(date);
+	TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
+                dateTime + ".txt");
 
 	startTime = System.nanoTime();
 //	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
