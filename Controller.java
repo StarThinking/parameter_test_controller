@@ -11,7 +11,9 @@ public class Controller {
 
     public static String workingDir = "/root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
-    
+    public static StringBuilder runLogBuffer = new StringBuilder();
+    public static BufferedWriter runLogWriter = null;
+
     /* shared files*/
     public static String testResultDirName = controllerRootDir + "shared/test_results";
     public static String parameterFileName = controllerRootDir + "shared/parameter";
@@ -19,15 +21,27 @@ public class Controller {
     public static String reconfigComponentFileName = controllerRootDir + "shared/reconfig_component";
     public static String v1FileName = controllerRootDir + "shared/v1";
     public static String v2FileName = controllerRootDir + "shared/v2";
+    public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
    
     /* static test and parameter per component */
-    public static String testForNameNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_namenode.txt";
-    public static String testForDataNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_datanode.txt";
-    public static String testForJournalNodeFileName = controllerRootDir + "test_for_component/hdfs/restart_journalnode.txt";
-    public static List<String> nameNodeTestList = new ArrayList<String>();
-    public static List<String> dataNodeTestList = new ArrayList<String>();
-    public static List<String> journalNodeTestList = new ArrayList<String>();
+    public static String restartNameNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_namenode.txt";
+    public static String restartDataNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_datanode.txt";
+    public static String restartJournalNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_journalnode.txt";
+    public static List<String> restartNameNodeTestList = new ArrayList<String>();
+    public static List<String> restartDataNodeTestList = new ArrayList<String>();
+    public static List<String> restartJournalNodeTestList = new ArrayList<String>();
     
+    public static String startNameNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_namenode.txt";
+    public static String startDataNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_datanode.txt";
+    public static String startJournalNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_journalnode.txt";
+    public static List<String> startNameNodeTestList = new ArrayList<String>();
+    public static List<String> startDataNodeTestList = new ArrayList<String>();
+    public static List<String> startJournalNodeTestList = new ArrayList<String>();
+    
+    static {
+        loadStaticTestData();
+    }
+
     static class TestResult {
         public String testName = "";
         public String result = "";
@@ -37,13 +51,15 @@ public class Controller {
         public String component = "";
         public String v1 = "";
         public String v2 = "";
+        public String componentHasStopped = "";
         public static int NumOfFieldsFromFile = 4;
         public static String fileName = "";
 
-        public TestResult(String testName, String parameter, String component, String v1, String v2) {
+        public TestResult(String testName, String parameter, String component, String v1, String v2, String componentHasStopped) {
             this.testName = testName;
             this.parameter = parameter;
             this.component = component;
+            this.componentHasStopped = componentHasStopped;
             this.v1 = v1;
             this.v2 = v2;
             this.result = "1"; // some tests may not complete, so let's set it as success by default
@@ -52,7 +68,8 @@ public class Controller {
         @Override
         public String toString() {
             return "parameter: " + parameter + "\n" +
-                "component: " +component + "\n" +
+                "component: " + component + "\n" +
+                "componentHasStopped: " + componentHasStopped + "\n" +
                 "v1 v2: " + v1 + " " + v2 + "\n" +
                 "testName: " + testName + "\n" +
                 "result: " + result;
@@ -61,6 +78,7 @@ public class Controller {
         public String completeInfo() {
             return "parameter: " + parameter + "\n" +
                 "component: " +component + "\n" +
+                "componentHasStopped: " + componentHasStopped + "\n" +
                 "v1 v2: " + v1 + " " + v2 + "\n" +
                 "testName: " + testName + "\n" +
                 "result: " + result + "\n" +
@@ -74,7 +92,7 @@ public class Controller {
                     return t;
             }
             // error
-            System.out.println("Error: name " + name + " cannot be found in the list");
+            myPrint("Error: name " + name + " cannot be found in the list");
             return null;
         }
 
@@ -92,6 +110,12 @@ public class Controller {
         public static void writeIntoFile(List<TestResult> list) {
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(TestResult.fileName, true)); // append;
+                writer.write("---------------------------------------short report---------------------------------------------");
+                for (TestResult t : list) {
+                    writer.write(t.toString());
+                    writer.newLine();
+                }
+                writer.write("---------------------------------------full report---------------------------------------------");
                 for (TestResult t : list) {
                     writer.write(t.completeInfo());
                     writer.newLine();
@@ -111,7 +135,7 @@ public class Controller {
             List<String> updatedTests = new ArrayList<String>();
             for (File f : testResultDir.listFiles()) {
                 if (f.isFile()) {
-                    System.out.println("updating test result for " + f.getName());
+                    myPrint("updating test result for " + f.getName());
                     BufferedReader reader = new BufferedReader(new FileReader(f));
                     String buffer = "";
                     StringBuilder sb = new StringBuilder("");  
@@ -123,22 +147,22 @@ public class Controller {
                     reader.close();
                     String[] contents = sb.toString().trim().split(SEPERATOR);
                     if (contents.length != TestResult.NumOfFieldsFromFile) {
-                        System.out.println("Error: the content for " + f.getName() + " is wrong, length = " + contents.length);
-                        System.out.println("Content: ");
-                        System.out.println(sb.toString());
+                        myPrint("Error: the content for " + f.getName() + " is wrong, length = " + contents.length);
+                        myPrint("Content: ");
+                        myPrint(sb.toString());
                         continue;
                     } else {
                         String testName = contents[0];
                         TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
                         if (testResult == null) {
-                            System.out.println("Error: cannot find testResult by test name " + testName);
+                            myPrint("Error: cannot find testResult by test name " + testName);
                             continue;
                         } else {
                             testResult.result = contents[1];
                             testResult.failureMessage = contents[2];
                             testResult.stackTrace = contents[3];
                             updatedTests.add(testName);
-                            //System.out.println(testResult.completeInfo());
+                            //myPrint(testResult.completeInfo());
                         }
                     }
                 }
@@ -154,7 +178,7 @@ public class Controller {
                         break;
                 }
                 if (!found) {
-                    System.out.println("Warn: test " + t + " has not been updated !");
+                    myPrint("Warn: test " + t + " has not been updated !");
                 }
             }
         } catch (Exception e) {
@@ -168,43 +192,64 @@ public class Controller {
 	    String buffer = "";
             long startTime, endTime, timeElapsed;
             startTime = endTime = timeElapsed = 0;
-        
-            // merge tests into a single command 
-            String combinedMethods = "";
-            List<String> testNameList = TestResult.getTestNames(testResultList);
-            int numOfTests = 0;
-            for (String test : testNameList) {
-                numOfTests ++;
-                if (numOfTests == testNameList.size())
-                    combinedMethods += test;
-                else
-                    combinedMethods += test + ",";
-            }
-            System.out.println("Number of combined methods is " + numOfTests);
-            String cmd = "mvn test -Dtest=" + combinedMethods;
-            
             startTime = System.nanoTime();
-            Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
-            BufferedReader reader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()));
-//            while ((buffer = reader.readLine()) != null)
-//                System.out.println(buffer);
-            reader.close();
-            process.waitFor();
-            int ret = process.exitValue();
-	    updateTestResult(testResultList);
-            process.destroy();
-            endTime = System.nanoTime();
 
+            List<String> testNameList = TestResult.getTestNames(testResultList);
+            
+            // split into parts
+            int numOfTestsPerPart = 100;
+            //int numOfParts = testNameList.size() / numOfTestsPerPart;
+            int indexOfParts = 0;
+            int start = 0;
+            int end = 0;
+            List<List<String>> listOfParts = new ArrayList<List<String>>(); 
+            do {
+                start = indexOfParts * numOfTestsPerPart;
+                end = (indexOfParts + 1) * numOfTestsPerPart;
+                if (end >= testNameList.size())
+                    end = testNameList.size();
+                myPrint("indexOfParts = " + indexOfParts + " start = " + start + " end = " + end);
+                listOfParts.add(testNameList.subList(start, end));
+                indexOfParts ++;
+            } while(end < testNameList.size());
+            
+            for (List<String> partOfTestNameList: listOfParts) { 
+                // merge tests into a single command 
+                String combinedMethods = "";
+                int numOfTests = 0;
+                myPrint("part size = " + partOfTestNameList.size());
+                for (String test : partOfTestNameList) {
+                    numOfTests ++;
+                    if (numOfTests == partOfTestNameList.size())
+                        combinedMethods += test;
+                    else
+                        combinedMethods += test + ",";
+                }
+                myPrint("Number of combined methods is " + numOfTests);
+                String cmd = "mvn test -Dtest=" + combinedMethods;
+                
+                Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
+                BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()));
+//                while ((buffer = reader.readLine()) != null)
+//                    myPrint(buffer);
+                reader.close();
+                process.waitFor();
+                int ret = process.exitValue();
+                process.destroy();
+            }
+	    updateTestResult(testResultList);
+            endTime = System.nanoTime();
             timeElapsed = endTime - startTime;
-            System.out.println("Execution time (sec) " + timeElapsed / 1000000000);
+            myPrint("Execution time (sec) " + timeElapsed / 1000000000);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
 
-    public static List<TestResult> testForTupleWithGivenTests(String parameter, String component, String reconfigMode, String v1, String v2, List<String> thisTestSet) {
+    public static List<TestResult> testForTupleWithGivenTests(String parameter, String component, String reconfigMode, String v1, String v2,
+            List<String> thisTestSet, String componentHasStopped) {
         List<TestResult> failedTests = new ArrayList<TestResult>();
         if (thisTestSet == null) {
             System.exit(1);
@@ -213,37 +258,37 @@ public class Controller {
         if (thisTestSet.size() == 0)
             return failedTests; // empty
         
-        System.out.println("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2); 
+        myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " componentHasStopped=" + componentHasStopped); 
         List<TestResult> testResultList = new ArrayList<TestResult>();
         // construct TestResult list
         for (String test : thisTestSet) {
-            testResultList.add(new TestResult(test, parameter, component, v1, v2));
+            testResultList.add(new TestResult(test, parameter, component, v1, v2, componentHasStopped));
         }
         cleanUpSharedFiles();
-        setupTestTuple(parameter, component, reconfigMode, v1, v2);
+        setupTestTuple(parameter, component, reconfigMode, v1, v2, componentHasStopped);
         runMvnCmd(testResultList);
         
         for (TestResult t : testResultList) {
-            //System.out.println(t);
+            //myPrint(t);
             if (Integer.valueOf(t.result) < 0)
                 failedTests.add(t);
         }
         return failedTests;
     }
 
-    public static void testCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
-	List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet); // all
-    }
+    //public static void testCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
+	//List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet); // all
+    //}
       
-    public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet) {    
-        List<TestResult> failedListv1v2 = testForTupleWithGivenTests(parameter, component, "v1v2", v1, v2, testSet); // all
-        List<TestResult> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", TestResult.getTestNames(failedListv1v2)); 
-        List<TestResult> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, TestResult.getTestNames(failedListv1v2));
+    public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
+        List<TestResult> failedListv1v2 = testForTupleWithGivenTests(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
+        List<TestResult> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", TestResult.getTestNames(failedListv1v2), componentHasStopped); 
+        List<TestResult> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, TestResult.getTestNames(failedListv1v2), componentHasStopped);
 	int thresholdOfIssues = 10;
         List<TestResult> suspicousList = new ArrayList<TestResult>();
         List<TestResult> issueList = new ArrayList<TestResult>();
 
-        System.out.println("failed v1v2 list size " + failedListv1v2.size());
+        myPrint("failed v1v2 list size " + failedListv1v2.size());
         
         for (TestResult v1v2Test : failedListv1v2) {
             boolean v1v1Failed, v2v2Failed;
@@ -265,27 +310,27 @@ public class Controller {
                 suspicousList.add(v1v2Test);
         }
 
-        System.out.println("suspicous list size " + suspicousList.size() + " :");
+        myPrint("suspicous list size " + suspicousList.size() + " :");
         for (TestResult t : suspicousList)
-            System.out.println(t.testName);
+            myPrint(t.testName);
     
-        System.out.println("test v1v1 v2v2 to filter suspicous");
+        myPrint("test v1v1 v2v2 to filter suspicous");
         for (TestResult t : suspicousList) {
-            System.out.println("suspicious " + t.testName + " v1 " + v1 + " v2 " + v2);
+            myPrint("suspicious " + t.testName + " v1 " + v1 + " v2 " + v2);
             int runs = 3;
             int i = 0;
             List<String> singleTest = new ArrayList<String>();
             singleTest.add(t.testName);
             for(; i<runs; i++) {
-                List<TestResult> failedList1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", singleTest);
-                List<TestResult> failedList2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, singleTest);
+                List<TestResult> failedList1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", singleTest, componentHasStopped);
+                List<TestResult> failedList2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, singleTest, componentHasStopped);
                 if (failedList1.size() > 0 || failedList2.size() > 0) {
-                    System.out.println("v1v1 or v2v2 also failed, no issue");
+                    myPrint("v1v1 or v2v2 also failed, no issue");
                     break;
                 }
             }
             if (i == runs) {
-                System.out.println("v1v1 and v2v2 succeed for " + runs + " times, add into issueList");
+                myPrint("v1v1 and v2v2 succeed for " + runs + " times, add into issueList");
                 issueList.add(t);
             }
 
@@ -294,106 +339,181 @@ public class Controller {
                 break;
         }
 
-        System.out.println("issue list size " + issueList.size() + " :");
-        for (TestResult t : issueList)
-            System.out.println(t);
-
-        TestResult.writeIntoFile(issueList);
-
 	return issueList;
     }
-    
+
+    public static List<TestResult> testV1V2PairRestartPointWrapper(String parameter, String component, String v1, String v2, List<String> testSet) {
+        List<TestResult> mergedIssueList = new ArrayList<TestResult>();
+        List<String> restartTestSet = null;
+        List<String> startTestSet = null;
+        
+        /* set restartTestSet/startTestSet by component if testSet is null */
+        if (testSet == null) {
+	    if (component.equals("NameNode")) {
+		restartTestSet = restartNameNodeTestList;
+                startTestSet = startNameNodeTestList;
+            } else if (component.equals("DataNode")) { 
+		restartTestSet = restartDataNodeTestList;
+                startTestSet = startDataNodeTestList;
+            } else if (component.equals("JournalNode")) {
+		restartTestSet = restartJournalNodeTestList;
+                startTestSet = startJournalNodeTestList;
+            }
+        } else {
+            restartTestSet = testSet;
+            startTestSet = testSet;
+        }
+        myPrint("restartTestSet size is " + restartTestSet.size() + ", startTestSet size is " + startTestSet.size());
+
+        try {
+            String componentHasStopped = "";
+            
+            myPrint("Testing restart... size " + restartTestSet.size());
+            componentHasStopped = "0";
+            List<TestResult> restartIssueList = testV1V2Pair(parameter, component, v1, v2, restartTestSet, componentHasStopped);
+            mergedIssueList.addAll(restartIssueList);
+
+            myPrint("Testing start... size " + startTestSet.size());
+            componentHasStopped = "1";
+            List<TestResult> startIssueList = testV1V2Pair(parameter, component, v1, v2, startTestSet, componentHasStopped);
+            mergedIssueList.addAll(startIssueList);
+
+            } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        myPrint("");
+        myPrint("---------------------------------------short report---------------------------------------------");
+        myPrint("mergedIssueList size " + mergedIssueList.size() + " :");
+        for (TestResult t : mergedIssueList)
+            myPrint(t);
+        myPrint("---------------------------------------short report---------------------------------------------");
+        myPrint("");
+        
+        return mergedIssueList;
+    }
+
     public static void main(String[] args) {
-	String componentFocused = "";
         String parameterToTest = "";
+        String componentFocused = "";
         String oneTest = "";
         List<String> testSet = null;
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
-        
+    
+        /* do this at the begining */
         int onetestArgIndex = 2; 
         if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
-            System.out.println("Error: args length is " + args.length);
-            System.out.println("Controller parameterToTest componentFocused [optional: one_test]");
+            myPrint("Error: args length is " + args.length);
+            myPrint("Controller parameterToTest componentFocused [optional: one_test]");
             System.exit(1);
         }
-
-        /* load static data first */
-        loadStaticData();
         
 	parameterToTest = args[0];
-	System.out.println("parameter to test: " + parameterToTest); 
+	myPrint("parameter to test: " + parameterToTest); 
 	componentFocused = args[1];
-        System.out.println("component to reconfig: " + componentFocused); 
+        myPrint("component to reconfig: " + componentFocused); 
 	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode")) {
-	    System.out.println("Error: wrong component " + componentFocused);
+	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
 	}
 
 	/* set test Set */
         if (args.length == onetestArgIndex+1) { // only use a single test
             oneTest = args[onetestArgIndex];
-	    System.out.println("onetest is " + oneTest);
+	    myPrint("onetest is " + oneTest);
             testSet = new ArrayList<String>();
             testSet.add(oneTest);
-        } else {
-	    if (componentFocused.equals("NameNode")) 
-		testSet = nameNodeTestList;
-	    if (componentFocused.equals("DataNode"))  
-		testSet = dataNodeTestList;   
-	    if (componentFocused.equals("JournalNode"))
-		testSet = journalNodeTestList;
-        }
-        System.out.println("size of testSet: " + testSet.size()); 
-       
-	/* set issue report file path */ 
+        } 
+        
+	startTime = System.nanoTime();
+//	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
+	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
+        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+        endTime = System.nanoTime();
+        timeElapsed = endTime - startTime;
+        myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
+        
+        /* log */
         Date date = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 	String dateTime = formatter.format(date);
 	TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
                 dateTime + ".txt");
+        TestResult.writeIntoFile(issueList1);
+        TestResult.writeIntoFile(issueList2);
+        
+        try {
+            String runLogPath = Controller.controllerRootDir + parameterToTest + "_run_" + componentFocused + "_" + dateTime + ".txt";
+            runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 
+            runLogWriter.write(runLogBuffer.toString());
+            runLogWriter.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	startTime = System.nanoTime();
-//	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
-	List<TestResult> list1 = testV1V2Pair(parameterToTest, componentFocused, "true", "false", testSet);
-        List<TestResult> list2 = testV1V2Pair(parameterToTest, componentFocused, "false", "true", testSet);
-        endTime = System.nanoTime();
-        timeElapsed = endTime - startTime;
-        System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
-        System.out.println();
+    public static void myPrint(Object o) {
+        String str = (String) o;
+        System.out.println(str);
+        runLogBuffer.append(str + System.lineSeparator());
     }
     
-    public static void loadStaticData() {
+    public static void loadStaticTestData() {
         try {
-            BufferedReader reader0 = new BufferedReader(new FileReader(new File(testForNameNodeFileName)));
-            String buffer0 = "";
-            while ((buffer0 = reader0.readLine()) != null) {
-                nameNodeTestList.add(buffer0.trim());
+            BufferedReader reader = null;
+            String buffer = "";
+
+            reader = new BufferedReader(new FileReader(new File(restartNameNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                restartNameNodeTestList.add(buffer.trim());
             }
-            reader0.close();
+            reader.close();
             
-	    BufferedReader reader1 = new BufferedReader(new FileReader(new File(testForDataNodeFileName)));
-            String buffer1 = "";
-            while ((buffer1 = reader1.readLine()) != null) {
-                dataNodeTestList.add(buffer1.trim());
+	    reader = new BufferedReader(new FileReader(new File(restartDataNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                restartDataNodeTestList.add(buffer.trim());
             }
-            reader1.close();
+            reader.close();
             
-	    BufferedReader reader2 = new BufferedReader(new FileReader(new File(testForJournalNodeFileName)));
-            String buffer2 = "";
-            while ((buffer2 = reader2.readLine()) != null) {
-                journalNodeTestList.add(buffer2.trim());
+	    reader = new BufferedReader(new FileReader(new File(restartJournalNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                restartJournalNodeTestList.add(buffer.trim());
             }
-            reader2.close();
+            reader.close();
+            
+            reader = new BufferedReader(new FileReader(new File(startNameNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                startNameNodeTestList.add(buffer.trim());
+            }
+            reader.close();
+            
+	    reader = new BufferedReader(new FileReader(new File(startDataNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                startDataNodeTestList.add(buffer.trim());
+            }
+            reader.close();
+            
+	    reader = new BufferedReader(new FileReader(new File(startJournalNodeTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                startJournalNodeTestList.add(buffer.trim());
+            }
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
   
-    public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2) {
+    public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2, String componentHasStopped) {
 	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2")) {
-	    System.out.println("Error, wrong mode " + mode);
+	    myPrint("Error, wrong mode " + mode);
 	    System.exit(1);
 	}
         try {
@@ -416,6 +536,10 @@ public class Controller {
             BufferedWriter writer5 = new BufferedWriter(new FileWriter(new File(v2FileName)));
             writer5.write(v2);
             writer5.close();
+            
+            BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(componentHasStoppedFileName)));
+            writer6.write(componentHasStopped);
+            writer6.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
@@ -430,6 +554,10 @@ public class Controller {
                     testResult.delete();
                 }
             }
+
+            BufferedWriter writer1 = new BufferedWriter(new FileWriter(new File(componentHasStoppedFileName)));
+            writer1.write("");
+            writer1.close();
             
             BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
             writer2.write("");
