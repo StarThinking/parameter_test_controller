@@ -8,7 +8,7 @@ function check_restart() {
     started=0
     while IFS= read -r line
     do
-        if [ "$line" == "[msx-restart] $component start" ]; then
+        if [[ "$line" == *"[msx-restart] $component start"* ]]; then
                 started=1
         fi
     done < "$methodfile"
@@ -21,6 +21,6 @@ do
     check_restart $i
     ret=$?
     if [ $ret -eq 1 ]; then
-        echo "$i $component start"
+        echo "$i"
     fi
 done

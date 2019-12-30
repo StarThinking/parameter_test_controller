@@ -1,0 +1,1145 @@
+diff -ruN hadoop-hdfs-project/hadoop-hdfs/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/pom.xml	2019-12-26 00:19:24.738077574 -0500
+@@ -36,6 +36,7 @@
+   </properties>
+ 
+   <dependencies>
++
+     <dependency>
+       <groupId>org.apache.hadoop</groupId>
+       <artifactId>hadoop-annotations</artifactId>
+@@ -228,7 +229,8 @@
+           <properties>
+             <property>
+               <name>listener</name>
+-              <value>org.apache.hadoop.test.TimedOutTestsListener</value>
++              <value>MyRunListener</value>
++              <!--<value>org.apache.hadoop.test.TimedOutTestsListener</value>-->
+             </property>
+           </properties>
+         </configuration>
+@@ -421,9 +423,24 @@
+           </filesets>
+         </configuration>
+       </plugin>
++<!--
++  <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
++-->
++
+     </plugins>
+   </build>
+-
+   <profiles>
+     <!-- profile that starts ApacheDS KDC server -->
+     <profile>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java
+--- hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/qjournal/server/JournalNode.java	2019-12-29 19:15:43.610503504 -0500
+@@ -59,6 +59,9 @@
+ import java.util.HashMap;
+ import java.util.Map;
+ 
++// msx
++import java.io.*;
++
+ /**
+  * The JournalNode is a daemon which allows namenodes using
+  * the QuorumJournalManager to log and retrieve edits stored
+@@ -147,10 +150,95 @@
+     return getOrCreateJournal(jid, nameServiceId, StartupOption.REGULAR);
+   }
+ 
++  // msx
++  public static String parameterReconfig = ""; // just for value check during stop
++  public static int componentHasStopped = 0; // reset at the beginning of each Test
++  public static int restartPerformed = 0; // reset at the beginning of each Test
++  private static Object hasStoppedLock = new Object();
++  private static Object restartPerformedLock = new Object();
++  private static String controllerRootDir = "/root/parameter_test_controller/";
++  static {
++      try {
++        BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++        String str = reader.readLine();
++        componentHasStopped = Integer.valueOf(str);
++        LOG.info("[msx-restart] componentHasStopped = " + componentHasStopped);
++        reader.close();
++      } catch(Exception e) {
++          e.printStackTrace();
++      }
++  }
++
++  private void recordComponentStopped() {
++      synchronized(hasStoppedLock) {
++          componentHasStopped = 1;
++      }
++  }
++
++  public void performReconfig(String component) throws Exception {
++    BufferedReader reader0 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/parameter")));
++    BufferedReader reader1 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_mode")));
++    BufferedReader reader2 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v1")));
++    BufferedReader reader3 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v2")));
++    BufferedReader reader4 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_component")));
++    String parameter, reconfigMode, v1, v2, reconfigComponent;
++    parameter = reconfigMode = v1 = v2 = reconfigComponent = "";
++    parameter = reader0.readLine();
++    reconfigMode = reader1.readLine();
++    v1 = reader2.readLine();
++    v2 = reader3.readLine();
++    reconfigComponent = reader4.readLine();
++    parameterReconfig = parameter; // global
++    reader0.close();
++    reader1.close();
++    reader2.close();
++    reader3.close();
++    reader4.close();
++    if (reconfigMode.equals("none")) {
++        LOG.info("[msx-restart] " + component + " init, reconfigMode is none, do nothing");
++    } else if (reconfigMode.equals("v1v1")) {
++        if (v1.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v1);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++    } else if (reconfigMode.equals("v2v2")) {
++        if (v2.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v2);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++    } else if (reconfigMode.equals("v1v2")) {
++        if (v1.equals("") || v2.equals(""))
++            System.exit(1);
++        synchronized(hasStoppedLock) {
++            synchronized(restartPerformedLock) {
++                if (reconfigComponent.equals(component) && restartPerformed == 0 && componentHasStopped == 1) {
++                    this.getConf().set(parameter, v2);
++                    LOG.info("[msx-restart] RECONFIG POINT!! " + component + " init, parameter=" + parameter
++                            + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++                    restartPerformed = 1;
++                } else {
++                    this.getConf().set(parameter, v1);
++                    LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++                }
++            }
++        }
++    } else {
++        LOG.info("[msx-restart] ERROR!!!");
++    }
++  }
++
+   @Override
+   public void setConf(Configuration conf) {
++    LOG.info("[msx-restart] JournalNode setConf conf");
+     this.conf = conf;
+ 
++    // msx
++    try {
++      performReconfig("JournalNode");
++    } catch (Exception e) {
++        e.printStackTrace();
++    }
++
+     String journalNodeDir = null;
+     Collection<String> nameserviceIds;
+ 
+@@ -210,6 +298,7 @@
+    * Start listening for edits via RPC.
+    */
+   public void start() throws IOException {
++    LOG.info("[msx-restart] JournalNode start");
+     Preconditions.checkState(!isStarted(), "JN already running");
+ 
+     try {
+@@ -266,6 +355,10 @@
+    * should indicate an error)
+    */
+   public void stop(int rc) {
++    Configuration conf = this.getConf();
++    LOG.info("[msx-restart] JournalNode stop, double check before stop, " + parameterReconfig + " = " + conf.get(parameterReconfig));
++    recordComponentStopped();
++
+     this.resultCode = rc;
+ 
+     for (JournalNodeSyncer jSyncer : journalSyncersById.values()) {
+@@ -312,6 +405,7 @@
+   }
+   
+   public void stopAndJoin(int rc) throws InterruptedException {
++    //System.out.println("[msx-restart] JournalNode stop");
+     stop(rc);
+     join();
+   }
+diff -ruN hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java
+--- hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java	2019-12-29 19:15:30.902350303 -0500
+@@ -228,6 +228,9 @@
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
++// msx
++import java.io.*;
++
+ /**********************************************************
+  * DataNode is a class (and program) that stores a set of
+  * blocks for a DFS deployment.  A single deployment can
+@@ -412,6 +415,83 @@
+ 
+   private ScheduledThreadPoolExecutor metricsLoggerTimer;
+ 
++  // msx
++  public static String parameterReconfig = ""; // just for value check during stop
++  public static int componentHasStopped = 0; // reset at the beginning of each Test
++  public static int restartPerformed = 0; // reset at the beginning of each Test
++  private static Object hasStoppedLock = new Object();
++  private static Object restartPerformedLock = new Object();
++  private static String controllerRootDir = "/root/parameter_test_controller/";
++  static {
++      try {
++        BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++        String str = reader.readLine();
++        componentHasStopped = Integer.valueOf(str);
++        LOG.info("[msx-restart] componentHasStopped = " + componentHasStopped);
++        reader.close();
++      } catch(Exception e) {
++          e.printStackTrace();
++      }
++  }
++
++  private void recordComponentStopped() {
++      synchronized(hasStoppedLock) {
++          componentHasStopped = 1;
++      }
++  }
++
++  public void performReconfig(String component) throws Exception {
++    BufferedReader reader0 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/parameter")));
++    BufferedReader reader1 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_mode")));
++    BufferedReader reader2 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v1")));
++    BufferedReader reader3 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v2")));
++    BufferedReader reader4 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_component")));
++    String parameter, reconfigMode, v1, v2, reconfigComponent;
++    parameter = reconfigMode = v1 = v2 = reconfigComponent = "";
++    parameter = reader0.readLine();
++    reconfigMode = reader1.readLine();
++    v1 = reader2.readLine();
++    v2 = reader3.readLine();
++    reconfigComponent = reader4.readLine();
++    parameterReconfig = parameter; // global
++    reader0.close();
++    reader1.close();
++    reader2.close();
++    reader3.close();
++    reader4.close();
++    if (reconfigMode.equals("none")) {
++        LOG.info("[msx-restart] " + component + " init, reconfigMode is none, do nothing");
++    } else if (reconfigMode.equals("v1v1")) {
++        if (v1.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v1);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++    } else if (reconfigMode.equals("v2v2")) {
++        if (v2.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v2);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++    } else if (reconfigMode.equals("v1v2")) {
++        if (v1.equals("") || v2.equals(""))
++            System.exit(1);
++        synchronized(hasStoppedLock) {
++            synchronized(restartPerformedLock) {
++                if (reconfigComponent.equals(component) && restartPerformed == 0 && componentHasStopped == 1) {
++                    this.getConf().set(parameter, v2);
++                    LOG.info("[msx-restart] RECONFIG POINT!! " + component + " init, parameter=" + parameter
++                            + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++                    restartPerformed = 1;
++                } else {
++                    this.getConf().set(parameter, v1);
++                    LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++                }
++            }
++        }
++    } else {
++        LOG.info("[msx-restart] ERROR!!!");
++    }
++  }
++
+   /**
+    * Creates a dummy DataNode for testing purpose.
+    */
+@@ -419,6 +499,12 @@
+   @InterfaceAudience.LimitedPrivate("HDFS")
+   DataNode(final Configuration conf) throws DiskErrorException {
+     super(conf);
++    // msx
++    try {
++      performReconfig("DataNode");
++    } catch (Exception e) {
++      e.printStackTrace();
++    }
+     this.tracer = createTracer(conf);
+     this.tracerConfigurationManager =
+         new TracerConfigurationManager(DATANODE_HTRACE_PREFIX, conf);
+@@ -446,6 +532,12 @@
+            final StorageLocationChecker storageLocationChecker,
+            final SecureResources resources) throws IOException {
+     super(conf);
++     // msx
++    try {
++      performReconfig("DataNode");
++    } catch (Exception e) {
++      e.printStackTrace();
++    }    
+     this.tracer = createTracer(conf);
+     this.tracerConfigurationManager =
+         new TracerConfigurationManager(DATANODE_HTRACE_PREFIX, conf);
+@@ -1976,6 +2068,10 @@
+    * Otherwise, deadlock might occur.
+    */
+   public void shutdown() {
++    Configuration conf = this.getConf();
++    LOG.info("[msx-restart] DataNode stop, double check before stop, " + parameterReconfig + " = " + conf.get(parameterReconfig));
++    recordComponentStopped();
++    
+     stopMetricsLogger();
+     if (plugins != null) {
+       for (ServicePlugin p : plugins) {
+@@ -2633,6 +2729,7 @@
+    *  If this thread is specifically interrupted, it will stop waiting.
+    */
+   public void runDatanodeDaemon() throws IOException {
++    LOG.info("[msx-restart] DataNode start");
+     blockPoolManager.startAll();
+ 
+     // start dataXceiveServer
+diff -ruN hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java
+--- hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/NameNode.java	2019-12-29 19:15:13.466140096 -0500
+@@ -166,6 +166,9 @@
+ import static org.apache.hadoop.fs.CommonConfigurationKeys.IPC_NAMESPACE;
+ import static org.apache.hadoop.fs.CommonConfigurationKeys.IPC_BACKOFF_ENABLE_DEFAULT;
+ 
++// msx
++import java.io.*;
++
+ /**********************************************************
+  * NameNode serves as both directory namespace manager and
+  * "inode table" for the Hadoop DFS.  There is a single NameNode
+@@ -910,9 +913,93 @@
+     this(conf, NamenodeRole.NAMENODE);
+   }
+ 
++  // msx
++  public static String parameterReconfig = ""; // just for value check during stop
++  public static int componentHasStopped = 0; // reset at the beginning of each Test
++  public static int restartPerformed = 0; // reset at the beginning of each Test
++  private static Object hasStoppedLock = new Object();
++  private static Object restartPerformedLock = new Object();
++  private static String controllerRootDir = "/root/parameter_test_controller/";
++  static {
++      try {
++        BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++        String str = reader.readLine();
++        componentHasStopped = Integer.valueOf(str);
++        LOG.info("[msx-restart] componentHasStopped = " + componentHasStopped);
++        reader.close();
++      } catch(Exception e) {
++          e.printStackTrace();
++      }
++  }
++
++  private void recordComponentStopped() {
++      synchronized(hasStoppedLock) {
++          componentHasStopped = 1;
++      }
++  }
++  
++  public void performReconfig(String component) throws Exception {
++    BufferedReader reader0 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/parameter")));
++    BufferedReader reader1 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_mode")));
++    BufferedReader reader2 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v1")));
++    BufferedReader reader3 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/v2")));
++    BufferedReader reader4 = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/reconfig_component")));
++    String parameter, reconfigMode, v1, v2, reconfigComponent;
++    parameter = reconfigMode = v1 = v2 = reconfigComponent = "";
++    parameter = reader0.readLine();
++    reconfigMode = reader1.readLine();
++    v1 = reader2.readLine();
++    v2 = reader3.readLine();
++    reconfigComponent = reader4.readLine();
++    parameterReconfig = parameter; // global
++    reader0.close();
++    reader1.close();
++    reader2.close();
++    reader3.close();
++    reader4.close();
++    if (reconfigMode.equals("none")) {
++        LOG.info("[msx-restart] " + component + " init, reconfigMode is none, do nothing");
++    } else if (reconfigMode.equals("v1v1")) {
++        if (v1.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v1);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++    } else if (reconfigMode.equals("v2v2")) {
++        if (v2.equals(""))
++            System.exit(1);
++        this.getConf().set(parameter, v2);
++        LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++    } else if (reconfigMode.equals("v1v2")) {
++        if (v1.equals("") || v2.equals(""))
++            System.exit(1);
++        synchronized(hasStoppedLock) {
++            synchronized(restartPerformedLock) {
++                if (reconfigComponent.equals(component) && restartPerformed == 0 && componentHasStopped == 1) {
++                    this.getConf().set(parameter, v2);
++                    LOG.info("[msx-restart] RECONFIG POINT!! " + component + " init, parameter=" + parameter
++                            + " reconfigMode=" + reconfigMode + " parameter=v2=" + v2);
++                    restartPerformed = 1;
++                } else {
++                    this.getConf().set(parameter, v1);
++                    LOG.info("[msx-restart] " + component + " init, parameter=" + parameter + " reconfigMode=" + reconfigMode + " parameter=v1=" + v1);
++                }
++            }
++        }
++    } else {
++        LOG.info("[msx-restart] ERROR!!!");
++    }
++  } 
++ 
+   protected NameNode(Configuration conf, NamenodeRole role)
+       throws IOException {
+     super(conf);
++
++    // msx
++    try {
++      performReconfig("NameNode");
++    } catch (Exception e) {
++        e.printStackTrace();
++    }
+     this.tracer = new Tracer.Builder("NameNode").
+         conf(TraceUtils.wrapHadoopConf(NAMENODE_HTRACE_PREFIX, conf)).
+         build();
+@@ -949,6 +1036,7 @@
+       this.stopAtException(e);
+       throw e;
+     }
++    LOG.info("[msx-restart] NameNode start");
+     this.started.set(true);
+   }
+ 
+@@ -990,6 +1078,10 @@
+    * Stop all NameNode threads and wait for all to finish.
+    */
+   public void stop() {
++    Configuration conf = this.getConf();
++    LOG.info("[msx-restart] NameNode stop, double check before stop, " + parameterReconfig + " = " + conf.get(parameterReconfig));
++    recordComponentStopped();
++
+     synchronized(this) {
+       if (stopRequested)
+         return;
+diff -ruN hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java
+--- hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java	1969-12-31 19:00:00.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs/src/test/java/MyRunListener.java	2019-12-29 18:54:41.651342241 -0500
+@@ -0,0 +1,108 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.io.PrintWriter;
++
++import org.apache.commons.lang.exception.ExceptionUtils;
++import org.apache.hadoop.hdfs.qjournal.server.JournalNode;
++import org.apache.hadoop.hdfs.server.namenode.NameNode;
++import org.apache.hadoop.hdfs.server.datanode.DataNode;
++
++public class MyRunListener extends RunListener {
++
++    public String controllerRootDir = "/root/parameter_test_controller/";
++    public String resultDirName = controllerRootDir + "shared/test_results/";
++    public String result = "";
++    public String SEPERATOR = "@@@";
++    public String failureMessage = "";
++    public String stackTrace = "";
++    public String testName = "";
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    public void reset() {
++        try {
++            BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++            String str = reader.readLine();
++            int componentHasStoppedDefault = Integer.valueOf(str);
++	    int restartPerformedDefault = 0;
++            reader.close();
++	    NameNode.componentHasStopped = componentHasStoppedDefault;
++	    DataNode.componentHasStopped = componentHasStoppedDefault;
++	    JournalNode.componentHasStopped = componentHasStoppedDefault;
++
++	    NameNode.restartPerformed = restartPerformedDefault;
++	    DataNode.restartPerformed = restartPerformedDefault;
++	    JournalNode.restartPerformed = restartPerformedDefault;
++            
++	    System.out.println("[msx] componentHasStopped has been reset to " + componentHasStoppedDefault);
++	    System.out.println("[msx] restartPerformedDefault has been reset to " + restartPerformedDefault);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }        
++    }
++ 
++    public void testStarted(Description description) throws java.lang.Exception {
++        reset();
++	result = "1"; // clean up
++        failureMessage = "none";
++        stackTrace = "none";
++        testName = description.getClassName() + "#" + description.getMethodName();
++        System.out.println("[msx] test Started " + testName);
++    }
++ 
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] test Finished " + testName + " test result = " + result);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(resultDirName + testName)); 
++        writer.write(testName + SEPERATOR + result + SEPERATOR + failureMessage + SEPERATOR + stackTrace + SEPERATOR);
++        writer.flush();
++        writer.close();
++    }
++ 
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        result = "-1";
++        failureMessage = failure.getMessage();
++        stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++        System.out.println("[msx] testFailure " + testName + " test result = " + result);
++    }
++ 
++    public void testIgnored(Description description) throws java.lang.Exception {
++        result = "0";
++        System.out.println("[msx] test Ignored " + testName);
++    }
++     
++    public void testAssumptionFailure(Failure failure) {
++        try {
++            result = "-2";
++            String failureMessage = failure.getMessage();
++            String stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++            System.out.println("[msx] testAssumptionFailure " + testName + " test result = " + result);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }
++    }
++    
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++}
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-client/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-client/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs-client/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-client/pom.xml	2019-12-29 19:09:17.105847367 -0500
+@@ -120,6 +120,15 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
+       </plugin>
+       <plugin>
+         <groupId>org.apache.rat</groupId>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java
+--- hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java	1969-12-31 19:00:00.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-client/src/test/java/MyRunListener.java	2019-12-29 19:16:21.370958708 -0500
+@@ -0,0 +1,108 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.io.PrintWriter;
++
++import org.apache.commons.lang.exception.ExceptionUtils;
++//import org.apache.hadoop.hdfs.qjournal.server.JournalNode;
++//import org.apache.hadoop.hdfs.server.namenode.NameNode;
++//import org.apache.hadoop.hdfs.server.datanode.DataNode;
++
++public class MyRunListener extends RunListener {
++
++    public String controllerRootDir = "/root/parameter_test_controller/";
++    public String resultDirName = controllerRootDir + "shared/test_results/";
++    public String result = "";
++    public String SEPERATOR = "@@@";
++    public String failureMessage = "";
++    public String stackTrace = "";
++    public String testName = "";
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    public void reset() {
++  /*      try {
++            BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++            String str = reader.readLine();
++            int componentHasStoppedDefault = Integer.valueOf(str);
++	    int restartPerformedDefault = 0;
++            reader.close();
++	    NameNode.componentHasStopped = componentHasStoppedDefault;
++	    DataNode.componentHasStopped = componentHasStoppedDefault;
++	    JournalNode.componentHasStopped = componentHasStoppedDefault;
++
++	    NameNode.restartPerformed = restartPerformedDefault;
++	    DataNode.restartPerformed = restartPerformedDefault;
++	    JournalNode.restartPerformed = restartPerformedDefault;
++            
++	    System.out.println("[msx] componentHasStopped has been reset to " + componentHasStoppedDefault);
++	    System.out.println("[msx] restartPerformedDefault has been reset to " + restartPerformedDefault);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }  */      
++    }
++ 
++    public void testStarted(Description description) throws java.lang.Exception {
++        reset();
++	result = "1"; // clean up
++        failureMessage = "none";
++        stackTrace = "none";
++        testName = description.getClassName() + "#" + description.getMethodName();
++        System.out.println("[msx] test Started " + testName);
++    }
++ 
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] test Finished " + testName + " test result = " + result);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(resultDirName + testName)); 
++        writer.write(testName + SEPERATOR + result + SEPERATOR + failureMessage + SEPERATOR + stackTrace + SEPERATOR);
++        writer.flush();
++        writer.close();
++    }
++ 
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        result = "-1";
++        failureMessage = failure.getMessage();
++        stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++        System.out.println("[msx] testFailure " + testName + " test result = " + result);
++    }
++ 
++    public void testIgnored(Description description) throws java.lang.Exception {
++        result = "0";
++        System.out.println("[msx] test Ignored " + testName);
++    }
++     
++    public void testAssumptionFailure(Failure failure) {
++        try {
++            result = "-2";
++            String failureMessage = failure.getMessage();
++            String stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++            System.out.println("[msx] testAssumptionFailure " + testName + " test result = " + result);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }
++    }
++    
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++}
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-httpfs/pom.xml	2019-12-26 00:19:24.742077623 -0500
+@@ -43,6 +43,14 @@
+ 
+   <dependencies>
+     <dependency>
++      <groupId>org.apache.maven.surefire</groupId>
++      <artifactId>surefire-logger-api</artifactId>
++      <version>3.0.0-M4</version>
++      <!-- to get around bug https://github.com/junit-team/junit5/issues/1367 -->
++      <scope>test</scope>
++      <!--<optional>true</optional>-->
++    </dependency>
++    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <scope>test</scope>
+@@ -254,6 +262,7 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++	<version>3.0.0-M4</version>
+         <configuration>
+           <threadCount>1</threadCount>
+           <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+@@ -264,7 +273,8 @@
+           <properties>
+             <property>
+               <name>listener</name>
+-              <value>org.apache.hadoop.test.TimedOutTestsListener</value>
++              <!--<value>org.apache.hadoop.test.TimedOutTestsListener</value>-->
++              <value>MyRunListener</value>
+             </property>
+           </properties>
+           <excludes>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java
+--- hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java	1969-12-31 19:00:00.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java/MyRunListener.java	2019-12-29 18:55:36.007994626 -0500
+@@ -0,0 +1,108 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.io.PrintWriter;
++
++import org.apache.commons.lang.exception.ExceptionUtils;
++import org.apache.hadoop.hdfs.qjournal.server.JournalNode;
++import org.apache.hadoop.hdfs.server.namenode.NameNode;
++import org.apache.hadoop.hdfs.server.datanode.DataNode;
++
++public class MyRunListener extends RunListener {
++
++    public String controllerRootDir = "/root/parameter_test_controller/";
++    public String resultDirName = controllerRootDir + "shared/test_results/";
++    public String result = "";
++    public String SEPERATOR = "@@@";
++    public String failureMessage = "";
++    public String stackTrace = "";
++    public String testName = "";
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    public void reset() {
++        try {
++            BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++            String str = reader.readLine();
++            int componentHasStoppedDefault = Integer.valueOf(str);
++	    int restartPerformedDefault = 0;
++            reader.close();
++	    NameNode.componentHasStopped = componentHasStoppedDefault;
++	    DataNode.componentHasStopped = componentHasStoppedDefault;
++	    JournalNode.componentHasStopped = componentHasStoppedDefault;
++
++	    NameNode.restartPerformed = restartPerformedDefault;
++	    DataNode.restartPerformed = restartPerformedDefault;
++	    JournalNode.restartPerformed = restartPerformedDefault;
++            
++	    System.out.println("[msx] componentHasStopped has been reset to " + componentHasStoppedDefault);
++	    System.out.println("[msx] restartPerformedDefault has been reset to " + restartPerformedDefault);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }        
++    }
++ 
++    public void testStarted(Description description) throws java.lang.Exception {
++        reset();
++	result = "1"; // clean up
++        failureMessage = "none";
++        stackTrace = "none";
++        testName = description.getClassName() + "#" + description.getMethodName();
++        System.out.println("[msx] test Started " + testName);
++    }
++ 
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] test Finished " + testName + " test result = " + result);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(resultDirName + testName)); 
++        writer.write(testName + SEPERATOR + result + SEPERATOR + failureMessage + SEPERATOR + stackTrace + SEPERATOR);
++        writer.flush();
++        writer.close();
++    }
++ 
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        result = "-1";
++        failureMessage = failure.getMessage();
++        stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++        System.out.println("[msx] testFailure " + testName + " test result = " + result);
++    }
++ 
++    public void testIgnored(Description description) throws java.lang.Exception {
++        result = "0";
++        System.out.println("[msx] test Ignored " + testName);
++    }
++     
++    public void testAssumptionFailure(Failure failure) {
++        try {
++            result = "-2";
++            String failureMessage = failure.getMessage();
++            String stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++            System.out.println("[msx] testAssumptionFailure " + testName + " test result = " + result);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }
++    }
++    
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++}
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-native-client/pom.xml	2019-12-26 00:19:24.742077623 -0500
+@@ -76,6 +76,19 @@
+ 
+   <build>
+     <plugins>
++  <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
+       <plugin>
+         <groupId>org.apache.rat</groupId>
+         <artifactId>apache-rat-plugin</artifactId>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-nfs/pom.xml	2019-12-26 00:19:24.742077623 -0500
+@@ -174,7 +174,25 @@
+       <scope>test</scope>
+     </dependency>
+   </dependencies>
+-
++ 
++  <build>
++    <plugins>
++    <plugin>
++    <groupId>org.apache.maven.plugins</groupId>
++    <artifactId>maven-surefire-plugin</artifactId>
++    <version>3.0.0-M4</version>
++    <configuration>
++      <properties>
++        <property>
++          <name>listener</name>
++          <value>MyRunListener</value>
++        </property>
++      </properties>
++    </configuration>
++  </plugin>
++   </plugins>
++  </build>
++ 
+   <profiles>
+     <profile>
+       <id>dist</id>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java
+--- hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java	1969-12-31 19:00:00.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java/MyRunListener.java	2019-12-29 18:55:36.007994626 -0500
+@@ -0,0 +1,108 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.io.PrintWriter;
++
++import org.apache.commons.lang.exception.ExceptionUtils;
++import org.apache.hadoop.hdfs.qjournal.server.JournalNode;
++import org.apache.hadoop.hdfs.server.namenode.NameNode;
++import org.apache.hadoop.hdfs.server.datanode.DataNode;
++
++public class MyRunListener extends RunListener {
++
++    public String controllerRootDir = "/root/parameter_test_controller/";
++    public String resultDirName = controllerRootDir + "shared/test_results/";
++    public String result = "";
++    public String SEPERATOR = "@@@";
++    public String failureMessage = "";
++    public String stackTrace = "";
++    public String testName = "";
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    public void reset() {
++        try {
++            BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++            String str = reader.readLine();
++            int componentHasStoppedDefault = Integer.valueOf(str);
++	    int restartPerformedDefault = 0;
++            reader.close();
++	    NameNode.componentHasStopped = componentHasStoppedDefault;
++	    DataNode.componentHasStopped = componentHasStoppedDefault;
++	    JournalNode.componentHasStopped = componentHasStoppedDefault;
++
++	    NameNode.restartPerformed = restartPerformedDefault;
++	    DataNode.restartPerformed = restartPerformedDefault;
++	    JournalNode.restartPerformed = restartPerformedDefault;
++            
++	    System.out.println("[msx] componentHasStopped has been reset to " + componentHasStoppedDefault);
++	    System.out.println("[msx] restartPerformedDefault has been reset to " + restartPerformedDefault);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }        
++    }
++ 
++    public void testStarted(Description description) throws java.lang.Exception {
++        reset();
++	result = "1"; // clean up
++        failureMessage = "none";
++        stackTrace = "none";
++        testName = description.getClassName() + "#" + description.getMethodName();
++        System.out.println("[msx] test Started " + testName);
++    }
++ 
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] test Finished " + testName + " test result = " + result);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(resultDirName + testName)); 
++        writer.write(testName + SEPERATOR + result + SEPERATOR + failureMessage + SEPERATOR + stackTrace + SEPERATOR);
++        writer.flush();
++        writer.close();
++    }
++ 
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        result = "-1";
++        failureMessage = failure.getMessage();
++        stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++        System.out.println("[msx] testFailure " + testName + " test result = " + result);
++    }
++ 
++    public void testIgnored(Description description) throws java.lang.Exception {
++        result = "0";
++        System.out.println("[msx] test Ignored " + testName);
++    }
++     
++    public void testAssumptionFailure(Failure failure) {
++        try {
++            result = "-2";
++            String failureMessage = failure.getMessage();
++            String stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++            System.out.println("[msx] testAssumptionFailure " + testName + " test result = " + result);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }
++    }
++    
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++}
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml
+--- hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml	2019-01-23 10:07:50.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-rbf/pom.xml	2019-12-26 00:19:24.742077623 -0500
+@@ -111,6 +111,15 @@
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
++	<version>3.0.0-M4</version>
++        <configuration>
++          <properties>
++            <property>
++              <name>listener</name>
++              <value>MyRunListener</value>
++            </property>
++          </properties>
++    	</configuration>
+       </plugin>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+@@ -234,4 +243,4 @@
+       </plugin>
+     </plugins>
+   </build>
+-</project>
+\ No newline at end of file
++</project>
+diff -ruN hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java
+--- hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java	1969-12-31 19:00:00.000000000 -0500
++++ /root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java/MyRunListener.java	2019-12-29 18:55:36.003994577 -0500
+@@ -0,0 +1,108 @@
++import org.junit.runner.notification.*;
++import org.junit.runner.Description;
++import org.junit.runner.Result;
++import org.junit.runner.notification.Failure;
++import org.junit.runner.notification.RunListener;
++
++import java.io.BufferedWriter;
++import java.io.BufferedReader;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.FileWriter;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.OutputStream;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.io.PrintWriter;
++
++import org.apache.commons.lang.exception.ExceptionUtils;
++import org.apache.hadoop.hdfs.qjournal.server.JournalNode;
++import org.apache.hadoop.hdfs.server.namenode.NameNode;
++import org.apache.hadoop.hdfs.server.datanode.DataNode;
++
++public class MyRunListener extends RunListener {
++
++    public String controllerRootDir = "/root/parameter_test_controller/";
++    public String resultDirName = controllerRootDir + "shared/test_results/";
++    public String result = "";
++    public String SEPERATOR = "@@@";
++    public String failureMessage = "";
++    public String stackTrace = "";
++    public String testName = "";
++    public MyRunListener() {
++        System.out.println("[msx] Creation of Run Listener...");
++    }
++
++    public void reset() {
++        try {
++            BufferedReader reader = new BufferedReader(new FileReader(new File(controllerRootDir + "shared/componentHasStopped")));
++            String str = reader.readLine();
++            int componentHasStoppedDefault = Integer.valueOf(str);
++	    int restartPerformedDefault = 0;
++            reader.close();
++	    NameNode.componentHasStopped = componentHasStoppedDefault;
++	    DataNode.componentHasStopped = componentHasStoppedDefault;
++	    JournalNode.componentHasStopped = componentHasStoppedDefault;
++
++	    NameNode.restartPerformed = restartPerformedDefault;
++	    DataNode.restartPerformed = restartPerformedDefault;
++	    JournalNode.restartPerformed = restartPerformedDefault;
++            
++	    System.out.println("[msx] componentHasStopped has been reset to " + componentHasStoppedDefault);
++	    System.out.println("[msx] restartPerformedDefault has been reset to " + restartPerformedDefault);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }        
++    }
++ 
++    public void testStarted(Description description) throws java.lang.Exception {
++        reset();
++	result = "1"; // clean up
++        failureMessage = "none";
++        stackTrace = "none";
++        testName = description.getClassName() + "#" + description.getMethodName();
++        System.out.println("[msx] test Started " + testName);
++    }
++ 
++    public void testFinished(Description description) throws java.lang.Exception {
++        System.out.println("[msx] test Finished " + testName + " test result = " + result);
++        BufferedWriter writer = new BufferedWriter(new FileWriter(resultDirName + testName)); 
++        writer.write(testName + SEPERATOR + result + SEPERATOR + failureMessage + SEPERATOR + stackTrace + SEPERATOR);
++        writer.flush();
++        writer.close();
++    }
++ 
++    public void testFailure(Failure failure) throws java.lang.Exception {
++        result = "-1";
++        failureMessage = failure.getMessage();
++        stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++        System.out.println("[msx] testFailure " + testName + " test result = " + result);
++    }
++ 
++    public void testIgnored(Description description) throws java.lang.Exception {
++        result = "0";
++        System.out.println("[msx] test Ignored " + testName);
++    }
++     
++    public void testAssumptionFailure(Failure failure) {
++        try {
++            result = "-2";
++            String failureMessage = failure.getMessage();
++            String stackTrace = ExceptionUtils.getStackTrace(failure.getException());
++            System.out.println("[msx] testAssumptionFailure " + testName + " test result = " + result);
++        } catch(Exception e) {
++            e.printStackTrace();
++        }
++    }
++    
++    // Called before any tests have been run.
++    public void testRunStarted(Description description) throws java.lang.Exception {
++        System.out.println("[msx] testRunStarted " + description.testCount());
++    }
++ 
++    // Called when all tests have finished
++    public void testRunFinished(Result result) throws java.lang.Exception {
++        System.out.println("[msx] testRunFinished " + result.getRunCount());
++    }
++}
