@@ -24,6 +24,9 @@ public class Controller {
     public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
    
     /* static test and parameter per component */
+    public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
+    public static List<String> beforeClassList = new ArrayList<String>();
+    
     public static String restartNameNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_namenode.txt";
     public static String restartDataNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_datanode.txt";
     public static String restartJournalNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_journalnode.txt";
@@ -187,57 +190,80 @@ public class Controller {
         }
     }
 
+    public static void runCombinedMvnCmd(List<String> testNameList, int numPerPart) throws Exception{
+        // split into parts
+        int numOfTestsPerPart = numPerPart;
+        int indexOfParts = 0;
+        int start = 0;
+        int end = 0;
+        List<List<String>> listOfParts = new ArrayList<List<String>>(); 
+        do {
+            start = indexOfParts * numOfTestsPerPart;
+            end = (indexOfParts + 1) * numOfTestsPerPart;
+            if (end >= testNameList.size())
+                end = testNameList.size();
+            myPrint("indexOfParts = " + indexOfParts + " start = " + start + " end = " + end);
+            listOfParts.add(testNameList.subList(start, end));
+            indexOfParts ++;
+        } while(end < testNameList.size());
+        
+        for (List<String> partOfTestNameList: listOfParts) { 
+            // merge tests into a single command 
+            String combinedMethods = "";
+            int numOfTests = 0;
+            myPrint("part size = " + partOfTestNameList.size());
+            for (String test : partOfTestNameList) {
+                numOfTests ++;
+                if (numOfTests == partOfTestNameList.size())
+                    combinedMethods += test;
+                else
+                    combinedMethods += test + ",";
+            }
+            myPrint("Number of combined methods is " + numOfTests);
+            String cmd = "mvn test -Dtest=" + combinedMethods;
+            
+            Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
+            BufferedReader reader = new BufferedReader(
+                new InputStreamReader(process.getInputStream()));
+//            while ((buffer = reader.readLine()) != null)
+//                myPrint(buffer);
+            reader.close();
+            process.waitFor();
+            int ret = process.exitValue();
+            process.destroy();
+        }
+    }
+
     public static void runMvnCmd(List<TestResult> testResultList) {
         try {
 	    String buffer = "";
             long startTime, endTime, timeElapsed;
             startTime = endTime = timeElapsed = 0;
             startTime = System.nanoTime();
+        
+            List<String> allTests = TestResult.getTestNames(testResultList);
+            List<String> nonBeforeClassTests = new ArrayList<String>();
+            List<String> beforeClassTests = new ArrayList<String>();
 
-            List<String> testNameList = TestResult.getTestNames(testResultList);
-            
-            // split into parts
-            int numOfTestsPerPart = 100;
-            //int numOfParts = testNameList.size() / numOfTestsPerPart;
-            int indexOfParts = 0;
-            int start = 0;
-            int end = 0;
-            List<List<String>> listOfParts = new ArrayList<List<String>>(); 
-            do {
-                start = indexOfParts * numOfTestsPerPart;
-                end = (indexOfParts + 1) * numOfTestsPerPart;
-                if (end >= testNameList.size())
-                    end = testNameList.size();
-                myPrint("indexOfParts = " + indexOfParts + " start = " + start + " end = " + end);
-                listOfParts.add(testNameList.subList(start, end));
-                indexOfParts ++;
-            } while(end < testNameList.size());
-            
-            for (List<String> partOfTestNameList: listOfParts) { 
-                // merge tests into a single command 
-                String combinedMethods = "";
-                int numOfTests = 0;
-                myPrint("part size = " + partOfTestNameList.size());
-                for (String test : partOfTestNameList) {
-                    numOfTests ++;
-                    if (numOfTests == partOfTestNameList.size())
-                        combinedMethods += test;
-                    else
-                        combinedMethods += test + ",";
+            for (String t : allTests) {
+                boolean hasBeforeClass = false;
+                for (String bc : beforeClassTests) {
+                    if (t.contains(bc)) {
+                        hasBeforeClass = true;
+                        break;
+                    }
                 }
-                myPrint("Number of combined methods is " + numOfTests);
-                String cmd = "mvn test -Dtest=" + combinedMethods;
-                
-                Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
-                BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(process.getInputStream()));
-//                while ((buffer = reader.readLine()) != null)
-//                    myPrint(buffer);
-                reader.close();
-                process.waitFor();
-                int ret = process.exitValue();
-                process.destroy();
+                if (hasBeforeClass)
+                    beforeClassTests.add(t);
+                else
+                    nonBeforeClassTests.add(t);
             }
+            myPrint("beforeClassTests = " + beforeClassTests);
+            myPrint("nonBeforeClassTests = " + nonBeforeClassTests);
+       
+            System.exit(0);
+            runCombinedMvnCmd(allTests, 4);
+
 	    updateTestResult(testResultList);
             endTime = System.nanoTime();
             timeElapsed = endTime - startTime;
@@ -282,13 +308,14 @@ public class Controller {
       
     public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
         List<TestResult> failedListv1v2 = testForTupleWithGivenTests(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
+        myPrint("failed v1v2 list size " + failedListv1v2.size());
+        
         List<TestResult> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", TestResult.getTestNames(failedListv1v2), componentHasStopped); 
         List<TestResult> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, TestResult.getTestNames(failedListv1v2), componentHasStopped);
 	int thresholdOfIssues = 10;
         List<TestResult> suspicousList = new ArrayList<TestResult>();
         List<TestResult> issueList = new ArrayList<TestResult>();
 
-        myPrint("failed v1v2 list size " + failedListv1v2.size());
         
         for (TestResult v1v2Test : failedListv1v2) {
             boolean v1v1Failed, v2v2Failed;
@@ -351,13 +378,13 @@ public class Controller {
         if (testSet == null) {
 	    if (component.equals("NameNode")) {
 		restartTestSet = restartNameNodeTestList;
-                startTestSet = startNameNodeTestList;
+                startTestSet = restartNameNodeTestList;
             } else if (component.equals("DataNode")) { 
 		restartTestSet = restartDataNodeTestList;
-                startTestSet = startDataNodeTestList;
+                startTestSet = restartDataNodeTestList;
             } else if (component.equals("JournalNode")) {
 		restartTestSet = restartJournalNodeTestList;
-                startTestSet = startJournalNodeTestList;
+                startTestSet = restartJournalNodeTestList;
             }
         } else {
             restartTestSet = testSet;
@@ -368,11 +395,11 @@ public class Controller {
         try {
             String componentHasStopped = "";
             
-            myPrint("Testing restart... size " + restartTestSet.size());
+           /* myPrint("Testing restart... size " + restartTestSet.size());
             componentHasStopped = "0";
             List<TestResult> restartIssueList = testV1V2Pair(parameter, component, v1, v2, restartTestSet, componentHasStopped);
             mergedIssueList.addAll(restartIssueList);
-
+*/
             myPrint("Testing start... size " + startTestSet.size());
             componentHasStopped = "1";
             List<TestResult> startIssueList = testV1V2Pair(parameter, component, v1, v2, startTestSet, componentHasStopped);
@@ -400,8 +427,7 @@ public class Controller {
         List<String> testSet = null;
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
-    
-        /* do this at the begining */
+
         int onetestArgIndex = 2; 
         if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
             myPrint("Error: args length is " + args.length);
@@ -417,6 +443,16 @@ public class Controller {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
 	}
+        
+        Date date = new Date();
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+	String dateTime = formatter.format(date);
+        String runLogPath = Controller.controllerRootDir + parameterToTest + "_run_" + componentFocused + "_" + dateTime + ".txt";
+        try {
+            runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
 	/* set test Set */
         if (args.length == onetestArgIndex+1) { // only use a single test
@@ -429,24 +465,18 @@ public class Controller {
 	startTime = System.nanoTime();
 //	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
 	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+//        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
         
         /* log */
-        Date date = new Date();
-	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
-	String dateTime = formatter.format(date);
 	TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
                 dateTime + ".txt");
         TestResult.writeIntoFile(issueList1);
-        TestResult.writeIntoFile(issueList2);
-        
+        //TestResult.writeIntoFile(issueList2);
+       
         try {
-            String runLogPath = Controller.controllerRootDir + parameterToTest + "_run_" + componentFocused + "_" + dateTime + ".txt";
-            runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 
-            runLogWriter.write(runLogBuffer.toString());
             runLogWriter.close();
         } catch(Exception e) {
             e.printStackTrace();
@@ -456,7 +486,16 @@ public class Controller {
     public static void myPrint(Object o) {
         String str = (String) o;
         System.out.println(str);
-        runLogBuffer.append(str + System.lineSeparator());
+        if (runLogWriter == null) {
+            System.out.println("=null");
+            return;
+        }
+        try {
+            runLogWriter.write(str + System.lineSeparator());
+            runLogWriter.flush();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
     
     public static void loadStaticTestData() {
@@ -503,6 +542,13 @@ public class Controller {
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 startJournalNodeTestList.add(buffer.trim());
+            }
+            reader.close();
+	    
+            reader = new BufferedReader(new FileReader(new File(beforeClassFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                beforeClassList.add(buffer.trim());
             }
             reader.close();
         } catch (Exception e) {
