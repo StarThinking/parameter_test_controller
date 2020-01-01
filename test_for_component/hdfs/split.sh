@@ -12,7 +12,7 @@ function split_class_into_methods {
     startarray=()
     finisharray=()
     
-    class=$(echo $file | awk -F '-output.txt' '{print $1}')
+    #class=$(echo $file | awk -F '-output.txt' '{print $1}')
    
     if [ ${#startlinearray[@]} -eq 0 ] || [ ${#finishlinearray[@]} -eq 0 ]; then
         echo 'startlinearray or finishlinearray has no method test, skip'
@@ -49,7 +49,7 @@ function split_class_into_methods {
     
     for i in ${!startarray[@]}
     do
-        classandmethod="$class""#""${methodnamearray[$i]}"
+        classandmethod="${methodnamearray[$i]}"
         echo "classandmethod is $classandmethod"
         echo "start at ${startarray[$i]}"
         echo "finish at ${finisharray[$i]}"
