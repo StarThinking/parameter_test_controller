@@ -1,0 +1,17 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testDiffReportWithOpenFiles
+2019-12-31 18:23:49,167 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:23:49,366 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:23:49,384 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:23:49,547 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:23:49,573 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:23:49,630 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:23:49,647 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:23:49,704 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:23:50,820 [Thread-1925] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:23:50,870 [Thread-1925] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:23:51,027 [Thread-1925] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:23:56,462 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:23:56,515 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:23:56,559 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:23:56,613 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testDiffReportWithOpenFiles test result = 1

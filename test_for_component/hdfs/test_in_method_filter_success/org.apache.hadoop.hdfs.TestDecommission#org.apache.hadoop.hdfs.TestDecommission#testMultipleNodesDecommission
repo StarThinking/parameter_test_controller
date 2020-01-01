@@ -1,0 +1,20 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDecommission#testMultipleNodesDecommission
+2019-12-31 21:28:01,770 [Thread-3418] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:01,953 [Thread-3418] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:28:01,963 [Thread-3418] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:02,034 [Thread-3418] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 21:28:02,049 [Thread-3418] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:02,170 [Thread-3418] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 21:28:02,183 [Thread-3418] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:02,265 [Thread-3418] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 21:28:02,287 [Thread-3418] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:02,337 [Thread-3418] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 21:28:02,356 [Thread-3418] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:28:02,401 [Thread-3418] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 21:28:08,004 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:28:08,063 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:28:08,110 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:28:08,174 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:28:08,218 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:28:08,262 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.TestDecommission#testMultipleNodesDecommission test result = 1

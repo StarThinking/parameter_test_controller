@@ -1,0 +1,20 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestPipelinesFailover#testLeaseRecoveryAfterFailover
+2019-12-31 18:52:36,976 [Thread-6824] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,130 [Thread-6824] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:52:37,139 [Thread-6824] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,268 [Thread-6824] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:52:37,273 [Thread-6824] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,559 [Thread-6824] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:52:37,614 [Thread-6824] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,659 [Thread-6824] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:52:37,673 [Thread-6824] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,802 [Thread-6824] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:52:37,838 [Thread-6824] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:52:37,888 [Thread-6824] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:52:45,812 [Thread-6824] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:52:45,893 [Thread-6824] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:52:45,947 [Thread-6824] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:52:46,001 [Thread-6824] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:52:46,027 [Thread-6824] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:52:46,051 [Thread-6824] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestPipelinesFailover#testLeaseRecoveryAfterFailover test result = 1

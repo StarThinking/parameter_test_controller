@@ -1,0 +1,14 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapshotDiffReport#testDiffReportWithRenameAndAppend
+2019-12-31 18:26:10,950 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:26:11,122 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:26:11,141 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:26:11,191 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:26:11,209 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:26:11,304 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:26:11,335 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 18:26:11,395 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 18:26:12,043 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:26:12,096 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:26:12,179 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:26:12,330 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapshotDiffReport#testDiffReportWithRenameAndAppend test result = 1

@@ -1,0 +1,26 @@
+[msx] test Started org.apache.hadoop.hdfs.tools.TestDFSAdminWithHA#testMetaSave
+2019-12-31 18:11:31,136 [Thread-5901] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 18:11:31,136 [Thread-5901] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,136 [Thread-5901] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 18:11:31,156 [Thread-5901] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 18:11:31,156 [Thread-5901] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,157 [Thread-5901] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 18:11:31,170 [Thread-5901] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 18:11:31,171 [Thread-5901] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,171 [Thread-5901] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 18:11:31,441 [Thread-5901] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,526 [Thread-5901] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:11:31,527 [Thread-5901] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,606 [Thread-5901] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:11:31,613 [Thread-5901] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,633 [Thread-5901] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,705 [Thread-5901] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,803 [Thread-5901] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:11:31,804 [Thread-5901] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:11:31,884 [Thread-5901] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:11:31,899 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,921 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,942 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,945 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:11:31,948 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.tools.TestDFSAdminWithHA#testMetaSave test result = 1

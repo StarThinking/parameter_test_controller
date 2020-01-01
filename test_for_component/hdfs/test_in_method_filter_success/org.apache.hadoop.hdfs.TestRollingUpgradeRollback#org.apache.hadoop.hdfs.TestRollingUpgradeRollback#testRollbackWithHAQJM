@@ -1,0 +1,35 @@
+[msx] test Started org.apache.hadoop.hdfs.TestRollingUpgradeRollback#testRollbackWithHAQJM
+2019-12-31 21:30:24,971 [main] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 21:30:24,971 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:24,971 [main] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 21:30:25,004 [main] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 21:30:25,004 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,005 [main] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 21:30:25,028 [main] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 21:30:25,028 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,029 [main] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 21:30:25,356 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,484 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:25,490 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,597 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:25,616 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:25,647 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:25,739 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,857 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:25,858 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:25,974 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:26,004 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:26,029 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:26,140 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:28,349 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:28,387 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:28,605 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:28,617 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:28,780 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:28,818 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:30:28,962 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:30:29,141 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:29,171 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:29,177 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 21:30:29,182 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.TestRollingUpgradeRollback#testRollbackWithHAQJM test result = 1

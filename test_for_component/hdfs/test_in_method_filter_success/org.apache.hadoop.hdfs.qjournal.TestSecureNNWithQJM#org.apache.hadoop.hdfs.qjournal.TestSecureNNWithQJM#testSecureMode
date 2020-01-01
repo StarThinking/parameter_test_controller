@@ -1,0 +1,26 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.TestSecureNNWithQJM#testSecureMode
+2019-12-31 17:59:07,241 [Thread-3] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 17:59:07,241 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:07,260 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 17:59:08,179 [Thread-3] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 17:59:08,179 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:08,180 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 17:59:08,239 [Thread-3] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
+2019-12-31 17:59:08,239 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:08,240 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
+2019-12-31 17:59:09,837 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:10,373 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 17:59:10,478 [Thread-3] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:10,786 [Thread-3] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 17:59:11,420 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:11,521 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:12,285 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 17:59:18,328 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:18,366 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 17:59:18,820 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 17:59:23,842 [Thread-3] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:23,905 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:23,948 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:23,955 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:59:23,960 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.TestSecureNNWithQJM#testSecureMode test result = 1

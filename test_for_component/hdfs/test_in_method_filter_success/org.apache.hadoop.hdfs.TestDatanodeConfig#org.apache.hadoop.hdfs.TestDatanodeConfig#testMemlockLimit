@@ -1,0 +1,6 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDatanodeConfig#testMemlockLimit
+2019-12-31 22:46:34,407 [Thread-92] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 22:46:34,484 [Thread-92] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 22:46:34,496 [Thread-92] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 22:46:34,665 [Thread-92] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+[msx] test Finished org.apache.hadoop.hdfs.TestDatanodeConfig#testMemlockLimit test result = 1

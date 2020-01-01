@@ -1,0 +1,8 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestHAStateTransitions#testFailoverWithEmptyInProgressEditLogWithHeader
+2019-12-31 18:49:41,621 [Thread-123] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:49:41,749 [Thread-123] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:49:41,754 [Thread-123] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 18:49:41,902 [Thread-123] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 18:49:42,227 [Thread-123] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 18:49:42,302 [Thread-123] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestHAStateTransitions#testFailoverWithEmptyInProgressEditLogWithHeader test result = 1

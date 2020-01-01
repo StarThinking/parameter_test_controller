@@ -1,0 +1,14 @@
+[msx] test Started org.apache.hadoop.hdfs.TestEncryptedTransfer#testLongLivedWriteClientAfterRestart[0]
+2019-12-31 17:49:26,431 [Thread-1080] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 17:49:26,550 [Thread-1080] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 17:49:26,559 [Thread-1080] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 17:49:26,605 [Thread-1080] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 17:49:26,962 [Thread-1080] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:49:27,006 [Thread-1080] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 17:49:27,182 [Thread-1080] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 17:49:33,200 [Thread-1080] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:49:33,253 [Thread-1080] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 17:49:33,295 [Thread-1080] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 17:49:33,564 [Thread-1080] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = true
+2019-12-31 17:49:33,616 [Thread-1080] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+[msx] test Finished org.apache.hadoop.hdfs.TestEncryptedTransfer#testLongLivedWriteClientAfterRestart[0] test result = 1

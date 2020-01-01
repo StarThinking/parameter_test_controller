@@ -6,8 +6,8 @@ function split_class_into_methods {
     #file='org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync-output.txt'
     IFS_backup=$IFS
     IFS=$'\n'
-    startlinearray=( $(grep -rn testStarted $file) )
-    finishlinearray=( $(grep -rn testFinished $file) )
+    startlinearray=( $(grep -rn 'test Started' $file) )
+    finishlinearray=( $(grep -rn 'test Finished' $file) )
     methodnamearray=()
     startarray=()
     finisharray=()
@@ -21,7 +21,7 @@ function split_class_into_methods {
 
     for line in ${startlinearray[@]}
     do 
-        name=$(echo $line | awk -F ':| '  '{print $4}')
+        name=$(echo $line | awk -F ':| '  '{print $5}')
         methodnamearray+=("$name")
     done
     

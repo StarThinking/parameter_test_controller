@@ -1,0 +1,8 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistReplicaPlacement#testFallbackToDisk
+2019-12-31 20:24:39,728 [Thread-279] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 20:24:39,904 [Thread-279] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 20:24:39,916 [Thread-279] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 20:24:39,969 [Thread-279] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 20:24:40,469 [Thread-279] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 20:24:40,656 [Thread-279] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistReplicaPlacement#testFallbackToDisk test result = 1

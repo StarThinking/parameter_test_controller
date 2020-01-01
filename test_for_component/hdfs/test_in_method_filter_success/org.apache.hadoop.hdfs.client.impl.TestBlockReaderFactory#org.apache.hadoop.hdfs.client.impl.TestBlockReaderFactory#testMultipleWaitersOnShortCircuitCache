@@ -1,0 +1,8 @@
+[msx] test Started org.apache.hadoop.hdfs.client.impl.TestBlockReaderFactory#testMultipleWaitersOnShortCircuitCache
+2019-12-31 22:38:11,587 [Thread-189] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 22:38:11,758 [Thread-189] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 22:38:11,771 [Thread-189] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 22:38:11,825 [Thread-189] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 22:38:12,769 [Thread-189] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 22:38:12,852 [Thread-189] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.client.impl.TestBlockReaderFactory#testMultipleWaitersOnShortCircuitCache test result = 1

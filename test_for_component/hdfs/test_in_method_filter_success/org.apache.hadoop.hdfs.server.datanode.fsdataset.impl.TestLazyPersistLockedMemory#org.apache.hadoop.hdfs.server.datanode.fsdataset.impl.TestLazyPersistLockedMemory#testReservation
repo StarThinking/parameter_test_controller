@@ -1,0 +1,8 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistLockedMemory#testReservation
+2019-12-31 20:28:24,305 [Thread-438] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 20:28:24,553 [Thread-438] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 20:28:24,565 [Thread-438] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 20:28:24,610 [Thread-438] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
+2019-12-31 20:28:25,108 [Thread-438] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
+2019-12-31 20:28:25,260 [Thread-438] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistLockedMemory#testReservation test result = 1

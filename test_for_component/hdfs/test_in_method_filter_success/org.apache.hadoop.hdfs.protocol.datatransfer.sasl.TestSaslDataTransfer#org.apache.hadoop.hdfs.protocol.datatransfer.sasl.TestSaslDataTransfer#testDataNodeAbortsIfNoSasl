@@ -1,0 +1,6 @@
+[msx] test Started org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testDataNodeAbortsIfNoSasl
+2019-12-31 21:22:38,321 [Thread-1232] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2019-12-31 21:22:38,522 [Thread-1232] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
+2019-12-31 21:22:38,550 [Thread-1232] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2019-12-31 21:22:38,551 [Thread-1232] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
+[msx] test Finished org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testDataNodeAbortsIfNoSasl test result = 1
