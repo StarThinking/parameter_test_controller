@@ -118,11 +118,13 @@ public class Controller {
                     writer.write(t.toString());
                     writer.newLine();
                 }
+		writer.newLine();
                 writer.write("---------------------------------------full report---------------------------------------------");
                 for (TestResult t : list) {
                     writer.write(t.completeInfo());
                     writer.newLine();
                 }
+		writer.newLine();
                 writer.close();
             } catch(Exception e) {
                 e.printStackTrace();
