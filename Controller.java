@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class Controller {
 
-    public static String workingDir = "/root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
+    public static String workingDir = "/root/hadoop-disk/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
     public static StringBuilder runLogBuffer = new StringBuilder();
     public static BufferedWriter runLogWriter = null;
@@ -221,12 +221,14 @@ public class Controller {
             }
             myPrint("Number of combined methods is " + numOfTests);
             String cmd = "mvn test -Dtest=" + combinedMethods;
-            
+
+	    myPrint(cmd);            
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(process.getInputStream()));
-//            while ((buffer = reader.readLine()) != null)
-//                myPrint(buffer);
+	    String buffer = "";
+            while ((buffer = reader.readLine()) != null)
+                myPrint(buffer);
             reader.close();
             process.waitFor();
             int ret = process.exitValue();
@@ -247,8 +249,8 @@ public class Controller {
 
             for (String t : allTests) {
                 boolean hasBeforeClass = false;
-                for (String bc : beforeClassTests) {
-                    if (t.contains(bc)) {
+                for (String c : beforeClassList) {
+                    if (t.contains(c)) {
                         hasBeforeClass = true;
                         break;
                     }
@@ -258,11 +260,15 @@ public class Controller {
                 else
                     nonBeforeClassTests.add(t);
             }
-            myPrint("beforeClassTests = " + beforeClassTests);
-            myPrint("nonBeforeClassTests = " + nonBeforeClassTests);
-       
-            System.exit(0);
-            runCombinedMvnCmd(allTests, 4);
+            myPrint("size of beforeClassTests = " + beforeClassTests.size());
+            myPrint("size of nonBeforeClassTests = " + nonBeforeClassTests.size());
+
+	    if (nonBeforeClassTests.size() > 0)       
+                runCombinedMvnCmd(nonBeforeClassTests, 200);
+            if (beforeClassTests.size() > 0)
+		runCombinedMvnCmd(beforeClassTests, 1);
+	    else
+		myPrint("beforeClassTests size is 0, just skip");
 
 	    updateTestResult(testResultList);
             endTime = System.nanoTime();
@@ -302,14 +308,17 @@ public class Controller {
         return failedTests;
     }
 
-    //public static void testCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
-	//List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet); // all
-    //}
+    public static void testCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
+	testSet = startNameNodeTestList;
+	String componentHasStopped = "1";
+	List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet, componentHasStopped); // all
+        myPrint("failed v1v2 list size " + failedList.size());
+    }
       
     public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
         List<TestResult> failedListv1v2 = testForTupleWithGivenTests(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
         myPrint("failed v1v2 list size " + failedListv1v2.size());
-        
+      
         List<TestResult> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", TestResult.getTestNames(failedListv1v2), componentHasStopped); 
         List<TestResult> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, TestResult.getTestNames(failedListv1v2), componentHasStopped);
 	int thresholdOfIssues = 10;
@@ -378,13 +387,13 @@ public class Controller {
         if (testSet == null) {
 	    if (component.equals("NameNode")) {
 		restartTestSet = restartNameNodeTestList;
-                startTestSet = restartNameNodeTestList;
+                startTestSet = startNameNodeTestList;
             } else if (component.equals("DataNode")) { 
 		restartTestSet = restartDataNodeTestList;
-                startTestSet = restartDataNodeTestList;
+                startTestSet = startDataNodeTestList;
             } else if (component.equals("JournalNode")) {
 		restartTestSet = restartJournalNodeTestList;
-                startTestSet = restartJournalNodeTestList;
+                startTestSet = startJournalNodeTestList;
             }
         } else {
             restartTestSet = testSet;
@@ -395,11 +404,11 @@ public class Controller {
         try {
             String componentHasStopped = "";
             
-           /* myPrint("Testing restart... size " + restartTestSet.size());
+            myPrint("Testing restart... size " + restartTestSet.size());
             componentHasStopped = "0";
             List<TestResult> restartIssueList = testV1V2Pair(parameter, component, v1, v2, restartTestSet, componentHasStopped);
             mergedIssueList.addAll(restartIssueList);
-*/
+
             myPrint("Testing start... size " + startTestSet.size());
             componentHasStopped = "1";
             List<TestResult> startIssueList = testV1V2Pair(parameter, component, v1, v2, startTestSet, componentHasStopped);
@@ -436,14 +445,13 @@ public class Controller {
         }
         
 	parameterToTest = args[0];
-	myPrint("parameter to test: " + parameterToTest); 
 	componentFocused = args[1];
-        myPrint("component to reconfig: " + componentFocused); 
 	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode")) {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
 	}
         
+	/* set run log */
         Date date = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 	String dateTime = formatter.format(date);
@@ -453,6 +461,9 @@ public class Controller {
         } catch(Exception e) {
             e.printStackTrace();
         }
+	
+	myPrint("parameter to test: " + parameterToTest); 
+        myPrint("component to reconfig: " + componentFocused); 
 
 	/* set test Set */
         if (args.length == onetestArgIndex+1) { // only use a single test
@@ -465,7 +476,7 @@ public class Controller {
 	startTime = System.nanoTime();
 //	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
 	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-//        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
@@ -474,7 +485,7 @@ public class Controller {
 	TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
                 dateTime + ".txt");
         TestResult.writeIntoFile(issueList1);
-        //TestResult.writeIntoFile(issueList2);
+        TestResult.writeIntoFile(issueList2);
        
         try {
             runLogWriter.close();
@@ -558,7 +569,7 @@ public class Controller {
     }
   
     public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2, String componentHasStopped) {
-	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2")) {
+	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2") && !mode.equals("none")) {
 	    myPrint("Error, wrong mode " + mode);
 	    System.exit(1);
 	}
