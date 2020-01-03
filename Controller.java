@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class Controller {
 
-    public static String workingDir = "/root/hadoop-disk/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
+    public static String workingDir = "/root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
     public static StringBuilder runLogBuffer = new StringBuilder();
     public static BufferedWriter runLogWriter = null;
@@ -424,7 +424,7 @@ public class Controller {
         myPrint("---------------------------------------short report---------------------------------------------");
         myPrint("mergedIssueList size " + mergedIssueList.size() + " :");
         for (TestResult t : mergedIssueList)
-            myPrint(t);
+            myPrint(t.toString());
         myPrint("---------------------------------------short report---------------------------------------------");
         myPrint("");
         
