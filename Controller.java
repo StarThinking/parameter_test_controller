@@ -40,6 +40,9 @@ public class Controller {
     public static List<String> startNameNodeTestList = new ArrayList<String>();
     public static List<String> startDataNodeTestList = new ArrayList<String>();
     public static List<String> startJournalNodeTestList = new ArrayList<String>();
+    	
+    public static String allComponentTestFileName = controllerRootDir + "test_for_component/hdfs/all_component.txt";
+    public static List<String> allComponentTestList = new ArrayList<String>();
     
     static {
         loadStaticTestData();
@@ -310,11 +313,13 @@ public class Controller {
         return failedTests;
     }
 
-    public static void testCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
-	testSet = startNameNodeTestList;
+    public static List<TestResult> testVanillaCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
+	testSet = allComponentTestList;
+	// parameter, component, componentHasStopped, v1, v2 are not effective for vanilla correctness test
 	String componentHasStopped = "1";
 	List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet, componentHasStopped); // all
         myPrint("failed v1v2 list size " + failedList.size());
+	return failedList;
     }
       
     public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
@@ -476,18 +481,21 @@ public class Controller {
         } 
         
 	startTime = System.nanoTime();
-//	testCorrectness(parameterToTest, componentFocused, "", "", testSet);
-	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+	List<TestResult> issueList0 = testVanillaCorrectness(parameterToTest, componentFocused, "", "", testSet);
+//	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
+//        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
         
         /* log */
-	TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
+	/*TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
                 dateTime + ".txt");
         TestResult.writeIntoFile(issueList1);
-        TestResult.writeIntoFile(issueList2);
+        TestResult.writeIntoFile(issueList2);*/
+
+	TestResult.setFileName(Controller.controllerRootDir + "vanilla" + "_issue_" + dateTime + ".txt");
+	TestResult.writeIntoFile(issueList0);
        
         try {
             runLogWriter.close();
@@ -562,6 +570,13 @@ public class Controller {
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 beforeClassList.add(buffer.trim());
+            }
+            reader.close();
+            
+	    reader = new BufferedReader(new FileReader(new File(allComponentTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                allComponentTestList.add(buffer.trim());
             }
             reader.close();
         } catch (Exception e) {
