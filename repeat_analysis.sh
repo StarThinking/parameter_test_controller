@@ -10,7 +10,6 @@ option=$2
 threshold=50
 cd $dir
 repeat_times=$(ls | wc -l)
-echo "repeat_times: $repeat_times"
 
 num_of_reconf_issue=0
 num_of_restart_reconf_issue=0
@@ -63,6 +62,8 @@ do
     done
 done
 
+echo "repeat task: $dir"
+echo "repeat_times: $repeat_times"
 echo "num_of_tests: ${#tests[@]}"
 #for t in ${tests[@]}; do echo $t; done
 for i in $(seq 0 $(( ${#indexes[@]} - 1 )))
@@ -79,3 +80,4 @@ done
 echo "num_of_reconf_issue: $num_of_reconf_issue"
 echo "num_of_restart_reconf_issue: $num_of_restart_reconf_issue"
 echo "num_of_start_reconf_issue: $num_of_start_reconf_issue"
+echo ""
