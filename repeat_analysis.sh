@@ -7,7 +7,7 @@ fi
 
 dir=$1
 option=$2
-threshold=50
+threshold=0
 cd $dir
 repeat_times=$(ls | wc -l)
 
@@ -54,7 +54,8 @@ do
 
     for t in ${tests[@]}
     do
-	if [ "$(cat $repeat | grep $t)" != "" ]; then
+	# test name includes specific characters like '[]'
+	if [ "$(cat $repeat | grep -F $t)" != "" ]; then
             index=$(indexOf $t)
 	    v=${tests_stat[$index]}
             tests_stat[$(indexOf $t)]=$(( v + 1 ))
