@@ -301,13 +301,13 @@ public class Controller {
         myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " componentHasStopped=" + componentHasStopped); 
         List<TestResult> testResultList = new ArrayList<TestResult>();
 	
-	System.out.println("Vanilla failed tests contained:");
+	myPrint("Vanilla failed tests contained:");
  	thisTestSet.stream().filter(test -> vanillaFailedTestList.contains(test)).forEach(System.out::println); 
 
-	System.out.println("thisTestSet before removing vanilla failure: " + thisTestSet.size());
+	myPrint("thisTestSet before removing vanilla failure: " + thisTestSet.size());
 	// remove vanilla failed tests
 	thisTestSet.removeIf(test -> vanillaFailedTestList.contains(test));
-	System.out.println("thisTestSet after filter out vanilla failure: " + thisTestSet.size());
+	myPrint("thisTestSet after filter out vanilla failure: " + thisTestSet.size());
  
 	// construct TestResult list
         for (String test : thisTestSet) {
