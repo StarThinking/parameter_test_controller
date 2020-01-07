@@ -41,8 +41,11 @@ public class Controller {
     public static List<String> startDataNodeTestList = new ArrayList<String>();
     public static List<String> startJournalNodeTestList = new ArrayList<String>();
     	
+    /* used for Vanilla Correctness Test */
     public static String allComponentTestFileName = controllerRootDir + "test_for_component/hdfs/all_component.txt";
+    public static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
     public static List<String> allComponentTestList = new ArrayList<String>();
+    public static List<String> vanillaFailedTestList = new ArrayList<String>();
     
     static {
         loadStaticTestData();
@@ -247,7 +250,7 @@ public class Controller {
             long startTime, endTime, timeElapsed;
             startTime = endTime = timeElapsed = 0;
             startTime = System.nanoTime();
-        
+      
             List<String> allTests = TestResult.getTestNames(testResultList);
             List<String> nonBeforeClassTests = new ArrayList<String>();
             List<String> beforeClassTests = new ArrayList<String>();
@@ -297,7 +300,16 @@ public class Controller {
         
         myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " componentHasStopped=" + componentHasStopped); 
         List<TestResult> testResultList = new ArrayList<TestResult>();
-        // construct TestResult list
+	
+	System.out.println("Vanilla failed tests contained:");
+ 	thisTestSet.stream().filter(test -> vanillaFailedTestList.contains(test)).forEach(System.out::println); 
+
+	System.out.println("thisTestSet before removing vanilla failure: " + thisTestSet.size());
+	// remove vanilla failed tests
+	thisTestSet.removeIf(test -> vanillaFailedTestList.contains(test));
+	System.out.println("thisTestSet after filter out vanilla failure: " + thisTestSet.size());
+ 
+	// construct TestResult list
         for (String test : thisTestSet) {
             testResultList.add(new TestResult(test, parameter, component, v1, v2, componentHasStopped));
         }
@@ -453,7 +465,7 @@ public class Controller {
         
 	parameterToTest = args[0];
 	componentFocused = args[1];
-	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode")) {
+	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode") && !componentFocused.equals("None")) {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
 	}
@@ -481,22 +493,28 @@ public class Controller {
         } 
         
 	startTime = System.nanoTime();
-	List<TestResult> issueList0 = testVanillaCorrectness(parameterToTest, componentFocused, "", "", testSet);
-//	List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-//        List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
-        endTime = System.nanoTime();
+	
+	if (componentFocused.equals("None")) {
+	    TestResult.setFileName(Controller.controllerRootDir + "vanilla" + "_issue_" + dateTime + ".txt");
+	} else {
+	    TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
+                    dateTime + ".txt");
+	}
+	
+	if (componentFocused.equals("None")) {
+	    List<TestResult> issueList0 = testVanillaCorrectness(parameterToTest, componentFocused, "", "", testSet);
+	    TestResult.writeIntoFile(issueList0);
+	} else {
+	    List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
+            List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+            TestResult.writeIntoFile(issueList1);
+            TestResult.writeIntoFile(issueList2);
+	}
+        
+	endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
         
-        /* log */
-	/*TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
-                dateTime + ".txt");
-        TestResult.writeIntoFile(issueList1);
-        TestResult.writeIntoFile(issueList2);*/
-
-	TestResult.setFileName(Controller.controllerRootDir + "vanilla" + "_issue_" + dateTime + ".txt");
-	TestResult.writeIntoFile(issueList0);
-       
         try {
             runLogWriter.close();
         } catch(Exception e) {
@@ -577,6 +595,13 @@ public class Controller {
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 allComponentTestList.add(buffer.trim());
+            }
+            reader.close();
+	    
+	    reader = new BufferedReader(new FileReader(new File(vanillaFailedTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                vanillaFailedTestList.add(buffer.trim());
             }
             reader.close();
         } catch (Exception e) {
