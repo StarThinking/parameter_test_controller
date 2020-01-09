@@ -1,6 +1,10 @@
 #!/bin/bash
 
-component=NameNode
+if [ $# -ne 1 ]; then
+    echo 'wrong arguments'
+    exit 1
+fi
+component=$1
 paras=( $(cat input.txt) )
 para_num=${#paras[@]}
 echo "para_num = $para_num"
