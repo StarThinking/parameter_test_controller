@@ -449,6 +449,7 @@ public class Controller {
     }
 
     public static void main(String[] args) {
+        String parameterType = "";
         String parameterToTest = "";
         String componentFocused = "";
         String oneTest = "";
@@ -456,15 +457,20 @@ public class Controller {
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
 
-        int onetestArgIndex = 2; 
+        int onetestArgIndex = 3; 
         if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
             myPrint("Error: args length is " + args.length);
             myPrint("Controller parameterToTest componentFocused [optional: one_test]");
             System.exit(1);
         }
-        
-	parameterToTest = args[0];
-	componentFocused = args[1];
+       
+        parameterType = args[0];
+	parameterToTest = args[1];
+	componentFocused = args[2];
+        if (!parameterType.equals("Boolean") && !parameterType.equals("Int")) {
+            myPrint("Error: wrong component " + componentFocused);
+            System.exit(1);
+        }
 	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode") && !componentFocused.equals("None")) {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
@@ -505,10 +511,14 @@ public class Controller {
 	    List<TestResult> issueList0 = testVanillaCorrectness(parameterToTest, componentFocused, "", "", testSet);
 	    TestResult.writeIntoFile(issueList0);
 	} else {
-	    List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-            List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
-            TestResult.writeIntoFile(issueList1);
-            TestResult.writeIntoFile(issueList2);
+            if (parameterType.equals("Boolean")) {
+	        List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
+                List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
+                TestResult.writeIntoFile(issueList1);
+                TestResult.writeIntoFile(issueList2);
+            } else if (parameterType.equals("Int")) {
+                myPrint("Int");
+            }
 	}
         
 	endTime = System.nanoTime();

@@ -1,4 +1,13 @@
-org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat
-org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncForDiscontinuousMissingLogs
-org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes
-org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
+org.apache.hadoop.hdfs.qjournal.client.TestQJMWithFaults#testRecoverAfterDoubleFailures
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testCrashBetweenSyncLogAndPersistPaxosData
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testNewerVersionOfSegmentWins
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testNewerVersionOfSegmentWins2
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOneJNMissingSegments
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment0
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment1
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testRecoverAfterIncompleteRecovery
+org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntime
+org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue
+org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testFailToStartWithBadConfig
+org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyInProgressTail#testDefault
