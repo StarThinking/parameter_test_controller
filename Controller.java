@@ -23,7 +23,11 @@ public class Controller {
     public static String v2FileName = controllerRootDir + "shared/v2";
     public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
    
-    /* static test and parameter per component */
+    /* static parameter value information */
+    public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
+    public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_values_unit_tests_merged_final.txt";
+
+    /* static test information for component */
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
     public static List<String> beforeClassList = new ArrayList<String>();
     
@@ -406,13 +410,13 @@ public class Controller {
         if (testSet == null) {
 	    if (component.equals("NameNode")) {
 		restartTestSet = restartNameNodeTestList;
-                startTestSet = startNameNodeTestList;
+                startTestSet = restartNameNodeTestList;
             } else if (component.equals("DataNode")) { 
 		restartTestSet = restartDataNodeTestList;
-                startTestSet = startDataNodeTestList;
+                startTestSet = restartDataNodeTestList;
             } else if (component.equals("JournalNode")) {
 		restartTestSet = restartJournalNodeTestList;
-                startTestSet = startJournalNodeTestList;
+                startTestSet = restartJournalNodeTestList;
             }
         } else {
             restartTestSet = testSet;
@@ -518,6 +522,20 @@ public class Controller {
                 TestResult.writeIntoFile(issueList2);
             } else if (parameterType.equals("Int")) {
                 myPrint("Int");
+                List<String> values = intNameNodeParameterValues.get(parameterToTest);
+                if (values == null) {
+                    myPrint("Error: cannot find int namenode parameter " + parameterToTest);
+                    System.exit(1);
+                } 
+
+                myPrint("parameter " + parameterToTest + " values " + values);
+                List<List<String>> permOfValues = generatePerm(values);
+                //myPrint("permOfValues" + permOfValues);
+                List<TestResult> issueList = null;
+                for (List<String> valuePair : permOfValues) {
+                    issueList = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, valuePair.get(0), valuePair.get(1), testSet);
+                    TestResult.writeIntoFile(issueList);
+                }
             }
 	}
         
@@ -614,6 +632,23 @@ public class Controller {
                 vanillaFailedTestList.add(buffer.trim());
             }
             reader.close();
+	    
+            reader = new BufferedReader(new FileReader(new File(intNameNodeParameterValuesFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                String[] contents = buffer.trim().split(" ");
+                if (contents.length <= 2 || contents.length >= 5) {
+                    //System.out.println("error");
+                    System.exit(1);
+                }
+                String parameter = contents[0];
+                List<String> values = new ArrayList<String>();
+                for (int i=1; i<contents.length; i++)
+                    values.add(contents[i]);
+                //System.out.println("parameter = " + parameter + " values = " + values);
+                intNameNodeParameterValues.put(parameter, values);
+            }
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
@@ -691,5 +726,24 @@ public class Controller {
             e.printStackTrace();
             System.exit(1);
         }
+    }
+
+    public static <E> List<List<E>> generatePerm(List<E> original) {
+        if (original.isEmpty()) {
+            List<List<E>> result = new ArrayList<>(); 
+            result.add(new ArrayList<>()); 
+            return result; 
+        }
+        E firstElement = original.remove(0);
+        List<List<E>> returnValue = new ArrayList<>();
+        List<List<E>> permutations = generatePerm(original);
+        for (List<E> smallerPermutated : permutations) {
+            for (int index=0; index <= smallerPermutated.size(); index++) {
+                List<E> temp = new ArrayList<>(smallerPermutated);
+                temp.add(index, firstElement);
+                returnValue.add(temp);
+            }
+        }
+        return returnValue;
     }
 }
