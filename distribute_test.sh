@@ -11,7 +11,7 @@ echo "para_num = $para_num"
 for i in $(seq 0 $(( para_num - 1 )))
 do
     echo "${paras[$i]} on hadoop-$i"
-    ssh hadoop-$i "cd parameter_test_controller; java Controller ${paras[$i]} $component > /dev/null &" & 
+    ssh hadoop-$i "cd parameter_test_controller; java Controller Int ${paras[$i]} $component > /dev/null &" & 
 done
 
 sleep 10
