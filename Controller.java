@@ -410,13 +410,13 @@ public class Controller {
         if (testSet == null) {
 	    if (component.equals("NameNode")) {
 		restartTestSet = restartNameNodeTestList;
-                startTestSet = restartNameNodeTestList;
+                startTestSet = startNameNodeTestList;
             } else if (component.equals("DataNode")) { 
 		restartTestSet = restartDataNodeTestList;
-                startTestSet = restartDataNodeTestList;
+                startTestSet = startDataNodeTestList;
             } else if (component.equals("JournalNode")) {
 		restartTestSet = restartJournalNodeTestList;
-                startTestSet = restartJournalNodeTestList;
+                startTestSet = startJournalNodeTestList;
             }
         } else {
             restartTestSet = testSet;
