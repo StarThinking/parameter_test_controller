@@ -26,6 +26,8 @@ public class Controller {
     /* static parameter value information */
     public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
     public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_values_unit_tests_merged_final.txt";
+    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
+    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_values_unit_tests_merged_final.txt";
 
     /* static test information for component */
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
@@ -522,7 +524,12 @@ public class Controller {
                 TestResult.writeIntoFile(issueList2);
             } else if (parameterType.equals("Int")) {
                 myPrint("Int");
-                List<String> values = intNameNodeParameterValues.get(parameterToTest);
+		List<String> values = null;
+		if (componentFocused.equals("NameNode")) {
+                    values = intNameNodeParameterValues.get(parameterToTest);
+		} else if (componentFocused.equals("DataNode")) {
+                    values = intDataNodeParameterValues.get(parameterToTest);
+		}
                 if (values == null) {
                     myPrint("Error: cannot find int namenode parameter " + parameterToTest);
                     System.exit(1);
@@ -647,6 +654,23 @@ public class Controller {
                     values.add(contents[i]);
                 //System.out.println("parameter = " + parameter + " values = " + values);
                 intNameNodeParameterValues.put(parameter, values);
+            }
+            reader.close();
+            
+ 	    reader = new BufferedReader(new FileReader(new File(intDataNodeParameterValuesFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                String[] contents = buffer.trim().split(" ");
+                if (contents.length <= 2 || contents.length >= 5) {
+                    //System.out.println("error");
+                    System.exit(1);
+                }
+                String parameter = contents[0];
+                List<String> values = new ArrayList<String>();
+                for (int i=1; i<contents.length; i++)
+                    values.add(contents[i]);
+                //System.out.println("parameter = " + parameter + " values = " + values);
+                intDataNodeParameterValues.put(parameter, values);
             }
             reader.close();
         } catch (Exception e) {
