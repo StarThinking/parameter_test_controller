@@ -1,0 +1,75 @@
+dfs.bytes-per-checksum 1 1024 10485760
+dfs.client.block.write.locateFollowingBlock.initial.delay.ms 1000 400
+dfs.client.block.write.locateFollowingBlock.retries 1 3 5
+dfs.client.block.write.replace-datanode-on-failure.min-replication 0 1 2
+dfs.client.block.write.retries 1 3
+dfs.client.cached.conn.retry 1 3
+dfs.client.failover.max.attempts 128 15 2
+dfs.client.failover.sleep.base.millis 0 500
+dfs.client.failover.sleep.max.millis 0 1000 15000
+dfs.client.hedged.read.threadpool.size 0 2 5
+dfs.client.max.block.acquire.failures 0 1 50
+dfs.client.mmap.cache.size 1 256
+dfs.client.read.shortcircuit.buffer.size 11 048576
+dfs.client.read.shortcircuit.metrics.sampling.percentage 0 100
+dfs.client.read.shortcircuit.streams.cache.size 0 256
+dfs.client.read.striped.threadpool.size 1 18
+dfs.client.retry.interval-ms.get-last-block-length 1 4000
+dfs.client.retry.max.attempts 10 2
+dfs.client.retry.times.get-last-block-length 0 3
+dfs.client.retry.window.base 0 1 3000
+dfs.client.socketcache.capacity 0 16 32
+dfs.client.socket.send.buffer.size 0 1024 262144
+dfs.client.socket-timeout 0 1000 100000000
+dfs.client.test.drop.namenode.response.number 0 2
+dfs.client.write.byte-array-manager.count-limit 1 2048
+dfs.client.write.byte-array-manager.count-threshold 1 128
+dfs.client.write.max-packets-in-flight 1 80
+dfs.client-write-packet-size 1048576000 1050 512
+dfs.datanode.balance.max.concurrent.moves 0 1 50
+dfs.datanode.block.id.layout.upgrade.threads 1 12
+dfs.datanode.directoryscan.threads 1 2 3
+dfs.datanode.directoryscan.throttle.limit.ms.per.sec 0 1 1000
+dfs.datanode.ec.reconstruction.stripedread.buffer.size 1048575 65536
+dfs.datanode.ec.reconstruction.stripedread.timeout.millis 100 5000
+dfs.datanode.ec.reconstruction.threads 2 8
+dfs.datanode.failed.volumes.tolerated 0 -1 3
+dfs.datanode.fileio.profiling.sampling.percentage 0 100
+dfs.datanode.fsdatasetcache.max.threads.per.volume 10 4
+dfs.datanode.handler.count 1 10 50
+dfs.datanode.http.internal-proxy.port 0 1
+dfs.datanode.lazywriter.interval.sec 1 60
+dfs.datanode.max.transfer.threads 2 4096
+dfs.datanode.metrics.logger.period.seconds 0 1 600
+dfs.datanode.network.counts.cache.max.size 1 2147483647
+dfs.datanode.parallel.volumes.load.threads.num 1 10
+dfs.datanode.socket.reuse.keepalive 0 1 120000
+dfs.datanode.socket.write.timeout 100 3000 480000
+dfs.datanode.transfer.socket.recv.buffer.size 0 2 4096
+dfs.datanode.transfer.socket.send.buffer.size 0 2 4096
+dfs.datanode.volumes.replica-add.threadpool.size 2 3 8
+dfs.disk.balancer.max.disk.throughputInMBperSec 1 10
+dfs.edit.log.transfer.timeout 300 30000
+dfs.encrypt.data.transfer.cipher.key.bitlength 2 128
+dfs.ha.log-roll.rpc.timeout 200 20000
+dfs.ha.tail-edits.namenode-retries 100 3
+dfs.ha.tail-edits.rolledits.timeout 5 60
+dfs.ha.zkfc.nn.http.timeout.ms 200 20000
+dfs.ha.zkfc.port 10024 8019t
+dfs.image.transfer.chunksize 4 65536
+dfs.image.transfer.timeout 600 60000
+dfs.namenode.checkpoint.max-retries 1 3
+dfs.namenode.edits.dir.minimum 0 1 2
+dfs.namenode.inotify.max.events.per.rpc 2 1000
+dfs.namenode.max.extra.edits.segments.retained 2 10000
+dfs.namenode.num.checkpoints.retained 1 10 2
+dfs.namenode.replication.min 1 2 3
+dfs.namenode.tolerate.heartbeat.multiplier 2 4
+dfs.namenode.upgrade.domain.factor 2 3
+dfs.provided.aliasmap.inmemory.batch-size 2 500
+dfs.provided.aliasmap.load.retries 0 1
+dfs.replication 0 1 3
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms 0 60000
+dfs.webhdfs.netty.high.watermark 2 65535
+dfs.webhdfs.netty.low.watermark 2 32768
+dfs.webhdfs.ugi.expire.after.access 600 600000
