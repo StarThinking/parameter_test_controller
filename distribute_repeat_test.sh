@@ -4,7 +4,7 @@ if [ $# -ne 1 ]; then
     echo 'wrong arguments'
     exit 1
 fi
-times=20
+times=10
 component=$1
 paras=( $(cat input.txt) )
 para_num=${#paras[@]}
