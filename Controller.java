@@ -124,12 +124,14 @@ public class Controller {
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(TestResult.fileName, true)); // append;
                 writer.write("---------------------------------------short report---------------------------------------------");
+		writer.newLine();
                 for (TestResult t : list) {
                     writer.write(t.toString());
                     writer.newLine();
                 }
 		writer.newLine();
                 writer.write("---------------------------------------full report---------------------------------------------");
+		writer.newLine();
                 for (TestResult t : list) {
                     writer.write(t.completeInfo());
                     writer.newLine();
@@ -239,8 +241,8 @@ public class Controller {
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(process.getInputStream()));
 	    String buffer = "";
-            while ((buffer = reader.readLine()) != null)
-                myPrint(buffer);
+//            while ((buffer = reader.readLine()) != null)
+//                myPrint(buffer);
             reader.close();
             process.waitFor();
             int ret = process.exitValue();
