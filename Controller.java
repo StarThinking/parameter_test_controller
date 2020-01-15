@@ -26,9 +26,9 @@ public class Controller {
    
     /* static parameter value information */
     public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
-    public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_values_unit_tests_merged_final.txt";
-    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
-    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_values_unit_tests_merged_final.txt";
+    public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_makeup_value.txt";
+//    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
+//    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_values_unit_tests_merged_final.txt";
 
     /* static test information for component */
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
@@ -542,26 +542,28 @@ public class Controller {
 		List<String> values = null;
 		if (componentFocused.equals("NameNode")) {
                     values = intNameNodeParameterValues.get(parameterToTest);
-		} else if (componentFocused.equals("DataNode")) {
-                    values = intDataNodeParameterValues.get(parameterToTest);
-		}
+		} 
+		//else if (componentFocused.equals("DataNode")) {
+                //    values = intDataNodeParameterValues.get(parameterToTest);
+		//}
                 if (values == null) {
                     myPrint("Error: cannot find int namenode parameter " + parameterToTest);
                     System.exit(1);
                 }
 
-                if (values.size() != 2) {
+                if (values.size() != 3) {
                      myPrint("Error: num of values is not 2 " + values);
                      System.exit(1);
                 }
 
                 myPrint("parameter " + parameterToTest + " values " + values);
-                List<List<String>> permOfValues = generatePerm(values);
-                for (List<String> valuePair : permOfValues) {
-                    myPrint("value pair: " + valuePair.get(0) + " " + valuePair.get(1));
-                }
+                List<List<String>> valuePairs = new ArrayList<List<String>>();
+	  	valuePairs.add(new ArrayList<String>(Arrays.asList(values.get(1), values.get(0))));
+	  	valuePairs.add(new ArrayList<String>(Arrays.asList(values.get(1), values.get(2))));
+
                 List<TestResult> issueList = null;
-                for (List<String> valuePair : permOfValues) {
+                for (List<String> valuePair : valuePairs) {
+                    myPrint("value pair: v1 " + valuePair.get(0) + " v2 " + valuePair.get(1));
                     issueList = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, valuePair.get(0), valuePair.get(1), testSet);
                     TestResult.writeIntoFile(issueList);
                 }
@@ -666,10 +668,10 @@ public class Controller {
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 String[] contents = buffer.trim().split(" ");
-                if (contents.length <= 2 || contents.length >= 5) {
-                    //System.out.println("error");
+                if (contents.length != 4) {
+                    System.out.println("error: " + contents[0]);
                     System.exit(1);
-                }
+                } 
                 String parameter = contents[0];
                 List<String> values = new ArrayList<String>();
                 for (int i=1; i<contents.length; i++)
@@ -679,7 +681,7 @@ public class Controller {
             }
             reader.close();
             
- 	    reader = new BufferedReader(new FileReader(new File(intDataNodeParameterValuesFileName)));
+ 	    /*reader = new BufferedReader(new FileReader(new File(intDataNodeParameterValuesFileName)));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 String[] contents = buffer.trim().split(" ");
@@ -694,7 +696,7 @@ public class Controller {
                 //System.out.println("parameter = " + parameter + " values = " + values);
                 intDataNodeParameterValues.put(parameter, values);
             }
-            reader.close();
+            reader.close();*/
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
