@@ -22,6 +22,7 @@ public class Controller {
     public static String v1FileName = controllerRootDir + "shared/v1";
     public static String v2FileName = controllerRootDir + "shared/v2";
     public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
+    public static String currentBeforeClassTestNameFileName = controllerRootDir + "shared/currentBeforeClassTestName";
    
     /* static parameter value information */
     public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
@@ -198,6 +199,7 @@ public class Controller {
                 }
                 if (!found) {
                     myPrint("Warn: test " + t + " has not been updated !");
+                    System.exit(-1);
                 }
             }
         } catch (Exception e) {
@@ -218,7 +220,7 @@ public class Controller {
             end = (indexOfParts + 1) * numOfTestsPerPart;
             if (end >= testNameList.size())
                 end = testNameList.size();
-            myPrint("indexOfParts = " + indexOfParts + " start = " + start + " end = " + end);
+            //myPrint("indexOfParts = " + indexOfParts + " start = " + start + " end = " + end);
             listOfParts.add(testNameList.subList(start, end));
             indexOfParts ++;
         } while(end < testNameList.size());
@@ -227,7 +229,7 @@ public class Controller {
             // merge tests into a single command 
             String combinedMethods = "";
             int numOfTests = 0;
-            myPrint("part size = " + partOfTestNameList.size());
+            //myPrint("part size = " + partOfTestNameList.size());
             for (String test : partOfTestNameList) {
                 numOfTests ++;
                 if (numOfTests == partOfTestNameList.size())
@@ -235,6 +237,15 @@ public class Controller {
                 else
                     combinedMethods += test + ",";
             }
+
+            if (numPerPart == 1) { // before-class test
+                myPrint("writing before-class test name into file " + combinedMethods);
+                // overwrite
+                BufferedWriter writer = new BufferedWriter(new FileWriter(new File(currentBeforeClassTestNameFileName)));
+                writer.write(combinedMethods);
+                writer.close();
+            }
+
             myPrint("Number of combined methods is " + numOfTests);
             String cmd = "mvn test -Dtest=" + combinedMethods;
 
@@ -309,8 +320,8 @@ public class Controller {
         myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " componentHasStopped=" + componentHasStopped); 
         List<TestResult> testResultList = new ArrayList<TestResult>();
 	
-	myPrint("Vanilla failed tests contained:");
- 	thisTestSet.stream().filter(test -> vanillaFailedTestList.contains(test)).forEach(System.out::println); 
+	//myPrint("Vanilla failed tests contained:");
+ 	//thisTestSet.stream().filter(test -> vanillaFailedTestList.contains(test)).forEach(System.out::println); 
 
 	myPrint("thisTestSet before removing vanilla failure: " + thisTestSet.size());
 	// remove vanilla failed tests
@@ -359,12 +370,14 @@ public class Controller {
             for (TestResult v1v1Test : failedListv1v1) {
                 if (v1v2Test.testName.equals(v1v1Test.testName)) {
                     v1v1Failed = true;
+                    myPrint("v1v1 also failed, no issue");
                     break;
                 }
             }
             for (TestResult v2v2Test : failedListv2v2) {
                 if (v1v2Test.testName.equals(v2v2Test.testName)) {
                     v2v2Failed = true;
+                    myPrint("v2v2 also failed, no issue");
                     break;
                 }
             }
@@ -377,8 +390,8 @@ public class Controller {
         for (TestResult t : suspicousList)
             myPrint(t.testName);
     
-        myPrint("test v1v1 v2v2 to filter suspicous");
         for (TestResult t : suspicousList) {
+            myPrint("test multiple v1v1 v2v2 to filter suspicous");
             myPrint("suspicious " + t.testName + " v1 " + v1 + " v2 " + v2);
             int runs = 3;
             int i = 0;
@@ -535,11 +548,18 @@ public class Controller {
                 if (values == null) {
                     myPrint("Error: cannot find int namenode parameter " + parameterToTest);
                     System.exit(1);
-                } 
+                }
+
+                if (values.size() != 2) {
+                     myPrint("Error: num of values is not 2 " + values);
+                     System.exit(1);
+                }
 
                 myPrint("parameter " + parameterToTest + " values " + values);
                 List<List<String>> permOfValues = generatePerm(values);
-                //myPrint("permOfValues" + permOfValues);
+                for (List<String> valuePair : permOfValues) {
+                    myPrint("value pair: " + valuePair.get(0) + " " + valuePair.get(1));
+                }
                 List<TestResult> issueList = null;
                 for (List<String> valuePair : permOfValues) {
                     issueList = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, valuePair.get(0), valuePair.get(1), testSet);
@@ -748,6 +768,10 @@ public class Controller {
             BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(v2FileName)));
             writer6.write("");
             writer6.close();
+            
+            BufferedWriter writer7 = new BufferedWriter(new FileWriter(new File(currentBeforeClassTestNameFileName)));
+            writer7.write("");
+            writer7.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
