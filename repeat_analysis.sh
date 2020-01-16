@@ -11,14 +11,14 @@ threshold=0
 cd $dir
 repeat_times=$(ls | wc -l)
 
-num_of_reconf_issue=0
+num_of_test_with_issue=0
 num_of_restart_reconf_issue=0
 num_of_start_reconf_issue=0
 
-tests=( $(cat * | grep testName | awk -F ':| ' '{print $3}' | sort -u) )
+failed_tests=( $(cat * | grep testName | awk -F ':| ' '{print $3}' | sort -u) )
 index=0
 # tests_stat, indexes
-for t in ${tests[@]}
+for t in ${failed_tests[@]}
 do
     tests_stat[$index]=0
     indexes[$index]=$t
@@ -49,10 +49,10 @@ do
 	failed=1
     fi
     if [ $failed -eq 1 ]; then
-	num_of_reconf_issue=$(( num_of_reconf_issue + 1 ))
+	num_of_test_with_issue=$(( num_of_test_with_issue + 1 ))
     fi
 
-    for t in ${tests[@]}
+    for t in ${failed_tests[@]}
     do
 	# test name includes specific characters like '[]'
 	if [ "$(cat $repeat | grep -F $t)" != "" ]; then
@@ -65,8 +65,8 @@ done
 
 echo "repeat task: $dir"
 echo "repeat_times: $repeat_times"
-echo "num_of_tests: ${#tests[@]}"
-#for t in ${tests[@]}; do echo $t; done
+echo "num_of_test_with_issue: $num_of_test_with_issue"
+echo "num_of_failed_tests: ${#failed_tests[@]}"
 for i in $(seq 0 $(( ${#indexes[@]} - 1 )))
 do
     if [ $option -eq 1 ]; then
@@ -78,7 +78,6 @@ do
         echo "${tests_stat[$i]} ${indexes[$i]}"
     fi
 done
-echo "num_of_reconf_issue: $num_of_reconf_issue"
-echo "num_of_restart_reconf_issue: $num_of_restart_reconf_issue"
-echo "num_of_start_reconf_issue: $num_of_start_reconf_issue"
+#echo "num_of_restart_reconf_issue: $num_of_restart_reconf_issue"
+#echo "num_of_start_reconf_issue: $num_of_start_reconf_issue"
 echo ""
