@@ -71,8 +71,11 @@ for i in $(seq 0 $(( ${#indexes[@]} - 1 )))
 do
     if [ $option -eq 1 ]; then
 	ratio=$(echo "${tests_stat[$i]} * 100 / $repeat_times" | bc)
+	#pwd
+	if [ ! -f ../result/distribution.txt ]; then echo "no file"; exit 1; fi
+	refer_dis=$(grep -wF "${indexes[$i]}" ../result/distribution.txt | awk -F ' ' '{print $2}')
 	if [ $ratio -ge $threshold ]; then 
-            echo "${tests_stat[$i]} ${indexes[$i]} "$ratio"%"
+            echo "${tests_stat[$i]} ${indexes[$i]} "$ratio"%" $refer_dis
 	fi
     else
         echo "${tests_stat[$i]} ${indexes[$i]}"
