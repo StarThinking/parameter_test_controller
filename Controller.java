@@ -34,29 +34,49 @@ public class Controller {
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
     public static List<String> beforeClassList = new ArrayList<String>();
     
-    public static String restartNameNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_namenode.txt";
-    public static String restartDataNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_datanode.txt";
-    public static String restartJournalNodeTestFileName = controllerRootDir + "test_for_component/hdfs/restart_journalnode.txt";
+    public static String getRestartNameNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_namenode.txt";
+    }
+
+    public static String getRestartDataNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_datanode.txt";
+    }
+
+    public static String getRestartJournalNodeTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_journalnode.txt";
+    }
+    
+    public static String getStartNameNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_namenode.txt";
+    }
+
+    public static String getStartDataNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_datanode.txt";
+    }
+
+    public static String getStartJournalNodeTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_journalnode.txt";
+    }
+    
+    public static String getStartAllComponentTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_all_component.txt";
+    }
+   
     public static List<String> restartNameNodeTestList = new ArrayList<String>();
     public static List<String> restartDataNodeTestList = new ArrayList<String>();
     public static List<String> restartJournalNodeTestList = new ArrayList<String>();
-    
-    public static String startNameNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_namenode.txt";
-    public static String startDataNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_datanode.txt";
-    public static String startJournalNodeTestFileName = controllerRootDir + "test_for_component/hdfs/start_journalnode.txt";
     public static List<String> startNameNodeTestList = new ArrayList<String>();
     public static List<String> startDataNodeTestList = new ArrayList<String>();
     public static List<String> startJournalNodeTestList = new ArrayList<String>();
     	
     /* used for Vanilla Correctness Test */
-    public static String allComponentTestFileName = controllerRootDir + "test_for_component/hdfs/all_component.txt";
     public static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
-    public static List<String> allComponentTestList = new ArrayList<String>();
+    public static List<String> startAllComponentTestList = new ArrayList<String>();
     public static List<String> vanillaFailedTestList = new ArrayList<String>();
     
-    static {
-        loadStaticTestData();
-    }
+    //static {
+    //    loadStaticTestData();
+    //}
 
     static class TestResult {
         public String testName = "";
@@ -345,7 +365,7 @@ public class Controller {
     }
 
     public static List<TestResult> testVanillaCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
-	testSet = allComponentTestList;
+	testSet = startAllComponentTestList;
 	// parameter, component, componentHasStopped, v1, v2 are not effective for vanilla correctness test
 	String componentHasStopped = "1";
 	List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet, componentHasStopped); // all
@@ -491,7 +511,9 @@ public class Controller {
         if (!parameterType.equals("Boolean") && !parameterType.equals("Int")) {
             myPrint("Error: wrong component " + componentFocused);
             System.exit(1);
-        }
+        } else {
+  	    loadStaticTestData(parameterType);
+	}
 	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode") && !componentFocused.equals("None")) {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
@@ -596,47 +618,47 @@ public class Controller {
         }
     }
     
-    public static void loadStaticTestData() {
+    public static void loadStaticTestData(String paraType) {
         try {
             BufferedReader reader = null;
             String buffer = "";
 
-            reader = new BufferedReader(new FileReader(new File(restartNameNodeTestFileName)));
+            reader = new BufferedReader(new FileReader(new File(getRestartNameNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 restartNameNodeTestList.add(buffer.trim());
             }
             reader.close();
             
-	    reader = new BufferedReader(new FileReader(new File(restartDataNodeTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(getRestartDataNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 restartDataNodeTestList.add(buffer.trim());
             }
             reader.close();
             
-	    reader = new BufferedReader(new FileReader(new File(restartJournalNodeTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(getRestartJournalNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 restartJournalNodeTestList.add(buffer.trim());
             }
             reader.close();
             
-            reader = new BufferedReader(new FileReader(new File(startNameNodeTestFileName)));
+            reader = new BufferedReader(new FileReader(new File(getStartNameNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 startNameNodeTestList.add(buffer.trim());
             }
             reader.close();
             
-	    reader = new BufferedReader(new FileReader(new File(startDataNodeTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(getStartDataNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 startDataNodeTestList.add(buffer.trim());
             }
             reader.close();
             
-	    reader = new BufferedReader(new FileReader(new File(startJournalNodeTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(getStartJournalNodeTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 startJournalNodeTestList.add(buffer.trim());
@@ -650,10 +672,10 @@ public class Controller {
             }
             reader.close();
             
-	    reader = new BufferedReader(new FileReader(new File(allComponentTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(getStartAllComponentTestFileName(paraType))));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
-                allComponentTestList.add(buffer.trim());
+                startAllComponentTestList.add(buffer.trim());
             }
             reader.close();
 	    
