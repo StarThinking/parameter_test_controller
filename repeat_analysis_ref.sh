@@ -7,7 +7,7 @@ fi
 
 dir=$1
 option=$2
-threshold=0
+threshold=20
 cd $dir
 repeat_times=$(ls | wc -l)
 
