@@ -544,7 +544,8 @@ public class Controller {
 	startTime = System.nanoTime();
 	
 	if (componentFocused.equals("None")) {
-	    TestResult.setFileName(Controller.controllerRootDir + "vanilla" + "_issue_" + dateTime + ".txt");
+	    TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_vanilla_issue_" + componentFocused + "_" +
+                    dateTime + ".txt");
 	} else {
 	    TestResult.setFileName(Controller.controllerRootDir + parameterToTest + "_issue_" + componentFocused + "_" +
                     dateTime + ".txt");
