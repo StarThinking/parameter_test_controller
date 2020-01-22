@@ -4,7 +4,7 @@
 # for i in dfs*; do ~/parameter_test_controller/repeat_analysis.sh $i 1 > result/$i.txt; done
 # cd result
 
-cat * | grep % | awk -F ' ' '{print $2}' | sort -u > issues.txt
+#cat * | grep % | awk -F ' ' '{print $2}' | sort -u > issues.txt
 
 for t in $(cat issues.txt)
 do 

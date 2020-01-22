@@ -7,7 +7,7 @@ fi
 
 dir=$1
 option=$2
-threshold=20
+threshold=1
 cd $dir
 repeat_times=$(ls | wc -l)
 
@@ -15,7 +15,8 @@ num_of_test_with_issue=0
 num_of_restart_reconf_issue=0
 num_of_start_reconf_issue=0
 
-failed_tests=( $(cat * | grep testName | awk -F ':| ' '{print $3}' | sort -u) )
+#failed_tests=( $(cat * | grep testName | awk -F ':| ' '{print $3}' | sort -u) )
+failed_tests=( $(cat ../result/issues.txt) )
 index=0
 # tests_stat, indexes
 for t in ${failed_tests[@]}
