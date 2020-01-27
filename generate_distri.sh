@@ -4,7 +4,11 @@
 # for i in dfs*; do ~/parameter_test_controller/repeat_analysis.sh $i 1 > result/$i.txt; done
 # cd result
 
-#cat * | grep % | awk -F ' ' '{print $2}' | sort -u > issues.txt
+# cat * | grep % | awk -F ' ' '{print $2}' | sort -u > issues.txt
+
+
+# for i in $(cat issues.txt.all); do if [ "$(grep -Fw $i ~/reconfig_test_result_new_boolean/vanilla/2/issue/result/issues.txt)" == "" ]; then echo $i; fi ; done >> issues.txt
+# for i in dfs*; do ~/parameter_test_controller/repeat_analysis_ref.sh $i 1 ; done | tee report_1.txt
 
 for t in $(cat issues.txt)
 do 
