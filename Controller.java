@@ -27,8 +27,10 @@ public class Controller {
     /* static parameter value information */
     public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
     public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_makeup_value.txt";
-//    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
-//    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_values_unit_tests_merged_final.txt";
+    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
+    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_makeup_value.txt";
+    public static Map<String, List<String>> intJournalNodeParameterValues = new HashMap<String, List<String>>();
+    public static String intJournalNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/journalnode_getInt_makeup_value.txt";
 
     /* static test information for component */
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
@@ -501,7 +503,7 @@ public class Controller {
         int onetestArgIndex = 3; 
         if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
             myPrint("Error: args length is " + args.length);
-            myPrint("Controller parameterToTest componentFocused [optional: one_test]");
+            myPrint("Controller parameterType parameterToTest componentFocused [optional: one_test]");
             System.exit(1);
         }
        
@@ -565,12 +567,14 @@ public class Controller {
 		List<String> values = null;
 		if (componentFocused.equals("NameNode")) {
                     values = intNameNodeParameterValues.get(parameterToTest);
-		} 
-		//else if (componentFocused.equals("DataNode")) {
-                //    values = intDataNodeParameterValues.get(parameterToTest);
-		//}
+		} else if (componentFocused.equals("DataNode")) {
+                    values = intDataNodeParameterValues.get(parameterToTest);
+		} else if (componentFocused.equals("JournalNode")) {
+                    values = intJournalNodeParameterValues.get(parameterToTest);
+                }
+
                 if (values == null) {
-                    myPrint("Error: cannot find int namenode parameter " + parameterToTest);
+                    myPrint("Error: cannot find int " + componentFocused + "  parameter " + parameterToTest);
                     System.exit(1);
                 }
 
@@ -686,7 +690,7 @@ public class Controller {
                 vanillaFailedTestList.add(buffer.trim());
             }
             reader.close();
-	    
+	   
             reader = new BufferedReader(new FileReader(new File(intNameNodeParameterValuesFileName)));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
@@ -704,22 +708,39 @@ public class Controller {
             }
             reader.close();
             
- 	    /*reader = new BufferedReader(new FileReader(new File(intDataNodeParameterValuesFileName)));
+            reader = new BufferedReader(new FileReader(new File(intDataNodeParameterValuesFileName)));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 String[] contents = buffer.trim().split(" ");
-                if (contents.length <= 2 || contents.length >= 5) {
-                    //System.out.println("error");
+                if (contents.length != 4) {
+                    System.out.println("error: " + contents[0]);
                     System.exit(1);
-                }
+                } 
                 String parameter = contents[0];
                 List<String> values = new ArrayList<String>();
                 for (int i=1; i<contents.length; i++)
                     values.add(contents[i]);
-                //System.out.println("parameter = " + parameter + " values = " + values);
+                //System.out.println("DataNode: parameter = " + parameter + " values = " + values);
                 intDataNodeParameterValues.put(parameter, values);
             }
-            reader.close();*/
+            reader.close();
+            
+            reader = new BufferedReader(new FileReader(new File(intJournalNodeParameterValuesFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                String[] contents = buffer.trim().split(" ");
+                if (contents.length != 4) {
+                    System.out.println("error: " + contents[0]);
+                    System.exit(1);
+                } 
+                String parameter = contents[0];
+                List<String> values = new ArrayList<String>();
+                for (int i=1; i<contents.length; i++)
+                    values.add(contents[i]);
+                //System.out.println("JournalNode: parameter = " + parameter + " values = " + values);
+                intJournalNodeParameterValues.put(parameter, values);
+            }
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
