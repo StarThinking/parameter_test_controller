@@ -11,13 +11,13 @@ para=$3
 component=$4
 option=""
 
-if [ $# -lt 5 ]; then
+if [ $# -eq 5 ]; then
     option=$5
 fi
 
 for t in $(seq 1 $repeat_times)
 do
     echo "$t 'time test for $para $component $option" 
-    java Controller $paraType $para $component $option> /dev/null
+    java Controller $paraType $para $component $option > /dev/null
     sleep 10
 done
