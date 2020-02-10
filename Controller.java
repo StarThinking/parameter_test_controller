@@ -107,7 +107,8 @@ public class Controller {
             this.componentHasStopped = componentHasStopped;
             this.v1 = v1;
             this.v2 = v2;
-            this.result = "1"; // some tests may not complete, so let's set it as success by default
+            // 1: succeed -1:failed
+            this.result = "-1"; // some tests may not complete, so let's set it as success by default
         }
 
         @Override
@@ -356,6 +357,7 @@ public class Controller {
 	// remove vanilla failed tests
 	thisTestSet.removeIf(test -> vanillaFailedTestList.contains(test));
 	myPrint("thisTestSet after filter out vanilla failure: " + thisTestSet.size());
+        myPrint("# of vanilla failed tests is " + vanillaFailedTestList.size());
  
 	// construct TestResult list
         for (String test : thisTestSet) {
