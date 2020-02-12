@@ -1,5 +1,7 @@
 #!/bin/bash
 
+host_name=$(hostname | awk -F '.' '{print $1}')
+
 for i in $(seq 0 9)
 do 
     issue_file=$(ssh hadoop-$i "ls ~/parameter_test_controller | grep -E '_issue_|_run_' | grep txt")
@@ -8,7 +10,7 @@ do
 	for f in $issue_file
 	do 
 	    #echo $f on hadoop-$i
-            scp hadoop-$i:~/parameter_test_controller/$f ./"$f".$i
+            scp hadoop-$i:~/parameter_test_controller/$f ./"$f"."$host_name".hadoop-"$i"
 	done
     else
 	echo "no issue file on hadoop-$i"
