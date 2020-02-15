@@ -5,7 +5,7 @@ if [ $# -lt 2 ]; then
     echo 'wrong arguments'
     exit 1
 fi
-times=10
+times=5
 
 paraType=$1
 component=$2
