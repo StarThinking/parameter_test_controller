@@ -14,7 +14,7 @@ public class Controller {
     public static StringBuilder runLogBuffer = new StringBuilder();
     public static BufferedWriter runLogWriter = null;
 
-    /* shared files*/
+    /* shared files */
     public static String testResultDirName = controllerRootDir + "shared/test_results";
     public static String parameterFileName = controllerRootDir + "shared/parameter";
     public static String reconfigModeFileName = controllerRootDir + "shared/reconfig_mode";
@@ -337,7 +337,7 @@ public class Controller {
         }
     }
 
-    public static List<TestResult> testForTupleWithGivenTests(String parameter, String component, String reconfigMode, String v1, String v2,
+    public static List<TestResult> testCore(String parameter, String component, String reconfigMode, String v1, String v2,
             List<String> thisTestSet, String componentHasStopped) {
         List<TestResult> failedTests = new ArrayList<TestResult>();
         if (thisTestSet == null) {
@@ -377,62 +377,38 @@ public class Controller {
 
     public static List<TestResult> testVanillaCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
 	testSet = startAllComponentTestList;
+        // dummy setting
 	// parameter, component, componentHasStopped, v1, v2 are not effective for vanilla correctness test
 	String componentHasStopped = "1";
-	List<TestResult> failedList = testForTupleWithGivenTests(parameter, component, "none", "", "", testSet, componentHasStopped); // all
+	List<TestResult> failedList = testCore(parameter, component, "none", "", "", testSet, componentHasStopped); // all
         myPrint("failed v1v2 list size " + failedList.size());
 	return failedList;
     }
       
-    public static List<TestResult> testV1V2Pair(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
-        List<TestResult> failedListv1v2 = testForTupleWithGivenTests(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
+    public static List<TestResult> testLogic(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
+        List<TestResult> failedListv1v2 = testCore(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
         myPrint("failed v1v2 list size " + failedListv1v2.size());
-      
-        List<TestResult> failedListv1v1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", TestResult.getTestNames(failedListv1v2), componentHasStopped); 
-        List<TestResult> failedListv2v2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, TestResult.getTestNames(failedListv1v2), componentHasStopped);
-	int thresholdOfIssues = 10;
-        List<TestResult> suspicousList = new ArrayList<TestResult>();
-        List<TestResult> issueList = new ArrayList<TestResult>();
-
-        
-        for (TestResult v1v2Test : failedListv1v2) {
-            boolean v1v1Failed, v2v2Failed;
-            v1v1Failed = v2v2Failed = false;
-            for (TestResult v1v1Test : failedListv1v1) {
-                if (v1v2Test.testName.equals(v1v1Test.testName)) {
-                    v1v1Failed = true;
-                    myPrint("v1v1 also failed, no issue");
-                    break;
-                }
-            }
-            for (TestResult v2v2Test : failedListv2v2) {
-                if (v1v2Test.testName.equals(v2v2Test.testName)) {
-                    v2v2Failed = true;
-                    myPrint("v2v2 also failed, no issue");
-                    break;
-                }
-            }
-        
-            if (v1v1Failed == false && v2v2Failed == false) 
-                suspicousList.add(v1v2Test);
-        }
-
-        myPrint("suspicous list size " + suspicousList.size() + " :");
-        for (TestResult t : suspicousList)
+        for (TestResult t : failedListv1v2)
             myPrint(t.testName);
-    
-        for (TestResult t : suspicousList) {
-            myPrint("test multiple v1v1 v2v2 to filter suspicous");
-            myPrint("suspicious " + t.testName + " v1 " + v1 + " v2 " + v2);
-            int runs = 3;
+      
+        List<TestResult> issueList = new ArrayList<TestResult>();
+        int runs = 40;
+	int thresholdOfIssues = 10;
+        myPrint("do " + runs + " v1v1 v2v2 tests to filter false alarm");
+        for (TestResult t : failedListv1v2) {
+            myPrint("failed v1v2 test: " + t.testName + " v1 " + v1 + " v2 " + v2);
             int i = 0;
             List<String> singleTest = new ArrayList<String>();
             singleTest.add(t.testName);
             for(; i<runs; i++) {
-                List<TestResult> failedList1 = testForTupleWithGivenTests(parameter, component, "v1v1", v1, "", singleTest, componentHasStopped);
-                List<TestResult> failedList2 = testForTupleWithGivenTests(parameter, component, "v2v2", "", v2, singleTest, componentHasStopped);
-                if (failedList1.size() > 0 || failedList2.size() > 0) {
-                    myPrint("v1v1 or v2v2 also failed, no issue");
+                List<TestResult> failedList1 = testCore(parameter, component, "v1v1", v1, "", singleTest, componentHasStopped);
+                List<TestResult> failedList2 = testCore(parameter, component, "v2v2", "", v2, singleTest, componentHasStopped);
+                if (failedList1.size() > 0) {
+                    myPrint("v1v1 also failed for test " + t.testName + " with v1 " + v1 + ", no issue.");
+                    break;
+                }
+                if (failedList2.size() > 0) {
+                    myPrint("v2v2 also failed for test " + t.testName + " with v2 " + v2 + ", no issue.");
                     break;
                 }
             }
@@ -477,12 +453,12 @@ public class Controller {
             
             myPrint("Testing restart... size " + restartTestSet.size());
             componentHasStopped = "0";
-            List<TestResult> restartIssueList = testV1V2Pair(parameter, component, v1, v2, restartTestSet, componentHasStopped);
+            List<TestResult> restartIssueList = testLogic(parameter, component, v1, v2, restartTestSet, componentHasStopped);
             mergedIssueList.addAll(restartIssueList);
 
             myPrint("Testing start... size " + startTestSet.size());
             componentHasStopped = "1";
-            List<TestResult> startIssueList = testV1V2Pair(parameter, component, v1, v2, startTestSet, componentHasStopped);
+            List<TestResult> startIssueList = testLogic(parameter, component, v1, v2, startTestSet, componentHasStopped);
             mergedIssueList.addAll(startIssueList);
 
             } catch(Exception e) {
@@ -510,7 +486,8 @@ public class Controller {
         startTime = endTime = timeElapsed = 0; 
 
         int onetestArgIndex = 3; 
-        if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
+        //if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
+        if (!(args.length >= onetestArgIndex)) {
             myPrint("Error: args length is " + args.length);
             myPrint("Controller parameterType parameterToTest componentFocused [optional: one_test]");
             System.exit(1);
@@ -545,11 +522,12 @@ public class Controller {
         myPrint("component to reconfig: " + componentFocused); 
 
 	/* set test Set */
-        if (args.length == onetestArgIndex+1) { // only use a single test
-            oneTest = args[onetestArgIndex];
-	    myPrint("onetest is " + oneTest);
+        if (args.length >= onetestArgIndex+1) { // only use a single test
             testSet = new ArrayList<String>();
-            testSet.add(oneTest);
+            int index = onetestArgIndex;
+            for (; index < args.length; index++) {
+                testSet.add(args[index]);
+            }
         } 
         
 	startTime = System.nanoTime();
@@ -566,11 +544,12 @@ public class Controller {
 	    List<TestResult> issueList0 = testVanillaCorrectness(parameterToTest, componentFocused, "", "", testSet);
 	    TestResult.writeIntoFile(issueList0);
 	} else {
+            // Set value pairs
+            List<List<String>> valuePairs = new ArrayList<List<String>>();
+
             if (parameterType.equals("Boolean")) {
-	        List<TestResult> issueList1 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "true", "false", testSet);
-                List<TestResult> issueList2 = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, "false", "true", testSet);
-                TestResult.writeIntoFile(issueList1);
-                TestResult.writeIntoFile(issueList2);
+                valuePairs.add(new ArrayList<String>(Arrays.asList("true", "false")));
+                valuePairs.add(new ArrayList<String>(Arrays.asList("false", "true")));
             } else if (parameterType.equals("Int") || parameterType.equals("Long")) {
                 myPrint("parameterType is " + parameterType);
 		List<String> values = null;
@@ -603,17 +582,17 @@ public class Controller {
                 }
 
                 myPrint("parameter " + parameterToTest + " values " + values);
-                List<List<String>> valuePairs = new ArrayList<List<String>>();
 	  	valuePairs.add(new ArrayList<String>(Arrays.asList(values.get(1), values.get(0))));
 	  	valuePairs.add(new ArrayList<String>(Arrays.asList(values.get(1), values.get(2))));
+            }
+            
+            List<TestResult> issueList = null;
+            for (List<String> valuePair : valuePairs) {
+                myPrint("value pair: v1 " + valuePair.get(0) + " v2 " + valuePair.get(1));
+                issueList = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, valuePair.get(0), valuePair.get(1), testSet);  
+                TestResult.writeIntoFile(issueList);
+            }
 
-                List<TestResult> issueList = null;
-                for (List<String> valuePair : valuePairs) {
-                    myPrint("value pair: v1 " + valuePair.get(0) + " v2 " + valuePair.get(1));
-                    issueList = testV1V2PairRestartPointWrapper(parameterToTest, componentFocused, valuePair.get(0), valuePair.get(1), testSet);
-                    TestResult.writeIntoFile(issueList);
-                }
-            } 
 	}
         
 	endTime = System.nanoTime();
