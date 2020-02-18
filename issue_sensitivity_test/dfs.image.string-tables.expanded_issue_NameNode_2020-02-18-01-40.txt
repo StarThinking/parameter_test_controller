@@ -1,0 +1,660 @@
+---------------------------------------short report---------------------------------------------
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+
+---------------------------------------full report---------------------------------------------
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel023ReservedImage(TestDFSUpgradeFromImage.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel1ReservedImage(TestDFSUpgradeFromImage.java:381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNode(MiniDFSCluster.java:1313)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.configureNameService(MiniDFSCluster.java:1082)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNodesAndSetConf(MiniDFSCluster.java:957)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:889)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:517)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:476)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel2ReservedImage(TestDFSUpgradeFromImage.java:514)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel023ReservedImage(TestDFSUpgradeFromImage.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel1ReservedImage(TestDFSUpgradeFromImage.java:381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNode(MiniDFSCluster.java:1313)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.configureNameService(MiniDFSCluster.java:1082)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNodesAndSetConf(MiniDFSCluster.java:957)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:889)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:517)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:476)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel2ReservedImage(TestDFSUpgradeFromImage.java:514)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+
+---------------------------------------short report---------------------------------------------
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+
+---------------------------------------full report---------------------------------------------
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel023ReservedImage(TestDFSUpgradeFromImage.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel1ReservedImage(TestDFSUpgradeFromImage.java:381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNode(MiniDFSCluster.java:1313)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.configureNameService(MiniDFSCluster.java:1082)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNodesAndSetConf(MiniDFSCluster.java:957)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:889)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:517)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:476)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel2ReservedImage(TestDFSUpgradeFromImage.java:514)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel023ReservedImage(TestDFSUpgradeFromImage.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2135)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.restartNameNode(MiniDFSCluster.java:2109)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel1ReservedImage(TestDFSUpgradeFromImage.java:381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+failureMessage: Cannot change serial maps
+stackTrace: java.lang.IllegalStateException: Cannot change serial maps
+	at org.apache.hadoop.hdfs.server.namenode.SerialNumberManager.initialize(SerialNumberManager.java:70)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirectory.<init>(FSDirectory.java:269)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.<init>(FSNamesystem.java:885)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.loadFromDisk(FSNamesystem.java:706)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.loadNamesystem(NameNode.java:635)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:697)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:1024)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.<init>(NameNode.java:913)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1735)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNode(MiniDFSCluster.java:1313)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.configureNameService(MiniDFSCluster.java:1082)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.createNameNodesAndSetConf(MiniDFSCluster.java:957)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.initMiniDFSCluster(MiniDFSCluster.java:889)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.<init>(MiniDFSCluster.java:517)
+	at org.apache.hadoop.hdfs.MiniDFSCluster$Builder.build(MiniDFSCluster.java:476)
+	at org.apache.hadoop.hdfs.TestDFSUpgradeFromImage.testUpgradeFromRel2ReservedImage(TestDFSUpgradeFromImage.java:514)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+
+

@@ -1,0 +1,555 @@
+parameter to test: dfs.bytes-per-checksum
+component to reconfig: NameNode
+parameterType is Int
+parameter dfs.bytes-per-checksum values [8, 512, 65536]
+value pair: v1 512 v2 8
+restartTestSet size is 2, startTestSet size is 2
+Testing restart... size 2
+Test reconfigMode=v1v2 v1=512 v2=8 componentHasStopped=0
+thisTestSet before removing vanilla failure: 2
+thisTestSet after filter out vanilla failure: 2
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs,org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 29
+failed v1v2 list size 0
+do 5 v1v1 v2v2 tests to filter false alarm
+Testing start... size 2
+Test reconfigMode=v1v2 v1=512 v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 2
+thisTestSet after filter out vanilla failure: 2
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs,org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 26
+failed v1v2 list size 2
+org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs v1 512 v2 8
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs v1 512 v2 8
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=8 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+v1v1 and v2v2 succeed for 5 times, add into issueList
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 2 :
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+---------------------------------------short report---------------------------------------------
+
+value pair: v1 512 v2 65536
+restartTestSet size is 2, startTestSet size is 2
+Testing restart... size 2
+Test reconfigMode=v1v2 v1=512 v2=65536 componentHasStopped=0
+thisTestSet before removing vanilla failure: 2
+thisTestSet after filter out vanilla failure: 2
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs,org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 32
+failed v1v2 list size 0
+do 5 v1v1 v2v2 tests to filter false alarm
+Testing start... size 2
+Test reconfigMode=v1v2 v1=512 v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 2
+thisTestSet after filter out vanilla failure: 2
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs,org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 29
+failed v1v2 list size 2
+org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs v1 512 v2 65536
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs v1 512 v2 65536
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 20
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=512 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=65536 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 22
+v1v1 and v2v2 succeed for 5 times, add into issueList
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 2 :
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+---------------------------------------short report---------------------------------------------
+
+Total execution time in seconds : 985

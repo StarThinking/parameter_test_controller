@@ -1,0 +1,88 @@
+---------------------------------------short report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+
+---------------------------------------full report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:33058,DS-56eefa0e-54be-470d-8fd3-58993935d402,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:33058,DS-56eefa0e-54be-470d-8fd3-58993935d402,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:35482,DS-00f78915-e51f-449f-b4c0-799034d38141,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:35482,DS-00f78915-e51f-449f-b4c0-799034d38141,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+
+---------------------------------------short report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+
+---------------------------------------full report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:42938,DS-5968e804-93ee-40ba-b687-9d81262ea6cd,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:42938,DS-5968e804-93ee-40ba-b687-9d81262ea6cd,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+parameter: dfs.bytes-per-checksum
+component: NameNode
+componentHasStopped: 1
+v1 v2: 512 65536
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:37156,DS-3500c231-ea19-45c9-b888-b9a2c2885a4a,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:37156,DS-3500c231-ea19-45c9-b888-b9a2c2885a4a,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+
