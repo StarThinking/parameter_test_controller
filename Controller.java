@@ -392,7 +392,7 @@ public class Controller {
             myPrint(t.testName);
       
         List<TestResult> issueList = new ArrayList<TestResult>();
-        int runs = 40;
+        int runs = 20;
 	int thresholdOfIssues = 10;
         myPrint("do " + runs + " v1v1 v2v2 tests to filter false alarm");
         for (TestResult t : failedListv1v2) {

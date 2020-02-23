@@ -1,0 +1,48 @@
+---------------------------------------short report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: DataNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+parameter: dfs.bytes-per-checksum
+component: DataNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+
+---------------------------------------full report---------------------------------------------
+parameter: dfs.bytes-per-checksum
+component: DataNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:41005,DS-75c57f52-a934-4c2f-876a-af8a6f336333,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:41005,DS-75c57f52-a934-4c2f-876a-af8a6f336333,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+parameter: dfs.bytes-per-checksum
+component: DataNode
+componentHasStopped: 1
+v1 v2: 512 8
+testName: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+result: -1
+failureMessage: All datanodes [DatanodeInfoWithStorage[127.0.0.1:38244,DS-fba63965-112f-4e1c-956a-166526c7f783,DISK]] are bad. Aborting...
+stackTrace: java.io.IOException: All datanodes [DatanodeInfoWithStorage[127.0.0.1:38244,DS-fba63965-112f-4e1c-956a-166526c7f783,DISK]] are bad. Aborting...
+	at org.apache.hadoop.hdfs.DataStreamer.handleBadDatanode(DataStreamer.java:1561)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineInternal(DataStreamer.java:1495)
+	at org.apache.hadoop.hdfs.DataStreamer.setupPipelineForAppendOrRecovery(DataStreamer.java:1481)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:720)
+
+
+
+---------------------------------------short report---------------------------------------------
+
+---------------------------------------full report---------------------------------------------
+

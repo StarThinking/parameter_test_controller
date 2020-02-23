@@ -1,0 +1,287 @@
+parameter to test: dfs.datanode.cache.revocation.timeout.ms
+component to reconfig: DataNode
+parameterType is Long
+parameter dfs.datanode.cache.revocation.timeout.ms values [90, 900000, 900000000]
+value pair: v1 900000 v2 90
+restartTestSet size is 4, startTestSet size is 4
+Testing restart... size 4
+Test reconfigMode=v1v2 v1=900000 v2=90 componentHasStopped=0
+thisTestSet before removing vanilla failure: 4
+thisTestSet after filter out vanilla failure: 4
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 4
+Number of combined methods is 4
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+Execution time (sec) 31
+failed v1v2 list size 4
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock has not been updated !
+Execution time (sec) 909
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+Execution time (sec) 24
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat has not been updated !
+Execution time (sec) 909
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+Execution time (sec) 41
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout has not been updated !
+Execution time (sec) 909
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+Execution time (sec) 77
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication has not been updated !
+Execution time (sec) 910
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication with v2 90, no issue.
+Testing start... size 4
+Test reconfigMode=v1v2 v1=900000 v2=90 componentHasStopped=1
+thisTestSet before removing vanilla failure: 4
+thisTestSet after filter out vanilla failure: 4
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 4
+Number of combined methods is 4
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock has not been updated !
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat has not been updated !
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout has not been updated !
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication has not been updated !
+Execution time (sec) 909
+failed v1v2 list size 4
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock has not been updated !
+Execution time (sec) 909
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+Execution time (sec) 26
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat has not been updated !
+Execution time (sec) 910
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+Execution time (sec) 40
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout has not been updated !
+Execution time (sec) 909
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout with v2 90, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication v1 900000 v2 90
+Test reconfigMode=v1v1 v1=900000 v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+Execution time (sec) 78
+Test reconfigMode=v2v2 v1= v2=90 componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+Warn: test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication has not been updated !
+Execution time (sec) 910
+v2v2 also failed for test org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication with v2 90, no issue.
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 0 :
+---------------------------------------short report---------------------------------------------
+
+value pair: v1 900000 v2 900000000
+restartTestSet size is 4, startTestSet size is 4
+Testing restart... size 4
+Test reconfigMode=v1v2 v1=900000 v2=900000000 componentHasStopped=0
+thisTestSet before removing vanilla failure: 4
+thisTestSet after filter out vanilla failure: 4
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 4
+Number of combined methods is 4
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+Execution time (sec) 115
+failed v1v2 list size 0
+do 5 v1v1 v2v2 tests to filter false alarm
+Testing start... size 4
+Test reconfigMode=v1v2 v1=900000 v2=900000000 componentHasStopped=1
+thisTestSet before removing vanilla failure: 4
+thisTestSet after filter out vanilla failure: 4
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 4
+Number of combined methods is 4
+mvn test -Dtest=org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout,org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryWillIgnoreMinReplication
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoverySlowerThanHeartbeat
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRaceBetweenReplicaRecoveryAndFinalizeBlock
+updating test result for org.apache.hadoop.hdfs.server.datanode.TestBlockRecovery#testRecoveryTimeout
+Execution time (sec) 117
+failed v1v2 list size 0
+do 5 v1v1 v2v2 tests to filter false alarm
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 0 :
+---------------------------------------short report---------------------------------------------
+
+Total execution time in seconds : 8784

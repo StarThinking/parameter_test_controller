@@ -1,0 +1,2513 @@
+parameter to test: dfs.encrypt.data.transfer
+component to reconfig: DataNode
+value pair: v1 true v2 false
+restartTestSet size is 5, startTestSet size is 5
+Testing restart... size 5
+Test reconfigMode=v1v2 v1=true v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 5
+thisTestSet after filter out vanilla failure: 5
+# of vanilla failed tests is 1
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 168
+failed v1v2 list size 5
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2 v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 20
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+v1v1 and v2v2 succeed for 5 times, add into issueList
+Testing start... size 5
+Test reconfigMode=v1v2 v1=true v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 5
+thisTestSet after filter out vanilla failure: 5
+# of vanilla failed tests is 1
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 120
+failed v1v2 list size 5
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 20
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2 v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity v1 true v2 false
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=true v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 30
+Test reconfigMode=v2v2 v1= v2=false componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 10 :
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: true false
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+result: -1
+---------------------------------------short report---------------------------------------------
+
+value pair: v1 false v2 true
+restartTestSet size is 5, startTestSet size is 5
+Testing restart... size 5
+Test reconfigMode=v1v2 v1=false v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 5
+thisTestSet after filter out vanilla failure: 5
+# of vanilla failed tests is 1
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 155
+failed v1v2 list size 5
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2 v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=0
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+Testing start... size 5
+Test reconfigMode=v1v2 v1=false v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 5
+thisTestSet after filter out vanilla failure: 5
+# of vanilla failed tests is 1
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 119
+failed v1v2 list size 5
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 18
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 18
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+updating test result for org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 19
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2 v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 20
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 21
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+beforeClassTests size is 0, just skip
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+Execution time (sec) 22
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 28
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 30
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 30
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+Execution time (sec) 29
+v1v1 and v2v2 succeed for 5 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity v1 false v2 true
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 28
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 30
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v1v1 v1=false v2= componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 29
+Test reconfigMode=v2v2 v1= v2=true componentHasStopped=1
+thisTestSet before removing vanilla failure: 1
+thisTestSet after filter out vanilla failure: 1
+# of vanilla failed tests is 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+writing before-class test name into file org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+updating test result for org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+Execution time (sec) 30
+v1v1 and v2v2 succeed for 5 times, add into issueList
+
+---------------------------------------short report---------------------------------------------
+mergedIssueList size 10 :
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 0
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithEncryptedTransfer#testEncryptedBalancer2
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Authentication
+result: -1
+parameter: dfs.encrypt.data.transfer
+component: DataNode
+componentHasStopped: 1
+v1 v2: false true
+testName: org.apache.hadoop.hdfs.server.balancer.TestBalancerWithSaslDataTransfer#testBalancer0Integrity
+result: -1
+---------------------------------------short report---------------------------------------------
+
+Total execution time in seconds : 5322
