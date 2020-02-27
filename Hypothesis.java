@@ -10,12 +10,34 @@ import java.text.SimpleDateFormat;
 public class Hypothesis extends Controller {
 
     public static void hypothesisTestLogic(String parameter, String component, String test, String v1, String v2, String reconfPoint) {    
-        myPrint("testLogic1");
+        myPrint("hypothesisTestLogic");
         List<String> testSet = new ArrayList<String>();
         testSet.add(test);
-        List<TestResult> failedListv1v2 = testCore(parameter, component, "v1v2", v1, v2, testSet, reconfPoint);
-        for (TestResult t : failedListv1v2)
-            myPrint(t.testName);
+	int v1v2Repeats = 100; 
+	int v1v2FailedCount = 0; 
+	int v1v1v2v2Repeats = 100; 
+	int v1v1v2v2FailedCount = 0; 
+        int i = 0;
+        for (i=0; i<v1v2Repeats; i++) {
+            List<TestResult> failedList = testCore(parameter, component, "v1v2", v1, v2, testSet, reconfPoint);
+            if (failedList.size() > 0) {
+                myPrint("v1v2 test failed !!!");
+                v1v2FailedCount ++;
+            }
+        }
+        
+        for (i=0; i<v1v1v2v2Repeats; i++) {
+            List<TestResult> v1v1failedList = testCore(parameter, component, "v1v1", v1, v2, testSet, reconfPoint);
+            List<TestResult> v2v2failedList = testCore(parameter, component, "v2v2", v1, v2, testSet, reconfPoint);
+            if (v1v1failedList.size() > 0 || v2v2failedList.size() > 0) {
+                myPrint("v1v1 or v2v2 test failed !!!");
+                v1v1v2v2FailedCount ++;
+            }
+        }
+        myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + v1v2Repeats);
+        myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + v1v1v2v2Repeats);
+        if (v1v1v2v2FailedCount != 0)
+            myPrint("false positive !!!");
 	return;
     }
 
