@@ -22,7 +22,7 @@ do
     echo "$line2"
     echo "$line3"
     #ssh hadoop-$hadoop_index "cd parameter_test_controller; java Hypothesis $line > /dev/null &" & 
-    echo "java Hypothesis $line0; sleep 60; java Hypothesis $line1; sleep 60; java Hypothesis $line2; sleep 60; java Hypothesis $line3; sleep 60;"
+    ssh hadoop-$hadoop_index "cd parameter_test_controller; java Hypothesis $line0 > /dev/null; sleep 60; java Hypothesis $line1 > /dev/null; sleep 60; java Hypothesis $line2 > /dev/null; sleep 60; java Hypothesis $line3 > /dev/null &" &
     hadoop_index=$(( hadoop_index + 1 ))
 done
 
