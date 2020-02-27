@@ -43,33 +43,14 @@ public class Controller {
     public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
     public static List<String> beforeClassList = new ArrayList<String>();
     
+    /* failed vanilla unit tests */
+    public static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
+    public static List<String> vanillaFailedTestList = new ArrayList<String>();
+    
     public static String getRestartNameNodeTestFileName(String paraType) {
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_namenode.txt";
     }
 
-    public static String getRestartDataNodeTestFileName(String paraType) {
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_datanode.txt";
-    }
-
-    public static String getRestartJournalNodeTestFileName(String paraType) { 
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_journalnode.txt";
-    }
-    
-    public static String getStartNameNodeTestFileName(String paraType) {
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_namenode.txt";
-    }
-
-    public static String getStartDataNodeTestFileName(String paraType) {
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_datanode.txt";
-    }
-
-    public static String getStartJournalNodeTestFileName(String paraType) { 
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_journalnode.txt";
-    }
-    
-    public static String getStartAllComponentTestFileName(String paraType) { 
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_all_component.txt";
-    }
    
     public static List<String> restartNameNodeTestList = new ArrayList<String>();
     public static List<String> restartDataNodeTestList = new ArrayList<String>();
@@ -77,11 +58,8 @@ public class Controller {
     public static List<String> startNameNodeTestList = new ArrayList<String>();
     public static List<String> startDataNodeTestList = new ArrayList<String>();
     public static List<String> startJournalNodeTestList = new ArrayList<String>();
-    	
     /* used for Vanilla Correctness Test */
-    public static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
     public static List<String> startAllComponentTestList = new ArrayList<String>();
-    public static List<String> vanillaFailedTestList = new ArrayList<String>();
     
     //static {
     //    loadStaticTestData();
@@ -499,9 +477,10 @@ public class Controller {
         if (!parameterType.equals("Boolean") && !parameterType.equals("Int") && !parameterType.equals("Long")) {
             myPrint("Error: wrong component " + componentFocused);
             System.exit(1);
-        } else {
-  	    loadStaticTestData(parameterType);
-	}
+        }
+
+  	loadStaticTestData(parameterType);
+	
 	if (!componentFocused.equals("NameNode") && !componentFocused.equals("DataNode") && !componentFocused.equals("JournalNode") && !componentFocused.equals("None")) {
 	    myPrint("Error: wrong component " + componentFocused);
 	    System.exit(1);
@@ -821,6 +800,30 @@ public class Controller {
             e.printStackTrace();
             System.exit(1);
         }
+    }
+    
+    public static String getRestartDataNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_datanode.txt";
+    }
+
+    public static String getRestartJournalNodeTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_journalnode.txt";
+    }
+    
+    public static String getStartNameNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_namenode.txt";
+    }
+
+    public static String getStartDataNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_datanode.txt";
+    }
+
+    public static String getStartJournalNodeTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_journalnode.txt";
+    }
+    
+    public static String getStartAllComponentTestFileName(String paraType) { 
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_all_component.txt";
     }
 
     public static <E> List<List<E>> generatePerm(List<E> original) {

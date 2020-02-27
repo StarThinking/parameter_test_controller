@@ -11,5 +11,5 @@ do
     componentHasStopped=$(awk -v line=$(( entry + 2 )) 'NR==line' $issue_file | awk -F ':' '{print $2}' | sed -e 's/^[ \t]*//')
     v1v2=$(awk -v line=$(( entry + 3 )) 'NR==line' $issue_file | awk -F ':' '{print $2}' | sed -e 's/^[ \t]*//')
     testName=$(awk -v line=$(( entry + 4 )) 'NR==line' $issue_file | awk -F ':' '{print $2}' | sed -e 's/^[ \t]*//')
-    echo "$parameter""%""$component""%""$testName""%""$componentHasStopped""%""$v1v2"
+    echo "$parameter""%""$component""%""$testName""%""$v1v2""%""$componentHasStopped"
 done
