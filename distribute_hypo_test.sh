@@ -5,7 +5,7 @@ lines=( $(cat input.txt) )
 length=${#lines[@]}
 i=0
 hadoop_index=0
-while [ $i -lt $(( length - 1 )) ]
+while [ $i -lt $length ]
 do
     line0=${lines[$i]}
     i=$(( i + 1 ))
