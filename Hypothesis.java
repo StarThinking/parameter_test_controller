@@ -13,9 +13,9 @@ public class Hypothesis extends Controller {
         myPrint("hypothesisTestLogic");
         List<String> testSet = new ArrayList<String>();
         testSet.add(test);
-	int v1v2Repeats = 100; 
+	int v1v2Repeats = 200; 
 	int v1v2FailedCount = 0; 
-	int v1v1v2v2Repeats = 100; 
+	int v1v1v2v2Repeats = 200; 
 	int v1v1v2v2FailedCount = 0; 
         int i = 0;
         for (i=0; i<v1v2Repeats; i++) {
