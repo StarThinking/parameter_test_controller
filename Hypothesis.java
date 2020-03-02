@@ -13,9 +13,9 @@ public class Hypothesis extends Controller {
         myPrint("hypothesisTestLogic");
         List<String> testSet = new ArrayList<String>();
         testSet.add(test);
-	int v1v2Repeats = 200; 
+	int v1v2Repeats = 100; 
 	int v1v2FailedCount = 0; 
-	int v1v1v2v2Repeats = 200; 
+	int v1v1v2v2Repeats = 100; 
 	int v1v1v2v2FailedCount = 0; 
         int i = 0;
         for (i=0; i<v1v2Repeats; i++) {
@@ -36,15 +36,16 @@ public class Hypothesis extends Controller {
         }
         myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + v1v2Repeats);
         myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + v1v1v2v2Repeats);
-        if (v1v1v2v2FailedCount != 0) {
-            myPrint("result: false positive !!!");
-        } else {
-            if (v1v2FailedCount > 0) {
+	if (v1v2FailedCount == 0) {
+            myPrint("result: v1v2 failure didn't occur");
+	} else {
+            if (v1v2FailedCount * 0.8 > v1v1v2v2FailedCount) {
                 myPrint("result: might be true error");
             } else {
-                myPrint("result: v1v2 failure didn't occur");
+                myPrint("result: false positive !!!");
             }
         }
+
 	return;
     }
 
