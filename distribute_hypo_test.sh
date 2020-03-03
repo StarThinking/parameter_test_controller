@@ -36,7 +36,7 @@ do
 	echo "$vm_l"
     done
 
-    vm_cmd=$(for vm_i in $(seq 0 $per_vm_tasks); do echo -n "java Hypothesis ${per_vm_lines[$vm_i]} > /dev/null; sleep 60; "; done)
+    vm_cmd=$(for vm_i in $(seq 0 $per_vm_tasks); do echo -n "java Hypothesis $repeats ${per_vm_lines[$vm_i]} > /dev/null; sleep 60; "; done)
     vm_cmd_all=$(echo "cd parameter_test_controller; $vm_cmd echo 'finished' &")
     #echo "vm_cmd_all=$vm_cmd_all"
     ssh hadoop-$hadoop_index "eval $vm_cmd_all" &
