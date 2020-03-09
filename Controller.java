@@ -22,7 +22,6 @@ public class Controller {
     public static String v1FileName = controllerRootDir + "shared/v1";
     public static String v2FileName = controllerRootDir + "shared/v2";
     public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
-    public static String currentBeforeClassTestNameFileName = controllerRootDir + "shared/currentBeforeClassTestName";
    
     /* static parameter value information */
     public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
@@ -244,14 +243,6 @@ public class Controller {
                     combinedMethods += test;
                 else
                     combinedMethods += test + ",";
-            }
-
-            if (numPerPart == 1) { // before-class test
-                myPrint("writing before-class test name into file " + combinedMethods);
-                // overwrite
-                BufferedWriter writer = new BufferedWriter(new FileWriter(new File(currentBeforeClassTestNameFileName)));
-                writer.write(combinedMethods);
-                writer.close();
             }
 
             myPrint("Number of combined methods is " + numOfTests);
@@ -792,10 +783,6 @@ public class Controller {
             BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(v2FileName)));
             writer6.write("");
             writer6.close();
-            
-            BufferedWriter writer7 = new BufferedWriter(new FileWriter(new File(currentBeforeClassTestNameFileName)));
-            writer7.write("");
-            writer7.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
