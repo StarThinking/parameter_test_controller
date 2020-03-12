@@ -84,9 +84,6 @@ public class Hypothesis extends Controller {
 	    System.exit(1);
 	}
 
-        String dummyParameterType = "Boolean";
-        loadStaticTestData(dummyParameterType);
-        
 	/* set run log */
         Date date = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");

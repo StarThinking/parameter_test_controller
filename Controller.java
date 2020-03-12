@@ -9,10 +9,11 @@ import java.text.SimpleDateFormat;
 
 public class Controller {
 
-    public static String workingDir = "/root/hadoop-3.1.2-src-reconf/hadoop-hdfs-project";
+    public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
     public static String controllerRootDir = "/root/parameter_test_controller/";
     public static StringBuilder runLogBuffer = new StringBuilder();
     public static BufferedWriter runLogWriter = null;
+    public static int RECHECK_RUNTIMES=20;
 
     /* shared files */
     public static String testResultDirName = controllerRootDir + "shared/test_results";
@@ -21,49 +22,40 @@ public class Controller {
     public static String reconfigComponentFileName = controllerRootDir + "shared/reconfig_component";
     public static String v1FileName = controllerRootDir + "shared/v1";
     public static String v2FileName = controllerRootDir + "shared/v2";
-    public static String componentHasStoppedFileName = controllerRootDir + "shared/componentHasStopped";
+    public static String reconfPointFileName = controllerRootDir + "shared/reconf_point";
    
     /* static parameter value information */
-    public static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
-    public static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_makeup_value.txt";
-    public static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
-    public static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_makeup_value.txt";
-    public static Map<String, List<String>> intJournalNodeParameterValues = new HashMap<String, List<String>>();
-    public static String intJournalNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/journalnode_getInt_makeup_value.txt";
+    private static Map<String, List<String>> intNameNodeParameterValues = new HashMap<String, List<String>>();
+    private static String intNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getInt_makeup_value.txt";
+    private static Map<String, List<String>> intDataNodeParameterValues = new HashMap<String, List<String>>();
+    private static String intDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getInt_makeup_value.txt";
+    private static Map<String, List<String>> intJournalNodeParameterValues = new HashMap<String, List<String>>();
+    private static String intJournalNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/journalnode_getInt_makeup_value.txt";
     
-    public static Map<String, List<String>> longNameNodeParameterValues = new HashMap<String, List<String>>();
-    public static String longNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getLong_makeup_value.txt";
-    public static Map<String, List<String>> longDataNodeParameterValues = new HashMap<String, List<String>>();
-    public static String longDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getLong_makeup_value.txt";
-    public static Map<String, List<String>> longJournalNodeParameterValues = new HashMap<String, List<String>>();
-    public static String longJournalNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/journalnode_getLong_makeup_value.txt";
+    private static Map<String, List<String>> longNameNodeParameterValues = new HashMap<String, List<String>>();
+    private static String longNameNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/namenode_getLong_makeup_value.txt";
+    private static Map<String, List<String>> longDataNodeParameterValues = new HashMap<String, List<String>>();
+    private static String longDataNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/datanode_getLong_makeup_value.txt";
+    private static Map<String, List<String>> longJournalNodeParameterValues = new HashMap<String, List<String>>();
+    private static String longJournalNodeParameterValuesFileName = controllerRootDir + "parameter_for_component/journalnode_getLong_makeup_value.txt";
 
     /* static test information for component */
-    public static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
-    public static List<String> beforeClassList = new ArrayList<String>();
+    private static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
+    private static List<String> beforeClassList = new ArrayList<String>();
     
     /* failed vanilla unit tests */
-    public static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
-    public static List<String> vanillaFailedTestList = new ArrayList<String>();
+    private static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
+    private static List<String> vanillaFailedTestList = new ArrayList<String>();
     
-    public static String getRestartNameNodeTestFileName(String paraType) {
-	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_namenode.txt";
-    }
-
-   
-    public static List<String> restartNameNodeTestList = new ArrayList<String>();
-    public static List<String> restartDataNodeTestList = new ArrayList<String>();
-    public static List<String> restartJournalNodeTestList = new ArrayList<String>();
-    public static List<String> startNameNodeTestList = new ArrayList<String>();
-    public static List<String> startDataNodeTestList = new ArrayList<String>();
-    public static List<String> startJournalNodeTestList = new ArrayList<String>();
+    private static List<String> restartNameNodeTestList = new ArrayList<String>();
+    private static List<String> restartDataNodeTestList = new ArrayList<String>();
+    private static List<String> restartJournalNodeTestList = new ArrayList<String>();
+    private static List<String> startNameNodeTestList = new ArrayList<String>();
+    private static List<String> startDataNodeTestList = new ArrayList<String>();
+    private static List<String> startJournalNodeTestList = new ArrayList<String>();
     /* used for Vanilla Correctness Test */
     public static List<String> startAllComponentTestList = new ArrayList<String>();
     
-    //static {
-    //    loadStaticTestData();
-    //}
-
     static class TestResult {
         public String testName = "";
         public String result = "";
@@ -73,15 +65,15 @@ public class Controller {
         public String component = "";
         public String v1 = "";
         public String v2 = "";
-        public String componentHasStopped = "";
+        public String reconfPoint = "";
         public static int NumOfFieldsFromFile = 4;
         public static String fileName = "";
 
-        public TestResult(String testName, String parameter, String component, String v1, String v2, String componentHasStopped) {
+        public TestResult(String testName, String parameter, String component, String v1, String v2, String reconfPoint) {
             this.testName = testName;
             this.parameter = parameter;
             this.component = component;
-            this.componentHasStopped = componentHasStopped;
+            this.reconfPoint = reconfPoint;
             this.v1 = v1;
             this.v2 = v2;
             // 1: succeed -1:failed
@@ -92,7 +84,7 @@ public class Controller {
         public String toString() {
             return "parameter: " + parameter + "\n" +
                 "component: " + component + "\n" +
-                "componentHasStopped: " + componentHasStopped + "\n" +
+                "reconfPoint: " + reconfPoint + "\n" +
                 "v1 v2: " + v1 + " " + v2 + "\n" +
                 "testName: " + testName + "\n" +
                 "result: " + result;
@@ -101,7 +93,7 @@ public class Controller {
         public String completeInfo() {
             return "parameter: " + parameter + "\n" +
                 "component: " +component + "\n" +
-                "componentHasStopped: " + componentHasStopped + "\n" +
+                "reconfPoint: " + reconfPoint + "\n" +
                 "v1 v2: " + v1 + " " + v2 + "\n" +
                 "testName: " + testName + "\n" +
                 "result: " + result + "\n" +
@@ -155,7 +147,7 @@ public class Controller {
         }
     }
 
-    public static void updateTestResult(List<TestResult> testResultList) {
+    private static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
         try {
             File testResultDir = new File(testResultDirName);
@@ -215,7 +207,7 @@ public class Controller {
         }
     }
 
-    public static void runCombinedMvnCmd(List<String> testNameList, int numPerPart) throws Exception{
+    private static void runCombinedMvnCmd(List<String> testNameList, int numPerPart) throws Exception{
         // split into parts
         int numOfTestsPerPart = numPerPart;
         int indexOfParts = 0;
@@ -262,7 +254,7 @@ public class Controller {
         }
     }
 
-    public static void runMvnCmd(List<TestResult> testResultList) {
+    private static void runMvnCmd(List<TestResult> testResultList) {
         try {
 	    String buffer = "";
             long startTime, endTime, timeElapsed;
@@ -307,7 +299,7 @@ public class Controller {
     }
 
     public static List<TestResult> testCore(String parameter, String component, String reconfigMode, String v1, String v2,
-            List<String> thisTestSet, String componentHasStopped) {
+            List<String> thisTestSet, String reconfPoint) {
         List<TestResult> failedTests = new ArrayList<TestResult>();
         if (thisTestSet == null) {
             System.exit(1);
@@ -316,7 +308,7 @@ public class Controller {
         if (thisTestSet.size() == 0)
             return failedTests; // empty
         
-        myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " componentHasStopped=" + componentHasStopped); 
+        myPrint("Test reconfigMode=" + reconfigMode + " v1=" + v1 + " v2=" + v2 + " reconfPoint=" + reconfPoint); 
         List<TestResult> testResultList = new ArrayList<TestResult>();
 	
 	//myPrint("Vanilla failed tests contained:");
@@ -330,10 +322,10 @@ public class Controller {
  
 	// construct TestResult list
         for (String test : thisTestSet) {
-            testResultList.add(new TestResult(test, parameter, component, v1, v2, componentHasStopped));
+            testResultList.add(new TestResult(test, parameter, component, v1, v2, reconfPoint));
         }
         cleanUpSharedFiles();
-        setupTestTuple(parameter, component, reconfigMode, v1, v2, componentHasStopped);
+        setupTestTuple(parameter, component, reconfigMode, v1, v2, reconfPoint);
         runMvnCmd(testResultList);
         
         for (TestResult t : testResultList) {
@@ -344,24 +336,24 @@ public class Controller {
         return failedTests;
     }
 
-    public static List<TestResult> testVanillaCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
+    private static List<TestResult> testVanillaCorrectness(String parameter, String component, String v1, String v2, List<String> testSet) {
 	testSet = startAllComponentTestList;
         // dummy setting
-	// parameter, component, componentHasStopped, v1, v2 are not effective for vanilla correctness test
-	String componentHasStopped = "1";
-	List<TestResult> failedList = testCore(parameter, component, "none", "", "", testSet, componentHasStopped); // all
+	// parameter, component, reconfPoint, v1, v2 are not effective for vanilla correctness test
+	String reconfPoint = "1";
+	List<TestResult> failedList = testCore(parameter, component, "none", "", "", testSet, reconfPoint); // all
         myPrint("failed v1v2 list size " + failedList.size());
 	return failedList;
     }
       
-    public static List<TestResult> testLogic(String parameter, String component, String v1, String v2, List<String> testSet, String componentHasStopped) {    
-        List<TestResult> failedListv1v2 = testCore(parameter, component, "v1v2", v1, v2, testSet, componentHasStopped); // all
+    public static List<TestResult> testLogic(String parameter, String component, String v1, String v2, String reconfPoint, List<String> testSet) {    
+        List<TestResult> failedListv1v2 = testCore(parameter, component, "v1v2", v1, v2, testSet, reconfPoint); // all
         myPrint("failed v1v2 list size " + failedListv1v2.size());
         for (TestResult t : failedListv1v2)
             myPrint(t.testName);
       
         List<TestResult> issueList = new ArrayList<TestResult>();
-        int runs = 20;
+        int runs = Controller.RECHECK_RUNTIMES;
 	int thresholdOfIssues = 10;
         myPrint("do " + runs + " v1v1 v2v2 tests to filter false alarm");
         for (TestResult t : failedListv1v2) {
@@ -370,8 +362,8 @@ public class Controller {
             List<String> singleTest = new ArrayList<String>();
             singleTest.add(t.testName);
             for(; i<runs; i++) {
-                List<TestResult> failedList1 = testCore(parameter, component, "v1v1", v1, "", singleTest, componentHasStopped);
-                List<TestResult> failedList2 = testCore(parameter, component, "v2v2", "", v2, singleTest, componentHasStopped);
+                List<TestResult> failedList1 = testCore(parameter, component, "v1v1", v1, "", singleTest, reconfPoint);
+                List<TestResult> failedList2 = testCore(parameter, component, "v2v2", "", v2, singleTest, reconfPoint);
                 if (failedList1.size() > 0) {
                     myPrint("v1v1 also failed for test " + t.testName + " with v1 " + v1 + ", no issue.");
                     break;
@@ -394,7 +386,7 @@ public class Controller {
 	return issueList;
     }
 
-    public static List<TestResult> testV1V2PairRestartPointWrapper(String parameter, String component, String v1, String v2, List<String> testSet) {
+    private static List<TestResult> testV1V2PairRestartPointWrapper(String parameter, String component, String v1, String v2, List<String> testSet) {
         List<TestResult> mergedIssueList = new ArrayList<TestResult>();
         List<String> restartTestSet = null;
         List<String> startTestSet = null;
@@ -418,16 +410,16 @@ public class Controller {
         myPrint("restartTestSet size is " + restartTestSet.size() + ", startTestSet size is " + startTestSet.size());
 
         try {
-            String componentHasStopped = "";
+            String reconfPoint = "";
             
             myPrint("Testing restart... size " + restartTestSet.size());
-            componentHasStopped = "0";
-            List<TestResult> restartIssueList = testLogic(parameter, component, v1, v2, restartTestSet, componentHasStopped);
+            reconfPoint = "0";
+            List<TestResult> restartIssueList = testLogic(parameter, component, v1, v2, reconfPoint, restartTestSet);
             mergedIssueList.addAll(restartIssueList);
 
             myPrint("Testing start... size " + startTestSet.size());
-            componentHasStopped = "1";
-            List<TestResult> startIssueList = testLogic(parameter, component, v1, v2, startTestSet, componentHasStopped);
+            reconfPoint = "1";
+            List<TestResult> startIssueList = testLogic(parameter, component, v1, v2, reconfPoint, startTestSet);
             mergedIssueList.addAll(startIssueList);
 
             } catch(Exception e) {
@@ -591,7 +583,7 @@ public class Controller {
         }
     }
     
-    public static void loadStaticTestData(String paraType) {
+    private static void loadStaticTestData(String paraType) {
         try {
             BufferedReader reader = null;
             String buffer = "";
@@ -716,7 +708,7 @@ public class Controller {
         }
     }
   
-    public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2, String componentHasStopped) {
+    public static void setupTestTuple(String parameter, String component, String mode, String v1, String v2, String reconfPoint) {
 	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2") && !mode.equals("none")) {
 	    myPrint("Error, wrong mode " + mode);
 	    System.exit(1);
@@ -742,8 +734,8 @@ public class Controller {
             writer5.write(v2);
             writer5.close();
             
-            BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(componentHasStoppedFileName)));
-            writer6.write(componentHasStopped);
+            BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(reconfPointFileName)));
+            writer6.write(reconfPoint);
             writer6.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -759,76 +751,38 @@ public class Controller {
                     testResult.delete();
                 }
             }
-
-            BufferedWriter writer1 = new BufferedWriter(new FileWriter(new File(componentHasStoppedFileName)));
-            writer1.write("");
-            writer1.close();
-            
-            BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
-            writer2.write("");
-            writer2.close();
-            
-            BufferedWriter writer3 = new BufferedWriter(new FileWriter(new File(reconfigModeFileName)));
-            writer3.write("");
-            writer3.close();
-            
-	    BufferedWriter writer4 = new BufferedWriter(new FileWriter(new File(reconfigComponentFileName)));
-            writer4.write("");
-            writer4.close();
-            
-            BufferedWriter writer5 = new BufferedWriter(new FileWriter(new File(v1FileName)));
-            writer5.write("");
-            writer5.close();
-            
-            BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(v2FileName)));
-            writer6.write("");
-            writer6.close();
+            setupTestTuple("", "", "none", "", "", "");
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
     
-    public static String getRestartDataNodeTestFileName(String paraType) {
+    private static String getRestartNameNodeTestFileName(String paraType) {
+	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_namenode.txt";
+    }
+    
+    private static String getRestartDataNodeTestFileName(String paraType) {
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_datanode.txt";
     }
 
-    public static String getRestartJournalNodeTestFileName(String paraType) { 
+    private static String getRestartJournalNodeTestFileName(String paraType) { 
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/restart_journalnode.txt";
     }
     
-    public static String getStartNameNodeTestFileName(String paraType) {
+    private static String getStartNameNodeTestFileName(String paraType) {
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_namenode.txt";
     }
 
-    public static String getStartDataNodeTestFileName(String paraType) {
+    private static String getStartDataNodeTestFileName(String paraType) {
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_datanode.txt";
     }
 
-    public static String getStartJournalNodeTestFileName(String paraType) { 
+    private static String getStartJournalNodeTestFileName(String paraType) { 
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_journalnode.txt";
     }
     
-    public static String getStartAllComponentTestFileName(String paraType) { 
+    private static String getStartAllComponentTestFileName(String paraType) { 
 	return controllerRootDir + "test_for_component/hdfs/" + paraType + "/start_all_component.txt";
-    }
-
-    public static <E> List<List<E>> generatePerm(List<E> original) {
-        if (original.isEmpty()) {
-            List<List<E>> result = new ArrayList<>(); 
-            result.add(new ArrayList<>()); 
-            return result; 
-        }
-        E firstElement = original.remove(0);
-        List<List<E>> returnValue = new ArrayList<>();
-        List<List<E>> permutations = generatePerm(original);
-        for (List<E> smallerPermutated : permutations) {
-            for (int index=0; index <= smallerPermutated.size(); index++) {
-                List<E> temp = new ArrayList<>(smallerPermutated);
-                temp.add(index, firstElement);
-                returnValue.add(temp);
-            }
-        }
-        return returnValue;
     }
 }
