@@ -17,7 +17,7 @@ function check_restart() {
 	if [[ "$line" == *"[msx-restart] $component"*"stop"* ]]; then
             stopped=1
         fi
-	if [[ "$line" == *"[msx-restart] $component"*"start"* ]]; then
+	if [[ "$line" == *"[msx-restart] $component"*"init"* ]]; then
             if [ $stopped -eq 1 ]; then
                 restarted=1
             fi

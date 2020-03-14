@@ -14,7 +14,7 @@ function check_start() {
     started=0
     while IFS= read -r line
     do
-        if [[ "$line" == *"[msx-restart] $component"*"start"* ]]; then
+        if [[ "$line" == *"[msx-restart] $component"*"init"* ]]; then
             started=$(( started + 1 ))
         fi
     done < "$methodfile"
