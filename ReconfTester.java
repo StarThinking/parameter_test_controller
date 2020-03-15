@@ -7,10 +7,14 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-public class ReconfTryer extends Controller {
+public class ReconfTester extends Controller {
 
+    private static List<String> startTestList = new ArrayList<String>();
+    private static Map<Integer, List<String>> restartTestMap = new HashMap<Integer, List<String>>();
+    private static List<String> instanceTestList = new ArrayList<String>();
+    
     public static void reconfTryerLogic(String parameter, String component, String v1, String v2, String reconfPoint) {    
-        List<String> restartTestSet = null;
+        /*List<String> restartTestSet = null;
         List<String> startTestSet = null;
 
         if (component.equals("NameNode")) {
@@ -30,6 +34,34 @@ public class ReconfTryer extends Controller {
         for (TestResult t : issueList)
             myPrint(t.toString());
         myPrint("---------------------------------------short report---------------------------------------------");
+    */
+    }
+
+    public static void loadReconfTesterStaticData(String component) {
+	try {
+            BufferedReader reader = null;
+            String buffer = "";
+    
+            String instanceTestFileName = systemRootDir + "reconfTester_static_data/hdfs/" +
+                component + "/instance.txt";
+            reader = new BufferedReader(new FileReader(new File(instanceTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                instanceTestList.add(buffer.trim());
+            }
+            System.out.println("instanceTestList has been loaded, size is " + instanceTestList.size());
+            reader.close();
+
+            /*reader = new BufferedReader(new FileReader(new File(vanillaFailedTestFileName)));
+            buffer = "";
+            while ((buffer = reader.readLine()) != null) {
+                vanillaFailedTestList.add(buffer.trim());
+            }
+            reader.close();*/
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 
     public static void main(String[] args) {
@@ -54,20 +86,18 @@ public class ReconfTryer extends Controller {
         v2=args[3];
         reconfPoint=args[4];
 
-	if (!component.equals("NameNode") && !component.equals("DataNode") && !component.equals("JournalNode") && !component.equals("None")) {
+	if (!component.equals("NameNode") && !component.equals("DataNode") && !component.equals("JournalNode")) {
 	    myPrint("Error: wrong component " + component);
 	    System.exit(1);
 	}
 
-        // support setting different test sets for different types
-        String dummyParameterType = "Boolean";
-        loadStaticTestData(dummyParameterType);
-        
-	/* set run log */
+        loadReconfTesterStaticData(component);
+	
+        /* set run log */
         Date date = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 	String dateTime = formatter.format(date);
-        String runLogPath = Controller.controllerRootDir + parameter + "%" + component + "%" + v1 +
+        String runLogPath = Controller.systemRootDir + parameter + "%" + component + "%" + v1 +
             "%" + v2 + "%" + reconfPoint + "_run_" + dateTime + ".txt";
         try {
             runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 

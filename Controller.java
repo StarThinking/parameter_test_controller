@@ -9,29 +9,32 @@ import java.text.SimpleDateFormat;
 
 public class Controller {
 
-    public static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
-    public static String controllerRootDir = "/root/parameter_test_controller/";
-    public static StringBuilder runLogBuffer = new StringBuilder();
-    public static BufferedWriter runLogWriter = null;
-    public static int RECHECK_RUNTIMES=20;
+    private static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
+    protected static String systemRootDir = "/root/parameter_test_controller/";
+    protected static BufferedWriter runLogWriter = null;
+    protected static int RECHECK_RUNTIMES=20;
 
     /* shared files */
-    public static String testResultDirName = controllerRootDir + "shared/test_results";
-    public static String parameterFileName = controllerRootDir + "shared/parameter";
-    public static String reconfigModeFileName = controllerRootDir + "shared/reconfig_mode";
-    public static String reconfigComponentFileName = controllerRootDir + "shared/reconfig_component";
-    public static String v1FileName = controllerRootDir + "shared/v1";
-    public static String v2FileName = controllerRootDir + "shared/v2";
-    public static String reconfPointFileName = controllerRootDir + "shared/reconf_point";
+    private static String testResultDirName = systemRootDir + "shared/test_results";
+    private static String parameterFileName = systemRootDir + "shared/parameter";
+    private static String reconfigModeFileName = systemRootDir + "shared/reconfig_mode";
+    private static String reconfigComponentFileName = systemRootDir + "shared/reconfig_component";
+    private static String v1FileName = systemRootDir + "shared/v1";
+    private static String v2FileName = systemRootDir + "shared/v2";
+    private static String reconfPointFileName = systemRootDir + "shared/reconf_point";
    
     /* static test information */
-    private static String beforeClassFileName = controllerRootDir + "test_for_component/hdfs/before_class.txt";
+    private static String beforeClassFileName = systemRootDir + "controller_static_data/hdfs/before_class.txt";
     private static List<String> beforeClassList = new ArrayList<String>();
     
     /* failed vanilla unit tests */
-    //private static String vanillaFailedTestFileName = controllerRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
+    //private static String vanillaFailedTestFileName = systemRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
     private static List<String> vanillaFailedTestList = new ArrayList<String>();
-    
+   
+    static {
+        loadControllerStaticData();
+    }
+
     static class TestResult {
         public String testName = "";
         public String result = "";
@@ -328,7 +331,7 @@ public class Controller {
         }
     }
     
-    public static void loadStaticTestData(String paraType) {
+    public static void loadControllerStaticData() {
         try {
             BufferedReader reader = null;
             String buffer = "";
@@ -338,6 +341,7 @@ public class Controller {
             while ((buffer = reader.readLine()) != null) {
                 beforeClassList.add(buffer.trim());
             }
+            System.out.println("beforeClassList has been loaded, size is " + beforeClassList.size());
             reader.close();
             
 	    /*reader = new BufferedReader(new FileReader(new File(vanillaFailedTestFileName)));
@@ -352,7 +356,7 @@ public class Controller {
         }
     }
   
-    public static void setupTestTuple(String mode, String parameter, String component, String v1, String v2, String reconfPoint) {
+    private static void setupTestTuple(String mode, String parameter, String component, String v1, String v2, String reconfPoint) {
 	if (!mode.equals("v1v1") && !mode.equals("v2v2") && !mode.equals("v1v2") && !mode.equals("none")) {
 	    myPrint("Error, wrong mode " + mode);
 	    System.exit(1);
@@ -387,7 +391,7 @@ public class Controller {
         }
     }
 
-    public static void cleanUpSharedFiles() {
+    private static void cleanUpSharedFiles() {
         try {
             File testResultDir = new File(testResultDirName);
             for (File testResult : testResultDir.listFiles()) {
