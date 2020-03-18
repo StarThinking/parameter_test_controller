@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.TestRefreshCallQueue#testRefreshCallQueueWithFairCallQueue
+[msx] unitTestCounterInClass = 0
+2020-03-14 09:16:31,932 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:16:32,551 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 09:16:33,715 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44192 start
+2020-03-14 09:16:33,730 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:16:33,791 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:16:34,054 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33101 start
+2020-03-14 09:16:34,885 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33101 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:16:35,049 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44192 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.TestRefreshCallQueue#testRefreshCallQueueWithFairCallQueue
+[msx] writeFile testName = org.apache.hadoop.TestRefreshCallQueue#testRefreshCallQueueWithFairCallQueue
+[msx] succeed
+2020-03-14 09:16:35,126 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

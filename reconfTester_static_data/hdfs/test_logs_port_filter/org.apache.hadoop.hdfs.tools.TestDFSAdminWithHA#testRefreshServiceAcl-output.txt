@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.tools.TestDFSAdminWithHA#testRefreshServiceAcl
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:08:29,758 [Thread-0] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:08:29,788 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:30,819 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35947 start
+2020-03-14 07:08:30,819 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:30,847 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 40608 start
+2020-03-14 07:08:30,847 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:30,890 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 38574 start
+2020-03-14 07:08:31,736 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:08:32,393 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:32,809 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13404 start
+2020-03-14 07:08:32,810 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:32,927 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13406 start
+2020-03-14 07:08:33,369 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13404 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:33,417 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13406 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:33,513 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:33,657 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13404 start
+2020-03-14 07:08:33,658 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:08:33,826 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13406 start
+2020-03-14 07:08:33,936 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13404 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:33,959 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13406 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:33,988 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35947 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:33,995 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 40608 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:08:34,002 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 38574 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.tools.TestDFSAdminWithHA#testRefreshServiceAcl
+[msx] writeFile testName = org.apache.hadoop.hdfs.tools.TestDFSAdminWithHA#testRefreshServiceAcl
+[msx] succeed
+2020-03-14 07:08:34,081 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

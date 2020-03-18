@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptSnapshots
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:18:01,452 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:18:02,030 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:18:02,456 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35995 start
+2020-03-14 05:18:02,470 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:18:02,511 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:18:02,760 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33973 start
+2020-03-14 05:18:07,857 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33973 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:18:07,914 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35995 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptSnapshots
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptSnapshots
+[msx] succeed
+2020-03-14 05:18:08,208 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

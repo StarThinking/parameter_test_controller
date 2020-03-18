@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testSecondaryHasVeryOutOfDateImage
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:56:52,243 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:56:52,977 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:56:53,986 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39776 start
+2020-03-14 06:56:54,003 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:56:54,092 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:56:54,484 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38211 start
+2020-03-14 06:56:54,496 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:56:54,548 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42614 start
+2020-03-14 06:56:54,572 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:56:54,626 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33555 start
+2020-03-14 06:56:56,288 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33555 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:56:56,348 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42614 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:56:56,380 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38211 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:56:56,423 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39776 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testSecondaryHasVeryOutOfDateImage
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testSecondaryHasVeryOutOfDateImage
+[msx] succeed
+2020-03-14 06:56:56,456 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

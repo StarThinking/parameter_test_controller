@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestAclConfigFlag#testModifyAclEntries
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:19:45,859 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:19:46,600 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:19:47,767 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33489 start
+2020-03-14 06:19:47,784 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:19:47,862 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:19:48,118 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42974 start
+2020-03-14 06:19:48,805 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42974 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:19:48,960 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33489 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestAclConfigFlag#testModifyAclEntries
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestAclConfigFlag#testModifyAclEntries
+[msx] succeed
+2020-03-14 06:19:49,016 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

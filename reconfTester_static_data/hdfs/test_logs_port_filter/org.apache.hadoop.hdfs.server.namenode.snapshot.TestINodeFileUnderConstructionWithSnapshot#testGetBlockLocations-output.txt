@@ -1,0 +1,13 @@
+2020-03-14 05:22:05,960 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:22:05,994 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestINodeFileUnderConstructionWithSnapshot#testGetBlockLocations
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:22:07,107 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:08,093 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42503 start
+2020-03-14 05:22:10,327 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42503 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestINodeFileUnderConstructionWithSnapshot#testGetBlockLocations
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestINodeFileUnderConstructionWithSnapshot#testGetBlockLocations
+[msx] succeed
+2020-03-14 05:22:10,387 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

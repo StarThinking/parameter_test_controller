@@ -19,7 +19,7 @@ public class Hypothesis extends Controller {
 	int v1v1v2v2FailedCount = 0; 
         int i = 0;
         for (i=0; i<v1v2Repeats; i++) {
-            List<TestResult> failedList = testCore(parameter, component, "v1v2", v1, v2, testSet, reconfPoint);
+            List<TestResult> failedList = testCore(parameter, component, "v1v2", v1, v2, reconfPoint, testSet);
             if (failedList.size() > 0) {
                 myPrint("v1v2 test failed !!!");
                 v1v2FailedCount ++;
@@ -27,8 +27,8 @@ public class Hypothesis extends Controller {
         }
         
         for (i=0; i<v1v1v2v2Repeats; i++) {
-            List<TestResult> v1v1failedList = testCore(parameter, component, "v1v1", v1, v2, testSet, reconfPoint);
-            List<TestResult> v2v2failedList = testCore(parameter, component, "v2v2", v1, v2, testSet, reconfPoint);
+            List<TestResult> v1v1failedList = testCore(parameter, component, "v1v1", v1, v2, reconfPoint, testSet);
+            List<TestResult> v2v2failedList = testCore(parameter, component, "v2v2", v1, v2, reconfPoint, testSet);
             if (v1v1failedList.size() > 0 || v2v2failedList.size() > 0) {
                 myPrint("v1v1 or v2v2 test failed !!!");
                 v1v1v2v2FailedCount ++;
@@ -88,7 +88,7 @@ public class Hypothesis extends Controller {
         Date date = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 	String dateTime = formatter.format(date);
-        String runLogPath = Controller.controllerRootDir + parameter + "%" + component + "%" + test + "%" + v1 +
+        String runLogPath = Controller.systemRootDir + parameter + "%" + component + "%" + test + "%" + v1 +
             "%" + v2 + "%" + reconfPoint + "_run_" + dateTime + ".txt";
         try {
             runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 

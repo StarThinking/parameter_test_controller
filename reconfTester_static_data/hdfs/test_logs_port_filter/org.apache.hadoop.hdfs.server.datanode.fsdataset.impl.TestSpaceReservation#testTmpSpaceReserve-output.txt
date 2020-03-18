@@ -1,0 +1,19 @@
+2020-03-14 06:49:14,066 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestSpaceReservation#testTmpSpaceReserve
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:49:14,593 [Thread-1] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:49:15,312 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:49:16,298 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37186 start
+2020-03-14 06:49:16,365 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:49:16,658 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42805 start
+2020-03-14 06:49:16,664 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:49:16,831 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44461 start
+2020-03-14 06:49:25,760 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44461 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:49:25,785 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42805 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:49:25,909 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37186 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestSpaceReservation#testTmpSpaceReserve
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestSpaceReservation#testTmpSpaceReserve
+[msx] succeed
+2020-03-14 06:49:25,967 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

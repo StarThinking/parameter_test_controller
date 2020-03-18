@@ -1,0 +1,20 @@
+[msx] before_class
+2020-03-14 07:04:11,093 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:04:11,883 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:04:12,850 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 45313 start
+2020-03-14 07:04:12,864 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:04:12,933 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:04:13,235 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33713 start
+2020-03-14 07:04:13,254 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:04:13,341 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41281 start
+[msx] test Started org.apache.hadoop.hdfs.TestDFSShell#testChownReserved
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.hdfs.TestDFSShell#testChownReserved
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDFSShell#testChownReserved
+[msx] succeed
+2020-03-14 07:04:14,141 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 07:04:14,142 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41281 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:04:14,183 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33713 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:04:14,324 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 45313 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

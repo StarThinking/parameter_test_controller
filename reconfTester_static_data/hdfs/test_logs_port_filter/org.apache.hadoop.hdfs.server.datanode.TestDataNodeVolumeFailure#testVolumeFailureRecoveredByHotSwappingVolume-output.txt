@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailure#testVolumeFailureRecoveredByHotSwappingVolume
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:41:39,473 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:41:40,073 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:41:41,179 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46376 start
+2020-03-14 07:41:41,196 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:41:41,269 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:41:41,504 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39164 start
+2020-03-14 07:41:41,528 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:41:41,580 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40864 start
+2020-03-14 07:41:42,501 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40864 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:41:42,564 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39164 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:41:42,691 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46376 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailure#testVolumeFailureRecoveredByHotSwappingVolume
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailure#testVolumeFailureRecoveredByHotSwappingVolume
+[msx] succeed
+2020-03-14 07:41:42,753 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

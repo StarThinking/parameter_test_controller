@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:59:56,870 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:59:57,560 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:58,633 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34692 start
+2020-03-14 06:59:58,646 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:59:58,723 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:59,021 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41331 start
+2020-03-14 06:59:59,037 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:59,190 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39138 start
+2020-03-14 06:59:59,821 [Thread-118] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:59,951 [Thread-118] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38201 start
+2020-03-14 06:59:59,964 [Thread-118] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:00:00,038 [Thread-118] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42299 start
+2020-03-14 07:00:00,053 [Thread-118] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:00:00,148 [Thread-118] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40325 start
+2020-03-14 07:00:00,153 [Thread-118] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:00:00,249 [Thread-118] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44975 start
+2020-03-14 07:00:06,674 [Thread-118] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44975 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:06,719 [Thread-118] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40325 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:06,761 [Thread-118] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42299 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:06,790 [Thread-118] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38201 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:06,843 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39138 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:06,873 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41331 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:00:07,004 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34692 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+[msx] writeFile testName = org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+[msx] succeed
+2020-03-14 07:00:07,048 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

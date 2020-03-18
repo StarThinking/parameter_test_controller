@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestDelegationTokensWithHA#testHdfsGetCanonicalServiceName
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:03:34,504 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:03:35,388 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:03:36,312 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34727 start
+2020-03-14 04:03:36,316 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:03:36,434 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34386 start
+2020-03-14 04:03:37,588 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34727 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:03:37,648 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34386 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestDelegationTokensWithHA#testHdfsGetCanonicalServiceName
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestDelegationTokensWithHA#testHdfsGetCanonicalServiceName
+[msx] succeed
+2020-03-14 04:03:37,689 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:03:37,691 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

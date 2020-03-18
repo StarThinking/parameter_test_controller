@@ -1,0 +1,20 @@
+[msx] before_class
+2020-03-14 03:36:20,611 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:36:21,365 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:36:22,445 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33068 start
+2020-03-14 03:36:22,466 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:36:22,539 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:36:22,845 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39948 start
+2020-03-14 03:36:22,863 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:36:22,924 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42970 start
+[msx] test Started org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testListStatusIterator
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testListStatusIterator
+[msx] writeFile testName = org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testListStatusIterator
+[msx] succeed
+2020-03-14 03:36:24,504 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 03:36:24,504 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42970 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:36:24,561 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39948 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:36:24,590 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33068 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

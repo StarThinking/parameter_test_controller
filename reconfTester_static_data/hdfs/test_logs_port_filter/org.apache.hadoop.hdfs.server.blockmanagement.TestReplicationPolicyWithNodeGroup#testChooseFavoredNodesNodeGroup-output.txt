@@ -1,0 +1,13 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicyWithNodeGroup#testChooseFavoredNodesNodeGroup
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:05:36,541 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:05:37,190 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:05:38,057 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46827 start
+2020-03-14 06:05:38,075 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46827 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicyWithNodeGroup#testChooseFavoredNodesNodeGroup
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicyWithNodeGroup#testChooseFavoredNodesNodeGroup
+[msx] succeed
+2020-03-14 06:05:38,157 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:05:38,159 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

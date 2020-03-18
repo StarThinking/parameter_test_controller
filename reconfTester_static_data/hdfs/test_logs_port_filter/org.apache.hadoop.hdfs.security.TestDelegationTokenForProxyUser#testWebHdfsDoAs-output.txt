@@ -1,0 +1,17 @@
+[msx] before_class
+2020-03-14 04:30:03,175 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:30:03,898 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:30:04,975 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42427 start
+2020-03-14 04:30:04,988 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:30:05,065 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:30:05,315 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42524 start
+[msx] test Started org.apache.hadoop.hdfs.security.TestDelegationTokenForProxyUser#testWebHdfsDoAs
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.hdfs.security.TestDelegationTokenForProxyUser#testWebHdfsDoAs
+[msx] writeFile testName = org.apache.hadoop.hdfs.security.TestDelegationTokenForProxyUser#testWebHdfsDoAs
+[msx] succeed
+2020-03-14 04:30:07,876 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 04:30:07,877 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42524 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:30:07,922 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42427 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

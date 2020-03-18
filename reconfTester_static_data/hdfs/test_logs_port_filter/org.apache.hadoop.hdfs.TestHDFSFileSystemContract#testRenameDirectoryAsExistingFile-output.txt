@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testRenameDirectoryAsExistingFile
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:21:20,952 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:21:21,643 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:21:22,819 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41198 start
+2020-03-14 04:21:22,838 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:21:22,918 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:21:23,217 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42991 start
+2020-03-14 04:21:23,228 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:21:23,291 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45952 start
+2020-03-14 04:21:24,564 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45952 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:21:24,604 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42991 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:21:24,743 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41198 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testRenameDirectoryAsExistingFile
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testRenameDirectoryAsExistingFile
+[msx] succeed
+2020-03-14 04:21:24,815 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

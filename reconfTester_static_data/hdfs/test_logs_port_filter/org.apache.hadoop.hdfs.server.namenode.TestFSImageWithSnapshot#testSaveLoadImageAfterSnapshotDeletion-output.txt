@@ -1,0 +1,19 @@
+2020-03-14 03:17:55,961 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:17:55,992 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageAfterSnapshotDeletion
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:17:57,229 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:17:58,288 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37554 start
+2020-03-14 03:18:00,500 [Thread-152] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37554 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:18:00,568 [Thread-152] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:18:00,719 [Thread-152] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43828 start
+2020-03-14 03:18:01,445 [Thread-152] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43828 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:18:01,480 [Thread-152] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:18:01,622 [Thread-152] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 45568 start
+2020-03-14 03:18:02,217 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 45568 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageAfterSnapshotDeletion
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageAfterSnapshotDeletion
+[msx] succeed
+2020-03-14 03:18:02,268 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

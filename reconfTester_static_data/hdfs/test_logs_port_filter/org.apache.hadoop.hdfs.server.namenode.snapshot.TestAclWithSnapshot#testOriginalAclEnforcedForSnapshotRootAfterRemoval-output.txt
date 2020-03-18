@@ -1,0 +1,29 @@
+[msx] before_class
+2020-03-14 05:13:03,213 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:13:03,852 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:04,926 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44862 start
+2020-03-14 05:13:04,943 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:13:05,007 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:05,272 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37361 start
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestAclWithSnapshot#testOriginalAclEnforcedForSnapshotRootAfterRemoval
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:13:06,081 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37361 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:13:06,116 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44862 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:13:06,170 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:06,335 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44608 start
+2020-03-14 05:13:06,350 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:06,390 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42823 start
+2020-03-14 05:13:06,739 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42823 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:13:06,887 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44608 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:13:06,952 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:07,094 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33635 start
+2020-03-14 05:13:07,103 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:13:07,234 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39096 start
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestAclWithSnapshot#testOriginalAclEnforcedForSnapshotRootAfterRemoval
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestAclWithSnapshot#testOriginalAclEnforcedForSnapshotRootAfterRemoval
+[msx] succeed
+2020-03-14 05:13:07,437 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 05:13:07,437 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39096 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:13:07,585 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33635 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

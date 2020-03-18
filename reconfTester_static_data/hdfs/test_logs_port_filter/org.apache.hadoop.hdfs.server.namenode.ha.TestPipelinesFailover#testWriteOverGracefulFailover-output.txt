@@ -1,0 +1,28 @@
+2020-03-14 04:42:36,908 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestPipelinesFailover#testWriteOverGracefulFailover
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:42:38,112 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,034 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43960 start
+2020-03-14 04:42:39,036 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,153 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33100 start
+2020-03-14 04:42:39,155 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,295 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39846 start
+2020-03-14 04:42:39,317 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:42:39,341 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,641 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35994 start
+2020-03-14 04:42:39,652 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,815 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46009 start
+2020-03-14 04:42:39,819 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:42:39,899 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34198 start
+2020-03-14 04:42:42,627 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34198 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:42:42,662 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46009 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:42:42,684 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35994 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:42:42,766 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43960 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:42:42,804 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33100 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:42:42,821 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39846 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestPipelinesFailover#testWriteOverGracefulFailover
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestPipelinesFailover#testWriteOverGracefulFailover
+[msx] succeed
+2020-03-14 04:42:42,850 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

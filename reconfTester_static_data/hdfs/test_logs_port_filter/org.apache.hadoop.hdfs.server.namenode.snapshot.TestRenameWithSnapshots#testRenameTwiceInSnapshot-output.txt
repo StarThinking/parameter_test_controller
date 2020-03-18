@@ -1,0 +1,13 @@
+2020-03-14 05:41:01,637 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:41:01,660 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameTwiceInSnapshot
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:41:02,833 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:41:03,647 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42995 start
+2020-03-14 05:41:05,992 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42995 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameTwiceInSnapshot
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameTwiceInSnapshot
+[msx] succeed
+2020-03-14 05:41:06,042 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

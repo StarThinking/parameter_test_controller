@@ -1,0 +1,23 @@
+[msx] before_class
+2020-03-14 07:57:41,466 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:57:42,212 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:57:43,267 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35101 start
+2020-03-14 07:57:43,282 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:57:43,364 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:57:43,654 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36965 start
+[msx] test Started org.apache.hadoop.hdfs.web.TestWebHDFSAcl#testRemoveDefaultAclOnlyDefault
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:57:45,357 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36965 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:57:45,512 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35101 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:57:45,636 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:57:45,761 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42010 start
+2020-03-14 07:57:45,768 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:57:45,822 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42298 start
+[msx] test Finished org.apache.hadoop.hdfs.web.TestWebHDFSAcl#testRemoveDefaultAclOnlyDefault
+[msx] writeFile testName = org.apache.hadoop.hdfs.web.TestWebHDFSAcl#testRemoveDefaultAclOnlyDefault
+[msx] succeed
+2020-03-14 07:57:46,539 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 07:57:46,539 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42298 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:57:46,688 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42010 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

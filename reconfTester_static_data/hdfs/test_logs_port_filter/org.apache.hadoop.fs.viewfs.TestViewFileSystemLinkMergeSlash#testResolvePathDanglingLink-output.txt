@@ -1,0 +1,29 @@
+[msx] before_class
+2020-03-14 02:53:09,496 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:53:10,226 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:11,252 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 40883 start
+2020-03-14 02:53:11,315 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:11,433 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35270 start
+2020-03-14 02:53:11,489 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:11,647 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 32885 start
+2020-03-14 02:53:11,662 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:53:11,745 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:12,107 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39574 start
+2020-03-14 02:53:12,135 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:12,253 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44554 start
+2020-03-14 02:53:12,258 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:53:12,390 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35023 start
+[msx] test Started org.apache.hadoop.fs.viewfs.TestViewFileSystemLinkMergeSlash#testResolvePathDanglingLink
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.fs.viewfs.TestViewFileSystemLinkMergeSlash#testResolvePathDanglingLink
+[msx] writeFile testName = org.apache.hadoop.fs.viewfs.TestViewFileSystemLinkMergeSlash#testResolvePathDanglingLink
+[msx] succeed
+2020-03-14 02:53:13,844 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 02:53:13,845 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35023 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:53:13,947 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44554 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:53:14,024 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39574 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:53:14,174 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35270 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:53:14,241 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 40883 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:53:14,274 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 32885 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

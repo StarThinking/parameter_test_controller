@@ -1,0 +1,24 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:15:48,873 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:15:48,908 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:49,864 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 40213 start
+2020-03-14 04:15:49,866 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:49,930 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35469 start
+2020-03-14 04:15:49,931 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:49,969 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 44457 start
+2020-03-14 04:15:51,421 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35469 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:51,512 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35469 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:51,524 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:51,564 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35469 start
+2020-03-14 04:15:51,565 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 44457 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:51,798 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 40213 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:51,840 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35469 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:51,847 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 44457 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+[msx] succeed
+2020-03-14 04:15:51,879 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:15:51,889 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,43 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestDataNodeReconfiguration#testMaxConcurrentMoversReconfiguration
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:28:34,121 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:28:34,896 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:36,010 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 32781 start
+2020-03-14 07:28:36,020 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:28:36,100 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:36,411 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33970 start
+2020-03-14 07:28:36,432 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:36,559 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38944 start
+2020-03-14 07:28:36,587 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:36,781 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38994 start
+2020-03-14 07:28:36,816 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:36,963 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44160 start
+2020-03-14 07:28:37,027 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:37,246 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40976 start
+2020-03-14 07:28:37,276 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:37,443 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33350 start
+2020-03-14 07:28:37,470 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:37,600 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38921 start
+2020-03-14 07:28:37,613 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:37,749 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39987 start
+2020-03-14 07:28:37,759 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:37,911 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38483 start
+2020-03-14 07:28:37,939 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:28:38,037 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36291 start
+2020-03-14 07:28:38,634 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36291 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,697 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38483 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,791 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39987 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,828 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38921 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,853 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33350 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,886 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40976 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,923 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44160 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,956 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38994 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:38,978 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38944 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:39,013 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33970 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:28:39,148 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 32781 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestDataNodeReconfiguration#testMaxConcurrentMoversReconfiguration
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeReconfiguration#testMaxConcurrentMoversReconfiguration
+[msx] succeed
+2020-03-14 07:28:39,229 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

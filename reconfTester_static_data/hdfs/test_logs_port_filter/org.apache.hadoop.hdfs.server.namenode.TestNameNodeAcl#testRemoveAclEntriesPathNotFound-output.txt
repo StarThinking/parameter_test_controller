@@ -1,0 +1,17 @@
+[msx] before_class
+2020-03-14 03:57:02,580 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:57:03,294 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:57:04,344 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42905 start
+2020-03-14 03:57:04,361 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:57:04,436 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:57:04,726 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43231 start
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestNameNodeAcl#testRemoveAclEntriesPathNotFound
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestNameNodeAcl#testRemoveAclEntriesPathNotFound
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestNameNodeAcl#testRemoveAclEntriesPathNotFound
+[msx] succeed
+2020-03-14 03:57:05,430 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 03:57:05,431 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43231 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:57:05,484 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42905 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

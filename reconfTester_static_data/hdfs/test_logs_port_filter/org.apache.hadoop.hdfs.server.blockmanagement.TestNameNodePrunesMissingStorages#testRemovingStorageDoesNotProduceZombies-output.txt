@@ -1,0 +1,26 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestNameNodePrunesMissingStorages#testRemovingStorageDoesNotProduceZombies
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:22:23,957 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:22:24,680 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:25,728 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44150 start
+2020-03-14 05:22:25,745 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:22:25,809 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:26,079 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37490 start
+2020-03-14 05:22:26,096 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:26,174 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44901 start
+2020-03-14 05:22:26,199 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:26,321 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41293 start
+2020-03-14 05:22:27,582 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41293 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:22:27,622 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41293 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:22:27,633 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:22:27,677 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46149 start
+2020-03-14 05:22:31,681 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46149 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:22:31,730 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44901 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:22:31,769 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37490 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:22:31,903 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44150 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestNameNodePrunesMissingStorages#testRemovingStorageDoesNotProduceZombies
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestNameNodePrunesMissingStorages#testRemovingStorageDoesNotProduceZombies
+[msx] succeed
+2020-03-14 05:22:31,965 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

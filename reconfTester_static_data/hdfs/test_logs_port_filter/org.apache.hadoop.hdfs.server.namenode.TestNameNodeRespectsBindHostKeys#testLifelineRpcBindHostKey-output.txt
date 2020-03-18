@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestNameNodeRespectsBindHostKeys#testLifelineRpcBindHostKey
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:24:08,401 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:24:09,139 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:24:10,262 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46524 start
+2020-03-14 04:24:10,994 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46524 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:24:11,167 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:24:11,313 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43144 start
+2020-03-14 04:24:11,446 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43144 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestNameNodeRespectsBindHostKeys#testLifelineRpcBindHostKey
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestNameNodeRespectsBindHostKeys#testLifelineRpcBindHostKey
+[msx] succeed
+2020-03-14 04:24:11,513 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:24:11,516 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

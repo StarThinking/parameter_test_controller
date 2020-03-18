@@ -1,0 +1,19 @@
+2020-03-14 05:35:31,770 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:35:31,802 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameDirAndDeleteSnapshot_3
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:35:33,026 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:35:33,976 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39608 start
+2020-03-14 05:35:35,629 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39608 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:35:35,689 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:35:35,827 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 45640 start
+2020-03-14 05:35:36,544 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 45640 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:35:36,594 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:35:36,738 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42578 start
+2020-03-14 05:35:37,348 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42578 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameDirAndDeleteSnapshot_3
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestRenameWithSnapshots#testRenameDirAndDeleteSnapshot_3
+[msx] succeed
+2020-03-14 05:35:37,405 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

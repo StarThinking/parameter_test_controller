@@ -1,0 +1,23 @@
+[msx] before_class
+[msx] test Started org.apache.hadoop.tracing.TestTraceAdmin#testCreateAndDestroySpanReceiver
+[msx] unitTestCounterInClass = 0
+2020-03-14 09:17:25,646 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:17:26,340 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 09:17:27,320 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 40711 start
+2020-03-14 09:17:27,335 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:17:27,397 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:17:27,598 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35034 start
+2020-03-14 09:17:27,607 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:17:27,706 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33133 start
+2020-03-14 09:17:27,729 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:17:27,807 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41267 start
+2020-03-14 09:17:28,584 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41267 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:17:28,653 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33133 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:17:28,686 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35034 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:17:28,821 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 40711 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.tracing.TestTraceAdmin#testCreateAndDestroySpanReceiver
+[msx] writeFile testName = org.apache.hadoop.tracing.TestTraceAdmin#testCreateAndDestroySpanReceiver
+[msx] succeed
+2020-03-14 09:17:28,884 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

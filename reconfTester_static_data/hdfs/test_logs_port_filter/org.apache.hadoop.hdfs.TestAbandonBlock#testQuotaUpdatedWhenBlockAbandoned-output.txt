@@ -1,0 +1,20 @@
+[msx] test Started org.apache.hadoop.hdfs.TestAbandonBlock#testQuotaUpdatedWhenBlockAbandoned
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:53:21,602 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:53:22,368 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:53:23,344 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33659 start
+2020-03-14 05:53:23,361 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:53:23,439 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:53:23,751 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45534 start
+2020-03-14 05:53:23,780 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:53:23,867 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34507 start
+2020-03-14 05:53:24,595 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45534 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:53:25,234 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34507 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:53:25,368 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45534 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:53:25,371 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33659 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestAbandonBlock#testQuotaUpdatedWhenBlockAbandoned
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestAbandonBlock#testQuotaUpdatedWhenBlockAbandoned
+[msx] succeed
+2020-03-14 05:53:25,432 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

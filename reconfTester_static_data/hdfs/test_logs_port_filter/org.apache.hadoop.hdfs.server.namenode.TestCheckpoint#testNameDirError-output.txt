@@ -1,0 +1,23 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:53:56,431 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:53:57,253 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:53:58,325 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34496 start
+2020-03-14 06:53:58,896 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34496 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:53:59,026 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:53:59,204 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42864 start
+2020-03-14 06:53:59,328 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42864 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Failure org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] failed
+[msx] failureMessage: NN should have failed to start with /root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs/target/test/data/dfs/name-0-1 set unreadable
+[msx] stackTrace: java.lang.AssertionError: NN should have failed to start with /root/hadoop-3.1.2-src/hadoop-hdfs-project/hadoop-hdfs/target/test/data/dfs/name-0-1 set unreadable
+2020-03-14 06:53:59,394 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:53:59,396 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] Info : file existed /root/parameter_test_controller/shared/test_results/org.apache.hadoop.hdfs.server.namenode.TestCheckpoint#testNameDirError
+[msx] succeed
+[msx] reset performed
+[msx] all testRunFinished

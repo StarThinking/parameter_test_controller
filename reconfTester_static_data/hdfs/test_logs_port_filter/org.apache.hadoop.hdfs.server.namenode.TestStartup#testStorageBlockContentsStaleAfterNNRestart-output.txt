@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestStartup#testStorageBlockContentsStaleAfterNNRestart
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:33:38,775 [Thread-2] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:33:39,449 [Thread-2] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:33:40,558 [Thread-2] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36177 start
+2020-03-14 05:33:40,581 [Thread-2] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:33:40,646 [Thread-2] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:33:40,857 [Thread-2] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36488 start
+2020-03-14 05:33:41,579 [Thread-2] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36177 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:33:41,651 [Thread-2] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:33:41,784 [Thread-2] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36177 start
+2020-03-14 05:33:47,818 [Thread-2] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36488 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:33:47,859 [Thread-2] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36177 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestStartup#testStorageBlockContentsStaleAfterNNRestart
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestStartup#testStorageBlockContentsStaleAfterNNRestart
+[msx] succeed
+2020-03-14 05:33:47,922 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

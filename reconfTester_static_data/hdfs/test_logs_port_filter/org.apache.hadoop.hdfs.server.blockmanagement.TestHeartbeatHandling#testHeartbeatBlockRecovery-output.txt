@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestHeartbeatHandling#testHeartbeatBlockRecovery
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:21:29,336 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:21:29,969 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:21:30,970 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36507 start
+2020-03-14 05:21:30,984 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:21:31,059 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:21:31,330 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35144 start
+2020-03-14 05:21:31,343 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:21:31,419 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46337 start
+2020-03-14 05:21:31,455 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:21:31,558 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36374 start
+2020-03-14 05:21:32,115 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36374 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:21:32,154 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46337 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:21:32,179 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35144 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:21:32,306 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36507 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestHeartbeatHandling#testHeartbeatBlockRecovery
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestHeartbeatHandling#testHeartbeatBlockRecovery
+[msx] succeed
+2020-03-14 05:21:32,365 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

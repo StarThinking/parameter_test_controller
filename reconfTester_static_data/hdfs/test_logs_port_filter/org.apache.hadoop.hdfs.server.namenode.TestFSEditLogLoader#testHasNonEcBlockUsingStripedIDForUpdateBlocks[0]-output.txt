@@ -1,0 +1,43 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestFSEditLogLoader#testHasNonEcBlockUsingStripedIDForUpdateBlocks[0]
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:02:40,409 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:02:41,169 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,203 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44776 start
+2020-03-14 03:02:42,219 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:02:42,294 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,584 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43108 start
+2020-03-14 03:02:42,596 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,656 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34888 start
+2020-03-14 03:02:42,685 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,728 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41238 start
+2020-03-14 03:02:42,746 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,804 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34696 start
+2020-03-14 03:02:42,819 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:42,907 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34448 start
+2020-03-14 03:02:42,922 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:43,121 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44506 start
+2020-03-14 03:02:43,165 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:43,487 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43091 start
+2020-03-14 03:02:43,493 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:43,640 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37127 start
+2020-03-14 03:02:43,652 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:43,792 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45614 start
+2020-03-14 03:02:44,391 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44776 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:44,464 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:02:44,694 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44776 start
+2020-03-14 03:02:49,640 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45614 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,695 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37127 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,739 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43091 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,796 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44506 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,834 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34448 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,863 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34696 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,900 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41238 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,936 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34888 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:49,973 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43108 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:02:50,017 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44776 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestFSEditLogLoader#testHasNonEcBlockUsingStripedIDForUpdateBlocks[0]
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestFSEditLogLoader#testHasNonEcBlockUsingStripedIDForUpdateBlocks[0]
+[msx] succeed
+2020-03-14 03:02:50,077 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

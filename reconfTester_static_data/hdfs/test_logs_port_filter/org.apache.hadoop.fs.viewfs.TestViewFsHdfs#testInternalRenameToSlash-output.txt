@@ -1,0 +1,20 @@
+[msx] before_class
+2020-03-14 03:34:24,826 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:34:25,502 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:26,564 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41415 start
+2020-03-14 03:34:26,580 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:34:26,651 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:26,885 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37673 start
+2020-03-14 03:34:26,895 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:26,972 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41152 start
+[msx] test Started org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testInternalRenameToSlash
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testInternalRenameToSlash
+[msx] writeFile testName = org.apache.hadoop.fs.viewfs.TestViewFsHdfs#testInternalRenameToSlash
+[msx] succeed
+2020-03-14 03:34:28,328 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 03:34:28,331 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41152 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:28,395 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37673 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:28,420 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41415 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

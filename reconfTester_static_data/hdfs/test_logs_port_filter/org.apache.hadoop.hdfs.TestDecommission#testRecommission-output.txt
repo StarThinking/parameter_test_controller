@@ -1,0 +1,32 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDecommission#testRecommission
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:35:17,269 [Thread-4] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:35:18,055 [Thread-4] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,074 [Thread-4] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33812 start
+2020-03-14 06:35:19,085 [Thread-4] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:35:19,106 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,405 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43212 start
+2020-03-14 06:35:19,418 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,539 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34510 start
+2020-03-14 06:35:19,573 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,657 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39540 start
+2020-03-14 06:35:19,671 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,790 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34573 start
+2020-03-14 06:35:19,814 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:19,961 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43855 start
+2020-03-14 06:35:19,975 [Thread-4] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:35:20,174 [Thread-4] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42071 start
+2020-03-14 06:35:23,651 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42071 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,704 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43855 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,742 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34573 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,779 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39540 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,838 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34510 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,859 [Thread-4] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43212 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,889 [Thread-4] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33812 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:35:23,956 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33812 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestDecommission#testRecommission
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDecommission#testRecommission
+[msx] succeed
+2020-03-14 06:35:23,960 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

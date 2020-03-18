@@ -1,0 +1,25 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestFsck#testFsckNonPrivilegedListCorrupt
+[msx] unitTestCounterInClass = 0
+2020-03-14 02:52:04,665 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:52:05,428 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:52:06,405 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38536 start
+2020-03-14 02:52:06,423 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:52:06,489 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:52:06,750 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33186 start
+2020-03-14 02:52:06,765 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:52:06,850 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36918 start
+2020-03-14 02:52:06,877 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:52:07,021 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34776 start
+2020-03-14 02:52:07,076 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:52:07,167 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36680 start
+2020-03-14 02:52:08,063 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36680 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:52:08,106 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34776 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:52:08,163 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36918 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:52:08,198 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33186 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:52:08,239 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38536 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestFsck#testFsckNonPrivilegedListCorrupt
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestFsck#testFsckNonPrivilegedListCorrupt
+[msx] succeed
+2020-03-14 02:52:08,302 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

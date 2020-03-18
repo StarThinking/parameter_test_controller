@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestEditLogsDuringFailover#testFailoverFinalizesAndReadsInProgressSimple
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:10:33,975 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:10:34,846 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:10:35,672 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35865 start
+2020-03-14 04:10:35,676 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:10:35,809 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46548 start
+2020-03-14 04:10:36,939 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35865 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:10:36,998 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46548 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestEditLogsDuringFailover#testFailoverFinalizesAndReadsInProgressSimple
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestEditLogsDuringFailover#testFailoverFinalizesAndReadsInProgressSimple
+[msx] succeed
+2020-03-14 04:10:37,056 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:10:37,058 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

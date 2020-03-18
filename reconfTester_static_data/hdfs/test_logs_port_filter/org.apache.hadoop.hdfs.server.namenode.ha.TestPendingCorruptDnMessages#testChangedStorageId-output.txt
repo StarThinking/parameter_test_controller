@@ -1,0 +1,28 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestPendingCorruptDnMessages#testChangedStorageId
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:38:59,211 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:39:00,012 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:00,893 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44157 start
+2020-03-14 04:39:00,895 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:01,230 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36233 start
+2020-03-14 04:39:01,246 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:39:01,278 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:01,556 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36081 start
+2020-03-14 04:39:04,171 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36081 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:39:04,208 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36233 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:39:04,249 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:04,379 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36233 start
+2020-03-14 04:39:04,395 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:04,461 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36081 start
+2020-03-14 04:39:10,470 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36081 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:39:10,522 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:39:10,595 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36081 start
+2020-03-14 04:39:11,639 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36081 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:39:11,683 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44157 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:39:11,758 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36233 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestPendingCorruptDnMessages#testChangedStorageId
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestPendingCorruptDnMessages#testChangedStorageId
+[msx] succeed
+2020-03-14 04:39:11,786 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

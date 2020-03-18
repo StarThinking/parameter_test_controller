@@ -1,0 +1,13 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicy#testAvoidLocalWrite[1]
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:47:48,181 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:47:48,844 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:47:49,804 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46691 start
+2020-03-14 05:47:49,837 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46691 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicy#testAvoidLocalWrite[1]
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestReplicationPolicy#testAvoidLocalWrite[1]
+[msx] succeed
+2020-03-14 05:47:49,948 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:47:49,950 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

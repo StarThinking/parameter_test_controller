@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:51:16,791 [Thread-0] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:51:16,792 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:17,806 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 37299 start
+2020-03-14 06:51:17,807 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:17,889 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35509 start
+2020-03-14 06:51:17,890 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:17,978 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 38457 start
+2020-03-14 06:51:18,948 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:51:19,673 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:20,153 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13732 start
+2020-03-14 06:51:20,165 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:20,453 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13734 start
+2020-03-14 06:51:20,923 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13732 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:20,989 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13734 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:21,210 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:21,362 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13732 start
+2020-03-14 06:51:21,375 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:51:21,547 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 13734 start
+2020-03-14 06:51:28,778 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13732 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:28,815 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 13734 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:28,841 [Thread-0] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 37299 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:28,852 [Thread-0] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35509 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:51:28,864 [Thread-0] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 38457 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
+[msx] succeed
+2020-03-14 06:51:29,897 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

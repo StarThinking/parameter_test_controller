@@ -1,0 +1,26 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:43:15,394 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:43:16,059 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:43:16,982 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35722 start
+2020-03-14 07:43:16,998 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:43:17,073 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:43:17,345 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38526 start
+2020-03-14 07:43:17,941 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38526 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:43:18,000 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:43:18,041 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46775 start
+2020-03-14 07:43:29,925 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46775 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:43:29,964 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35722 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Failure org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] failed
+[msx] failureMessage: The DN shouldn't have a bad directory.
+[msx] stackTrace: java.lang.AssertionError: The DN shouldn't have a bad directory.
+2020-03-14 07:43:30,043 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] Info : file existed /root/parameter_test_controller/shared/test_results/org.apache.hadoop.hdfs.server.datanode.TestDataNodeVolumeFailureToleration#testValidVolumesAtStartup
+[msx] succeed
+[msx] reset performed
+[msx] all testRunFinished

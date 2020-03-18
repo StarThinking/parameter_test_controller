@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptCommandsQueuedOrdering
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:11:52,366 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:11:52,946 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:11:53,467 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37961 start
+2020-03-14 05:11:53,484 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:11:53,521 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:11:53,764 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35527 start
+2020-03-14 05:11:59,960 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37961 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:12:00,035 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:12:00,258 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37961 start
+2020-03-14 05:12:03,558 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37961 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:12:03,601 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:12:03,764 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37961 start
+2020-03-14 05:12:09,536 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35527 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:12:09,871 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37961 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptCommandsQueuedOrdering
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestReencryptionWithKMS#testReencryptCommandsQueuedOrdering
+[msx] succeed
+2020-03-14 05:12:09,915 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

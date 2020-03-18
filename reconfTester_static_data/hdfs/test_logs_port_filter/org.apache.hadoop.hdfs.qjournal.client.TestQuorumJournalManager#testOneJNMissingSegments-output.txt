@@ -1,0 +1,24 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOneJNMissingSegments
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:14:55,783 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:14:55,811 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:14:56,741 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35548 start
+2020-03-14 04:14:56,742 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:14:56,781 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 32800 start
+2020-03-14 04:14:56,782 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:14:56,812 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 33076 start
+2020-03-14 04:14:58,296 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35548 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:14:58,386 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35548 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:14:58,389 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:14:58,420 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35548 start
+2020-03-14 04:14:58,507 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 32800 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:14:58,720 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35548 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:14:58,731 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 32800 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:14:58,732 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 33076 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOneJNMissingSegments
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOneJNMissingSegments
+[msx] succeed
+2020-03-14 04:14:58,754 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:14:58,765 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

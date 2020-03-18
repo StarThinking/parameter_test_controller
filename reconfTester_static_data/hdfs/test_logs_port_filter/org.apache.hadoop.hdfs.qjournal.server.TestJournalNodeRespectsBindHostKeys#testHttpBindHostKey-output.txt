@@ -1,0 +1,15 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeRespectsBindHostKeys#testHttpBindHostKey
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:18:22,739 [Thread-0] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:18:22,742 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:18:23,703 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 40944 start
+2020-03-14 04:18:23,704 [Thread-0] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:18:23,731 [Thread-0] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 39359 start
+2020-03-14 04:18:23,732 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 39359 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeRespectsBindHostKeys#testHttpBindHostKey
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeRespectsBindHostKeys#testHttpBindHostKey
+[msx] succeed
+2020-03-14 04:18:23,847 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:18:23,857 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

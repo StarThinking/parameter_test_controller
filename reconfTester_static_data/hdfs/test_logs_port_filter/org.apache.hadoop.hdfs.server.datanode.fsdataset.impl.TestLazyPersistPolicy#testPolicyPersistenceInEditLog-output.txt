@@ -1,0 +1,19 @@
+2020-03-14 06:32:23,805 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistPolicy#testPolicyPersistenceInEditLog
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:32:24,979 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:32:25,824 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39991 start
+2020-03-14 06:32:25,836 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:32:25,894 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:32:26,188 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36786 start
+2020-03-14 06:32:26,943 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39991 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:32:27,007 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:32:27,140 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39991 start
+2020-03-14 06:32:29,170 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36786 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:32:29,195 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39991 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistPolicy#testPolicyPersistenceInEditLog
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistPolicy#testPolicyPersistenceInEditLog
+[msx] succeed
+2020-03-14 06:32:29,248 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

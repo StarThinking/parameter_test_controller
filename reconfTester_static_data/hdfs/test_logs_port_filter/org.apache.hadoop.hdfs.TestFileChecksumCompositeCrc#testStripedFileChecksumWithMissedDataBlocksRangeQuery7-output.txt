@@ -1,0 +1,50 @@
+[msx] test Started org.apache.hadoop.hdfs.TestFileChecksumCompositeCrc#testStripedFileChecksumWithMissedDataBlocksRangeQuery7
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:34:05,005 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:34:05,853 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:06,884 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43466 start
+2020-03-14 03:34:06,895 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:34:06,971 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:07,256 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46556 start
+2020-03-14 03:34:07,270 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:07,445 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36183 start
+2020-03-14 03:34:07,473 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:07,618 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40070 start
+2020-03-14 03:34:07,627 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:07,797 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33870 start
+2020-03-14 03:34:07,813 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,054 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41302 start
+2020-03-14 03:34:08,104 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,229 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45756 start
+2020-03-14 03:34:08,251 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,394 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36067 start
+2020-03-14 03:34:08,411 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,578 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33012 start
+2020-03-14 03:34:08,596 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,753 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43839 start
+2020-03-14 03:34:08,759 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:08,888 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38969 start
+2020-03-14 03:34:08,901 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:09,020 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44463 start
+2020-03-14 03:34:15,689 [Thread-424] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44463 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:15,885 [Thread-424] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44463 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:15,893 [Thread-424] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:34:15,946 [Thread-424] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37642 start
+2020-03-14 03:34:15,958 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37642 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,081 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38969 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,123 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43839 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,171 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33012 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,205 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36067 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,250 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45756 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,283 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41302 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,312 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33870 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,330 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40070 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,348 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36183 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,368 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46556 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:34:16,502 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43466 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestFileChecksumCompositeCrc#testStripedFileChecksumWithMissedDataBlocksRangeQuery7
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestFileChecksumCompositeCrc#testStripedFileChecksumWithMissedDataBlocksRangeQuery7
+[msx] succeed
+2020-03-14 03:34:16,562 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

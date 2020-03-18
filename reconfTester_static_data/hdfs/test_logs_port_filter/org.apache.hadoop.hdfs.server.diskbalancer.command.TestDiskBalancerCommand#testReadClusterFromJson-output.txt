@@ -1,0 +1,25 @@
+[msx] test Started org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testReadClusterFromJson
+[msx] unitTestCounterInClass = 0
+2020-03-14 02:48:32,944 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:48:33,669 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:48:34,680 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43355 start
+2020-03-14 02:48:34,697 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:48:34,769 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:48:35,088 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37384 start
+2020-03-14 02:48:35,112 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:48:35,188 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36963 start
+2020-03-14 02:48:35,208 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:48:35,264 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33363 start
+2020-03-14 02:48:35,980 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37384 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,018 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36963 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,042 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33363 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,174 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33363 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,179 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36963 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,180 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37384 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:48:36,181 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43355 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testReadClusterFromJson
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testReadClusterFromJson
+[msx] succeed
+2020-03-14 02:48:36,269 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

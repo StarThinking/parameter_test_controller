@@ -1,0 +1,25 @@
+[msx] test Started org.apache.hadoop.hdfs.TestClientProtocolForPipelineRecovery#testPipelineRecoveryWithTransferBlock
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:11:30,601 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:11:31,331 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:11:32,286 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37969 start
+2020-03-14 06:11:32,301 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:11:32,378 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:11:32,657 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36919 start
+2020-03-14 06:11:32,688 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:11:32,799 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35008 start
+2020-03-14 06:11:32,825 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:11:32,936 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44618 start
+2020-03-14 06:11:32,977 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:11:33,098 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34049 start
+2020-03-14 06:11:35,077 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36919 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:11:35,128 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44618 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:11:35,287 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34049 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:11:35,319 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35008 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:11:35,449 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37969 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestClientProtocolForPipelineRecovery#testPipelineRecoveryWithTransferBlock
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestClientProtocolForPipelineRecovery#testPipelineRecoveryWithTransferBlock
+[msx] succeed
+2020-03-14 06:11:35,509 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

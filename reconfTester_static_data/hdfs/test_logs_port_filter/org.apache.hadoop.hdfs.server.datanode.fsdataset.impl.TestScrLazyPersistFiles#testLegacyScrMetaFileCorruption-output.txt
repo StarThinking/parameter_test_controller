@@ -1,0 +1,17 @@
+2020-03-14 06:44:15,146 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] before_class
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestScrLazyPersistFiles#testLegacyScrMetaFileCorruption
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:44:16,575 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:44:17,617 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34698 start
+2020-03-14 06:44:17,629 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:44:17,701 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:44:17,980 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45647 start
+2020-03-14 06:44:19,711 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45647 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:44:19,758 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34698 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestScrLazyPersistFiles#testLegacyScrMetaFileCorruption
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestScrLazyPersistFiles#testLegacyScrMetaFileCorruption
+[msx] succeed
+2020-03-14 06:44:19,813 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

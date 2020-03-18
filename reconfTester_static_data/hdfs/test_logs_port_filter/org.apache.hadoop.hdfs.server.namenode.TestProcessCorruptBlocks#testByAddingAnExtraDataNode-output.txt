@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestProcessCorruptBlocks#testByAddingAnExtraDataNode
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:38:30,996 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:38:31,733 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:32,769 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42266 start
+2020-03-14 04:38:32,783 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:38:32,848 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:33,118 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35210 start
+2020-03-14 04:38:33,143 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:33,233 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35118 start
+2020-03-14 04:38:33,253 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:33,380 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35561 start
+2020-03-14 04:38:33,384 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:33,526 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40647 start
+2020-03-14 04:38:34,108 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40647 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:34,552 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35210 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:34,591 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:34,641 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40661 start
+2020-03-14 04:38:34,668 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:38:34,771 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35018 start
+2020-03-14 04:38:37,838 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35018 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:37,888 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40661 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:37,970 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35561 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:38,006 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35118 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:38:38,136 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42266 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestProcessCorruptBlocks#testByAddingAnExtraDataNode
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestProcessCorruptBlocks#testByAddingAnExtraDataNode
+[msx] succeed
+2020-03-14 04:38:38,191 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

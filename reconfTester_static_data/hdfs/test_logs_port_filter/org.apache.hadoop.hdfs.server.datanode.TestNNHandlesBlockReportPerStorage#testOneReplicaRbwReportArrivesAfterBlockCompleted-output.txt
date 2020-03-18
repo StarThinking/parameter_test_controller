@@ -1,0 +1,19 @@
+2020-03-14 08:20:44,235 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:20:44,255 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#testOneReplicaRbwReportArrivesAfterBlockCompleted
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:20:45,536 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:20:46,584 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35647 start
+2020-03-14 08:20:46,648 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:20:46,906 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35585 start
+2020-03-14 08:20:47,524 [Thread-85] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:20:47,569 [Thread-85] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45457 start
+2020-03-14 08:20:50,568 [Thread-85] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45457 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:20:50,642 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35585 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:20:50,783 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35647 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#testOneReplicaRbwReportArrivesAfterBlockCompleted
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#testOneReplicaRbwReportArrivesAfterBlockCompleted
+[msx] succeed
+2020-03-14 08:20:50,845 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestFSNamesystemMBean#testWithFSNamesystemWriteLock
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:21:08,832 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:21:09,530 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:21:10,533 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46042 start
+2020-03-14 03:21:10,551 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:21:10,642 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:21:10,957 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41668 start
+2020-03-14 03:21:12,630 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41668 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:21:12,808 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46042 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestFSNamesystemMBean#testWithFSNamesystemWriteLock
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestFSNamesystemMBean#testWithFSNamesystemWriteLock
+[msx] succeed
+2020-03-14 03:21:12,870 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

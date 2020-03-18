@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestEditLogAutoroll#testEditLogAutoroll[0]
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:13:21,103 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:13:21,940 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:13:23,037 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39187 start
+2020-03-14 07:13:23,039 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:13:23,141 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38165 start
+2020-03-14 07:13:25,291 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39187 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:13:25,337 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38165 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestEditLogAutoroll#testEditLogAutoroll[0]
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestEditLogAutoroll#testEditLogAutoroll[0]
+[msx] succeed
+2020-03-14 07:13:25,379 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:13:25,381 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

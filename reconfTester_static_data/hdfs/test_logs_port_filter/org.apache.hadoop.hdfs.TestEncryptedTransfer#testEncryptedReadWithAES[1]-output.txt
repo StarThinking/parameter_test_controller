@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.TestEncryptedTransfer#testEncryptedReadWithAES[1]
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:06:46,709 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:06:47,411 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:06:48,433 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41685 start
+2020-03-14 08:06:48,448 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:06:48,525 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:06:48,790 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33641 start
+2020-03-14 08:06:50,161 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33641 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:06:50,316 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41685 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:06:50,390 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:06:50,547 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39025 start
+2020-03-14 08:06:50,551 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:06:50,611 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46837 start
+2020-03-14 08:06:50,761 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46837 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:06:50,908 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39025 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestEncryptedTransfer#testEncryptedReadWithAES[1]
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestEncryptedTransfer#testEncryptedReadWithAES[1]
+[msx] succeed
+2020-03-14 08:06:50,966 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

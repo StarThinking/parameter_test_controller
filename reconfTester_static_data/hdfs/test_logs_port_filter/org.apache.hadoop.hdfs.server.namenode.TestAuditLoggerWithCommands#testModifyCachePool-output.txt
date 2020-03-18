@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestAuditLoggerWithCommands#testModifyCachePool
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:34:25,670 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:34:26,343 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:34:27,309 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 33029 start
+2020-03-14 06:34:27,323 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:34:27,398 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:34:27,665 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35834 start
+2020-03-14 06:34:27,712 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:34:27,776 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41387 start
+2020-03-14 06:34:28,680 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41387 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:34:28,732 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35834 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:34:28,873 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 33029 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestAuditLoggerWithCommands#testModifyCachePool
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestAuditLoggerWithCommands#testModifyCachePool
+[msx] succeed
+2020-03-14 06:34:28,952 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

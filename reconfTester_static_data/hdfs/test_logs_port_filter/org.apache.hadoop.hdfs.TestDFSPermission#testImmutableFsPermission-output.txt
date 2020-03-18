@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDFSPermission#testImmutableFsPermission
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:59:17,257 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:59:17,929 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:18,826 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44729 start
+2020-03-14 06:59:18,843 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:59:18,926 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:19,435 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41337 start
+2020-03-14 06:59:19,455 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:19,522 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36220 start
+2020-03-14 06:59:19,541 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:59:19,617 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45916 start
+2020-03-14 06:59:20,476 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45916 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:59:20,541 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36220 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:59:20,576 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41337 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:59:20,608 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44729 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestDFSPermission#testImmutableFsPermission
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDFSPermission#testImmutableFsPermission
+[msx] succeed
+2020-03-14 06:59:20,691 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

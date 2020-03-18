@@ -1,0 +1,19 @@
+2020-03-14 06:29:25,588 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistFiles#testFileShouldNotDiscardedIfNNRestarted
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:29:26,958 [Thread-2] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:29:28,099 [Thread-2] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34537 start
+2020-03-14 06:29:28,111 [Thread-2] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:29:28,171 [Thread-2] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:29:28,475 [Thread-2] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42878 start
+2020-03-14 06:29:29,845 [Thread-2] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42878 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:29:29,888 [Thread-2] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34537 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:29:29,944 [Thread-2] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:29:30,060 [Thread-2] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34537 start
+2020-03-14 06:29:33,079 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34537 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistFiles#testFileShouldNotDiscardedIfNNRestarted
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyPersistFiles#testFileShouldNotDiscardedIfNNRestarted
+[msx] succeed
+2020-03-14 06:29:33,118 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testMultipleJournalsMultipleMissingLogs
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:19:50,689 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:19:50,691 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:51,538 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 35004 start
+2020-03-14 04:19:51,539 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:51,573 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 38106 start
+2020-03-14 04:19:51,573 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:51,665 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 38778 start
+2020-03-14 04:19:52,491 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:19:53,019 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:53,555 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 10940 start
+2020-03-14 04:19:53,556 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:53,697 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 10942 start
+2020-03-14 04:19:54,046 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 10940 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:54,092 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 10942 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:54,195 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:54,393 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 10940 start
+2020-03-14 04:19:54,394 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:54,531 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 10942 start
+2020-03-14 04:19:56,890 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 10940 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:56,937 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 10942 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:56,966 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 35004 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:56,973 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 38106 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:56,981 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 38778 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testMultipleJournalsMultipleMissingLogs
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testMultipleJournalsMultipleMissingLogs
+[msx] succeed
+2020-03-14 04:19:57,015 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

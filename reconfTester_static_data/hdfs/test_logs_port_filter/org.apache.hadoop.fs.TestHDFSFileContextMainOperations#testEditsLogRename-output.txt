@@ -1,0 +1,26 @@
+[msx] before_class
+2020-03-14 05:15:45,348 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:15:46,085 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:15:47,085 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38972 start
+2020-03-14 05:15:47,099 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:15:47,158 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:15:47,430 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38354 start
+2020-03-14 05:15:47,449 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:15:47,579 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40662 start
+[msx] test Started org.apache.hadoop.fs.TestHDFSFileContextMainOperations#testEditsLogRename
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:15:48,983 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40662 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:15:49,027 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38354 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:15:49,050 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38972 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:15:49,114 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:15:49,264 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 45789 start
+2020-03-14 05:15:49,273 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:15:49,313 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34792 start
+[msx] test Finished org.apache.hadoop.fs.TestHDFSFileContextMainOperations#testEditsLogRename
+[msx] writeFile testName = org.apache.hadoop.fs.TestHDFSFileContextMainOperations#testEditsLogRename
+[msx] succeed
+2020-03-14 05:15:49,578 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 05:15:49,578 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34792 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:15:49,621 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 45789 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

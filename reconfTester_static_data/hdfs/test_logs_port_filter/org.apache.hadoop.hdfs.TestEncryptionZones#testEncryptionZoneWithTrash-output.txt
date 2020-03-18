@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.TestEncryptionZones#testEncryptionZoneWithTrash
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:18:19,070 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:18:19,928 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:18:20,976 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36299 start
+2020-03-14 08:18:20,990 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:18:21,021 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:18:21,297 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43754 start
+2020-03-14 08:18:25,669 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43754 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:18:25,724 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36299 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestEncryptionZones#testEncryptionZoneWithTrash
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestEncryptionZones#testEncryptionZoneWithTrash
+[msx] succeed
+2020-03-14 08:18:25,784 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

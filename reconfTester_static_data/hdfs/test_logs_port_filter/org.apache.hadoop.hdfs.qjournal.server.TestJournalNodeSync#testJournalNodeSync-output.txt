@@ -1,0 +1,31 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testJournalNodeSync
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:19:09,679 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:19:09,683 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:10,520 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 38096 start
+2020-03-14 04:19:10,521 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:10,632 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 40842 start
+2020-03-14 04:19:10,633 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:10,659 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 40217 start
+2020-03-14 04:19:11,512 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:19:11,999 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:12,606 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 11164 start
+2020-03-14 04:19:12,608 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:12,710 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 11166 start
+2020-03-14 04:19:13,087 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 11164 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:13,132 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 11166 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:13,216 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:13,388 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 11164 start
+2020-03-14 04:19:13,389 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:19:13,599 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 11166 start
+2020-03-14 04:19:14,897 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 11164 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:14,950 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 11166 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:14,970 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 38096 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:14,974 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 40842 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:19:14,982 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 40217 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testJournalNodeSync
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testJournalNodeSync
+[msx] succeed
+2020-03-14 04:19:14,997 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

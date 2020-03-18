@@ -1,0 +1,16 @@
+2020-03-14 03:18:16,973 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:18:17,001 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageWithAppending
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:18:18,283 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:18:19,243 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34787 start
+2020-03-14 03:18:22,097 [Thread-152] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34787 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:18:22,218 [Thread-152] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:18:22,366 [Thread-152] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 40048 start
+2020-03-14 03:18:23,049 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 40048 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageWithAppending
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestFSImageWithSnapshot#testSaveLoadImageWithAppending
+[msx] succeed
+2020-03-14 03:18:23,088 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

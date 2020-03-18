@@ -1,0 +1,29 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:49:41,524 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:49:42,195 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:49:43,242 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39268 start
+2020-03-14 05:49:43,256 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:49:43,328 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:49:43,657 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39623 start
+2020-03-14 05:49:43,684 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:49:43,877 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40418 start
+2020-03-14 05:49:43,889 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:49:43,955 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40170 start
+2020-03-14 05:49:44,562 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40170 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:49:44,596 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40418 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:49:44,616 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39623 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:49:44,752 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39268 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] testAssumptionFailure org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] failed
+[msx] failureMessage: got: <false>, expected: is <true>
+[msx] stackTrace: org.junit.internal.AssumptionViolatedException: got: <false>, expected: is <true>
+2020-03-14 05:49:44,814 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] Info : file existed /root/parameter_test_controller/shared/test_results/org.apache.hadoop.hdfs.server.namenode.snapshot.TestSnapRootDescendantDiff#testSnapRootDescendantDiffReportWithRename
+[msx] succeed
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,20 @@
+[msx] before_class
+2020-03-14 02:54:32,274 [JUnit] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:54:32,972 [JUnit] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:54:34,006 [JUnit] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36044 start
+2020-03-14 02:54:34,022 [JUnit] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:54:34,091 [JUnit] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:54:34,416 [JUnit] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38921 start
+2020-03-14 02:54:34,439 [JUnit] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:54:34,540 [JUnit] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42474 start
+[msx] test Started org.apache.hadoop.fs.contract.hdfs.TestHDFSContractGetFileStatus#testComplexDirActions
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.fs.contract.hdfs.TestHDFSContractGetFileStatus#testComplexDirActions
+[msx] writeFile testName = org.apache.hadoop.fs.contract.hdfs.TestHDFSContractGetFileStatus#testComplexDirActions
+[msx] succeed
+2020-03-14 02:54:36,388 [JUnit] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 02:54:36,390 [JUnit] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42474 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:54:36,428 [JUnit] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38921 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:54:36,560 [JUnit] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36044 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

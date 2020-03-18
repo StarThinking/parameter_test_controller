@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.TestMultiThreadedHflush#testHflushWhileClosing
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:54:19,939 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:54:20,610 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:54:21,651 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38582 start
+2020-03-14 04:54:21,668 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:54:21,746 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:54:22,059 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46251 start
+2020-03-14 04:54:23,444 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46251 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:54:23,606 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38582 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestMultiThreadedHflush#testHflushWhileClosing
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestMultiThreadedHflush#testHflushWhileClosing
+[msx] succeed
+2020-03-14 04:54:23,690 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,13 @@
+[msx] test Started org.apache.hadoop.hdfs.server.mover.TestMover#testMoverCli
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:44:53,574 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:44:54,351 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:44:55,428 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38175 start
+2020-03-14 03:44:56,026 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38175 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.mover.TestMover#testMoverCli
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.mover.TestMover#testMoverCli
+[msx] succeed
+2020-03-14 03:44:56,102 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:44:56,104 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.web.TestWebHDFSForHA#testRetryWhileNNStartup
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:23:19,199 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:23:19,963 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:23:20,863 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46611 start
+2020-03-14 08:23:20,865 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:23:21,014 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36536 start
+2020-03-14 08:23:24,187 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46611 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:23:24,271 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36536 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.web.TestWebHDFSForHA#testRetryWhileNNStartup
+[msx] writeFile testName = org.apache.hadoop.hdfs.web.TestWebHDFSForHA#testRetryWhileNNStartup
+[msx] succeed
+2020-03-14 08:23:24,313 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:23:24,316 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

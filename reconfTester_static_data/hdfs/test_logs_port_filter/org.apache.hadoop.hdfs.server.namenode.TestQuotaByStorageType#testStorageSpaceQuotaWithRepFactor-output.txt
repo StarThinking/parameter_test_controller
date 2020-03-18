@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestQuotaByStorageType#testStorageSpaceQuotaWithRepFactor
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:48:52,971 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:48:53,667 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:48:54,774 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42450 start
+2020-03-14 04:48:54,794 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:48:54,879 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:48:55,213 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41640 start
+2020-03-14 04:48:55,226 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:48:55,335 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42301 start
+2020-03-14 04:48:55,353 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:48:55,403 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41942 start
+2020-03-14 04:48:56,373 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41942 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:48:56,419 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42301 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:48:56,452 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41640 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:48:56,586 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42450 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestQuotaByStorageType#testStorageSpaceQuotaWithRepFactor
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestQuotaByStorageType#testStorageSpaceQuotaWithRepFactor
+[msx] succeed
+2020-03-14 04:48:56,646 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

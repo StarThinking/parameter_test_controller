@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.TestEncryptedTransfer#testFileChecksumWithInvalidEncryptionKey[0]
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:09:44,110 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:09:44,840 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:09:45,922 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43008 start
+2020-03-14 08:09:45,939 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:09:46,006 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:09:46,290 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 32789 start
+2020-03-14 08:09:56,084 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 32789 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:09:56,231 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43008 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestEncryptedTransfer#testFileChecksumWithInvalidEncryptionKey[0]
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestEncryptedTransfer#testFileChecksumWithInvalidEncryptionKey[0]
+[msx] succeed
+2020-03-14 08:09:56,298 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testSelectInputStreamsMajorityDown
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:16:58,280 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:16:58,295 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:16:59,115 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 41575 start
+2020-03-14 04:16:59,116 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:16:59,135 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 44056 start
+2020-03-14 04:16:59,136 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:16:59,154 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 34703 start
+2020-03-14 04:17:00,212 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 41575 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:17:00,225 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 44056 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:17:00,234 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 34703 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:17:00,251 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 41575 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:17:00,252 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 44056 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:17:00,252 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 34703 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testSelectInputStreamsMajorityDown
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testSelectInputStreamsMajorityDown
+[msx] succeed
+2020-03-14 04:17:00,267 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:17:00,278 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

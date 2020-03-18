@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testGetFileStatusThrowsExceptionForNonExistentFile
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:15:55,608 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:15:56,330 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:57,427 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34354 start
+2020-03-14 04:15:57,444 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:15:57,524 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:57,768 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35817 start
+2020-03-14 04:15:57,777 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:15:57,857 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45698 start
+2020-03-14 04:15:58,467 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45698 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:58,531 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35817 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:15:58,664 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34354 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testGetFileStatusThrowsExceptionForNonExistentFile
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestHDFSFileSystemContract#testGetFileStatusThrowsExceptionForNonExistentFile
+[msx] succeed
+2020-03-14 04:15:58,731 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

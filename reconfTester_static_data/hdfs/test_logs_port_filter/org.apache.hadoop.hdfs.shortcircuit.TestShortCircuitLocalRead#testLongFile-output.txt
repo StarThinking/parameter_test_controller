@@ -1,0 +1,23 @@
+[msx] before_class
+[msx] test Started org.apache.hadoop.hdfs.shortcircuit.TestShortCircuitLocalRead#testLongFile
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:51:22,593 [Thread-1] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:51:23,267 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:51:24,278 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36130 start
+2020-03-14 05:51:24,293 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:51:24,365 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:51:24,640 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42192 start
+2020-03-14 05:51:25,807 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42192 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:51:25,867 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36130 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:51:26,003 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:51:26,132 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34196 start
+2020-03-14 05:51:26,159 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:51:26,221 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40938 start
+2020-03-14 05:51:26,606 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40938 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:51:26,663 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34196 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.shortcircuit.TestShortCircuitLocalRead#testLongFile
+[msx] writeFile testName = org.apache.hadoop.hdfs.shortcircuit.TestShortCircuitLocalRead#testLongFile
+[msx] succeed
+2020-03-14 05:51:26,699 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

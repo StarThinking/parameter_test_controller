@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.TestLease#testLeaseAbort
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:46:26,680 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:46:27,411 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:46:28,454 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34315 start
+2020-03-14 04:46:28,469 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:46:28,537 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:46:28,793 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34240 start
+2020-03-14 04:46:28,810 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:46:28,860 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46070 start
+2020-03-14 04:46:30,860 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46070 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:46:30,911 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34240 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:46:31,048 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34315 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestLease#testLeaseAbort
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestLease#testLeaseAbort
+[msx] succeed
+2020-03-14 04:46:31,105 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

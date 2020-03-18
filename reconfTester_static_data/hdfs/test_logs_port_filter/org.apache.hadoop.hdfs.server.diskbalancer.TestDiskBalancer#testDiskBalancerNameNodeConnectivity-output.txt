@@ -1,0 +1,20 @@
+[msx] test Started org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerNameNodeConnectivity
+[msx] unitTestCounterInClass = 0
+2020-03-14 02:59:21,490 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:59:22,195 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:59:23,296 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42200 start
+2020-03-14 02:59:23,312 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:59:23,383 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:59:23,694 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33018 start
+2020-03-14 02:59:23,707 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:59:23,823 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38205 start
+2020-03-14 02:59:24,699 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33018 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:59:24,769 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38205 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:59:24,805 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33018 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:59:24,810 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42200 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerNameNodeConnectivity
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerNameNodeConnectivity
+[msx] succeed
+2020-03-14 02:59:24,868 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

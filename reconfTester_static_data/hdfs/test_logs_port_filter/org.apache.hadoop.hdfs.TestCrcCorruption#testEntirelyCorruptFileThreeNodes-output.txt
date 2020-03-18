@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.TestCrcCorruption#testEntirelyCorruptFileThreeNodes
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:15:36,050 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:15:37,119 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:15:38,173 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35486 start
+2020-03-14 06:15:38,189 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:15:38,256 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:15:38,472 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36547 start
+2020-03-14 06:15:38,499 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:15:38,611 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38276 start
+2020-03-14 06:15:38,657 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:15:38,756 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39796 start
+2020-03-14 06:15:40,011 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39796 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:15:40,076 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38276 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:15:40,101 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36547 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:15:40,236 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35486 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestCrcCorruption#testEntirelyCorruptFileThreeNodes
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestCrcCorruption#testEntirelyCorruptFileThreeNodes
+[msx] succeed
+2020-03-14 06:15:40,307 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

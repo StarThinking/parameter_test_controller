@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.TestFileCreation#testConcurrentFileCreation
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:57:02,953 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:57:03,661 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:57:04,643 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44459 start
+2020-03-14 03:57:04,660 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:57:04,741 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:57:05,038 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39833 start
+2020-03-14 03:57:06,851 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39833 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:57:07,007 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44459 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestFileCreation#testConcurrentFileCreation
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestFileCreation#testConcurrentFileCreation
+[msx] succeed
+2020-03-14 03:57:07,060 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

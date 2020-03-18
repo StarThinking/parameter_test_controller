@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDatanodeStartupFixesLegacyStorageIDs#testUpgradeFrom26PreservesStorageIDs
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:23:03,693 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:23:04,182 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:23:05,607 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46037 start
+2020-03-14 06:23:05,624 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:23:05,695 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:23:06,196 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43963 start
+2020-03-14 06:23:07,974 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43963 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:23:08,120 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46037 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestDatanodeStartupFixesLegacyStorageIDs#testUpgradeFrom26PreservesStorageIDs
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDatanodeStartupFixesLegacyStorageIDs#testUpgradeFrom26PreservesStorageIDs
+[msx] succeed
+2020-03-14 06:23:08,206 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

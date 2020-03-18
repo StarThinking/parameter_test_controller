@@ -1,0 +1,23 @@
+[msx] before_class
+[msx] test Started org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testDataNodeStartIfHttpsQopPrivacy
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:05:28,185 [Thread-1] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:05:28,915 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:05:30,128 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38786 start
+2020-03-14 04:05:30,142 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:05:30,226 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:05:30,469 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45136 start
+2020-03-14 04:05:30,508 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:05:30,580 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45628 start
+2020-03-14 04:05:30,649 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:05:30,746 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43282 start
+2020-03-14 04:05:31,605 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43282 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:05:31,669 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45628 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:05:31,701 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45136 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:05:31,835 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38786 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testDataNodeStartIfHttpsQopPrivacy
+[msx] writeFile testName = org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testDataNodeStartIfHttpsQopPrivacy
+[msx] succeed
+2020-03-14 04:05:31,910 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

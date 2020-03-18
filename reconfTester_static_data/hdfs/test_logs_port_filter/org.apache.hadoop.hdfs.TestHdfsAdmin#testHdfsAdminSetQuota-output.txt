@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.TestHdfsAdmin#testHdfsAdminSetQuota
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:12:43,841 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:12:44,643 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:12:45,569 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41392 start
+2020-03-14 04:12:45,589 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:12:45,666 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:12:46,050 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33279 start
+2020-03-14 04:12:46,058 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:12:46,127 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38152 start
+2020-03-14 04:12:46,921 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38152 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:12:46,968 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33279 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:12:47,104 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41392 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestHdfsAdmin#testHdfsAdminSetQuota
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestHdfsAdmin#testHdfsAdminSetQuota
+[msx] succeed
+2020-03-14 04:12:47,164 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

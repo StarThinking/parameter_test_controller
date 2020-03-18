@@ -1,0 +1,18 @@
+[msx] before_class
+2020-03-14 06:22:20,026 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:22:20,749 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:22:21,668 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34016 start
+2020-03-14 06:22:21,685 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:22:21,773 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:22:22,059 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40429 start
+[msx] before_class
+[msx] test Started org.apache.hadoop.fs.TestSymlinkHdfsFileSystem#testCreateLinkToLink
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.fs.TestSymlinkHdfsFileSystem#testCreateLinkToLink
+[msx] writeFile testName = org.apache.hadoop.fs.TestSymlinkHdfsFileSystem#testCreateLinkToLink
+[msx] succeed
+2020-03-14 06:22:23,558 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 06:22:23,558 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40429 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:22:23,707 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34016 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

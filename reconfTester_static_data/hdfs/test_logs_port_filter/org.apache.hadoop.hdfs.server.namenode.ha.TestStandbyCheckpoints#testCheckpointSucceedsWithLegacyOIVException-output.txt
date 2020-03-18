@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testCheckpointSucceedsWithLegacyOIVException
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:55:02,292 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:55:03,525 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:55:04,522 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37192 start
+2020-03-14 04:55:04,524 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:55:04,639 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43161 start
+2020-03-14 04:55:04,643 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:55:04,729 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42425 start
+2020-03-14 04:55:04,745 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:55:04,761 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:55:05,240 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 32960 start
+2020-03-14 04:55:08,036 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 32960 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:55:08,102 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37192 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:55:08,150 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43161 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:55:08,170 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42425 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testCheckpointSucceedsWithLegacyOIVException
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testCheckpointSucceedsWithLegacyOIVException
+[msx] succeed
+2020-03-14 04:55:08,208 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

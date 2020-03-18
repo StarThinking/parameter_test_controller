@@ -1,0 +1,18 @@
+[msx] test Started org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:47:07,736 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:47:07,941 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:47:08,638 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 0 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:47:08,677 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:47:09,561 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41605 start
+2020-03-14 07:47:10,343 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41605 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:47:10,414 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:47:10,634 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41605 start
+2020-03-14 07:47:10,690 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41605 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+[msx] succeed
+2020-03-14 07:47:10,742 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:47:10,744 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

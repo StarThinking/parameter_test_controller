@@ -1,0 +1,25 @@
+[msx] test Started org.apache.hadoop.metrics2.sink.TestRollingFileSystemSinkWithHdfs#testWrite
+[msx] unitTestCounterInClass = 0
+2020-03-14 09:02:56,066 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:02:56,822 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 09:02:57,826 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43317 start
+2020-03-14 09:02:57,842 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 09:02:57,923 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:02:58,178 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42960 start
+2020-03-14 09:02:58,188 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:02:58,317 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42096 start
+2020-03-14 09:02:58,345 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:02:58,455 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39059 start
+2020-03-14 09:02:58,460 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 09:02:58,535 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46730 start
+2020-03-14 09:02:59,987 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46730 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:03:00,023 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39059 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:03:00,046 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42096 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:03:00,074 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42960 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 09:03:00,108 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43317 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.metrics2.sink.TestRollingFileSystemSinkWithHdfs#testWrite
+[msx] writeFile testName = org.apache.hadoop.metrics2.sink.TestRollingFileSystemSinkWithHdfs#testWrite
+[msx] succeed
+2020-03-14 09:03:00,194 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestDataNodeTransferSocketSize#testAutoTuningDataSocketSize
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:33:21,904 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:33:22,611 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:33:23,597 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 37765 start
+2020-03-14 07:33:23,613 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:33:23,685 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:33:24,159 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43667 start
+2020-03-14 07:33:24,539 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43667 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:33:24,667 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 37765 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestDataNodeTransferSocketSize#testAutoTuningDataSocketSize
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeTransferSocketSize#testAutoTuningDataSocketSize
+[msx] succeed
+2020-03-14 07:33:24,728 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

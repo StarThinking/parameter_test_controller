@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.ha.TestInitializeSharedEdits#testDontOverWriteExistingDir
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:36:48,424 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:36:49,278 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:36:50,205 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 35646 start
+2020-03-14 04:36:50,207 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:36:50,321 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43424 start
+2020-03-14 04:36:51,210 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 35646 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:36:51,279 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43424 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.ha.TestInitializeSharedEdits#testDontOverWriteExistingDir
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.ha.TestInitializeSharedEdits#testDontOverWriteExistingDir
+[msx] succeed
+2020-03-14 04:36:51,455 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:36:51,458 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

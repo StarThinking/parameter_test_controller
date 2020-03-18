@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestRBWBlockInvalidation#testBlockInvalidationWhenRBWReplicaMissedInDN
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:43:17,255 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:43:18,058 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:43:19,077 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 38834 start
+2020-03-14 05:43:19,091 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:43:19,155 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:43:19,424 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35877 start
+2020-03-14 05:43:19,445 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:43:19,639 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33519 start
+2020-03-14 05:43:20,631 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:43:20,675 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 46211 start
+2020-03-14 05:43:22,469 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 46211 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:43:22,544 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33519 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:43:22,579 [Thread-0] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35877 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:43:22,712 [Thread-0] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 38834 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestRBWBlockInvalidation#testBlockInvalidationWhenRBWReplicaMissedInDN
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestRBWBlockInvalidation#testBlockInvalidationWhenRBWReplicaMissedInDN
+[msx] succeed
+2020-03-14 05:43:22,778 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

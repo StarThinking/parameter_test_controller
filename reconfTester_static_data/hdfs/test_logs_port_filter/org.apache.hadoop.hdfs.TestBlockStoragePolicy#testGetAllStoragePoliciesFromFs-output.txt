@@ -1,0 +1,22 @@
+[msx] test Started org.apache.hadoop.hdfs.TestBlockStoragePolicy#testGetAllStoragePoliciesFromFs
+[msx] unitTestCounterInClass = 0
+2020-03-14 06:05:55,855 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:05:56,603 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 06:05:57,674 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39957 start
+2020-03-14 06:05:57,687 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 06:05:57,787 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:05:58,067 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44072 start
+2020-03-14 06:05:58,092 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:05:58,261 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 33893 start
+2020-03-14 06:05:58,289 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 06:05:58,360 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36807 start
+2020-03-14 06:05:58,985 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36807 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:05:59,026 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 33893 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:05:59,048 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44072 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 06:05:59,184 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39957 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.TestBlockStoragePolicy#testGetAllStoragePoliciesFromFs
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestBlockStoragePolicy#testGetAllStoragePoliciesFromFs
+[msx] succeed
+2020-03-14 06:05:59,246 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

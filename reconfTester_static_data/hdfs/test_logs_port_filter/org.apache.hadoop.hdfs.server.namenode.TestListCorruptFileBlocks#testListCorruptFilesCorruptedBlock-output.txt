@@ -1,0 +1,16 @@
+2020-03-14 03:41:28,376 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestListCorruptFileBlocks#testListCorruptFilesCorruptedBlock
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:41:29,580 [Thread-1] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:41:30,633 [Thread-1] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 42368 start
+2020-03-14 03:41:30,649 [Thread-1] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:41:30,724 [Thread-1] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:41:30,988 [Thread-1] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40304 start
+2020-03-14 03:41:32,090 [Thread-1] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40304 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:41:32,243 [Thread-1] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 42368 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestListCorruptFileBlocks#testListCorruptFilesCorruptedBlock
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestListCorruptFileBlocks#testListCorruptFilesCorruptedBlock
+[msx] succeed
+2020-03-14 03:41:32,307 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

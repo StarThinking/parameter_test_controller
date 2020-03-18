@@ -1,0 +1,17 @@
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:22:41,311 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+[msx] test Failure org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] failed
+[msx] failureMessage: Savenamespace should have marked one directory as bad. But found 0 bad directories.
+[msx] stackTrace: java.lang.AssertionError: Savenamespace should have marked one directory as bad. But found 0 bad directories.
+2020-03-14 05:22:42,606 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:22:42,608 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] Info : file existed /root/parameter_test_controller/shared/test_results/org.apache.hadoop.hdfs.server.namenode.TestSaveNamespace#testReinsertnamedirsInSavenamespace
+[msx] succeed
+[msx] reset performed
+[msx] all testRunFinished

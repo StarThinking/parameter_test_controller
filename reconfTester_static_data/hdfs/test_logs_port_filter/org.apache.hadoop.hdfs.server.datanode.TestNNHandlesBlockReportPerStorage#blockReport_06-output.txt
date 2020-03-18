@@ -1,0 +1,19 @@
+2020-03-14 08:18:37,750 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:18:37,763 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#blockReport_06
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:18:39,321 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:18:40,344 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 39399 start
+2020-03-14 08:18:40,424 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:18:40,736 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 41505 start
+2020-03-14 08:18:41,828 [Thread-85] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:18:41,898 [Thread-85] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45289 start
+2020-03-14 08:18:54,252 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45289 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:18:54,303 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 41505 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:18:54,443 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 39399 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#blockReport_06
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestNNHandlesBlockReportPerStorage#blockReport_06
+[msx] succeed
+2020-03-14 08:18:54,501 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

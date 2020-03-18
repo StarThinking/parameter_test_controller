@@ -1,0 +1,17 @@
+[msx] before_class
+[msx] test Started org.apache.hadoop.hdfs.client.impl.TestBlockReaderLocal#testBlockReaderLocalOnFileWithoutChecksumNoReadahead
+[msx] unitTestCounterInClass = 0
+2020-03-14 03:51:05,316 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:51:06,094 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 03:51:07,110 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44446 start
+2020-03-14 03:51:07,125 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 03:51:07,195 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 03:51:07,508 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 43478 start
+2020-03-14 03:51:08,565 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 43478 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 03:51:08,717 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44446 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.client.impl.TestBlockReaderLocal#testBlockReaderLocalOnFileWithoutChecksumNoReadahead
+[msx] writeFile testName = org.apache.hadoop.hdfs.client.impl.TestBlockReaderLocal#testBlockReaderLocalOnFileWithoutChecksumNoReadahead
+[msx] succeed
+2020-03-14 03:51:08,789 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestBlockManager#testNeededReconstructionWhileAppending
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:07:50,986 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:07:52,277 [Thread-6] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:07:53,222 [Thread-6] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 36175 start
+2020-03-14 05:07:53,237 [Thread-6] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:07:53,306 [Thread-6] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:07:53,751 [Thread-6] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37081 start
+2020-03-14 05:07:55,015 [Thread-6] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37081 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:07:55,178 [Thread-6] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 36175 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestBlockManager#testNeededReconstructionWhileAppending
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestBlockManager#testNeededReconstructionWhileAppending
+[msx] succeed
+2020-03-14 05:07:55,253 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

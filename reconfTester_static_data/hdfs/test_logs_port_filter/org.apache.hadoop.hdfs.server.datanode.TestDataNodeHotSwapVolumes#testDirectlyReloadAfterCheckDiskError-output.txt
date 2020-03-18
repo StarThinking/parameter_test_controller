@@ -1,0 +1,19 @@
+[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestDataNodeHotSwapVolumes#testDirectlyReloadAfterCheckDiskError
+[msx] unitTestCounterInClass = 0
+2020-03-14 07:14:25,217 [Thread-0] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:14:25,876 [Thread-0] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 07:14:26,911 [Thread-0] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46313 start
+2020-03-14 07:14:26,921 [Thread-0] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 07:14:26,999 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:14:27,211 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 37059 start
+2020-03-14 07:14:27,226 [Thread-0] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 07:14:27,273 [Thread-0] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 39197 start
+2020-03-14 07:14:29,983 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 39197 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:14:30,015 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 37059 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 07:14:30,170 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46313 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestDataNodeHotSwapVolumes#testDirectlyReloadAfterCheckDiskError
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.datanode.TestDataNodeHotSwapVolumes#testDirectlyReloadAfterCheckDiskError
+[msx] succeed
+2020-03-14 07:14:30,240 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

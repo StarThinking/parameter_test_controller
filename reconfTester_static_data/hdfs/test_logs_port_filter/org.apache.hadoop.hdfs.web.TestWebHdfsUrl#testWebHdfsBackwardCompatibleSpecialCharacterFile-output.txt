@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.hdfs.web.TestWebHdfsUrl#testWebHdfsBackwardCompatibleSpecialCharacterFile
+[msx] unitTestCounterInClass = 0
+2020-03-14 08:40:01,180 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:40:01,810 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 08:40:02,884 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 46576 start
+2020-03-14 08:40:02,901 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 08:40:02,985 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 08:40:03,222 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 40655 start
+2020-03-14 08:40:05,564 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 40655 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 08:40:05,726 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 46576 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.web.TestWebHdfsUrl#testWebHdfsBackwardCompatibleSpecialCharacterFile
+[msx] writeFile testName = org.apache.hadoop.hdfs.web.TestWebHdfsUrl#testWebHdfsBackwardCompatibleSpecialCharacterFile
+[msx] succeed
+2020-03-14 08:40:05,783 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

@@ -1,0 +1,16 @@
+[msx] test Started org.apache.hadoop.cli.TestCryptoAdminCLI#testAll
+[msx] unitTestCounterInClass = 0
+2020-03-14 02:42:31,446 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:42:32,341 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 02:42:33,809 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 44783 start
+2020-03-14 02:42:33,825 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 02:42:33,848 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 02:42:34,097 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 38564 start
+2020-03-14 02:42:37,656 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 38564 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 02:42:37,808 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 44783 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.cli.TestCryptoAdminCLI#testAll
+[msx] writeFile testName = org.apache.hadoop.cli.TestCryptoAdminCLI#testAll
+[msx] succeed
+2020-03-14 02:42:39,876 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

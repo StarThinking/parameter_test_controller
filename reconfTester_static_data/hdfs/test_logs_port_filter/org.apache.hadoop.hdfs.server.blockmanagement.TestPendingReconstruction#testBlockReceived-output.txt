@@ -1,0 +1,28 @@
+[msx] test Started org.apache.hadoop.hdfs.server.blockmanagement.TestPendingReconstruction#testBlockReceived
+[msx] unitTestCounterInClass = 0
+2020-03-14 05:26:30,680 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:26:31,424 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:32,380 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 34351 start
+2020-03-14 05:26:32,396 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:26:32,460 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:32,715 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 42729 start
+2020-03-14 05:26:32,727 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:32,830 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34915 start
+2020-03-14 05:26:32,842 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:32,971 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 45372 start
+2020-03-14 05:26:32,978 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:33,107 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 34180 start
+2020-03-14 05:26:33,153 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:26:33,297 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 35188 start
+2020-03-14 05:26:39,933 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 35188 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:26:39,981 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34180 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:26:40,005 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 45372 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:26:40,029 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 34915 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:26:40,071 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 42729 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:26:40,248 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 34351 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.server.blockmanagement.TestPendingReconstruction#testBlockReceived
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.blockmanagement.TestPendingReconstruction#testBlockReceived
+[msx] succeed
+2020-03-14 05:26:40,316 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

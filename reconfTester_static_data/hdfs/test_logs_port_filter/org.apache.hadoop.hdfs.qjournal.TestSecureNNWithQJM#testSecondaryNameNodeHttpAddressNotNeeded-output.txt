@@ -1,0 +1,32 @@
+[msx] before_class
+[msx] test Started org.apache.hadoop.hdfs.qjournal.TestSecureNNWithQJM#testSecondaryNameNodeHttpAddressNotNeeded
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:28:39,578 [Thread-3] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:28:39,579 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:40,552 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 36513 start
+2020-03-14 04:28:40,553 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:40,624 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 37802 start
+2020-03-14 04:28:40,625 [Thread-3] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:40,681 [Thread-3] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 45579 start
+2020-03-14 04:28:41,606 [Thread-3] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:28:42,270 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:42,946 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41705 start
+2020-03-14 04:28:42,966 [Thread-3] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:28:43,056 [Thread-3] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:43,313 [Thread-3] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 36076 start
+2020-03-14 04:28:44,041 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41705 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:44,128 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:44,829 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41705 start
+2020-03-14 04:28:50,891 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41705 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:50,923 [Thread-3] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:28:51,335 [Thread-3] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 41705 start
+2020-03-14 04:28:56,367 [Thread-3] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 36076 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:56,407 [Thread-3] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 41705 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:56,434 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 36513 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:56,440 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 37802 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:28:56,444 [Thread-3] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 45579 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.TestSecureNNWithQJM#testSecondaryNameNodeHttpAddressNotNeeded
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.TestSecureNNWithQJM#testSecondaryNameNodeHttpAddressNotNeeded
+[msx] succeed
+[msx] reset performed
+[msx] all testRunFinished

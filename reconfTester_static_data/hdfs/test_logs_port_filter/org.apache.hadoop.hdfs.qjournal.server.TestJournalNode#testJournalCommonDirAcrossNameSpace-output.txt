@@ -1,0 +1,13 @@
+[msx] test Started org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testJournalCommonDirAcrossNameSpace
+[msx] unitTestCounterInClass = 0
+2020-03-14 04:24:13,680 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:24:13,683 [main] INFO  server.JournalNode (JournalNode.java:performReconfig(195)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
+2020-03-14 04:24:14,651 [main] INFO  server.JournalNode (JournalNode.java:start(332)) - [msx-restart] JournalNode 36046 start
+2020-03-14 04:24:14,850 [main] INFO  server.JournalNode (JournalNode.java:stop(364)) - [msx-restart] JournalNode 36046 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] test Finished org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testJournalCommonDirAcrossNameSpace
+[msx] writeFile testName = org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testJournalCommonDirAcrossNameSpace
+[msx] succeed
+2020-03-14 04:24:14,889 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:24:14,916 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+[msx] all testRunFinished

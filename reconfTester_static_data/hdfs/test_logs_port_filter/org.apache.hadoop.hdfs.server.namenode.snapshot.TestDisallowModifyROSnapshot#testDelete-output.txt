@@ -1,0 +1,17 @@
+[msx] before_class
+2020-03-14 05:18:41,821 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:18:42,490 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 05:18:43,697 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 45351 start
+2020-03-14 05:18:43,715 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 05:18:43,796 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 05:18:44,093 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44158 start
+[msx] test Started org.apache.hadoop.hdfs.server.namenode.snapshot.TestDisallowModifyROSnapshot#testDelete
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.hdfs.server.namenode.snapshot.TestDisallowModifyROSnapshot#testDelete
+[msx] writeFile testName = org.apache.hadoop.hdfs.server.namenode.snapshot.TestDisallowModifyROSnapshot#testDelete
+[msx] succeed
+2020-03-14 05:18:44,808 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 05:18:44,809 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44158 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 05:18:44,973 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 45351 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished

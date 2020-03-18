@@ -1,0 +1,17 @@
+[msx] before_class
+2020-03-14 04:57:52,964 [main] INFO  namenode.NameNode (NameNode.java:<clinit>(931)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:57:53,687 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(958)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
+2020-03-14 04:57:54,695 [main] INFO  namenode.NameNode (NameNode.java:<init>(1042)) - [msx-restart] NameNode 43959 start
+2020-03-14 04:57:54,708 [main] INFO  datanode.DataNode (DataNode.java:<clinit>(433)) - [msx-restart] reconfPoint = 0
+2020-03-14 04:57:54,793 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(460)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
+2020-03-14 04:57:55,090 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2750)) - [msx-restart] DataNode 44673 start
+[msx] test Started org.apache.hadoop.hdfs.TestParallelShortCircuitLegacyRead#testParallelReadByteBuffer
+[msx] unitTestCounterInClass = 0
+[msx] test Finished org.apache.hadoop.hdfs.TestParallelShortCircuitLegacyRead#testParallelReadByteBuffer
+[msx] writeFile testName = org.apache.hadoop.hdfs.TestParallelShortCircuitLegacyRead#testParallelReadByteBuffer
+[msx] succeed
+2020-03-14 04:58:00,516 [main] INFO  server.JournalNode (JournalNode.java:<clinit>(168)) - [msx-restart] reconfPoint = 0
+[msx] reset performed
+2020-03-14 04:58:00,517 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2075)) - [msx-restart] DataNode 44673 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+2020-03-14 04:58:00,556 [main] INFO  namenode.NameNode (NameNode.java:stop(1087)) - [msx-restart] NameNode 43959 stop, double check before stop, dfs.data.transfer.client.tcpnodelay = true
+[msx] all testRunFinished
