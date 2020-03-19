@@ -1,0 +1,175 @@
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+v1: false
+v2: true
+reconfPoint: 2
+restartTestMap for NameNode has been loaded, size is 582
+commonTestList has been loaded, size is 27
+testSet size before finding common is 582
+testSet size after finding common is 6
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 6
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode,org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+size of groupList =  3
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage,org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+Warn: test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair has not been updated !
+Execution time (sec) 39
+failed v1v2 list size 6
+org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+do 1 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+Execution time (sec) 10
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+Execution time (sec) 11
+v1v1 and v2v2 succeed for 1 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+Execution time (sec) 11
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+Execution time (sec) 11
+v1v1 and v2v2 succeed for 1 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+Execution time (sec) 24
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+Execution time (sec) 11
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+Execution time (sec) 11
+v1v1 and v2v2 succeed for 1 times, add into issueList
+failed v1v2 test: org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Execution time (sec) 23
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Warn: test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair has not been updated !
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 20
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing with v2 true, no issue.
+---------------------------------------short report---------------------------------------------
+issueList size 3 :
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+reconfPoint: 2
+v1: false
+v2: true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+reconfPoint: 2
+v1: false
+v2: true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+result: -1
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+reconfPoint: 2
+v1: false
+v2: true
+testName: org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+result: -1
+---------------------------------------short report---------------------------------------------
+Total execution time in seconds : 197

@@ -1,0 +1,20 @@
+parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 1000
+reconfPoint: 1
+restartTestMap for DataNode has been loaded, size is 344
+commonTestList has been loaded, size is 27
+testSet size before finding common is 344
+testSet size after finding common is 5
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 5
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 5
+Number of combined methods is 5
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd,org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup
+Execution time (sec) 140
+failed v1v2 list size 0
+do 1 v1v1 v2v2 tests to filter false alarm
+Total execution time in seconds : 140

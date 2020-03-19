@@ -1,0 +1,20 @@
+parameter: dfs.namenode.fs-limits.max-directory-items
+component: NameNode
+v1: 1048576
+v2: 8
+reconfPoint: -2
+multiInstanceTestList for NameNode has been loaded, size is 849
+commonTestList has been loaded, size is 1
+testSet size before finding common is 849
+testSet size after finding common is 1
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics
+Execution time (sec) 28
+failed v1v2 list size 0
+do 1 v1v1 v2v2 tests to filter false alarm
+Total execution time in seconds : 28

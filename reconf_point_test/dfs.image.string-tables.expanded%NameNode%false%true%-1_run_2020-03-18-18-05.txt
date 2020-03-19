@@ -1,0 +1,402 @@
+parameter: dfs.image.string-tables.expanded
+component: NameNode
+v1: false
+v2: true
+reconfPoint: -1
+allStartTestList for NameNode has been loaded, size is 4512
+commonTestList has been loaded, size is 27
+testSet size before finding common is 4512
+testSet size after finding common is 22
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 22
+size of beforeClassTests = 8
+size of nonBeforeClassTests = 14
+Number of combined methods is 14
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup,org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd,org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes,org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs,org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode,org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState,org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing,org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics,org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK,org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs,org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+size of groupList =  4
+Number of combined methods is 3
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair,org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication,org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity,org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored,org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy
+Warn: test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair has not been updated !
+Execution time (sec) 70
+failed v1v2 list size 19
+org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored
+org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy
+org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity
+org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan
+org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup
+org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd
+org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes
+org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs
+org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode
+org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState
+org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics
+org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK
+org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+do 1 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Execution time (sec) 23
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Warn: test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair has not been updated !
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication
+Execution time (sec) 9
+v2v2 also failed for test org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testAuthentication with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity
+Execution time (sec) 8
+v2v2 also failed for test org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testIntegrity with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored
+Execution time (sec) 12
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored
+Execution time (sec) 8
+v2v2 also failed for test org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testNoSaslAndSecurePortsIgnored with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy
+Execution time (sec) 9
+v2v2 also failed for test org.apache.hadoop.hdfs.protocol.datatransfer.sasl.TestSaslDataTransfer#testPrivacy with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+Execution time (sec) 24
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity
+Execution time (sec) 24
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan
+Execution time (sec) 14
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup
+Execution time (sec) 14
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd
+Execution time (sec) 14
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerEndToEnd with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes
+Execution time (sec) 15
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.diskbalancer.TestDiskBalancer#testDiskBalancerWhenRemovingVolumes with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs
+Execution time (sec) 23
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs
+Execution time (sec) 8
+v2v2 also failed for test org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode
+Execution time (sec) 24
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testBothNodesInStandbyState with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 21
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics
+Execution time (sec) 15
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK
+Execution time (sec) 11
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs
+Execution time (sec) 7
+v2v2 also failed for test org.apache.hadoop.hdfs.TestEncryptionZones#testReadWriteUsingWebHdfs with v2 true, no issue.
+failed v1v2 test: org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 13
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs
+Execution time (sec) 8
+v2v2 also failed for test org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testReadWriteUsingWebHdfs with v2 true, no issue.
+Total execution time in seconds : 545

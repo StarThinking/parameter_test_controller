@@ -1,0 +1,16 @@
+parameter: dfs.datanode.cached-dfsused.check.interval.ms
+component: DataNode
+v1: 600000
+v2: 60
+reconfPoint: -2
+multiInstanceTestList for DataNode has been loaded, size is 2573
+commonTestList has been loaded, size is 27
+testSet size before finding common is 2573
+testSet size after finding common is 12
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 12
+size of beforeClassTests = 5
+size of nonBeforeClassTests = 7
+Number of combined methods is 7
+mvn test -Dtest=org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testDiskBalancerExecuteOptionPlanValidity,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testPrintFullPathOfPlan,org.apache.hadoop.hdfs.server.diskbalancer.command.TestDiskBalancerCommand#testRunMultipleCommandsUnderOneSetup,org.apache.hadoop.hdfs.server.mover.TestMover#testMoverWithKeytabs,org.apache.hadoop.hdfs.server.mover.TestMover#testScheduleBlockWithinSameNode,org.apache.hadoop.hdfs.server.namenode.metrics.TestNameNodeMetrics#testTransactionSinceLastCheckpointMetrics,org.apache.hadoop.hdfs.server.namenode.TestFsck#testStoragePoliciesCK

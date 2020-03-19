@@ -1,0 +1,84 @@
+parameter: dfs.block.access.token.enable
+component: NameNode
+v1: false
+v2: true
+reconfPoint: 2
+restartTestMap for NameNode has been loaded, size is 582
+commonTestList has been loaded, size is 27
+testSet size before finding common is 582
+testSet size after finding common is 6
+
+Test vvMode=v1v2
+thisTestSet after filter out vanilla failure: 6
+size of beforeClassTests = 4
+size of nonBeforeClassTests = 2
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.security.TestDelegationToken#testDTManagerInSafeMode,org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+size of groupList =  3
+Number of combined methods is 2
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel023ReservedImage,org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel1ReservedImage
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.TestDFSUpgradeFromImage#testUpgradeFromRel2ReservedImage
+Execution time (sec) 88
+failed v1v2 list size 2
+org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+do 1 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Execution time (sec) 23
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 1
+size of nonBeforeClassTests = 0
+size of groupList =  1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+Execution time (sec) 23
+v1v1 and v2v2 succeed for 1 times, add into issueList
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing v1 false v2 true
+
+Test vvMode=v1v1
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 20
+
+Test vvMode=v2v2
+thisTestSet after filter out vanilla failure: 1
+size of beforeClassTests = 0
+size of nonBeforeClassTests = 1
+Number of combined methods is 1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+Execution time (sec) 20
+v1v1 and v2v2 succeed for 1 times, add into issueList
+---------------------------------------short report---------------------------------------------
+issueList size 2 :
+parameter: dfs.block.access.token.enable
+component: NameNode
+reconfPoint: 2
+v1: false
+v2: true
+testName: org.apache.hadoop.fs.viewfs.TestViewFileSystemHdfs#testNflyClosestRepair
+result: -1
+parameter: dfs.block.access.token.enable
+component: NameNode
+reconfPoint: 2
+v1: false
+v2: true
+testName: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyCheckpoints#testNewDirInitAfterCheckpointing
+result: -1
+---------------------------------------short report---------------------------------------------
+Total execution time in seconds : 176
