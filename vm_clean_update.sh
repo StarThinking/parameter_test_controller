@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in $(seq 0 9)
+for i in $(seq 0 14)
 do 
     echo $i
     ssh hadoop-$i "killall -9 bash"
