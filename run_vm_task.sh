@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -ne 4 ]; echo wrong; exit -1; fi 
+if [ $# -ne 4 ]; then echo wrong; exit -1; fi 
 
 parameter=$1
 component=$2
