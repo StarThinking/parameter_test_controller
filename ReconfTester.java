@@ -45,7 +45,7 @@ public class ReconfTester extends Controller {
     }
 
     public static void reconfTryerLogic(String parameter, String component, String v1, String v2, String reconfPoint) {    
-        Controller.RECHECK_RUNTIMES=1;
+        Controller.RECHECK_RUNTIMES=5;
 
         // associate testset for different the reconfPoint
         // do RP_MODE_INSTANCE reconf for allStartTest; RP_MODE_COMPONENT for multiInstanceTest; RP_MODE_RECONF for restartTest
