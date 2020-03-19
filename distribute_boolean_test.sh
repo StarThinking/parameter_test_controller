@@ -16,7 +16,7 @@ echo "para_num = $para_num"
 for i in $(seq 0 $(( para_num - 1 )))
 do
     echo "${paras[$i]} on hadoop-$i"
-    ssh hadoop-$i "~/parameter_test_controller/run_vm_task.sh ${paras[$i]} $component $v1 $v2 > /dev/null &" &
+    ssh hadoop-$i "cd ~/parameter_test_controller; ./run_vm_task.sh ${paras[$i]} $component $v1 $v2 > /dev/null &" &
 done
 
 sleep 10
