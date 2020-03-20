@@ -13,8 +13,8 @@ public class Controller {
     //private static String workingDir = "/root/hadoop-3.1.2-src";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
-    protected static int RECHECK_RUNTIMES = 5;
-    protected static int ISSUE_NUM_THRESHOLD = 50;
+    protected static int RECHECK_RUNTIMES = 10;
+    protected static int ISSUE_NUM_THRESHOLD = 100;
 
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
@@ -31,7 +31,7 @@ public class Controller {
     
     /* failed vanilla unit tests */
     private static List<String> vanillaFailedTestList = new ArrayList<String>();
-    //private static String vanillaFailedTestFileName = systemRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
+    private static String vanillaFailedTestFileName = systemRootDir + "test_for_component/hdfs/vanilla_failed_test.txt";
    
     static {
         loadControllerStaticData();
@@ -238,7 +238,7 @@ public class Controller {
 
 	//myPrint("thisTestSet before removing vanilla failure: " + thisTestSet.size());
 	// remove vanilla failed tests
-        //myPrint("# of vanilla failed tests is " + vanillaFailedTestList.size());
+        myPrint("# of vanilla failed tests is " + vanillaFailedTestList.size());
 	thisTestSet.removeIf(test -> vanillaFailedTestList.contains(test));
 	myPrint("thisTestSet after filter out vanilla failure: " + thisTestSet.size());
  
@@ -324,12 +324,12 @@ public class Controller {
             System.out.println("beforeClassList has been loaded, size is " + beforeClassList.size());
             reader.close();
             
-	    /*reader = new BufferedReader(new FileReader(new File(vanillaFailedTestFileName)));
+	    reader = new BufferedReader(new FileReader(new File(vanillaFailedTestFileName)));
             buffer = "";
             while ((buffer = reader.readLine()) != null) {
                 vanillaFailedTestList.add(buffer.trim());
             }
-            reader.close();*/
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
