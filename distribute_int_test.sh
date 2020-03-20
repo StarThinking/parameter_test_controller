@@ -16,7 +16,7 @@ value_store=~/parameter_test_controller/int_values.txt
 ret_values=()
 function get_values {
     p=$1
-    if [ $(grep "^$p " $value_store | wc -l) -ne 1 ]; then echo 'wrong!'; grep -wF "$p" $value_store; exit -1; fi
+    if [ $(grep ^"$p"' ' $value_store | wc -l) -ne 1 ]; then echo 'wrong!'; grep -wF "$p" $value_store; exit -1; fi
     ret_values=( $(grep -wF "$p" $value_store | awk -F ' ' '{print $2" "$3" "$4}') )
 }
 
