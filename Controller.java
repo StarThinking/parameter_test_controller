@@ -88,7 +88,7 @@ public class Controller {
                 }
                 if (!found) {
                     myPrint("Warn: test " + t + " has not been updated !");
-                    //System.exit(-1);
+                    System.exit(-1);
                 }
             }
         } catch (Exception e) {
