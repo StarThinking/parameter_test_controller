@@ -89,7 +89,7 @@ public class Hypothesis extends Controller {
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 	String dateTime = formatter.format(date);
         String runLogPath = Controller.systemRootDir + parameter + "%" + component + "%" + test + "%" + v1 +
-            "%" + v2 + "%" + reconfPoint + "_run_" + dateTime + ".txt";
+            "%" + v2 + "%" + reconfPoint + "_hypothesis_" + dateTime + ".txt";
         try {
             runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 
         } catch(Exception e) {
