@@ -63,17 +63,17 @@ public class Hypothesis extends Controller {
         //if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
         if (args.length != 7) {
             myPrint("Error: args length is " + args.length);
-            myPrint("Hypothesis repeats parameter component test v1 v2 reconfPoint");
+            myPrint("Hypothesis repeats parameter component v1 v2 reconfPoint test");
             System.exit(1);
         }
        
 	repeats = Integer.valueOf(args[0]);
 	parameter = args[1];
 	component = args[2];
-        test=args[3];
-        v1=args[4];
-        v2=args[5];
-        reconfPoint=args[6];
+        v1=args[3];
+        v2=args[4];
+        reconfPoint=args[5];
+        test=args[6];
 
 	if (!component.equals("NameNode") && !component.equals("DataNode") && !component.equals("JournalNode") && !component.equals("None")) {
 	    myPrint("Error: wrong component " + component);
