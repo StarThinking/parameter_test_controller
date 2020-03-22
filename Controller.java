@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 public class Controller {
 
     private static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
-    //private static String workingDir = "/root/hadoop-3.1.2-src";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
     protected static int RECHECK_RUNTIMES = 10;
@@ -88,7 +87,7 @@ public class Controller {
                 }
                 if (!found) {
                     myPrint("Warn: test " + t + " has not been updated !");
-                    System.exit(-1);
+                    //System.exit(-1);
                 }
             }
         } catch (Exception e) {
@@ -262,16 +261,16 @@ public class Controller {
         myPrint("failed v1v2 list size " + failedListv1v2.size());
         for (TestResult t : failedListv1v2)
             myPrint(t.testName);
+        if (failedListv1v2.size() > 0)
+            myPrint("do " + Controller.RECHECK_RUNTIMES + " v1v1 v2v2 tests to filter false alarm");
       
         List<TestResult> issueList = new ArrayList<TestResult>();
-        int runs = Controller.RECHECK_RUNTIMES;
-        myPrint("do " + runs + " v1v1 v2v2 tests to filter false alarm");
         for (TestResult t : failedListv1v2) {
             myPrint("failed v1v2 test: " + t.testName + " v1 " + v1 + " v2 " + v2);
             int i = 0;
             List<String> singleTest = new ArrayList<String>();
             singleTest.add(t.testName);
-            for(; i<runs; i++) {
+            for(; i<Controller.RECHECK_RUNTIMES; i++) {
                 List<TestResult> failedList1 = testCore(parameter, component, "v1v1", v1, "", reconfPoint, singleTest);
                 List<TestResult> failedList2 = testCore(parameter, component, "v2v2", "", v2, reconfPoint, singleTest);
                 if (failedList1.size() > 0) {
@@ -283,8 +282,8 @@ public class Controller {
                     break;
                 }
             }
-            if (i == runs) {
-                myPrint("v1v1 and v2v2 succeed for " + runs + " times, add into issueList");
+            if (i == Controller.RECHECK_RUNTIMES) {
+                myPrint("v1v1 and v2v2 succeed for " + Controller.RECHECK_RUNTIMES + " times, add into issueList");
                 issueList.add(t);
             }
 
