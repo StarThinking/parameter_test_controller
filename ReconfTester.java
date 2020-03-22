@@ -8,7 +8,6 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class ReconfTester extends Controller {
-
     private static boolean ENABLE_COMMON = false;
     private static List<String> allStartTestList = new ArrayList<String>();
     private static Map<Integer, List<String>> restartTestMap = new TreeMap<Integer, List<String>>();
@@ -45,8 +44,6 @@ public class ReconfTester extends Controller {
     }
 
     public static void reconfTryerLogic(String parameter, String component, String v1, String v2, String reconfPoint) {    
-        Controller.RECHECK_RUNTIMES=10;
-
         // associate testset for different the reconfPoint
         // do RP_MODE_INSTANCE reconf for allStartTest; RP_MODE_COMPONENT for multiInstanceTest; RP_MODE_RECONF for restartTest
         List<String> testSet = null;
@@ -62,11 +59,11 @@ public class ReconfTester extends Controller {
             enableCommonTest(testSet);
         List<TestResult> issueList = testLogic(parameter, component, v1, v2, reconfPoint, testSet);
         if (issueList.size() > 0) {
-            myPrint("---------------------------------------short report---------------------------------------------");
+            myPrint("---------------------------------------full report---------------------------------------------");
             myPrint("issueList size " + issueList.size() + " :");
             for (TestResult t : issueList)
-                myPrint(t.toString());
-            myPrint("---------------------------------------short report---------------------------------------------");
+                myPrint(t.completeInfo());
+            myPrint("---------------------------------------full report---------------------------------------------");
         }
     }
 
