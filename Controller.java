@@ -123,7 +123,7 @@ public class Controller {
         testCore("v1v2", v1v2Tr);
         if (v1v2Tr.result.equals("1")) {
             myPrint("succeed.");
-            return v1v2Tr;
+            return null;
         } else {
             myPrint("fail. do " + Controller.RECHECK_TIMES + " v1v1 v2v2 tests to filter false alarm");
         }
