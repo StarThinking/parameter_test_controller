@@ -89,7 +89,10 @@ public class Controller {
             myPrint(cmd);
             
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
-            process.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+	    String buffer = "";
+	    reader.close();
+	    process.waitFor();
             ret = process.exitValue();
             process.destroy();
            
