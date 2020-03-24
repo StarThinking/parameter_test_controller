@@ -2,6 +2,8 @@
 
 num=$1
 
+apt install -y docker.io docker-compose
+
 docker rm -f $(docker ps -aq); docker rmi -f $(docker images -q)
 systemctl stop docker
 rm -rf /var/lib/docker
