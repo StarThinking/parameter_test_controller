@@ -10,4 +10,4 @@ rm -rf /var/lib/docker
 mkdir /var/lib/docker
 mount --rbind /root/vm_images /var/lib/docker
 systemctl start docker
-for i in $(seq 0 $num); do docker run -d -it --name hadoop-$i sixiangma/hdfs-reconf-template:v0.1_2020.03.22; done
+for i in $(seq 0 $num); do docker run -d -it --name hadoop-$i sixiangma/hdfs-reconf-template:v0.7_2020.03.24; done
