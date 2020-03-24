@@ -11,7 +11,7 @@ public class Controller {
     private static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
-    protected static int RECHECK_TIMES = 1;
+    protected static int RECHECK_TIMES = 10;
 
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
