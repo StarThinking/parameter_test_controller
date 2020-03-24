@@ -9,28 +9,30 @@ import java.text.SimpleDateFormat;
 
 public class Hypothesis extends Controller {
 
-    public static void hypothesisTestLogic(int repeats, String parameter, String component, String test, String v1, String v2, String reconfPoint) {    
-        myPrint("hypothesisTestLogic");
-        List<String> testSet = new ArrayList<String>();
-        testSet.add(test);
-	int v1v2Repeats = repeats; 
+    public static void hypothesisTestLogic(int repeats, TestResult tr) {    
+        int v1v2Repeats = repeats; 
 	int v1v2FailedCount = 0; 
 	int v1v1v2v2Repeats = repeats; 
 	int v1v1v2v2FailedCount = 0; 
         int i = 0;
+        
+        myPrint(tr.toString());
+        
         for (i=0; i<v1v2Repeats; i++) {
-            List<TestResult> failedList = testCore(parameter, component, "v1v2", v1, v2, reconfPoint, testSet);
-            if (failedList.size() > 0) {
+            TestResult v1v2Tr = new TestResult(tr);
+            testCore("v1v2", v1v2Tr);
+            if (v1v2Tr.result.equals("-1")) {
                 myPrint("v1v2 test failed !!!");
                 v1v2FailedCount ++;
             }
         }
         
         for (i=0; i<v1v1v2v2Repeats; i++) {
-            List<TestResult> v1v1failedList = testCore(parameter, component, "v1v1", v1, v2, reconfPoint, testSet);
-            List<TestResult> v2v2failedList = testCore(parameter, component, "v2v2", v1, v2, reconfPoint, testSet);
-            if (v1v1failedList.size() > 0 || v2v2failedList.size() > 0) {
-                myPrint("v1v1 or v2v2 test failed !!!");
+            TestResult v1v1Tr = new TestResult(tr);
+            testCore("v1v1", v1v1Tr);
+            TestResult v2v2Tr = new TestResult(tr);
+            testCore("v2v2", v2v2Tr);
+            if (v1v1Tr.result.equals("-1") || v2v2Tr.result.equals("-1")) {
                 v1v1v2v2FailedCount ++;
             }
         }
@@ -45,7 +47,6 @@ public class Hypothesis extends Controller {
                 myPrint("result: false positive !!!");
             }
         }
-
 	return;
     }
 
@@ -53,67 +54,50 @@ public class Hypothesis extends Controller {
 	int repeats = 0;
         String parameter = "";
         String component = "";
-        String test = "";
         String v1 = "";
         String v2 = "";
         String reconfPoint = "";
+        String unitTest = "";
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
 
-        //if (!(args.length >= onetestArgIndex && args.length <= onetestArgIndex+1)) {
         if (args.length != 7) {
             myPrint("Error: args length is " + args.length);
-            myPrint("Hypothesis repeats parameter component v1 v2 reconfPoint test");
+            myPrint("Hypothesis repeats parameter component v1 v2 reconfPoint unitTest");
             System.exit(1);
         }
        
 	repeats = Integer.valueOf(args[0]);
+  	if (repeats <= 0) {
+	    myPrint("Error: wrong repeats " + repeats);
+	    System.exit(1);
+	}
 	parameter = args[1];
 	component = args[2];
         v1=args[3];
         v2=args[4];
         reconfPoint=args[5];
-        test=args[6];
+        unitTest=args[6];
 
-	if (!component.equals("NameNode") && !component.equals("DataNode") && !component.equals("JournalNode") && !component.equals("None")) {
-	    myPrint("Error: wrong component " + component);
-	    System.exit(1);
-	}
-  	if (repeats <= 0) {
-	    myPrint("Error: wrong repeats " + repeats);
-	    System.exit(1);
-	}
-
-	/* set run log */
-        Date date = new Date();
-	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
-	String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + parameter + "%" + component + "%" + test + "%" + v1 +
-            "%" + v2 + "%" + reconfPoint + "_hypothesis_" + dateTime + ".txt";
-        try {
-            runLogWriter = new BufferedWriter(new FileWriter(new File(runLogPath), true)); 
-        } catch(Exception e) {
-            e.printStackTrace();
+        TestResult tr = new TestResult(parameter, component, v1, v2, reconfPoint, unitTest);
+        if (!TestResult.isValid(tr)) {
+            myPrint("Error: wrong component " + component);
+            System.exit(1);
         }
-	
-	myPrint("repeats: " + repeats); 
-	myPrint("parameter: " + parameter); 
-        myPrint("component: " + component); 
-        myPrint("test: " + test);
-        myPrint("v1: " + v1);
-        myPrint("v2: " + v2);
-        myPrint("reconfPoint: " + reconfPoint);
 
+        /* set run log */
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+        String dateTime = formatter.format(date);
+        String runLogPath = Controller.systemRootDir + tr.shortName() + "_hypothesis_" + dateTime + ".txt";
+        Controller.setLogger(runLogPath);
+	
 	startTime = System.nanoTime();
-        hypothesisTestLogic(repeats, parameter, component, test, v1, v2, reconfPoint);
+        hypothesisTestLogic(repeats, tr);
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
-        
-        try {
-            runLogWriter.close();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+         
+        Controller.stopLogger();        
     }
 }
