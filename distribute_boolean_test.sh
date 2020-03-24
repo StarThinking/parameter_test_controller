@@ -1,23 +1,30 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
     echo 'wrong arguments'
     exit 1
 fi
 
-component=$1
-v1=$2
-v2=$3
+parameter=$1
+component=$2
+component_dir=/root/parameter_test_controller/reconfTester_static_data/hdfs/accumulate/$component
+start_path=$component_dir/start.txt
+reconf_files=( $(ls $component_dir | grep -v start.txt) )
 
-echo "component = $component, v1 = $v1, v2 = $v2"
-paras=( $(cat input.txt) )
-para_num=${#paras[@]}
-echo "para_num = $para_num"
-for i in $(seq 0 $(( para_num - 1 )))
+for value_pair in 'true false' 'false true'
 do
-    echo "${paras[$i]} on hadoop-$i"
-    ssh hadoop-$i "cd ~/parameter_test_controller; ./run_vm_task.sh ${paras[$i]} $component $v1 $v2 > /dev/null &" &
-done
+    for t in $(cat $start_path)
+    do
+        echo $parameter $component $value_pair -1 $t
+    done
 
-sleep 10
-echo 'jobs distributed'
+    for restart_file in ${reconf_files[@]}
+    do
+        restart_path=$component_dir/$restart_file
+        rp=$(echo $restart_file | awk -F '.txt' '{print $1}')
+        for t in $(cat $restart_path)
+        do
+            echo $parameter $component $value_pair $rp $t
+        done
+    done
+done
