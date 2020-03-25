@@ -2,6 +2,9 @@
 
 num=19
 
+apt-get update
+apt-get upgrade
+
 sudo mkfs.ext4 /dev/sda4 
 mkdir /root/vm_images
 sudo mount /dev/sda4  /root/vm_images
