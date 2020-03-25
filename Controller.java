@@ -43,21 +43,24 @@ public class Controller {
         loadStaticFiles();
     }
 
-    private static String findSubProject(String unitTest) {
-        if (hdfsClassList.contains(unitTest))
+    private static String findSubProject(String unitTestClass) {
+        if (hdfsClassList.contains(unitTestClass))
             return "hadoop-hdfs";
-        else if (hdfsClientClassList.contains(unitTest))
+        else if (hdfsClientClassList.contains(unitTestClass))
             return "hadoop-hdfs-client";
-        else if (hdfsHttpfsClassList.contains(unitTest))
+        else if (hdfsHttpfsClassList.contains(unitTestClass))
             return "hadoop-hdfs-httpfs";
-        else if (hdfsNativeClientClassList.contains(unitTest))
+        else if (hdfsNativeClientClassList.contains(unitTestClass))
             return "hadoop-hdfs-native-client";
-        else if (hdfsNfsClassList.contains(unitTest))
+        else if (hdfsNfsClassList.contains(unitTestClass))
             return "hadoop-hdfs-nfs";
-        else if (hdfsRbfClassList.contains(unitTest))
+        else if (hdfsRbfClassList.contains(unitTestClass))
             return "hadoop-hdfs-rbf";
-        else
-            return "";
+        else {
+	    myPrint("Warn : cannot find sub project for " + unitTestClass);
+	    System.exit(-1);
+	}
+        return "";
     }
     
     private static void updateTestResult(List<TestResult> testResultList) {
@@ -125,10 +128,9 @@ public class Controller {
             int ret = -1;
 	    String cmd = "mvn test -Dtest=" + tr.unitTest;
             myPrint(cmd);
-           
-            String subProject = findSubProject(tr.unitTest);
-            myPrint("subProject is " + subProject);
-            System.exit(0);
+          
+	    String unitTestClass = tr.unitTest.split("#")[0]; 
+            String subProject = findSubProject(unitTestClass);
             String workingDir = workingRootDir + "/" + subProject;
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
