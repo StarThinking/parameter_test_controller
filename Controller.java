@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Controller {
 
@@ -92,9 +93,13 @@ public class Controller {
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 	    String buffer = "";
 	    reader.close();
-	    process.waitFor();
-            ret = process.exitValue();
-            process.destroy();
+	    if(!process.waitFor(1200, TimeUnit.SECONDS)) {
+    		//timeout - kill the process.
+		myPrint("Warn: wait process timeout!");
+    		process.destroy(); // consider using destroyForcibly instead
+	    }
+            //ret = process.exitValue();
+            //process.destroy();
            
             List<TestResult> testResultList = new ArrayList<TestResult>();
             testResultList.add(tr);
