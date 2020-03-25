@@ -1,0 +1,24 @@
+issue_parameter: dfs.data.transfer.client.tcpnodelay
+component: DataNode
+reconfPoint: -1
+v1: 1000
+v2: 2000
+unitTest: org.apache.hadoop.fs.contract.router.TestRouterHDFSContractAppend#testAppendMissingTarget
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.fs.contract.router.TestRouterHDFSContractAppend#testAppendMissingTarget
+tr.result is 1
+succeed.
+---------------------------------------full report---------------------------------------------
+issue_parameter: dfs.data.transfer.client.tcpnodelay
+component: DataNode
+reconfPoint: -1
+v1: 1000
+v2: 2000
+unitTest: org.apache.hadoop.fs.contract.router.TestRouterHDFSContractAppend#testAppendMissingTarget
+result: 1
+failureMessage: none
+stackTrace: none
+
+Total execution time in seconds : 24
