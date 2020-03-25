@@ -1,6 +1,10 @@
 #!/bin/bash
 
-num=$1
+num=19
+
+sudo mkfs.ext4 /dev/sda4 
+mkdir /root/vm_images
+sudo mount /dev/sda4  /root/vm_images
 
 apt install -y docker.io docker-compose
 
