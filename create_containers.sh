@@ -5,9 +5,9 @@ num=19
 apt-get update
 apt-get upgrade
 
-sudo mkfs.ext4 /dev/sda4 
+sudo mkfs.ext4 /dev/sdc 
 mkdir /root/vm_images
-sudo mount /dev/sda4  /root/vm_images
+sudo mount /dev/sdc  /root/vm_images
 
 apt install -y docker.io docker-compose
 
