@@ -5,10 +5,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Controller {
 
-    private static String workingDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project";
+    private static String workingRootDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
     protected static int RECHECK_TIMES = 10;
@@ -22,6 +23,43 @@ public class Controller {
     private static String v2FileName = systemRootDir + "shared/reconf_v2";
     private static String reconfPointFileName = systemRootDir + "shared/reconf_point";
 
+    /* static files */
+    private static String subProjectDir = systemRootDir + "controller_static_data/hdfs/sub_project/";
+    private static String hdfsClass = "hadoop-hdfs.txt";
+    private static String hdfsClientClass = "hadoop-hdfs-client.txt";
+    private static String hdfsHttpfsClass = "hadoop-hdfs-httpfs.txt";
+    private static String hdfsNativeClientClass = "hadoop-hdfs-native-client.txt";
+    private static String hdfsNfsClass = "hadoop-hdfs-nfs.txt";
+    private static String hdfsRbfClass = "hadoop-hdfs-rbf.txt";
+
+    private static List<String> hdfsClassList = new ArrayList<String>();
+    private static List<String> hdfsClientClassList = new ArrayList<String>();
+    private static List<String> hdfsHttpfsClassList = new ArrayList<String>();
+    private static List<String> hdfsNativeClientClassList = new ArrayList<String>();
+    private static List<String> hdfsNfsClassList = new ArrayList<String>();
+    private static List<String> hdfsRbfClassList = new ArrayList<String>();
+    
+    static {
+        loadStaticFiles();
+    }
+
+    private static String findSubProject(String unitTest) {
+        if (hdfsClassList.contains(unitTest))
+            return "hadoop-hdfs";
+        else if (hdfsClientClassList.contains(unitTest))
+            return "hadoop-hdfs-client";
+        else if (hdfsHttpfsClassList.contains(unitTest))
+            return "hadoop-hdfs-httpfs";
+        else if (hdfsNativeClientClassList.contains(unitTest))
+            return "hadoop-hdfs-native-client";
+        else if (hdfsNfsClassList.contains(unitTest))
+            return "hadoop-hdfs-nfs";
+        else if (hdfsRbfClassList.contains(unitTest))
+            return "hadoop-hdfs-rbf";
+        else
+            return "";
+    }
+    
     private static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
         try {
@@ -87,14 +125,22 @@ public class Controller {
             int ret = -1;
 	    String cmd = "mvn test -Dtest=" + tr.unitTest;
             myPrint(cmd);
-            
+           
+            String subProject = findSubProject(tr.unitTest);
+            myPrint("subProject is " + subProject);
+            System.exit(0);
+            String workingDir = workingRootDir + "/" + subProject;
             Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 	    String buffer = "";
 	    reader.close();
-	    process.waitFor();
-            ret = process.exitValue();
-            process.destroy();
+	    if(!process.waitFor(1200, TimeUnit.SECONDS)) {
+    		//timeout - kill the process.
+		myPrint("Warn: wait process timeout!");
+    		process.destroy(); // consider using destroyForcibly instead
+	    }
+            //ret = process.exitValue();
+            //process.destroy();
            
             List<TestResult> testResultList = new ArrayList<TestResult>();
             testResultList.add(tr);
@@ -231,6 +277,58 @@ public class Controller {
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
+        }
+    }
+    
+    private static void loadStaticFiles() {
+        String buffer = "";
+        BufferedReader reader = null;
+       
+        try {
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsClassList.add(buffer);
+            }
+            reader.close();
+            
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsClientClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsClientClassList.add(buffer);
+            }
+            reader.close();
+            
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsHttpfsClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsHttpfsClassList.add(buffer);
+            }
+            reader.close();
+
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsNativeClientClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsNativeClientClassList.add(buffer);
+            }
+            reader.close();
+
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsNfsClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsNfsClassList.add(buffer);
+            }
+            reader.close();
+
+            buffer = "";
+            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsRbfClass)));
+            while ((buffer = reader.readLine()) != null) {
+                hdfsRbfClassList.add(buffer);
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 }
