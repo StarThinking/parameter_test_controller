@@ -7,7 +7,7 @@ apt-get update -y
 
 sudo mkfs.ext4 /dev/$disk 
 mkdir /root/vm_images
-sudo mount /dev/sdc  /root/vm_images
+sudo mount /dev/$disk  /root/vm_images
 
 apt install -y docker.io docker-compose
 
