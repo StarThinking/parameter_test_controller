@@ -1193,12 +1193,12 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or null if no such property exists.
    */
   public String get(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String[] names = handleDeprecation(deprecationContext.get(), name);
     String result = null;
     for(String n : names) {
       result = substituteVars(getProps().getProperty(n));
     }
-    LOG.info("[msx-conf-get1] parameter " + name + " value " + result);
     return result;
   }
 
@@ -1251,6 +1251,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or null if no such property exists.
    */
   public String getTrimmed(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String value = get(name);
     
     if (null == value) {
@@ -1271,6 +1272,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *                      if it is not set.
    */
   public String getTrimmed(String name, String defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String ret = getTrimmed(name);
     return ret == null ? defaultValue : ret;
   }
@@ -1286,6 +1288,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         its replacing property and null if no such property exists.
    */
   public String getRaw(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String[] names = handleDeprecation(deprecationContext.get(), name);
     String result = null;
     for(String n : names) {
@@ -1454,12 +1457,12 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         doesn't exist.                    
    */
   public String get(String name, String defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String[] names = handleDeprecation(deprecationContext.get(), name);
     String result = null;
     for(String n : names) {
       result = substituteVars(getProps().getProperty(n, defaultValue));
     }
-    LOG.info("[msx-conf-get2] parameter " + name + " value " + result);
     return result;
   }
 
@@ -1477,17 +1480,15 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public int getInt(String name, int defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (valueString == null) {
-      LOG.info("[msx-conf-int] parameter " + name + " value " + defaultValue);
       return defaultValue;
     }
     String hexString = getHexDigits(valueString);
     if (hexString != null) {
-      LOG.info("[msx-conf-int] parameter " + name + " value " + Integer.parseInt(hexString, 16));
       return Integer.parseInt(hexString, 16);
     }
-    LOG.info("[msx-conf-int] parameter " + name + " value " + Integer.parseInt(valueString));
     return Integer.parseInt(valueString);
   }
   
@@ -1502,6 +1503,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         <code>int</code> values
    */
   public int[] getInts(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String[] strings = getTrimmedStrings(name);
     int[] ints = new int[strings.length];
     for (int i = 0; i < strings.length; i++) {
@@ -1534,17 +1536,15 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public long getLong(String name, long defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (valueString == null) {
-      LOG.info("[msx-conf-long] parameter " + name + " value " + defaultValue);
       return defaultValue;
     }
     String hexString = getHexDigits(valueString);
     if (hexString != null) {
-      LOG.info("[msx-conf-long] parameter " + name + " value " + Long.parseLong(hexString), 16);
       return Long.parseLong(hexString, 16);
     }
-    LOG.info("[msx-conf-long] parameter " + name + " value " + Long.parseLong(valueString));
     return Long.parseLong(valueString);
   }
 
@@ -1563,6 +1563,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>.
    */
   public long getLongBytes(String name, long defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (valueString == null)
       return defaultValue;
@@ -1610,12 +1611,11 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public float getFloat(String name, float defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (valueString == null) {
-      LOG.info("[msx-conf-float] parameter " + name + " value " + defaultValue);
       return defaultValue;
     }
-    LOG.info("[msx-conf-float] parameter " + name + " value " + Float.parseFloat(valueString));
     return Float.parseFloat(valueString);
   }
 
@@ -1642,12 +1642,11 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public double getDouble(String name, double defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (valueString == null) {
-      LOG.info("[msx-conf-double] parameter " + name + " value " + defaultValue);
       return defaultValue;
     }
-    LOG.info("[msx-conf-double] parameter " + name + " value " + Double.parseDouble(valueString));
     return Double.parseDouble(valueString);
   }
 
@@ -1672,6 +1671,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public boolean getBoolean(String name, boolean defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getTrimmed(name);
     if (null == valueString || valueString.isEmpty()) {
       return defaultValue;
@@ -1722,9 +1722,9 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * provided
    */
   public <T extends Enum<T>> T getEnum(String name, T defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     final String val = getTrimmed(name);
     T value = null == val ? defaultValue : Enum.valueOf(defaultValue.getDeclaringClass(), val);
-    LOG.info("[msx-conf-enum] parameter " + name + " value " + value);
     return null == val
       ? defaultValue
       : Enum.valueOf(defaultValue.getDeclaringClass(), val);
@@ -1802,6 +1802,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         a number
    */
   public long getTimeDuration(String name, long defaultValue, TimeUnit unit) {
+    LOG.info("[msx-conf-para] " + name);
     String vStr = get(name);
     if (null == vStr) {
       return defaultValue;
@@ -1811,6 +1812,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
   }
 
   public long getTimeDuration(String name, String defaultValue, TimeUnit unit) {
+    LOG.info("[msx-conf-para] " + name);
     String vStr = get(name);
     if (null == vStr) {
       return getTimeDurationHelper(name, defaultValue, unit);
@@ -1828,6 +1830,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @param unit Unit to convert the stored property, if it exists.
    */
   public long getTimeDurationHelper(String name, String vStr, TimeUnit unit) {
+    LOG.info("[msx-conf-para] " + name);
     vStr = vStr.trim();
     vStr = StringUtils.toLowerCase(vStr);
     ParsedTimeDuration vUnit = ParsedTimeDuration.unitFor(vStr);
@@ -1848,6 +1851,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
   }
 
   public long[] getTimeDurations(String name, TimeUnit unit) {
+    LOG.info("[msx-conf-para] " + name);
     String[] strings = getTrimmedStrings(name);
     long[] durations = new long[strings.length];
     for (int i = 0; i < strings.length; i++) {
@@ -1866,6 +1870,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    */
   public double getStorageSize(String name, String defaultValue,
       StorageUnit targetUnit) {
+    LOG.info("[msx-conf-para] " + name);
     Preconditions.checkState(isNotBlank(name), "Key cannot be blank.");
     String vString = get(name);
     if (isBlank(vString)) {
@@ -1895,6 +1900,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    */
   public double getStorageSize(String name, double defaultValue,
       StorageUnit targetUnit) {
+    LOG.info("[msx-conf-para] " + name);
     Preconditions.checkNotNull(targetUnit, "Conversion unit cannot be null.");
     Preconditions.checkState(isNotBlank(name), "Name cannot be blank.");
     String vString = get(name);
@@ -1944,6 +1950,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return property value as a compiled Pattern, or defaultValue
    */
   public Pattern getPattern(String name, Pattern defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valString = get(name);
     if (null == valString || valString.isEmpty()) {
       return defaultValue;
@@ -1987,6 +1994,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    */
   @InterfaceStability.Unstable
   public synchronized String[] getPropertySources(String name) {
+    LOG.info("[msx-conf-para] " + name);
     if (properties == null) {
       // If properties is null, it means a resource was newly added
       // but the props were cleared so as to load it upon future
@@ -2173,6 +2181,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return a new set of ranges from the configured value
    */
   public IntegerRanges getRange(String name, String defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     return new IntegerRanges(get(name, defaultValue));
   }
 
@@ -2187,6 +2196,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return property value as a collection of <code>String</code>s. 
    */
   public Collection<String> getStringCollection(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     return StringUtils.getStringCollection(valueString);
   }
@@ -2201,6 +2211,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>null</code>. 
    */
   public String[] getStrings(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     return StringUtils.getStrings(valueString);
   }
@@ -2216,6 +2227,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or default value. 
    */
   public String[] getStrings(String name, String... defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     if (valueString == null) {
       return defaultValue;
@@ -2233,6 +2245,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return property value as a collection of <code>String</code>s, or empty <code>Collection</code> 
    */
   public Collection<String> getTrimmedStringCollection(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     if (null == valueString) {
       Collection<String> empty = new ArrayList<String>();
@@ -2251,6 +2264,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or empty array. 
    */
   public String[] getTrimmedStrings(String name) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     return StringUtils.getTrimmedStrings(valueString);
   }
@@ -2266,6 +2280,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or default value. 
    */
   public String[] getTrimmedStrings(String name, String... defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = get(name);
     if (null == valueString) {
       return defaultValue;
@@ -2294,6 +2309,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return password
    */
   public char[] getPassword(String name) throws IOException {
+    LOG.info("[msx-conf-para] " + name);
     char[] pass = null;
 
     pass = getPasswordFromCredentialProviders(name);
@@ -2389,6 +2405,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    * @return clear text password or null
    */
   protected char[] getPasswordFromConfig(String name) {
+    LOG.info("[msx-conf-para] " + name);
     char[] pass = null;
     if (getBoolean(CredentialProvider.CLEAR_TEXT_FALLBACK,
         CommonConfigurationKeysPublic.
@@ -2419,6 +2436,8 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
       String addressProperty,
       String defaultAddressValue,
       int defaultPort) {
+    LOG.info("[msx-conf-para] " + hostProperty);
+    LOG.info("[msx-conf-para] " + addressProperty);
 
     InetSocketAddress bindAddr = getSocketAddr(
       addressProperty, defaultAddressValue, defaultPort);
@@ -2443,6 +2462,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    */
   public InetSocketAddress getSocketAddr(
       String name, String defaultAddress, int defaultPort) {
+    LOG.info("[msx-conf-para] " + name);
     final String address = getTrimmed(name, defaultAddress);
     return NetUtils.createSocketAddr(address, defaultPort, name);
   }
@@ -2577,6 +2597,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    *         or <code>defaultValue</code>. 
    */
   public Class<?>[] getClasses(String name, Class<?> ... defaultValue) {
+    LOG.info("[msx-conf-para] " + name);
     String valueString = getRaw(name);
     if (null == valueString) {
       return defaultValue;
@@ -2660,6 +2681,7 @@ public class Configuration implements Iterable<Map.Entry<String,String>>,
    */
   @SuppressWarnings("unchecked")
   public <U> List<U> getInstances(String name, Class<U> xface) {
+    LOG.info("[msx-conf-para] " + name);
     List<U> ret = new ArrayList<U>();
     Class<?>[] classes = getClasses(name);
     for (Class<?> cl: classes) {
