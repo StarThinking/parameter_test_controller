@@ -1,0 +1,4 @@
+dfs.datanode.duplicate.replica.deletion JournalNode false true -1 org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes
+dfs.datatransfer.server.variableBlackList.enable JournalNode true false -1 org.apache.hadoop.hdfs.server.namenode.ha.TestFailureToReadEdits#testFailuretoReadEdits[1]
+dfs.mover.keytab.enabled JournalNode false true -1 org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
+dfs.namenode.edits.asynclogging JournalNode true false -1 org.apache.hadoop.hdfs.server.namenode.ha.TestFailureToReadEdits#testFailureToReadEditsOnTransitionToActive[1]
