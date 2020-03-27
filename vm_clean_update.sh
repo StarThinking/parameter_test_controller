@@ -1,5 +1,10 @@
 #!/bin/bash
 
+killall -9 dispatcher_hypo.sh
+pkill dispatcher_hypo.sh
+killall -9 dispatcher.sh
+pkill dispatcher.sh
+
 for i in $(seq 0 19)
 do 
     echo $i
