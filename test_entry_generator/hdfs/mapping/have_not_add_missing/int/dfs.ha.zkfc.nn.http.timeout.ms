@@ -1,0 +1,4 @@
+org.apache.hadoop.hdfs.server.namenode.TestAuditLoggerWithCommands#testStartReconfiguration
+org.apache.hadoop.hdfs.tools.TestDFSZKFailoverController#testFailoverAndBackOnNNShutdown
+org.apache.hadoop.hdfs.tools.TestDFSZKFailoverController#testManualFailoverWithDFSHAAdmin
+org.apache.hadoop.hdfs.tools.TestDFSZKFailoverController#testThreadDumpCaptureAfterNNStateChange
