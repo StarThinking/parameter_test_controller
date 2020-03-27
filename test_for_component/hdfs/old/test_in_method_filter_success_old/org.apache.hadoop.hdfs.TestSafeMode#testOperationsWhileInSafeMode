@@ -1,8 +1,0 @@
-[msx] testStarted testOperationsWhileInSafeMode
-2019-12-19 14:39:31,498 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:39:32,272 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45288
-2019-12-19 14:39:32,353 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:39:32,654 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:39:34,040 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:39:34,108 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45288 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testOperationsWhileInSafeMode testresult=1

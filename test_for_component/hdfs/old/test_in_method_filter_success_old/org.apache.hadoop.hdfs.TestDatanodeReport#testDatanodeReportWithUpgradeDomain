@@ -1,8 +1,0 @@
-[msx] testStarted testDatanodeReportWithUpgradeDomain
-2019-12-19 15:02:44,867 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 15:02:45,025 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39601
-2019-12-19 15:02:45,043 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 15:02:45,118 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 15:02:45,516 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 15:02:45,713 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39601 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testDatanodeReportWithUpgradeDomain testresult=1

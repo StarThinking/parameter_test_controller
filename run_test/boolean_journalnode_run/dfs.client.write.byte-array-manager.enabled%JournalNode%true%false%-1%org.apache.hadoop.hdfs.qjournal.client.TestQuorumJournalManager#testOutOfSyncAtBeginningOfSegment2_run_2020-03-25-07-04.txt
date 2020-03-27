@@ -1,0 +1,14 @@
+issue_parameter: dfs.client.write.byte-array-manager.enabled
+component: JournalNode
+reconfPoint: -1
+v1: true
+v2: false
+unitTest: org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment2
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 27

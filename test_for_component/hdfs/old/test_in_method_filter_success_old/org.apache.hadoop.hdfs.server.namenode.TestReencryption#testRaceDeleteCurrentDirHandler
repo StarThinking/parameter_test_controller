@@ -1,8 +1,0 @@
-[msx] testStarted testRaceDeleteCurrentDirHandler
-2019-12-19 17:17:59,051 [Thread-4356] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:17:59,151 [Thread-4356] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35088
-2019-12-19 17:17:59,158 [Thread-4356] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 17:17:59,192 [Thread-4356] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 17:18:10,352 [Thread-4356] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 17:18:10,402 [Thread-4356] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35088 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testRaceDeleteCurrentDirHandler testresult=1

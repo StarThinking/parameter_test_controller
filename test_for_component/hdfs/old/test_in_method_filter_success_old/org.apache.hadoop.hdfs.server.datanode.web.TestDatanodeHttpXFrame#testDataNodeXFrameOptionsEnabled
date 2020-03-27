@@ -1,8 +1,0 @@
-[msx] testStarted testDataNodeXFrameOptionsEnabled
-2019-12-19 16:38:58,623 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 16:38:58,742 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44548
-2019-12-19 16:38:58,749 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 16:38:58,823 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 16:38:58,949 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 16:38:59,215 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44548 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testDataNodeXFrameOptionsEnabled testresult=1

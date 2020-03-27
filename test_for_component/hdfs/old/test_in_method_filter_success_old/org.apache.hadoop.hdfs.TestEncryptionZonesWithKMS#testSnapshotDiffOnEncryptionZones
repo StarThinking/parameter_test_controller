@@ -1,8 +1,0 @@
-[msx] testStarted testSnapshotDiffOnEncryptionZones
-2019-12-19 14:59:07,857 [Thread-2224] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:59:07,937 [Thread-2224] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38043
-2019-12-19 14:59:07,945 [Thread-2224] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:59:07,975 [Thread-2224] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:59:09,666 [Thread-2224] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:59:09,709 [Thread-2224] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38043 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testSnapshotDiffOnEncryptionZones testresult=1

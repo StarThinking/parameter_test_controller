@@ -1,8 +1,0 @@
-[msx] testStarted testTransitionToActiveWhenOtherNamenodeisActive
-2019-12-19 18:52:37,943 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 18:52:38,675 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35352
-2019-12-19 18:52:38,677 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 18:52:38,784 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:36099
-2019-12-19 18:52:39,900 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35352 double check before stop dfs.namenode.audit.log.async = false
-2019-12-19 18:52:40,013 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:36099 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testTransitionToActiveWhenOtherNamenodeisActive testresult=1

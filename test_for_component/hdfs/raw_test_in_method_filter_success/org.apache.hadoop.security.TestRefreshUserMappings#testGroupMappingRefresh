@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.security.TestRefreshUserMappings#testGroupMappingRefresh
-2019-12-31 22:59:10,201 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 22:59:10,368 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 22:59:10,379 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 22:59:10,454 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 22:59:11,811 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 22:59:11,982 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.security.TestRefreshUserMappings#testGroupMappingRefresh test result = 1

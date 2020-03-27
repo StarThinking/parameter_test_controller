@@ -1,8 +1,0 @@
-[msx] testStarted testDataNodeMXBeanBlockSize
-2019-12-19 16:35:47,957 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 16:35:48,077 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38431
-2019-12-19 16:35:48,083 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 16:35:48,145 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 16:35:56,683 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 16:35:56,849 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38431 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testDataNodeMXBeanBlockSize testresult=1

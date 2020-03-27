@@ -1,8 +1,0 @@
-[msx] testStarted testEZwithFullyQualifiedPath
-2019-12-19 14:59:29,629 [Thread-3464] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:59:29,845 [Thread-3464] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:42433
-2019-12-19 14:59:29,853 [Thread-3464] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:59:29,882 [Thread-3464] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:59:30,603 [Thread-3464] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:59:30,647 [Thread-3464] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:42433 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testEZwithFullyQualifiedPath testresult=1

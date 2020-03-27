@@ -1,9 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeRespectsBindHostKeys#testHttpBindHostKey
-2019-12-31 17:59:04,386 [Thread-1] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
-2019-12-31 17:59:04,387 [Thread-1] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
-2019-12-31 17:59:04,406 [Thread-1] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
-2019-12-31 17:59:05,283 [Thread-1] INFO  server.JournalNode (JournalNode.java:setConf(232)) - [msx-restart] JournalNode setConf conf
-2019-12-31 17:59:05,284 [Thread-1] INFO  server.JournalNode (JournalNode.java:performReconfig(198)) - [msx-restart] JournalNode init, reconfigMode is none, do nothing
-2019-12-31 17:59:05,284 [Thread-1] INFO  server.JournalNode (JournalNode.java:start(301)) - [msx-restart] JournalNode start
-2019-12-31 17:59:05,316 [main] INFO  server.JournalNode (JournalNode.java:stop(359)) - [msx-restart] JournalNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeRespectsBindHostKeys#testHttpBindHostKey test result = 1

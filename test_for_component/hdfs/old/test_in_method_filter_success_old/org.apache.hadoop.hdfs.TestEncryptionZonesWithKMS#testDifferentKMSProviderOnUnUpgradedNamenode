@@ -1,8 +1,0 @@
-[msx] testStarted testDifferentKMSProviderOnUnUpgradedNamenode
-2019-12-19 14:59:00,406 [Thread-1719] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:59:00,494 [Thread-1719] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35928
-2019-12-19 14:59:00,502 [Thread-1719] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:59:00,537 [Thread-1719] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:59:01,035 [Thread-1719] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:59:01,088 [Thread-1719] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35928 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testDifferentKMSProviderOnUnUpgradedNamenode testresult=1

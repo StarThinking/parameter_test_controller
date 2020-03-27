@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.shortcircuit.TestShortCircuitLocalRead#testReadWithRemoteBlockReader2
-2019-12-31 22:24:09,738 [Thread-903] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 22:24:09,918 [Thread-903] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 22:24:09,930 [Thread-903] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 22:24:09,997 [Thread-903] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 22:24:10,430 [Thread-903] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 22:24:10,490 [Thread-903] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.shortcircuit.TestShortCircuitLocalRead#testReadWithRemoteBlockReader2 test result = 1

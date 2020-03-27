@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.TestEncryptionZones#testSnapshotsOnEncryptionZones
-2019-12-31 17:55:35,833 [Thread-2426] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 17:55:35,966 [Thread-2426] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 17:55:35,974 [Thread-2426] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 17:55:36,008 [Thread-2426] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 17:55:37,888 [Thread-2426] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 17:55:37,932 [Thread-2426] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.TestEncryptionZones#testSnapshotsOnEncryptionZones test result = 1

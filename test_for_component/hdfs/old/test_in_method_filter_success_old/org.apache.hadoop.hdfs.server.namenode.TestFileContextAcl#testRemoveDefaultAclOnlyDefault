@@ -1,8 +1,0 @@
-[msx] testStarted testRemoveDefaultAclOnlyDefault
-2019-12-19 17:58:15,100 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 17:58:15,160 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41198 double check before stop dfs.namenode.audit.log.async = false
-2019-12-19 17:58:15,212 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:58:15,412 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:34920
-2019-12-19 17:58:15,424 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 17:58:15,493 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-[msx] testFinished testRemoveDefaultAclOnlyDefault testresult=1

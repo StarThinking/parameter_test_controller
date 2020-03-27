@@ -1,8 +1,0 @@
-[msx] testStarted testExistingInterleavedWithNonExistentUsers
-2019-12-19 17:51:12,334 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:51:12,419 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38613
-2019-12-19 17:51:12,420 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:51:12,505 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:41045
-2019-12-19 17:51:12,525 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38613 double check before stop dfs.namenode.audit.log.async = false
-2019-12-19 17:51:12,547 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:41045 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testExistingInterleavedWithNonExistentUsers testresult=1

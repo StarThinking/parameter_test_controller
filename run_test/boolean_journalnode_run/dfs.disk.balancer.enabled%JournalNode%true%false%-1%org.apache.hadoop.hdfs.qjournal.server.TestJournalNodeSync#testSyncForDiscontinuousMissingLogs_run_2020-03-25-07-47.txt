@@ -1,0 +1,14 @@
+issue_parameter: dfs.disk.balancer.enabled
+component: JournalNode
+reconfPoint: -1
+v1: true
+v2: false
+unitTest: org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncForDiscontinuousMissingLogs
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncForDiscontinuousMissingLogs
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 31

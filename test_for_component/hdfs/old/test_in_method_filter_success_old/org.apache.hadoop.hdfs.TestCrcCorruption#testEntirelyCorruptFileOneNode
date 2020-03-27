@@ -1,8 +1,0 @@
-[msx] testStarted testEntirelyCorruptFileOneNode
-2019-12-19 14:34:51,185 [Thread-2643] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:34:51,338 [Thread-2643] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45746
-2019-12-19 14:34:51,354 [Thread-2643] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:34:51,414 [Thread-2643] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:34:51,585 [Thread-2643] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:34:51,746 [Thread-2643] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45746 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testEntirelyCorruptFileOneNode testresult=1

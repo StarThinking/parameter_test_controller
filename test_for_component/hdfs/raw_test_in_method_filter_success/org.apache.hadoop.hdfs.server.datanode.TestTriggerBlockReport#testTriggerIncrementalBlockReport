@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.server.datanode.TestTriggerBlockReport#testTriggerIncrementalBlockReport
-2019-12-31 20:39:00,797 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 20:39:00,962 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 20:39:00,972 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 20:39:01,055 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 20:39:01,872 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 20:39:02,135 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.server.datanode.TestTriggerBlockReport#testTriggerIncrementalBlockReport test result = 1

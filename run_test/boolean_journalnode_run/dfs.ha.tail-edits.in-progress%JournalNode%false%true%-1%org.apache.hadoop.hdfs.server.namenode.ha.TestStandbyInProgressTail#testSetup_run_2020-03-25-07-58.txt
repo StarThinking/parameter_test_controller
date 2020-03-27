@@ -1,0 +1,20 @@
+issue_parameter: dfs.ha.tail-edits.in-progress
+component: JournalNode
+reconfPoint: -1
+v1: false
+v2: true
+unitTest: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyInProgressTail#testSetup
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyInProgressTail#testSetup
+tr.result is -1
+fail. do 10 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyInProgressTail#testSetup v1 false v2 true
+
+Test vvMode=v1v1
+mvn test -Dtest=org.apache.hadoop.hdfs.server.namenode.ha.TestStandbyInProgressTail#testSetup
+tr.result is -1
+v1v1 failed with v1 false, no issue.
+no issue
+Total execution time in seconds : 40

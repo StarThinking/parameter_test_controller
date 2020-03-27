@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IFS=$'\n' 
-REPEAT=10
+REPEAT=100
 entry_list=( $(cat task.txt) )
 entry_list_length=${#entry_list[@]}
 entry_cursor=0
@@ -21,5 +21,5 @@ do
 	    if [ $entry_cursor -ge $entry_list_length ]; then echo finish all tasks; break; fi
 	fi
     done
-    sleep 10
+    sleep 60
 done

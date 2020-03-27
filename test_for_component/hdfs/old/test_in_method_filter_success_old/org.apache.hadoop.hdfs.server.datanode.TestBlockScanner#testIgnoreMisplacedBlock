@@ -1,8 +1,0 @@
-[msx] testStarted testIgnoreMisplacedBlock
-2019-12-19 16:49:00,447 [Thread-435] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 16:49:00,579 [Thread-435] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:44293
-2019-12-19 16:49:00,584 [Thread-435] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 16:49:00,644 [Thread-435] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 16:49:01,705 [Thread-435] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 16:49:01,854 [Thread-435] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:44293 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testIgnoreMisplacedBlock testresult=1

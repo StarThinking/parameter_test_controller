@@ -1,8 +1,0 @@
-[msx] testStarted testFadviseSkippedForSmallReads
-2019-12-19 16:23:40,798 [Thread-264] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 16:23:40,948 [Thread-264] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:37006
-2019-12-19 16:23:40,961 [Thread-264] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 16:23:41,038 [Thread-264] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 16:23:41,787 [Thread-264] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 16:23:41,994 [Thread-264] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:37006 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testFadviseSkippedForSmallReads testresult=1

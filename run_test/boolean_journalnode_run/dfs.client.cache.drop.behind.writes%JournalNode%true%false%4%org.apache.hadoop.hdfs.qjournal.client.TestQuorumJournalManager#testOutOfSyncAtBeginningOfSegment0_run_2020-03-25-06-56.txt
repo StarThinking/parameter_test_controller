@@ -1,0 +1,14 @@
+issue_parameter: dfs.client.cache.drop.behind.writes
+component: JournalNode
+reconfPoint: 4
+v1: true
+v2: false
+unitTest: org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment0
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testOutOfSyncAtBeginningOfSegment0
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 33

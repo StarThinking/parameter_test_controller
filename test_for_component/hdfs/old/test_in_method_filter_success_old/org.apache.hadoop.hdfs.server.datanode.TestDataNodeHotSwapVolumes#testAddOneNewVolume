@@ -1,8 +1,0 @@
-[msx] testStarted testAddOneNewVolume
-2019-12-19 16:28:36,733 [Thread-2989] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 16:28:36,843 [Thread-2989] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:43868
-2019-12-19 16:28:36,859 [Thread-2989] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 16:28:36,909 [Thread-2989] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 16:28:37,149 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 16:28:37,314 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:43868 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testAddOneNewVolume testresult=1

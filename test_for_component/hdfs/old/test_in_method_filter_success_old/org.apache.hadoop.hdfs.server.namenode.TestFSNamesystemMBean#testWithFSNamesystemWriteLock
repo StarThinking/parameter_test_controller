@@ -1,8 +1,0 @@
-[msx] testStarted testWithFSNamesystemWriteLock
-2019-12-19 17:28:41,386 [main] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:28:42,174 [main] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:45035
-2019-12-19 17:28:42,250 [main] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 17:28:42,700 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 17:28:44,184 [main] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 17:28:44,356 [main] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:45035 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testWithFSNamesystemWriteLock testresult=1

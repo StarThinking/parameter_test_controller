@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.TestReservedRawPaths#testListDotReserved
-2019-12-31 21:37:21,791 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 21:37:21,943 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 21:37:21,954 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 21:37:22,006 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 21:37:23,182 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 21:37:23,255 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.TestReservedRawPaths#testListDotReserved test result = 1

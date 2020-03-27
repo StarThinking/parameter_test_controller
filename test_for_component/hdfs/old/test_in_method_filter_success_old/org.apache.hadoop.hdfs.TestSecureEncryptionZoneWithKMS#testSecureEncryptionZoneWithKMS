@@ -1,8 +1,0 @@
-[msx] testStarted testSecureEncryptionZoneWithKMS
-2019-12-19 14:58:04,520 [Thread-19] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:58:05,082 [Thread-19] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:38970
-2019-12-19 14:58:05,156 [Thread-19] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:58:05,523 [Thread-19] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:58:08,693 [Thread-19] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:58:08,877 [Thread-19] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:38970 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testSecureEncryptionZoneWithKMS testresult=1

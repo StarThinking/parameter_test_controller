@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testProvisionTrash
-2019-12-31 21:24:21,085 [Thread-2016] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 21:24:21,204 [Thread-2016] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 21:24:21,216 [Thread-2016] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 21:24:21,248 [Thread-2016] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 21:24:22,187 [Thread-2016] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 21:24:22,240 [Thread-2016] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.TestEncryptionZonesWithKMS#testProvisionTrash test result = 1

@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.tracing.TestTraceAdmin#testKerberizedTraceAdmin
-2019-12-31 22:59:30,523 [main] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 22:59:30,898 [main] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 22:59:30,939 [main] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 22:59:31,022 [main] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 22:59:31,581 [main] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = true
-2019-12-31 22:59:31,769 [main] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = true
-[msx] test Finished org.apache.hadoop.tracing.TestTraceAdmin#testKerberizedTraceAdmin test result = 1

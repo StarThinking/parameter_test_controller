@@ -1,0 +1,14 @@
+issue_parameter: dfs.disk.balancer.enabled
+component: JournalNode
+reconfPoint: -1
+v1: false
+v2: true
+unitTest: org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testFailToStartWithBadConfig
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testFailToStartWithBadConfig
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 23

@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.TestRollingUpgrade#testQueryAfterRestart
-2019-12-31 18:14:00,670 [Thread-3053] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 18:14:00,857 [Thread-3053] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 18:14:01,003 [Thread-3053] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 18:14:01,026 [Thread-3053] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 18:14:01,134 [Thread-3053] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 18:14:01,143 [Thread-3053] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.TestRollingUpgrade#testQueryAfterRestart test result = 1

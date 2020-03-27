@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.TestEncryptionZones#testWebhdfsReadOldBehavior
-2019-12-31 17:54:56,621 [Thread-353] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 17:54:56,804 [Thread-353] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 17:54:56,815 [Thread-353] INFO  datanode.DataNode (DataNode.java:performReconfig(463)) - [msx-restart] DataNode init, reconfigMode is none, do nothing
-2019-12-31 17:54:56,865 [Thread-353] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2732)) - [msx-restart] DataNode start
-2019-12-31 17:54:58,159 [Thread-353] INFO  datanode.DataNode (DataNode.java:shutdown(2072)) - [msx-restart] DataNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 17:54:58,480 [Thread-353] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.TestEncryptionZones#testWebhdfsReadOldBehavior test result = 1

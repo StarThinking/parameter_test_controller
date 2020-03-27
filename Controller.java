@@ -24,7 +24,7 @@ public class Controller {
     private static String reconfPointFileName = systemRootDir + "shared/reconf_point";
 
     /* static files */
-    private static String subProjectDir = systemRootDir + "controller_static_data/hdfs/sub_project/";
+    private static String subProjectDir = systemRootDir + "tests/hdfs/sub_project/";
     private static String hdfsClass = "hadoop-hdfs.txt";
     private static String hdfsClientClass = "hadoop-hdfs-client.txt";
     private static String hdfsHttpfsClass = "hadoop-hdfs-httpfs.txt";

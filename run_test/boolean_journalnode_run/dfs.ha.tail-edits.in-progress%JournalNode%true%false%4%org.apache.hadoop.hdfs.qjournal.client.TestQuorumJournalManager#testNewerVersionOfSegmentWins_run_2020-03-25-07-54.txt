@@ -1,0 +1,14 @@
+issue_parameter: dfs.ha.tail-edits.in-progress
+component: JournalNode
+reconfPoint: 4
+v1: true
+v2: false
+unitTest: org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testNewerVersionOfSegmentWins
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.client.TestQuorumJournalManager#testNewerVersionOfSegmentWins
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 21

@@ -1,0 +1,14 @@
+issue_parameter: dfs.namenode.edits.noeditlogchannelflush
+component: JournalNode
+reconfPoint: -1
+v1: false
+v2: true
+unitTest: org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testJournalNodeSyncwithFederationTypeConfigWithNamenodeId
+result: -1
+
+Test vvMode=v1v2
+mvn test -Dtest=org.apache.hadoop.hdfs.qjournal.server.TestJournalNode#testJournalNodeSyncwithFederationTypeConfigWithNamenodeId
+tr.result is 1
+succeed.
+no issue
+Total execution time in seconds : 19

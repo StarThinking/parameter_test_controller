@@ -1,8 +1,0 @@
-[msx] test Started org.apache.hadoop.hdfs.server.namenode.TestStartup#testCorruptImageFallbackLostECPolicy
-2019-12-31 19:32:48,906 [Thread-434] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 19:32:49,062 [Thread-434] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 19:32:49,271 [Thread-434] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-2019-12-31 19:32:49,306 [Thread-434] INFO  namenode.NameNode (NameNode.java:performReconfig(961)) - [msx-restart] NameNode init, reconfigMode is none, do nothing
-2019-12-31 19:32:49,474 [Thread-434] INFO  namenode.NameNode (NameNode.java:<init>(1039)) - [msx-restart] NameNode start
-2019-12-31 19:32:49,496 [Thread-434] INFO  namenode.NameNode (NameNode.java:stop(1082)) - [msx-restart] NameNode stop, double check before stop, dfs.block.access.token.enable = false
-[msx] test Finished org.apache.hadoop.hdfs.server.namenode.TestStartup#testCorruptImageFallbackLostECPolicy test result = 1

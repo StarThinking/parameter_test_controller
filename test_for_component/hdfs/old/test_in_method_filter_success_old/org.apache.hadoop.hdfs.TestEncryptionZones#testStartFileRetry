@@ -1,8 +1,0 @@
-[msx] testStarted testStartFileRetry
-2019-12-19 14:26:56,692 [Thread-3386] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 14:26:56,805 [Thread-3386] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:35892
-2019-12-19 14:26:56,811 [Thread-3386] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 14:26:56,861 [Thread-3386] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 14:27:01,330 [Thread-3386] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 14:27:01,371 [Thread-3386] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:35892 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testStartFileRetry testresult=1

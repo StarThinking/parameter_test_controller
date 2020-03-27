@@ -1,8 +1,0 @@
-[msx] testStarted testReencryptOrdering
-2019-12-19 17:17:10,334 [Thread-3608] INFO  namenode.NameNode (NameNode.java:<init>(946)) - [msx-restart] reconfigMode is none, do nothing
-2019-12-19 17:17:10,434 [Thread-3608] INFO  namenode.NameNode (NameNode.java:<init>(1016)) - [msx-restart] NameNode start HostAndPort localhost:39348
-2019-12-19 17:17:10,442 [Thread-3608] INFO  datanode.DataNode (DataNode.java:<init>(464)) - [msx-restart] DataNode new conf
-2019-12-19 17:17:10,477 [Thread-3608] INFO  datanode.DataNode (DataNode.java:runDatanodeDaemon(2653)) - [msx-restart] DataNode start
-2019-12-19 17:17:16,918 [Thread-3608] INFO  datanode.DataNode (DataNode.java:shutdown(1995)) - [msx-restart] DataNode stop
-2019-12-19 17:17:16,971 [Thread-3608] INFO  namenode.NameNode (NameNode.java:stop(1059)) - [msx-restart] NameNode stop HostAndPort localhost:39348 double check before stop dfs.namenode.audit.log.async = false
-[msx] testFinished testReencryptOrdering testresult=1
