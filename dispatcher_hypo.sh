@@ -1,7 +1,9 @@
 #!/bin/bash
 
+if [ $# -ne 1 ]; then echo 'wrong'; exit -1; fi
+
 IFS=$'\n' 
-REPEAT=100
+REPEAT=$1
 entry_list=( $(cat task.txt) )
 entry_list_length=${#entry_list[@]}
 entry_cursor=0
