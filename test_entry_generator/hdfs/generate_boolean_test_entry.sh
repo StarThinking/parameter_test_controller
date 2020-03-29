@@ -18,7 +18,7 @@ for value_pair in 'true false' 'false true'
 do
     for t in $(cat $start_path)
     do
-        if [ "$(grep $t $testset_for_parameter)" == "" ]; then
+        if [ "$(grep $t $testset_for_parameter)" != "" ]; then
             echo $parameter $component $value_pair -1 $t
         fi
     done
@@ -29,7 +29,7 @@ do
         rp=$(echo $restart_file | awk -F '.txt' '{print $1}')
         for t in $(cat $restart_path)
         do
-            if [ "$(grep $t $testset_for_parameter)" == "" ]; then
+            if [ "$(grep $t $testset_for_parameter)" != "" ]; then
                 echo $parameter $component $value_pair $rp $t
             fi
         done

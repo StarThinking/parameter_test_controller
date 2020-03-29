@@ -1,39 +1,57 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
     echo 'wrong arguments'
     exit 1
 fi
 
-component=$1
-v1_p=$2
-v2_p=$3
+parameter_type=int
+parameter=$1
+component=$2
+component_dir=/root/parameter_test_controller/tests/hdfs/accumulate/$component
+start_path=$component_dir/start.txt
+reconf_files=( $(ls $component_dir | grep -v start.txt) )
 
-if [ $v1_p -ge 3 ] || [ $v2_p -ge 3 ]; then echo 'wrong!'; exit -1; fi
+mapping_dir=/root/parameter_test_controller/test_entry_generator/hdfs/mapping/$parameter_type
+testset_for_parameter=$mapping_dir/$parameter
 
-value_store=~/parameter_test_controller/int_values.txt 
-
-ret_values=()
+value_store=/root/parameter_test_controller/parameters/hdfs/makeup_value/"$parameter_type"_values.txt 
 function get_values {
     p=$1
-    if [ $(grep ^"$p"' ' $value_store | wc -l) -ne 1 ]; then echo 'wrong!'; grep -wF "$p" $value_store; exit -1; fi
-    ret_values=( $(grep -wF "$p" $value_store | awk -F ' ' '{print $2" "$3" "$4}') )
+    if [ $(grep ^"$p"' ' $value_store | wc -l) -ne 1 ]; then echo 'wrong!'; grep ^"$p"' ' $value_store; exit -1; fi
+    ret_values=( $(grep ^"$p"' ' $value_store | awk -F ' ' '{print $2" "$3" "$4}') )
 }
 
-paras=( $(cat input.txt) )
-para_num=${#paras[@]}
-echo "para_num = $para_num"
-for i in $(seq 0 $(( para_num - 1 )))
-do
-    echo "${paras[$i]} on hadoop-$i"
-    ret_values=()
-    get_values ${paras[$i]}
-    echo "values=${ret_values[@]}"
-    v1=${ret_values[$v1_p]}
-    v2=${ret_values[$v2_p]}
-    echo "component=$component v1=$v1 v2=$v2"
-    ssh hadoop-$i "cd ~/parameter_test_controller; ./run_vm_task.sh ${paras[$i]} $component $v1 $v2 > /dev/null &" &
-done
+ret_values=()
+get_values $parameter
+#echo "values=${ret_values[@]}"
+v0=${ret_values[0]}
+v1=${ret_values[1]}
+v2=${ret_values[2]}
+IFS=$'\n' 
+value_pairs[0]="$v1 $v0"
+value_pairs[1]="$v1 $v2"
+value_pairs[2]="$v0 $v1"
+value_pairs[3]="$v2 $v1"
 
-sleep 10
-echo 'jobs distributed'
+for value_pair in ${value_pairs[@]}
+do
+    for t in $(cat $start_path)
+    do
+        if [ "$(grep $t $testset_for_parameter)" != "" ]; then
+            echo $parameter $component $value_pair -1 $t
+        fi
+    done
+
+    for restart_file in ${reconf_files[@]}
+    do
+        restart_path=$component_dir/$restart_file
+        rp=$(echo $restart_file | awk -F '.txt' '{print $1}')
+        for t in $(cat $restart_path)
+        do
+            if [ "$(grep $t $testset_for_parameter)" != "" ]; then
+                echo $parameter $component $value_pair $rp $t
+            fi
+        done
+    done
+done
