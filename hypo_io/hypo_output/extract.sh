@@ -1,6 +1,6 @@
 #!/bin/bash
 
-libs=/root/parameter_test_controller/run_hp/hypo_output:/root/parameter_test_controller/run_hp/hypo_output/commons-math3-3.6.1/commons-math3-3.6.1.jar
+libs=/root/parameter_test_controller/hypo_io/hypo_output:/root/parameter_test_controller/hypo_io/hypo_output/commons-math3-3.6.1/commons-math3-3.6.1.jar
 if [ $# -ne 1 ]; then echo "wrong"; exit -1; fi
 
 f=$1
