@@ -1,0 +1,440 @@
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: false positive !!!
+Total execution time in seconds : 1445
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2063
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 3 out of 25
+result: false positive !!!
+Total execution time in seconds : 2081
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 5 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: false positive !!!
+Total execution time in seconds : 1445
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1447
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1493
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1456
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1447
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1498
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1445
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2078
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 3 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2085
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: false positive !!!
+Total execution time in seconds : 1440
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1442
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1489
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1454
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1446
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1495
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 6 out of 25
+result: false positive !!!
+Total execution time in seconds : 1439
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2082
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: might be true error
+Total execution time in seconds : 2154
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1437
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1440
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1488
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1448
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1439
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1490
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 5 out of 25
+result: false positive !!!
+Total execution time in seconds : 1451
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 3 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2078
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2092
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1448
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1450
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1499
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1459
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1448
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1502
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: false positive !!!
+Total execution time in seconds : 1507
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: false positive !!!
+Total execution time in seconds : 2139
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2136
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 3 out of 25
+result: false positive !!!
+Total execution time in seconds : 1507
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1512
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1550
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1525
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1506
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1554
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 3 out of 25
+v1v1v2v2 failed with probability 6 out of 25
+result: false positive !!!
+Total execution time in seconds : 1442
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: false positive !!!
+Total execution time in seconds : 2084
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: false positive !!!
+Total execution time in seconds : 2072
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 3 out of 25
+v1v1v2v2 failed with probability 6 out of 25
+result: false positive !!!
+Total execution time in seconds : 1444
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1446
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1491
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1458
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1446
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1496
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 4 out of 25
+result: false positive !!!
+Total execution time in seconds : 1451
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 1 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: false positive !!!
+Total execution time in seconds : 2095
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2093
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 6 out of 25
+result: false positive !!!
+Total execution time in seconds : 1444
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1451
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1499
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1466
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1451
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1516
+
+all files with key dfs are fetched
+dfs.bytes-per-checksum%JournalNode%512%65536%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 2 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: might be true error
+Total execution time in seconds : 1444
+
+dfs.client.block.write.locateFollowingBlock.retries%JournalNode%500%5%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2081
+
+dfs.client.failover.sleep.base.millis%JournalNode%10%500%-1%org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 1 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 2066
+
+dfs.client.retry.max.attempts%JournalNode%1000%10%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 3 out of 25
+v1v1v2v2 failed with probability 2 out of 25
+result: might be true error
+Total execution time in seconds : 1442
+
+dfs.client.socket.send.buffer.size%JournalNode%1%0%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1445
+
+dfs.client.write.max-packets-in-flight%JournalNode%80%1%4%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1489
+
+dfs.edit.log.transfer.timeout%JournalNode%3000000%30000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1452
+
+dfs.namenode.num.checkpoints.retained%JournalNode%1%2%-1%org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1446
+
+dfs.short.circuit.shared.memory.watcher.interrupt.check.ms%JournalNode%6000000%60000%-1%org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue_hypothesis_2020-04-03-00-31.txt
+v1v2 failed with probability 0 out of 25
+v1v1v2v2 failed with probability 0 out of 25
+result: v1v2 failure didn't occur
+Total execution time in seconds : 1493
+
