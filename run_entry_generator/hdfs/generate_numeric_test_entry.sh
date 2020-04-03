@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [ $# -lt 2 ]; then
-    echo 'wrong arguments'
+if [ $# -lt 3 ]; then
+    echo 'wrong arguments: parameter_type parameter component'
     exit 1
 fi
 
-parameter_type=int
-parameter=$1
-component=$2
+parameter_type=$1 # int, long
+parameter=$2
+component=$3
 component_dir=/root/parameter_test_controller/tests/hdfs/accumulate/$component
 start_path=$component_dir/start.txt
 reconf_files=( $(ls $component_dir | grep -v start.txt) )
 
-mapping_dir=/root/parameter_test_controller/test_entry_generator/hdfs/mapping/$parameter_type
+mapping_dir=/root/parameter_test_controller/run_entry_generator/hdfs/mapping/$parameter_type
 testset_for_parameter=$mapping_dir/$parameter
 
 value_store=/root/parameter_test_controller/parameters/hdfs/makeup_value/"$parameter_type"_values.txt 
