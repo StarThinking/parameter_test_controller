@@ -8,7 +8,7 @@ entries=( $(grep '_hypothesis_' $file | awk -F '_hypothesis_' '{print $1}' | sor
 for entry in ${entries[@]}
 do
     echo "entry: $entry"
-    entry_lines=( $(grep -rn $entry $file | awk -F ':' '{print $1}') )
+    entry_lines=( $(grep -rn -F $entry $file | awk -F ':' '{print $1}') )
     v1v2_num_sum=0
     v1v2_failure_sum=0
     v1v1v2v2_num_sum=0
@@ -24,7 +24,7 @@ do
         v1v1v2v2_failure=$(echo $v1v1v2v2 | awk -F ' ' '{print $5}')
 
 	null_hypo=$(java -cp $libs ReconfTtest $v1v2_num $v1v2_failure $v1v1v2v2_num $v1v1v2v2_failure)
-        echo "$v1v2_num $v1v2_failure $v1v1v2v2_num $v1v1v2v2_failure $null_hypo"
+        #echo "$v1v2_num $v1v2_failure $v1v1v2v2_num $v1v1v2v2_failure $null_hypo"
 
 	v1v2_num_sum=$(( v1v2_num_sum + v1v2_num ))
 	v1v2_failure_sum=$(( v1v2_failure_sum + v1v2_failure ))
