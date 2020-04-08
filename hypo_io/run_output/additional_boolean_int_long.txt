@@ -1,0 +1,14 @@
+dfs.federation.router.admin.enable NameNode true false 1 org.apache.hadoop.hdfs.server.federation.router.TestRouterAllResolver#testSpaceAll
+dfs.webhdfs.rest-csrf.enabled NameNode true false -1 org.apache.hadoop.hdfs.TestFileConcurrentReader#testUnfinishedBlockCRCErrorNormalTransfer
+dfs.federation.router.client.reject.overload DataNode true false -1 org.apache.hadoop.hdfs.server.federation.router.TestRouterQuota#testQuotaRefreshWhenDestinationNotPresent
+dfs.federation.router.heartbeat.enable DataNode true false -1 org.apache.hadoop.hdfs.server.federation.router.TestRouterQuota#testQuotaRefreshWhenDestinationNotPresent
+dfs.webhdfs.rest-csrf.enabled DataNode false true -1 org.apache.hadoop.hdfs.TestBlockStoragePolicy#testChangeWarmRep
+dfs.webhdfs.rest-csrf.enabled DataNode true false -1 org.apache.hadoop.hdfs.server.datanode.TestDataNodeMXBean#testDataNodeMXBean
+dfs.webhdfs.rest-csrf.enabled DataNode true false -1 org.apache.hadoop.hdfs.TestBlockStoragePolicy#testChangeColdRep
+dfs.webhdfs.rest-csrf.enabled DataNode true false 6 org.apache.hadoop.hdfs.server.namenode.TestNamenodeCapacityReport#testXceiverCount
+dfs.webhdfs.rest-csrf.enabled DataNode true false 6 org.apache.hadoop.hdfs.server.blockmanagement.TestBlockTokenWithDFSStriped#testRead
+dfs.webhdfs.rest-csrf.enabled DataNode true false 2 org.apache.hadoop.hdfs.server.datanode.TestNNHandlesCombinedBlockReport#blockReport_08
+dfs.webhdfs.rest-csrf.enabled DataNode true false 5 org.apache.hadoop.hdfs.server.namenode.TestNamenodeCapacityReport#testXceiverCount
+dfs.webhdfs.rest-csrf.enabled DataNode false true -1 org.apache.hadoop.hdfs.TestDFSClientRetries#testLeaseRenewAndDFSOutputStreamDeadLock
+dfs.webhdfs.rest-csrf.enabled DataNode false true 28 org.apache.hadoop.hdfs.TestReconstructStripedFile#testNNSendsErasureCodingTasks
+dfs.federation.router.handler.count NameNode 10 1 3 org.apache.hadoop.fs.contract.router.web.TestRouterWebHDFSContractAppend#testRenameFileBeingAppended
