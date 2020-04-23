@@ -75,10 +75,10 @@ public class TestResult {
         }
 
         public static boolean isValid(TestResult tr) {
-            if (!tr.component.equals("NameNode") && !tr.component.equals("DataNode") && !tr.component.equals("JournalNode")) {
-                Controller.myPrint("Error: wrong component " + tr.component);
-                return false;
-            }
+            //if (!tr.component.equals("NameNode") && !tr.component.equals("DataNode") && !tr.component.equals("JournalNode")) {
+            //    Controller.myPrint("Error: wrong component " + tr.component);
+            //    return false;
+            //}
             return true;
         }
     }

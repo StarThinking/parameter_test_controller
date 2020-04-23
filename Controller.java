@@ -22,46 +22,6 @@ public class Controller {
     private static String v1FileName = systemRootDir + "shared/reconf_v1";
     private static String v2FileName = systemRootDir + "shared/reconf_v2";
     private static String reconfPointFileName = systemRootDir + "shared/reconf_point";
-
-    /* static files */
-    private static String subProjectDir = systemRootDir + "tests/hdfs/sub_project/";
-    private static String hdfsClass = "hadoop-hdfs.txt";
-    private static String hdfsClientClass = "hadoop-hdfs-client.txt";
-    private static String hdfsHttpfsClass = "hadoop-hdfs-httpfs.txt";
-    private static String hdfsNativeClientClass = "hadoop-hdfs-native-client.txt";
-    private static String hdfsNfsClass = "hadoop-hdfs-nfs.txt";
-    private static String hdfsRbfClass = "hadoop-hdfs-rbf.txt";
-
-    private static List<String> hdfsClassList = new ArrayList<String>();
-    private static List<String> hdfsClientClassList = new ArrayList<String>();
-    private static List<String> hdfsHttpfsClassList = new ArrayList<String>();
-    private static List<String> hdfsNativeClientClassList = new ArrayList<String>();
-    private static List<String> hdfsNfsClassList = new ArrayList<String>();
-    private static List<String> hdfsRbfClassList = new ArrayList<String>();
-    
-    static {
-        loadStaticFiles();
-    }
-
-    private static String findSubProject(String unitTestClass) {
-        if (hdfsClassList.contains(unitTestClass))
-            return "hadoop-hdfs";
-        else if (hdfsClientClassList.contains(unitTestClass))
-            return "hadoop-hdfs-client";
-        else if (hdfsHttpfsClassList.contains(unitTestClass))
-            return "hadoop-hdfs-httpfs";
-        else if (hdfsNativeClientClassList.contains(unitTestClass))
-            return "hadoop-hdfs-native-client";
-        else if (hdfsNfsClassList.contains(unitTestClass))
-            return "hadoop-hdfs-nfs";
-        else if (hdfsRbfClassList.contains(unitTestClass))
-            return "hadoop-hdfs-rbf";
-        else {
-	    myPrint("Warn : cannot find sub project for " + unitTestClass);
-	    System.exit(-1);
-	}
-        return "";
-    }
     
     private static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
@@ -125,24 +85,23 @@ public class Controller {
     
     private static void runMvnCmd(TestResult tr) {
         try {
-            int ret = -1;
-	    String cmd = "mvn test -Dtest=" + tr.unitTest;
-            myPrint(cmd);
-          
-	    String unitTestClass = tr.unitTest.split("#")[0]; 
-            String subProject = findSubProject(unitTestClass);
-            String workingDir = workingRootDir + "/" + subProject;
-            Process process = Runtime.getRuntime().exec(cmd, null, new File(workingDir));
+            int exitCode = -1;
+	    String systemLogSavingDir = "/root/reconf_test_gen";
+            ProcessBuilder builder = new ProcessBuilder();
+   	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", "hbase", tr.unitTest, systemLogSavingDir);
+	    Process process = builder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-	    String buffer = "";
+	    String line = "";
+	    while ((line = reader.readLine()) != null) {
+		;
+		//myPrint(line);
+	    }
 	    reader.close();
-	    if(!process.waitFor(1200, TimeUnit.SECONDS)) {
-    		//timeout - kill the process.
+	    if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
 		myPrint("Warn: wait process timeout!");
     		process.destroy(); // consider using destroyForcibly instead
 	    }
-            //ret = process.exitValue();
-            //process.destroy();
+            exitCode = process.exitValue();
            
             List<TestResult> testResultList = new ArrayList<TestResult>();
             testResultList.add(tr);
@@ -279,58 +238,6 @@ public class Controller {
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
-        }
-    }
-    
-    private static void loadStaticFiles() {
-        String buffer = "";
-        BufferedReader reader = null;
-       
-        try {
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsClassList.add(buffer);
-            }
-            reader.close();
-            
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsClientClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsClientClassList.add(buffer);
-            }
-            reader.close();
-            
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsHttpfsClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsHttpfsClassList.add(buffer);
-            }
-            reader.close();
-
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsNativeClientClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsNativeClientClassList.add(buffer);
-            }
-            reader.close();
-
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsNfsClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsNfsClassList.add(buffer);
-            }
-            reader.close();
-
-            buffer = "";
-            reader = new BufferedReader(new FileReader(new File(subProjectDir + hdfsRbfClass)));
-            while ((buffer = reader.readLine()) != null) {
-                hdfsRbfClassList.add(buffer);
-            }
-            reader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(-1);
         }
     }
 }
