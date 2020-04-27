@@ -88,7 +88,7 @@ public class Controller {
             int exitCode = -1;
 	    String systemLogSavingDir = "/root/reconf_test_gen";
             ProcessBuilder builder = new ProcessBuilder();
-   	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", "hbase", tr.unitTest, systemLogSavingDir);
+   	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.testProject, tr.unitTest, systemLogSavingDir);
 	    Process process = builder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 	    String line = "";
@@ -233,7 +233,7 @@ public class Controller {
                     testResult.delete();
                 }
             }
-            TestResult empty = new TestResult("", "", "", "", "", "");
+            TestResult empty = new TestResult("", "", "", "", "", "", "");
             setupTestTuple("none", empty);
         } catch (Exception e) {
             e.printStackTrace();

@@ -56,14 +56,15 @@ public class Hypothesis extends Controller {
         String component = "";
         String v1 = "";
         String v2 = "";
-        String reconfPoint = "";
+	String testProject = "";
         String unitTest = "";
+        String reconfPoint = "";
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
 
-        if (args.length != 7) {
+        if (args.length != 8) {
             myPrint("Error: args length is " + args.length);
-            myPrint("Hypothesis repeats parameter component v1 v2 reconfPoint unitTest");
+            myPrint("Hypothesis [repeats] [parameter] [component] [v1] [v2] [testProject] [unitTest] [reconfPoint]");
             System.exit(1);
         }
        
@@ -73,13 +74,14 @@ public class Hypothesis extends Controller {
 	    System.exit(1);
 	}
 	parameter = args[1];
-	component = args[2];
-        v1=args[3];
-        v2=args[4];
-        reconfPoint=args[5];
-        unitTest=args[6];
+        component = args[2];
+        v1 = args[3];
+        v2 = args[4];
+        testProject = args[5];
+        unitTest = args[6];
+        reconfPoint = args[7];
 
-        TestResult tr = new TestResult(parameter, component, v1, v2, reconfPoint, unitTest);
+        TestResult tr = new TestResult(parameter, component, v1, v2, testProject, unitTest, reconfPoint);
         if (!TestResult.isValid(tr)) {
             myPrint("Error: wrong component " + component);
             System.exit(1);

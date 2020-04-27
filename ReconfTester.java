@@ -8,15 +8,16 @@ public class ReconfTester extends Controller {
         String component = "";
         String v1 = "";
         String v2 = "";
-        String reconfPoint = "";
+	String testProject = "";
         String unitTest = "";
-        final int parameterNum = 6;
+        String reconfPoint = "";
+        final int parameterNum = 7;
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
 
         if (args.length != parameterNum) {
             myPrint("Error: args length is " + args.length);
-            myPrint("ReconfTryer parameter component v1 v2 reconfPoint unitTest");
+            myPrint("ReconfTryer [parameter] [component] [v1] [v2] [testProject] [unitTest] [reconfPoint]");
             System.exit(1);
         }
        
@@ -24,10 +25,11 @@ public class ReconfTester extends Controller {
 	component = args[1];
         v1 = args[2];
         v2 = args[3];
-        reconfPoint = args[4];
+	testProject = args[4];
         unitTest = args[5];
+        reconfPoint = args[6];
         
-        TestResult tr = new TestResult(parameter, component, v1, v2, reconfPoint, unitTest);
+        TestResult tr = new TestResult(parameter, component, v1, v2, testProject, unitTest, reconfPoint);
 	if (!TestResult.isValid(tr)) {
 	    myPrint("Error: wrong component " + component);
 	    System.exit(1);
