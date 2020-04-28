@@ -86,7 +86,7 @@ public class Controller {
     private static void runMvnCmd(TestResult tr) {
         try {
             int exitCode = -1;
-	    String systemLogSavingDir = "/root/reconf_test_gen";
+	    String systemLogSavingDir = "/root/parameter_test_controller";
             ProcessBuilder builder = new ProcessBuilder();
    	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.testProject, tr.unitTest, systemLogSavingDir);
 	    Process process = builder.start();
