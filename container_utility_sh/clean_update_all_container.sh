@@ -11,7 +11,7 @@ pkill dispatcher.sh
 for i in $(seq 0 $num)
 do 
     echo $i
-    docker exec hadoop-$i bash -c "pkill -9 java; cd /root/parameter_test_controller; rm *.txt; git clean -df; git checkout -- *; git pull; javac *.java" &
+    docker exec hadoop-$i bash -c "pkill -9 java; cd /root/parameter_test_controller; git clean -df; git checkout -- *; git pull; javac *.java; cd /root/reconf_test_gen; git clean -df; git checkout -- *; git pull;" &
     pids[$i]=$!
 done
 
