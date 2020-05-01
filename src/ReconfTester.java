@@ -4,7 +4,8 @@ import java.text.SimpleDateFormat;
 public class ReconfTester extends Controller {
 
     public static void main(String[] args) {
-        String parameter = "";
+        int rc = 0;
+	String parameter = "";
         String component = "";
         String v1 = "";
         String v2 = "";
@@ -39,7 +40,7 @@ public class ReconfTester extends Controller {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + tr.shortName() + "_run_" + dateTime + ".txt";
+        String runLogPath = Controller.systemRootDir + "target/" + tr.shortName() + "_run_" + dateTime + ".txt";
         Controller.setLogger(runLogPath);
  
 	startTime = System.nanoTime();
@@ -54,11 +55,16 @@ public class ReconfTester extends Controller {
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
-	if (issue == null) // no issue
+	if (issue == null) { // no issue
 	    myPrint("0");
-	else 
-	    myPrint("-1");
-        
+	    rc = 0;
+	} else {
+	    myPrint("1");
+	    rc = 1;
+	}
+
         Controller.stopLogger();
+
+	System.exit(rc);
     }
 }

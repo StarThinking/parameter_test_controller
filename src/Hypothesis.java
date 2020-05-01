@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 
 public class Hypothesis extends Controller {
 
+    private static double adhocThreshold = 1.0;
+
     public static void hypothesisTestLogic(int repeats, TestResult tr) {    
         int v1v2Repeats = repeats; 
 	int v1v2FailedCount = 0; 
@@ -41,7 +43,7 @@ public class Hypothesis extends Controller {
 	if (v1v2FailedCount == 0) {
             myPrint("result: v1v2 failure didn't occur");
 	} else {
-            if (v1v2FailedCount * 0.8 > v1v1v2v2FailedCount) {
+            if (v1v2FailedCount * adhocThreshold > v1v1v2v2FailedCount) {
                 myPrint("result: might be true error");
             } else {
                 myPrint("result: false positive !!!");
@@ -91,7 +93,7 @@ public class Hypothesis extends Controller {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + tr.shortName() + "_hypothesis_" + dateTime + ".txt";
+        String runLogPath = Controller.systemRootDir + "target/" + tr.shortName() + "_hypothesis_" + dateTime + ".txt";
         Controller.setLogger(runLogPath);
 	
 	startTime = System.nanoTime();
