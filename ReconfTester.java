@@ -54,6 +54,10 @@ public class ReconfTester extends Controller {
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
         myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
+	if (issue == null) // no issue
+	    myPrint("0");
+	else 
+	    myPrint("-1");
         
         Controller.stopLogger();
     }

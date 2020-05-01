@@ -12,7 +12,7 @@ public class Controller {
     private static String workingRootDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
-    protected static int RECHECK_TIMES = 10;
+    protected static int RECHECK_TIMES = 5;
 
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
@@ -86,7 +86,8 @@ public class Controller {
     private static void runMvnCmd(TestResult tr) {
         try {
             int exitCode = -1;
-	    String systemLogSavingDir = "/root/parameter_test_controller";
+	    //String systemLogSavingDir = "/root/parameter_test_controller";
+	    String systemLogSavingDir = "none";
             ProcessBuilder builder = new ProcessBuilder();
    	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.testProject, tr.unitTest, systemLogSavingDir);
 	    Process process = builder.start();
@@ -106,6 +107,17 @@ public class Controller {
             List<TestResult> testResultList = new ArrayList<TestResult>();
             testResultList.add(tr);
             updateTestResult(testResultList);
+
+	    // override result with cmd exit code
+	    if ((exitCode == 0 && tr.result.equals("-1")) || (exitCode != 0 && tr.result.equals("1"))) {
+	        myPrint("Warn: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
+	    }
+	   
+	    if (exitCode == 0)
+		tr.result = "1";
+	    else
+		tr.result = "-1";
+
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
