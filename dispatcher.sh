@@ -2,7 +2,7 @@
 
 vm_num=19 # 20
 IFS=$'\n' 
-entry_list=( $(cat task.txt) )
+entry_list=( $(cat /root/parameter_test_controller/task.txt) )
 entry_list_length=${#entry_list[@]}
 entry_cursor=0
 echo entry_list_length = $entry_list_length
