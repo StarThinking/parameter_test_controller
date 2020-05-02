@@ -3,7 +3,7 @@
 if [ $# -ne 1 ]; then echo wrong: num; exit -1; fi
 
 num=$1
-key='.txt'
+key='_hypothesis_'
 
 function fetch {
     d=$1
