@@ -22,5 +22,5 @@ if [ $tester_rc -eq 0 ]; then
     exit 0;
 fi
 
-times=10
-java -cp target/ Hypothesis "$times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
+repeat_times=10
+java -cp target/ Hypothesis "$repeat_times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
