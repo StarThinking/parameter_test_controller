@@ -13,7 +13,7 @@ testProject=$5
 unitTest=$6
 reconfPoint=$7
 
-java -cp target/ ReconfTester "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
+java -cp /root/parameter_test_controller/target/ ReconfTester "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
 tester_rc=$?
 
 echo "tester_rc is $tester_rc"
@@ -23,4 +23,4 @@ if [ $tester_rc -eq 0 ]; then
 fi
 
 repeat_times=10
-java -cp target/ Hypothesis "$repeat_times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
+java -cp /root/parameter_test_controller/target/ Hypothesis "$repeat_times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
