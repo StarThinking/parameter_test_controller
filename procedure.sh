@@ -22,5 +22,5 @@ if [ $tester_rc -eq 0 ]; then
     exit 0;
 fi
 
-repeat_times=10
+repeat_times=50
 java -cp /root/parameter_test_controller/target/ Hypothesis "$repeat_times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
