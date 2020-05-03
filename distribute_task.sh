@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then echo 'wrong [num] [file]'; exit -1; fi
+if [ $# -ne 1 ]; then echo 'wrong [file]'; exit -1; fi
 
-num=$1
-all_task_file=$2
+num=$(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n | wc -l)
+all_task_file=$1
 
 rm x*
 split -d -n l/$num $all_task_file
