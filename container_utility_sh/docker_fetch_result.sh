@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then echo wrong: num; exit -1; fi
+if [ $# -ne 2 ]; then echo wrong: num key; exit -1; fi
 
 num=$1
-key='_hypothesis_'
+key=$2
 
 function fetch {
     d=$1
