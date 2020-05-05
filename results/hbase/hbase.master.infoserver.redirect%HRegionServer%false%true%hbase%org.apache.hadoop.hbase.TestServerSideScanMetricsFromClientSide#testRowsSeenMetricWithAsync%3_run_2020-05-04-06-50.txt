@@ -1,0 +1,61 @@
+reconf_parameter: hbase.master.infoserver.redirect
+component: HRegionServer
+v1: false
+v2: true
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.TestServerSideScanMetricsFromClientSide#testRowsSeenMetricWithAsync
+reconfPoint: 3
+result: -1
+
+Test vvMode=v1v2
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hbase.TestServerSideScanMetricsFromClientSide#testRowsSeenMetricWithAsync v1 false v2 true
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: hbase.master.infoserver.redirect
+component: HRegionServer
+v1: false
+v2: true
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.TestServerSideScanMetricsFromClientSide#testRowsSeenMetricWithAsync
+reconfPoint: 3
+result: -1
+failureMessage: null
+stackTrace: java.lang.NullPointerException
+	at org.apache.hadoop.hbase.client.ClientAsyncPrefetchScanner$PrefetchRunnable.run(ClientAsyncPrefetchScanner.java:174)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+Total execution time in seconds : 749
+1
