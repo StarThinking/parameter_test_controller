@@ -25,6 +25,7 @@ public class Hypothesis extends Controller {
             testCore("v1v2", v1v2Tr);
             if (v1v2Tr.result.equals("-1")) {
                 myPrint("v1v2 test failed !!!");
+		myPrint(v1v2Tr.completeInfo());
                 v1v2FailedCount ++;
             }
         }
@@ -35,6 +36,11 @@ public class Hypothesis extends Controller {
             TestResult v2v2Tr = new TestResult(tr);
             testCore("v2v2", v2v2Tr);
             if (v1v1Tr.result.equals("-1") || v2v2Tr.result.equals("-1")) {
+                myPrint("v1v1 or v2v2 test failed !!!");
+		if (v1v1Tr.result.equals("-1"))
+		    myPrint(v1v1Tr.completeInfo());
+		if (v2v2Tr.result.equals("-1"))
+		    myPrint(v2v2Tr.completeInfo());
                 v1v1v2v2FailedCount ++;
             }
         }
