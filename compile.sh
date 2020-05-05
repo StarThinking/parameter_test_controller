@@ -3,4 +3,4 @@
 rm target/*.class
 rm target/*.txt
 
-javac src/*.java -d target/
+javac -cp src/lib/commons-math3-3.6.1.jar src/*.java -d target/
