@@ -1,13 +1,14 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]; then
-    echo "./hypo_analysis.sh [file1] [file2] ..."
+if [ $# -ne 1 ]; then
+    echo "./hypo_analysis.sh [file_prefix] ..."
     exit -1
 fi
 
 classpath=/root/parameter_test_controller/target/:/root/parameter_test_controller/src/lib/commons-math3-3.6.1.jar
 
-hypo_files=( $@ )
+prefix=$1
+hypo_files=$(ls /root/parameter_test_controller/target/ | grep -F $prefix)
 
 sum_v1v2_num=0
 sum_v1v2_failed=0
@@ -15,7 +16,8 @@ sum_v1v1v2v2_num=0
 sum_v1v1v2v2_failed=0
 
 for hypo_file in ${hypo_files[@]} 
-do  
+do 
+    hypo_file="/root/parameter_test_controller/target/""$hypo_file" 
     v1v2_num=$(grep 'v1v2 failed with probability' $hypo_file | awk -F ' ' '{print $8}')
     v1v2_failed=$(grep 'v1v2 failed with probability' $hypo_file | awk -F ' ' '{print $5}')
     v1v1v2v2_num=$(grep 'v1v1v2v2 failed with probability' $hypo_file | awk -F ' ' '{print $8}')
@@ -31,7 +33,13 @@ echo "sum_v1v2_failed: $sum_v1v2_failed"
 echo "sum_v1v1v2v2_num: $sum_v1v1v2v2_num"
 echo "sum_v1v1v2v2_failed: $sum_v1v1v2v2_failed"
 
-#output=$(java -cp $classpath HypoAnalysis $v1v2_num $v1v2_failed $v1v1v2v2_num $v1v1v2v2_failed)
+if [ $sum_v1v1v2v2_failed -gt $sum_v1v2_failed ]; then
+    echo 'v1v1v2v2 failed more';
+    exit 0;
+fi
+
+output=$(java -cp $classpath HypoAnalysis $sum_v1v2_num $sum_v1v2_failed $sum_v1v1v2v2_num $sum_v1v1v2v2_failed)
+echo $output
 #if [ "$output" == "null_hypothesis is false" ]; then
 #    echo "$hypo_file"    
 #    print_data
