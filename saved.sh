@@ -24,7 +24,6 @@ cd suspicious
 for c in *.txt; do for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh 19 "$(echo "$c" | awk -F '_hypothesis_' '{print $1}')"_run_"; scp node-$i:~/parameter_test_controller/target/*.txt .; done; done
 #########
 
-rm /ttttmp.txt; ls ~/parameter_test_controller/target/ | grep .txt | awk -F '_hypothesis_' '{print $1}' | sort -u > /ttttmp.txt
-for i in $(cat /ttttmp.txt); do echo $i; ./hypo_analysis_parallel.sh $i; echo ''; done
+rm /ttttmp.txt; ls ~/parameter_test_controller/target/ | grep .txt | awk -F '_hypothesis_' '{print $1}' | sort -u > /ttttmp.txt; for i in $(cat /ttttmp.txt); do echo $i; ~/parameter_test_controller//hypo_analysis_parallel.sh $i; echo ''; done
 
 
