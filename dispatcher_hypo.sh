@@ -28,6 +28,7 @@ do
 	else
 	    echo hadoop-$i is not busy, assign entry $entry_cursor to it
 	    docker exec -d hadoop-$i bash -c "$(eval $cmd)"
+	    sleep 2
 	    entry_cursor=$(( entry_cursor + 1 ))
 	    if [ $entry_cursor -ge $entry_list_length ]; then echo finish all tasks; break; fi
 	fi
