@@ -11,8 +11,7 @@ function fetch {
     files=$(docker exec hadoop-$d bash -c "ls /root/parameter_test_controller/target | grep -F $key")
     for f in ${files[@]}
     do 
-        prefix=$(echo $f | awk -F '_hypothesis_' '{print $1}'); 
-	docker cp hadoop-$d:/root/parameter_test_controller/target/$f /root/parameter_test_controller/target/"$prefix""_hypothesis_""$host"."$d".txt
+	docker cp hadoop-$d:/root/parameter_test_controller/target/$f /root/parameter_test_controller/target/
     done
 }
 

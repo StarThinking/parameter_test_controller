@@ -58,6 +58,10 @@ public class TestResult {
                 "stackTrace: " + stackTrace + "\n";
         }
 
+        public String veryShortName() {
+            return parameter + "%" + unitTest;
+        }
+        
         public String shortName() {
             return parameter + "%" + component + "%" + v1 + "%" + v2 + "%" +
 		   testProject + "%" + unitTest + "%" + reconfPoint;
