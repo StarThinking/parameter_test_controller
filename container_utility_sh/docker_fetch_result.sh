@@ -1,17 +1,18 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then echo wrong: num key; exit -1; fi
+if [ $# -ne 3 ]; then echo 'wrong: [key] [src_dir] [dst_dir']; exit -1; fi
 
-num=$1
-key=$2
+num=19
+key=$1
+src_dir=$2
+dst_dir=$3
 
-host=$(cat /proc/sys/kernel/hostname | awk -F '.' '{print $1}' | sed 's/node-//g')
 function fetch {
     d=$1
-    files=$(docker exec hadoop-$d bash -c "ls /root/parameter_test_controller/target | grep -F $key")
+    files=$(docker exec hadoop-$d bash -c "ls $src_dir | grep -F $key")
     for f in ${files[@]}
     do 
-	docker cp hadoop-$d:/root/parameter_test_controller/target/$f /root/parameter_test_controller/target/
+	docker cp hadoop-$d:/"$src_dir"/$f "$dst_dir"
     done
 }
 
