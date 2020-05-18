@@ -12,7 +12,7 @@ function fetch {
     files=$(docker exec hadoop-$d bash -c "ls $src_dir | grep -F $key")
     for f in ${files[@]}
     do
-        docker exec hadoop-$d bash -c "cd $src_dir; /root/reconf_test_gen/compress.sh $f" 
+        docker exec hadoop-$d bash -c "cd $src_dir; /root/reconf_test_gen/compress.sh $f; /root/reconf_test_gen/generate_ultimate_meta_for_test.sh . $f" 
         docker exec hadoop-$d bash -c "cd $src_dir; rm $f" 
     done
     
