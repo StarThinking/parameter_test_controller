@@ -99,7 +99,10 @@ public class Hypothesis extends Controller {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + "target/" + tr.veryShortName() + "_hypothesis_" + dateTime + ".txt";
+	int hashCodeOfFullName = tr.shortName().hashCode();
+
+        String runLogPath = Controller.systemRootDir + "target/" + tr.veryShortName() + "_" + hashCodeOfFullName + 
+	    "_hypothesis_" + dateTime + ".txt";
         Controller.setLogger(runLogPath);
 	
 	startTime = System.nanoTime();

@@ -63,8 +63,8 @@ public class TestResult {
         }
         
         public String shortName() {
-            return parameter + "%" + component + "%" + v1 + "%" + v2 + "%" +
-		   testProject + "%" + unitTest + "%" + reconfPoint;
+            return parameter + "%" + testProject + "%" + unitTest + "%" + 
+		   component + "%" + reconfPoint + "%" + v1 + "%" + v2;
         }
         
         public static TestResult getTestResultByName(List<TestResult> list, String name) {

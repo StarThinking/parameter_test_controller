@@ -40,7 +40,10 @@ public class ReconfTester extends Controller {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + "target/" + tr.veryShortName() + "_run_" + dateTime + ".txt";
+	int hashCodeOfFullName = tr.shortName().hashCode();
+	System.out.println("hashCodeOfFullName = " + hashCodeOfFullName);
+        String runLogPath = Controller.systemRootDir + "target/" + tr.veryShortName() + "_" + hashCodeOfFullName + 
+	    "_run_" + dateTime + ".txt";
         Controller.setLogger(runLogPath);
  
 	startTime = System.nanoTime();
