@@ -1,0 +1,1214 @@
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:32784, 3cf29cb416ad:33368, 3cf29cb416ad:36454, 3cf29cb416ad:46229],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33368, 3cf29cb416ad:36454, 3cf29cb416ad:46229],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:32784, 3cf29cb416ad:33368, 3cf29cb416ad:36454, 3cf29cb416ad:46229],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33368, 3cf29cb416ad:36454, 3cf29cb416ad:46229],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:36833, 3cf29cb416ad:43911, 3cf29cb416ad:44048, 3cf29cb416ad:45999],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:43911, 3cf29cb416ad:44048, 3cf29cb416ad:45999],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:36833, 3cf29cb416ad:43911, 3cf29cb416ad:44048, 3cf29cb416ad:45999],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:43911, 3cf29cb416ad:44048, 3cf29cb416ad:45999],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:37564, 3cf29cb416ad:38661, 3cf29cb416ad:42495, 3cf29cb416ad:43468],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37564, 3cf29cb416ad:38661, 3cf29cb416ad:42495],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:37564, 3cf29cb416ad:38661, 3cf29cb416ad:42495, 3cf29cb416ad:43468],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37564, 3cf29cb416ad:38661, 3cf29cb416ad:42495],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:32898, 3cf29cb416ad:33744, 3cf29cb416ad:37045, 3cf29cb416ad:41348],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33744, 3cf29cb416ad:37045, 3cf29cb416ad:41348],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:32898, 3cf29cb416ad:33744, 3cf29cb416ad:37045, 3cf29cb416ad:41348],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33744, 3cf29cb416ad:37045, 3cf29cb416ad:41348],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:35178, 3cf29cb416ad:42395, 3cf29cb416ad:46360, 3cf29cb416ad:46371],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:42395, 3cf29cb416ad:46360, 3cf29cb416ad:46371],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:35178, 3cf29cb416ad:42395, 3cf29cb416ad:46360, 3cf29cb416ad:46371],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:42395, 3cf29cb416ad:46360, 3cf29cb416ad:46371],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:37722, 3cf29cb416ad:39257, 3cf29cb416ad:44064, 3cf29cb416ad:46184],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37722, 3cf29cb416ad:39257, 3cf29cb416ad:46184],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:37722, 3cf29cb416ad:39257, 3cf29cb416ad:44064, 3cf29cb416ad:46184],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37722, 3cf29cb416ad:39257, 3cf29cb416ad:46184],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:32890, 3cf29cb416ad:33059, 3cf29cb416ad:39653, 3cf29cb416ad:42415],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:32890, 3cf29cb416ad:33059, 3cf29cb416ad:42415],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:32890, 3cf29cb416ad:33059, 3cf29cb416ad:39653, 3cf29cb416ad:42415],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:32890, 3cf29cb416ad:33059, 3cf29cb416ad:42415],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:33624, 3cf29cb416ad:41533, 3cf29cb416ad:43613, 3cf29cb416ad:45732],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:41533, 3cf29cb416ad:43613, 3cf29cb416ad:45732],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:33624, 3cf29cb416ad:41533, 3cf29cb416ad:43613, 3cf29cb416ad:45732],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:41533, 3cf29cb416ad:43613, 3cf29cb416ad:45732],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:35294, 3cf29cb416ad:38141, 3cf29cb416ad:44084, 3cf29cb416ad:46797],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:35294, 3cf29cb416ad:44084, 3cf29cb416ad:46797],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:35294, 3cf29cb416ad:38141, 3cf29cb416ad:44084, 3cf29cb416ad:46797],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:35294, 3cf29cb416ad:44084, 3cf29cb416ad:46797],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:37631, 3cf29cb416ad:41800, 3cf29cb416ad:43602, 3cf29cb416ad:45398],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:41800, 3cf29cb416ad:43602, 3cf29cb416ad:45398],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:37631, 3cf29cb416ad:41800, 3cf29cb416ad:43602, 3cf29cb416ad:45398],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:41800, 3cf29cb416ad:43602, 3cf29cb416ad:45398],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:36710, 3cf29cb416ad:41808, 3cf29cb416ad:44538, 3cf29cb416ad:45001],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:36710, 3cf29cb416ad:44538, 3cf29cb416ad:45001],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:36710, 3cf29cb416ad:41808, 3cf29cb416ad:44538, 3cf29cb416ad:45001],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:36710, 3cf29cb416ad:44538, 3cf29cb416ad:45001],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is -1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:41448, 3cf29cb416ad:45225, 3cf29cb416ad:45490, 3cf29cb416ad:46443],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:45225, 3cf29cb416ad:45490, 3cf29cb416ad:46443],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:41448, 3cf29cb416ad:45225, 3cf29cb416ad:45490, 3cf29cb416ad:46443],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:45225, 3cf29cb416ad:45490, 3cf29cb416ad:46443],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is -1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:35746, 3cf29cb416ad:40140, 3cf29cb416ad:44077, 3cf29cb416ad:45101],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:35746, 3cf29cb416ad:44077, 3cf29cb416ad:45101],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:35746, 3cf29cb416ad:40140, 3cf29cb416ad:44077, 3cf29cb416ad:45101],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:35746, 3cf29cb416ad:44077, 3cf29cb416ad:45101],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is -1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:36952, 3cf29cb416ad:41833, 3cf29cb416ad:44428, 3cf29cb416ad:45298],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:36952, 3cf29cb416ad:41833, 3cf29cb416ad:44428],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:36952, 3cf29cb416ad:41833, 3cf29cb416ad:44428, 3cf29cb416ad:45298],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:36952, 3cf29cb416ad:41833, 3cf29cb416ad:44428],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is -1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:33264, 3cf29cb416ad:36312, 3cf29cb416ad:40823, 3cf29cb416ad:41561],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33264, 3cf29cb416ad:36312, 3cf29cb416ad:41561],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:33264, 3cf29cb416ad:36312, 3cf29cb416ad:40823, 3cf29cb416ad:41561],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:33264, 3cf29cb416ad:36312, 3cf29cb416ad:41561],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is -1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: hbase.rpc.timeout
+component: HRegionServer
+v1: 1
+v2: 60000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2#testMoveServersAndTables
+reconfPoint: 2
+result: -1
+failureMessage: expected:<[Name:default,  Servers:[3cf29cb416ad:37840, 3cf29cb416ad:41758, 3cf29cb416ad:43151, 3cf29cb416ad:45225],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37840, 3cf29cb416ad:41758, 3cf29cb416ad:45225],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+stackTrace: java.lang.AssertionError: expected:<[Name:default,  Servers:[3cf29cb416ad:37840, 3cf29cb416ad:41758, 3cf29cb416ad:43151, 3cf29cb416ad:45225],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]> but was:<[Name:default,  Servers:[3cf29cb416ad:37840, 3cf29cb416ad:41758, 3cf29cb416ad:45225],  Tables:[hbase:meta, hbase:namespace, hbase:rsgroup], Name:master,  Servers:[],  Tables:[]]>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.verify(VerifyingRSGroupAdminClient.java:134)
+	at org.apache.hadoop.hbase.rsgroup.VerifyingRSGroupAdminClient.addRSGroup(VerifyingRSGroupAdminClient.java:63)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.tearDownAfterMethod(TestRSGroupsBase.java:161)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsBase.setUpBeforeMethod(TestRSGroupsBase.java:140)
+	at org.apache.hadoop.hbase.rsgroup.TestRSGroupsAdmin2.beforeMethod(TestRSGroupsAdmin2.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v2 failed with probability 11 out of 50
+v1v1v2v2 failed with probability 5 out of 50
+result: might be true error
+Total execution time in seconds : 14242
