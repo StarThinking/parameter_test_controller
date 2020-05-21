@@ -1,7 +1,7 @@
 #!/bin/bash
 
 vm_num=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
-vm_num=$(( vm -1 ))
+vm_num=$(( vm_num -1 ))
 IFS=$'\n' 
 entry_list=( $(cat /root/parameter_test_controller/task.txt) )
 entry_list_length=${#entry_list[@]}
