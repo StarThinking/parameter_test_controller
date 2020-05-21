@@ -6,7 +6,7 @@ pm=$(( pm -1 ))
 vm=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
 tag=$1
 
-for i in $(seq 0 $pm); do ssh node-$i "killall -9 dispatcher_hypo.sh; pkill dispatcher_hypo.sh; killall -9 dispatcher.sh; pkill dispatcher.sh; "; done;
+for i in $(seq 0 $pm); do ssh node-$i "ps aux | grep dispatcher | awk '{print $2}' | xargs kill -9; killall -9 dispatcher_hypo.sh; pkill dispatcher_hypo.sh; killall -9 dispatcher.sh; pkill dispatcher.sh; "; done;
 
 for i in $(seq 0 $pm); do ssh node-$i "cd ~/parameter_test_controller; git pull; cd ~/reconf_test_gen; git pull" & ppids[$i]=$!; done; for p in ${ppids[@]}; do wait $p; echo git update finished; done
 
