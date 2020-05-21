@@ -3,7 +3,7 @@
 if [ $# -ne 1 ]; then echo "wrong [tag]"; exit -1; fi
 pm=$(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n | wc -l)
 pm=$(( pm -1 ))
-vm=19
+vm=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
 tag=$1
 
 for i in $(seq 0 $pm); do ssh node-$i "killall -9 dispatcher_hypo.sh; pkill dispatcher_hypo.sh; killall -9 dispatcher.sh; pkill dispatcher.sh; "; done;
