@@ -1,0 +1,71 @@
+reconf_parameter: hbase.rpc.timeout
+component: HMaster
+v1: 60000
+v2: 1
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.regionserver.TestRegionReplicasAreDistributed#testRegionReplicasCreatedAreDistributed
+reconfPoint: 1
+result: -1
+
+Test vvMode=v1v2
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hbase.regionserver.TestRegionReplicasAreDistributed#testRegionReplicasCreatedAreDistributed v1 60000 v2 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: hbase.rpc.timeout
+component: HMaster
+v1: 60000
+v2: 1
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.regionserver.TestRegionReplicasAreDistributed#testRegionReplicasCreatedAreDistributed
+reconfPoint: 1
+result: -1
+failureMessage: java.io.UncheckedIOException: org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=46, exceptions:
+2020-05-20T14:29:48.921Z, java.net.SocketTimeoutException: callTimeout=60000, callDuration=68503: Call to 83c238637007/172.17.0.5:32987 failed on local exception: org.apache.hadoop.hbase.ipc.CallTimeoutException: Call[id=1360,methodName=Scan], waitTime=2, rpcTimeout=1 row 'TestRegionReplicasAreDistributed,,' on table 'hbase:meta' at region=hbase:meta,,1.1588230740, hostname=83c238637007,32987,1589984329421, seqNum=-1
+
+stackTrace: java.io.IOException: java.io.UncheckedIOException: org.apache.hadoop.hbase.client.RetriesExhaustedException: Failed after attempts=46, exceptions:
+2020-05-20T14:29:48.921Z, java.net.SocketTimeoutException: callTimeout=60000, callDuration=68503: Call to 83c238637007/172.17.0.5:32987 failed on local exception: org.apache.hadoop.hbase.ipc.CallTimeoutException: Call[id=1360,methodName=Scan], waitTime=2, rpcTimeout=1 row 'TestRegionReplicasAreDistributed,,' on table 'hbase:meta' at region=hbase:meta,,1.1588230740, hostname=83c238637007,32987,1589984329421, seqNum=-1
+
+	at org.apache.hadoop.hbase.procedure2.RemoteProcedureException.unwrapRemoteIOException(RemoteProcedureException.java:86)
+	at org.apache.hadoop.hbase.master.procedure.MasterProcedureUtil.unwrapRemoteIOException(MasterProcedureUtil.java:193)
+	at org.apache.hadoop.hbase.master.MasterRpcServices.getProcedureResult(MasterRpcServices.java:1221)
+	at org.apache.hadoop.hbase.shaded.protobuf.generated.MasterProtos$MasterService$2.callBlockingMethod(MasterProtos.java)
+	at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:413)
+	at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:133)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:338)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor$Handler.run(RpcExecutor.java:318)
+
+
+Total execution time in seconds : 2459
+1

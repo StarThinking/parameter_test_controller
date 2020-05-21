@@ -1,0 +1,101 @@
+reconf_parameter: hbase.rpc.timeout
+component: HMaster
+v1: 60000
+v2: 1
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*]
+reconfPoint: 1
+result: -1
+
+Test vvMode=v1v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] v1 60000 v2 1
+
+Test vvMode=v1v1
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v2v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v1v1
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v2v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v1v1
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v2v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v1v1
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v2v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v1v1
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+
+Test vvMode=v2v2
+Error: name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch] cannot be found in the list
+Error: cannot find testResult by test name org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1: table=raw, scan=batch]
+Warn: test org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*] has not been updated !
+Warn: conflict exitCode = 0 but tr.result = -1
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: hbase.rpc.timeout
+component: HMaster
+v1: 60000
+v2: 1
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.client.TestAsyncTableScanAll#testScanAll[1:*]
+reconfPoint: 1
+result: -1
+failureMessage: 
+stackTrace: 
+
+Total execution time in seconds : 1347
+1
