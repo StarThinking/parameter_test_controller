@@ -1,4 +1,6 @@
 #!/bin/bash
+ 
+for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh _hypothesis_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/"; scp node-$i:~/parameter_test_controller/target/*.txt .; done
 
 ~/parameter_test_controller/compile.sh
 mkdir suspicious
