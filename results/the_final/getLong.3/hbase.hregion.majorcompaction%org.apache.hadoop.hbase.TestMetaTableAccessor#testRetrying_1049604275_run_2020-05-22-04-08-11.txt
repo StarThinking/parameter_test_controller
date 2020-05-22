@@ -1,0 +1,59 @@
+reconf_parameter: hbase.hregion.majorcompaction
+component: HRegionServer
+v1: 60480000000
+v2: 604800000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.TestMetaTableAccessor#testRetrying
+reconfPoint: 1
+result: -1
+
+Test vvMode=v1v2
+Warn: conflict exitCode = 1 but tr.result = 1
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hbase.TestMetaTableAccessor#testRetrying v1 60480000000 v2 604800000
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: hbase.hregion.majorcompaction
+component: HRegionServer
+v1: 60480000000
+v2: 604800000
+testProject: hbase
+unitTest: org.apache.hadoop.hbase.TestMetaTableAccessor#testRetrying
+reconfPoint: 1
+result: -1
+failureMessage: none
+stackTrace: none
+
+Total execution time in seconds : 1564
+1
