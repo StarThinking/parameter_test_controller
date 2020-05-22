@@ -6,9 +6,12 @@ entry_list_length=${#entry_list[@]}
 entry_cursor=0
 echo entry_list_length = $entry_list_length
 
+vm_num=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
+vm_num=$(( vm -1 ))
+
 while [ $entry_cursor -lt $entry_list_length ]
 do
-    for i in $(seq 0 19)
+    for i in $(seq 0 $vm_num)
     do
         jps_num=$(docker exec hadoop-$i bash -c "jps" | wc -l)
         if [ $jps_num -gt 1 ]; then
