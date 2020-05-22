@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm target/*.class
-rm target/*.txt
+rm ~/parameter_test_controllertarget/*.class
+rm ~/parameter_test_controller/target/*.txt
 
-javac -cp src/lib/commons-math3-3.6.1.jar src/*.java -d target/
+javac -cp ~/parameter_test_controller/src/lib/commons-math3-3.6.1.jar ~/parameter_test_controller/src/*.java -d ~/parameter_test_controller/target/
