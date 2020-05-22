@@ -1,5 +1,6 @@
 #!/bin/bash
 
+~/parameter_test_controller/compile.sh
 mkdir suspicious
 mv $(for i in *.txt; do ~/parameter_test_controller/hypo_analysis.sh $i; done) suspicious/
 cd suspicious
