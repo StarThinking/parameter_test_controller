@@ -1,0 +1,2353 @@
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-2140641936-172.17.0.2-1590253381563:blk_1073741856_1053 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-2140641936-172.17.0.2-1590253381563:blk_1073741856_1053 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-499570888-172.17.0.2-1590253455461:blk_1073741868_1076 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-499570888-172.17.0.2-1590253455461:blk_1073741868_1076 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741866_1057 of src=/tmp/files/b/open-file-1 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741866_1057 of src=/tmp/files/b/open-file-1 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-960528139-172.17.0.2-1590253594956:blk_1073741874_1071 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-960528139-172.17.0.2-1590253594956:blk_1073741874_1071 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-2005319509-172.17.0.2-1590253734928:blk_1073741858_1049 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-2005319509-172.17.0.2-1590253734928:blk_1073741858_1049 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1644295261-172.17.0.2-1590253841264:blk_1073741863_1054 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1644295261-172.17.0.2-1590253841264:blk_1073741863_1054 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741867_1058 of src=/tmp/files/a/open-file-2 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741867_1058 of src=/tmp/files/a/open-file-2 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741873_1064 of src=/tmp/files/a/open-file-8 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741873_1064 of src=/tmp/files/a/open-file-8 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741868_1059 of src=/tmp/files/b/open-file-3 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741868_1059 of src=/tmp/files/b/open-file-3 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1777947286-172.17.0.2-1590254206743:blk_1073741858_1049 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1777947286-172.17.0.2-1590254206743:blk_1073741858_1049 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-87949564-172.17.0.2-1590254304184:blk_1073741856_1053 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-87949564-172.17.0.2-1590254304184:blk_1073741856_1053 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741866_1057 of src=/tmp/files/b/open-file-1 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741866_1057 of src=/tmp/files/b/open-file-1 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741874_1065 of src=/tmp/files/b/open-file-9 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741874_1065 of src=/tmp/files/b/open-file-9 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy26.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741872_1063 of src=/tmp/files/b/open-file-7 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741872_1063 of src=/tmp/files/b/open-file-7 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1503709207-172.17.0.2-1590254769326:blk_1073741855_1051 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1503709207-172.17.0.2-1590254769326:blk_1073741855_1051 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-15792190-172.17.0.2-1590254870104:blk_1073741862_1052 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-15792190-172.17.0.2-1590254870104:blk_1073741862_1052 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1482592287-172.17.0.2-1590254922549:blk_1073741863_1054 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1482592287-172.17.0.2-1590254922549:blk_1073741863_1054 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-67362119-172.17.0.2-1590254971087:blk_1073741854_1044 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-67362119-172.17.0.2-1590254971087:blk_1073741854_1044 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1203040267-172.17.0.2-1590255113687:blk_1073741862_1052 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1203040267-172.17.0.2-1590255113687:blk_1073741862_1052 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-603883002-172.17.0.2-1590255188588:blk_1073741861_1050 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-603883002-172.17.0.2-1590255188588:blk_1073741861_1050 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-894432726-172.17.0.2-1590255275711:blk_1073741859_1055 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-894432726-172.17.0.2-1590255275711:blk_1073741859_1055 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1224967945-172.17.0.2-1590255331182:blk_1073741856_1053 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1224967945-172.17.0.2-1590255331182:blk_1073741856_1053 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-988232765-172.17.0.2-1590255406988:blk_1073741877_1068 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-988232765-172.17.0.2-1590255406988:blk_1073741877_1068 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:469)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:427)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:420)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:413)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:763)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741867_1058 of src=/tmp/files/a/open-file-2 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741867_1058 of src=/tmp/files/a/open-file-2 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-827851227-172.17.0.2-1590255646663:blk_1073741856_1053 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-827851227-172.17.0.2-1590255646663:blk_1073741856_1053 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-385394703-172.17.0.2-1590255713331:blk_1073741863_1054 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-385394703-172.17.0.2-1590255713331:blk_1073741863_1054 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1338086099-172.17.0.2-1590255778208:blk_1073741861_1050 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1338086099-172.17.0.2-1590255778208:blk_1073741861_1050 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1962660776-172.17.0.2-1590255884488:blk_1073741863_1054 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1962660776-172.17.0.2-1590255884488:blk_1073741863_1054 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1871872727-172.17.0.2-1590255952491:blk_1073741866_1078 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1871872727-172.17.0.2-1590255952491:blk_1073741866_1078 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741872_1063 of src=/tmp/files/b/open-file-7 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741872_1063 of src=/tmp/files/b/open-file-7 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1766695360-172.17.0.2-1590256094806:blk_1073741866_1078 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1766695360-172.17.0.2-1590256094806:blk_1073741866_1078 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-476599243-172.17.0.2-1590256181316:blk_1073741874_1071 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-476599243-172.17.0.2-1590256181316:blk_1073741874_1071 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741865_1056 of src=/tmp/files/a/open-file-0 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741865_1056 of src=/tmp/files/a/open-file-0 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-504260356-172.17.0.2-1590256360087:blk_1073741871_1062 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-504260356-172.17.0.2-1590256360087:blk_1073741871_1062 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:469)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:427)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:420)
+	at org.apache.hadoop.hdfs.DFSTestUtil.createFile(DFSTestUtil.java:413)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:763)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1058486334-172.17.0.2-1590256476523:blk_1073741859_1055 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1058486334-172.17.0.2-1590256476523:blk_1073741859_1055 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1207167802-172.17.0.2-1590256577856:blk_1073741859_1055 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1207167802-172.17.0.2-1590256577856:blk_1073741859_1055 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1308404729-172.17.0.2-1590256632138:blk_1073741859_1055 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1308404729-172.17.0.2-1590256632138:blk_1073741859_1055 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-646935138-172.17.0.2-1590256683681:blk_1073741858_1049 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-646935138-172.17.0.2-1590256683681:blk_1073741858_1049 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741873_1064 of src=/tmp/files/a/open-file-8 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741873_1064 of src=/tmp/files/a/open-file-8 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: append: lastBlock=blk_1073741869_1060 of src=/tmp/files/a/open-file-4 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+stackTrace: org.apache.hadoop.ipc.RemoteException(java.io.IOException): append: lastBlock=blk_1073741869_1060 of src=/tmp/files/a/open-file-4 is not sufficiently replicated yet.
+	at org.apache.hadoop.hdfs.server.namenode.FSDirAppendOp.appendFile(FSDirAppendOp.java:137)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(FSNamesystem.java:2722)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.append(NameNodeRpcServer.java:822)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.append(ClientNamenodeProtocolServerSideTranslatorPB.java:500)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1070)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:999)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:927)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2915)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1545)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1491)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1388)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:233)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:118)
+	at com.sun.proxy.$Proxy25.append(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.append(ClientNamenodeProtocolTranslatorPB.java:400)
+	at sun.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy28.append(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1328)
+	at org.apache.hadoop.hdfs.DFSClient.callAppend(DFSClient.java:1350)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1419)
+	at org.apache.hadoop.hdfs.DFSClient.append(DFSClient.java:1389)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:420)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$5.doCall(DistributedFileSystem.java:416)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:428)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.append(DistributedFileSystem.java:397)
+	at org.apache.hadoop.fs.FileSystem.append(FileSystem.java:1379)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:764)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1717204960-172.17.0.2-1590257009917:blk_1073741856_1053 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1717204960-172.17.0.2-1590257009917:blk_1073741856_1053 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:744)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-792161444-172.17.0.2-1590257062150:blk_1073741872_1073 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-792161444-172.17.0.2-1590257062150:blk_1073741872_1073 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1575671363-172.17.0.2-1590257207185:blk_1073741868_1076 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1575671363-172.17.0.2-1590257207185:blk_1073741868_1076 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 1
+v2: 300000s
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.tools.TestDFSAdmin#testListOpenFiles
+reconfPoint: -1
+result: -1
+failureMessage: Unable to close file because the last blockBP-1314745280-172.17.0.2-1590257311334:blk_1073741872_1073 does not have enough number of replicas.
+stackTrace: java.io.IOException: Unable to close file because the last blockBP-1314745280-172.17.0.2-1590257311334:blk_1073741872_1073 does not have enough number of replicas.
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:963)
+	at org.apache.hadoop.hdfs.DFSOutputStream.completeFile(DFSOutputStream.java:907)
+	at org.apache.hadoop.hdfs.DFSOutputStream.closeImpl(DFSOutputStream.java:890)
+	at org.apache.hadoop.hdfs.DFSOutputStream.close(DFSOutputStream.java:845)
+	at org.apache.hadoop.fs.FSDataOutputStream$PositionCache.close(FSDataOutputStream.java:72)
+	at org.apache.hadoop.fs.FSDataOutputStream.close(FSDataOutputStream.java:101)
+	at org.apache.hadoop.hdfs.DFSTestUtil.closeOpenFiles(DFSTestUtil.java:2387)
+	at org.apache.hadoop.hdfs.tools.TestDFSAdmin.testListOpenFiles(TestDFSAdmin.java:810)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v2 failed with probability 44 out of 50
+v1v1v2v2 failed with probability 0 out of 50
+result: might be true error
+Total execution time in seconds : 8536

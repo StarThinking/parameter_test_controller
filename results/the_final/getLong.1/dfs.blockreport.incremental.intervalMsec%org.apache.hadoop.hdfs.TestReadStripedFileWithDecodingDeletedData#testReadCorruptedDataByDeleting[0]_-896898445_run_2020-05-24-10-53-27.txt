@@ -1,0 +1,81 @@
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 100000
+v2: 0
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[0]
+reconfPoint: -2
+result: -1
+
+Test vvMode=v1v2
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[0] v1 100000 v2 0
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 100000
+v2: 0
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[0]
+reconfPoint: -2
+result: -1
+failureMessage: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-850766207-172.17.0.19-1590317622638:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:42861,DS-f3b75c67-9c8e-4e17-aa9e-d44fb38fc6bd,DISK], DatanodeInfoWithStorage[127.0.0.1:39717,DS-ae0f78ba-78c6-4dbf-b83f-ee0dcbdf78dc,DISK], DatanodeInfoWithStorage[127.0.0.1:45890,DS-025aed46-64c0-4c3a-a84b-13663a1b1f80,DISK], DatanodeInfoWithStorage[127.0.0.1:42983,DS-2434a8d5-6866-4bc5-871b-661a7fbca5c6,DISK], DatanodeInfoWithStorage[127.0.0.1:44451,DS-f3b0a593-725a-442c-850a-f6db1c6dc6eb,DISK], DatanodeInfoWithStorage[127.0.0.1:39208,DS-f4a3a053-2817-4270-a180-cc159dd69220,DISK]]; indices=[0, 1, 2, 4, 6, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-850766207-172.17.0.19-1590317622638:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:42861,DS-f3b75c67-9c8e-4e17-aa9e-d44fb38fc6bd,DISK], DatanodeInfoWithStorage[127.0.0.1:39717,DS-ae0f78ba-78c6-4dbf-b83f-ee0dcbdf78dc,DISK], DatanodeInfoWithStorage[127.0.0.1:45890,DS-025aed46-64c0-4c3a-a84b-13663a1b1f80,DISK], DatanodeInfoWithStorage[127.0.0.1:42983,DS-2434a8d5-6866-4bc5-871b-661a7fbca5c6,DISK], DatanodeInfoWithStorage[127.0.0.1:44451,DS-f3b0a593-725a-442c-850a-f6db1c6dc6eb,DISK], DatanodeInfoWithStorage[127.0.0.1:39208,DS-f4a3a053-2817-4270-a180-cc159dd69220,DISK]]; indices=[0, 1, 2, 4, 6, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-850766207-172.17.0.19-1590317622638:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:42861,DS-f3b75c67-9c8e-4e17-aa9e-d44fb38fc6bd,DISK], DatanodeInfoWithStorage[127.0.0.1:39717,DS-ae0f78ba-78c6-4dbf-b83f-ee0dcbdf78dc,DISK], DatanodeInfoWithStorage[127.0.0.1:45890,DS-025aed46-64c0-4c3a-a84b-13663a1b1f80,DISK], DatanodeInfoWithStorage[127.0.0.1:42983,DS-2434a8d5-6866-4bc5-871b-661a7fbca5c6,DISK], DatanodeInfoWithStorage[127.0.0.1:44451,DS-f3b0a593-725a-442c-850a-f6db1c6dc6eb,DISK], DatanodeInfoWithStorage[127.0.0.1:39208,DS-f4a3a053-2817-4270-a180-cc159dd69220,DISK]]; indices=[0, 1, 2, 4, 6, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-850766207-172.17.0.19-1590317622638:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:42861,DS-f3b75c67-9c8e-4e17-aa9e-d44fb38fc6bd,DISK], DatanodeInfoWithStorage[127.0.0.1:39717,DS-ae0f78ba-78c6-4dbf-b83f-ee0dcbdf78dc,DISK], DatanodeInfoWithStorage[127.0.0.1:45890,DS-025aed46-64c0-4c3a-a84b-13663a1b1f80,DISK], DatanodeInfoWithStorage[127.0.0.1:42983,DS-2434a8d5-6866-4bc5-871b-661a7fbca5c6,DISK], DatanodeInfoWithStorage[127.0.0.1:44451,DS-f3b0a593-725a-442c-850a-f6db1c6dc6eb,DISK], DatanodeInfoWithStorage[127.0.0.1:39208,DS-f4a3a053-2817-4270-a180-cc159dd69220,DISK]]; indices=[0, 1, 2, 4, 6, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+Total execution time in seconds : 746
+1

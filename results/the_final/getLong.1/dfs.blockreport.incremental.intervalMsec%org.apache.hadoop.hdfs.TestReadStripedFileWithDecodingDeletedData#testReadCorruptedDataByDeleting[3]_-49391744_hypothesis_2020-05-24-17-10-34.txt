@@ -1,0 +1,705 @@
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1342574632-172.17.0.2-1590340640110:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:38842,DS-a759e283-66a3-4e81-b6d0-81d6d8f75902,DISK], DatanodeInfoWithStorage[127.0.0.1:39410,DS-853d1fad-9ab9-4844-929c-019591a9b886,DISK], DatanodeInfoWithStorage[127.0.0.1:43130,DS-59be19d3-7595-4aea-90ab-a81b0ded00c4,DISK], DatanodeInfoWithStorage[127.0.0.1:43462,DS-1813982b-1417-42cf-8120-094c349a7794,DISK], DatanodeInfoWithStorage[127.0.0.1:39867,DS-b7fd92ff-5e46-4e50-8ac1-77d43bfa2aa0,DISK], DatanodeInfoWithStorage[127.0.0.1:39296,DS-8c2dfce3-ff95-4138-bb4f-df100a43d673,DISK]]; indices=[1, 2, 3, 4, 5, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1342574632-172.17.0.2-1590340640110:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:38842,DS-a759e283-66a3-4e81-b6d0-81d6d8f75902,DISK], DatanodeInfoWithStorage[127.0.0.1:39410,DS-853d1fad-9ab9-4844-929c-019591a9b886,DISK], DatanodeInfoWithStorage[127.0.0.1:43130,DS-59be19d3-7595-4aea-90ab-a81b0ded00c4,DISK], DatanodeInfoWithStorage[127.0.0.1:43462,DS-1813982b-1417-42cf-8120-094c349a7794,DISK], DatanodeInfoWithStorage[127.0.0.1:39867,DS-b7fd92ff-5e46-4e50-8ac1-77d43bfa2aa0,DISK], DatanodeInfoWithStorage[127.0.0.1:39296,DS-8c2dfce3-ff95-4138-bb4f-df100a43d673,DISK]]; indices=[1, 2, 3, 4, 5, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1342574632-172.17.0.2-1590340640110:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:38842,DS-a759e283-66a3-4e81-b6d0-81d6d8f75902,DISK], DatanodeInfoWithStorage[127.0.0.1:39410,DS-853d1fad-9ab9-4844-929c-019591a9b886,DISK], DatanodeInfoWithStorage[127.0.0.1:43130,DS-59be19d3-7595-4aea-90ab-a81b0ded00c4,DISK], DatanodeInfoWithStorage[127.0.0.1:43462,DS-1813982b-1417-42cf-8120-094c349a7794,DISK], DatanodeInfoWithStorage[127.0.0.1:39867,DS-b7fd92ff-5e46-4e50-8ac1-77d43bfa2aa0,DISK], DatanodeInfoWithStorage[127.0.0.1:39296,DS-8c2dfce3-ff95-4138-bb4f-df100a43d673,DISK]]; indices=[1, 2, 3, 4, 5, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1342574632-172.17.0.2-1590340640110:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:38842,DS-a759e283-66a3-4e81-b6d0-81d6d8f75902,DISK], DatanodeInfoWithStorage[127.0.0.1:39410,DS-853d1fad-9ab9-4844-929c-019591a9b886,DISK], DatanodeInfoWithStorage[127.0.0.1:43130,DS-59be19d3-7595-4aea-90ab-a81b0ded00c4,DISK], DatanodeInfoWithStorage[127.0.0.1:43462,DS-1813982b-1417-42cf-8120-094c349a7794,DISK], DatanodeInfoWithStorage[127.0.0.1:39867,DS-b7fd92ff-5e46-4e50-8ac1-77d43bfa2aa0,DISK], DatanodeInfoWithStorage[127.0.0.1:39296,DS-8c2dfce3-ff95-4138-bb4f-df100a43d673,DISK]]; indices=[1, 2, 3, 4, 5, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-221030996-172.17.0.2-1590341368765:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:40990,DS-9a673757-1c7f-46df-88cf-3a97ed7b9ef9,DISK], DatanodeInfoWithStorage[127.0.0.1:40724,DS-801e7f82-aa56-4d05-afa5-b13d5f96a74e,DISK], DatanodeInfoWithStorage[127.0.0.1:42547,DS-e434463a-507c-44a3-86d0-fbbb0a336c87,DISK], DatanodeInfoWithStorage[127.0.0.1:43822,DS-67fa4fb2-60d9-45d1-b568-b2056513bd18,DISK], DatanodeInfoWithStorage[127.0.0.1:42245,DS-b943f747-0e96-45bc-8917-82ea45cf05ac,DISK], DatanodeInfoWithStorage[127.0.0.1:45808,DS-48da7474-d621-4b10-bd1d-76efa6b90469,DISK]]; indices=[3, 4, 5, 6, 7, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-221030996-172.17.0.2-1590341368765:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:40990,DS-9a673757-1c7f-46df-88cf-3a97ed7b9ef9,DISK], DatanodeInfoWithStorage[127.0.0.1:40724,DS-801e7f82-aa56-4d05-afa5-b13d5f96a74e,DISK], DatanodeInfoWithStorage[127.0.0.1:42547,DS-e434463a-507c-44a3-86d0-fbbb0a336c87,DISK], DatanodeInfoWithStorage[127.0.0.1:43822,DS-67fa4fb2-60d9-45d1-b568-b2056513bd18,DISK], DatanodeInfoWithStorage[127.0.0.1:42245,DS-b943f747-0e96-45bc-8917-82ea45cf05ac,DISK], DatanodeInfoWithStorage[127.0.0.1:45808,DS-48da7474-d621-4b10-bd1d-76efa6b90469,DISK]]; indices=[3, 4, 5, 6, 7, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-221030996-172.17.0.2-1590341368765:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:40990,DS-9a673757-1c7f-46df-88cf-3a97ed7b9ef9,DISK], DatanodeInfoWithStorage[127.0.0.1:40724,DS-801e7f82-aa56-4d05-afa5-b13d5f96a74e,DISK], DatanodeInfoWithStorage[127.0.0.1:42547,DS-e434463a-507c-44a3-86d0-fbbb0a336c87,DISK], DatanodeInfoWithStorage[127.0.0.1:43822,DS-67fa4fb2-60d9-45d1-b568-b2056513bd18,DISK], DatanodeInfoWithStorage[127.0.0.1:42245,DS-b943f747-0e96-45bc-8917-82ea45cf05ac,DISK], DatanodeInfoWithStorage[127.0.0.1:45808,DS-48da7474-d621-4b10-bd1d-76efa6b90469,DISK]]; indices=[3, 4, 5, 6, 7, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-221030996-172.17.0.2-1590341368765:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:40990,DS-9a673757-1c7f-46df-88cf-3a97ed7b9ef9,DISK], DatanodeInfoWithStorage[127.0.0.1:40724,DS-801e7f82-aa56-4d05-afa5-b13d5f96a74e,DISK], DatanodeInfoWithStorage[127.0.0.1:42547,DS-e434463a-507c-44a3-86d0-fbbb0a336c87,DISK], DatanodeInfoWithStorage[127.0.0.1:43822,DS-67fa4fb2-60d9-45d1-b568-b2056513bd18,DISK], DatanodeInfoWithStorage[127.0.0.1:42245,DS-b943f747-0e96-45bc-8917-82ea45cf05ac,DISK], DatanodeInfoWithStorage[127.0.0.1:45808,DS-48da7474-d621-4b10-bd1d-76efa6b90469,DISK]]; indices=[3, 4, 5, 6, 7, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:338)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1977818046-172.17.0.2-1590341891237:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:32947,DS-b845bee3-f799-4cf9-a474-201eab0d173f,DISK], DatanodeInfoWithStorage[127.0.0.1:41791,DS-5243b0c5-6476-4a4d-8e4b-ccf1e41aff7c,DISK], DatanodeInfoWithStorage[127.0.0.1:36140,DS-c5ad698e-ef7b-4e95-b9be-f1f2ad0e55dc,DISK], DatanodeInfoWithStorage[127.0.0.1:43321,DS-62b15402-88eb-4005-91ce-26222bd9c466,DISK], DatanodeInfoWithStorage[127.0.0.1:46064,DS-d89212b3-f3f3-4ae0-8bf0-ff6091ac5726,DISK], DatanodeInfoWithStorage[127.0.0.1:42372,DS-950af6ad-e2be-411e-8cf7-0668bf3b2dc1,DISK]]; indices=[0, 2, 3, 6, 7, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1977818046-172.17.0.2-1590341891237:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:32947,DS-b845bee3-f799-4cf9-a474-201eab0d173f,DISK], DatanodeInfoWithStorage[127.0.0.1:41791,DS-5243b0c5-6476-4a4d-8e4b-ccf1e41aff7c,DISK], DatanodeInfoWithStorage[127.0.0.1:36140,DS-c5ad698e-ef7b-4e95-b9be-f1f2ad0e55dc,DISK], DatanodeInfoWithStorage[127.0.0.1:43321,DS-62b15402-88eb-4005-91ce-26222bd9c466,DISK], DatanodeInfoWithStorage[127.0.0.1:46064,DS-d89212b3-f3f3-4ae0-8bf0-ff6091ac5726,DISK], DatanodeInfoWithStorage[127.0.0.1:42372,DS-950af6ad-e2be-411e-8cf7-0668bf3b2dc1,DISK]]; indices=[0, 2, 3, 6, 7, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1977818046-172.17.0.2-1590341891237:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:32947,DS-b845bee3-f799-4cf9-a474-201eab0d173f,DISK], DatanodeInfoWithStorage[127.0.0.1:41791,DS-5243b0c5-6476-4a4d-8e4b-ccf1e41aff7c,DISK], DatanodeInfoWithStorage[127.0.0.1:36140,DS-c5ad698e-ef7b-4e95-b9be-f1f2ad0e55dc,DISK], DatanodeInfoWithStorage[127.0.0.1:43321,DS-62b15402-88eb-4005-91ce-26222bd9c466,DISK], DatanodeInfoWithStorage[127.0.0.1:46064,DS-d89212b3-f3f3-4ae0-8bf0-ff6091ac5726,DISK], DatanodeInfoWithStorage[127.0.0.1:42372,DS-950af6ad-e2be-411e-8cf7-0668bf3b2dc1,DISK]]; indices=[0, 2, 3, 6, 7, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1977818046-172.17.0.2-1590341891237:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:32947,DS-b845bee3-f799-4cf9-a474-201eab0d173f,DISK], DatanodeInfoWithStorage[127.0.0.1:41791,DS-5243b0c5-6476-4a4d-8e4b-ccf1e41aff7c,DISK], DatanodeInfoWithStorage[127.0.0.1:36140,DS-c5ad698e-ef7b-4e95-b9be-f1f2ad0e55dc,DISK], DatanodeInfoWithStorage[127.0.0.1:43321,DS-62b15402-88eb-4005-91ce-26222bd9c466,DISK], DatanodeInfoWithStorage[127.0.0.1:46064,DS-d89212b3-f3f3-4ae0-8bf0-ff6091ac5726,DISK], DatanodeInfoWithStorage[127.0.0.1:42372,DS-950af6ad-e2be-411e-8cf7-0668bf3b2dc1,DISK]]; indices=[0, 2, 3, 6, 7, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:338)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-580050659-172.17.0.2-1590342354235:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:46264,DS-23aeafa6-35da-49ba-8f19-6ea3955c5202,DISK], DatanodeInfoWithStorage[127.0.0.1:45926,DS-e1e9ab1e-ecb8-40b2-a32f-c38365e89f23,DISK], DatanodeInfoWithStorage[127.0.0.1:41802,DS-3c144ee5-b5dd-4e49-97fb-ac7a0baad388,DISK], DatanodeInfoWithStorage[127.0.0.1:34813,DS-33032501-fd62-4a56-b819-e072e2904909,DISK], DatanodeInfoWithStorage[127.0.0.1:34340,DS-f4fa70a0-2990-4154-a7e6-615766944bf4,DISK], DatanodeInfoWithStorage[127.0.0.1:35553,DS-eea839bd-0d8a-4692-ae53-5d0be61a3094,DISK]]; indices=[0, 1, 2, 4, 5, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-580050659-172.17.0.2-1590342354235:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:46264,DS-23aeafa6-35da-49ba-8f19-6ea3955c5202,DISK], DatanodeInfoWithStorage[127.0.0.1:45926,DS-e1e9ab1e-ecb8-40b2-a32f-c38365e89f23,DISK], DatanodeInfoWithStorage[127.0.0.1:41802,DS-3c144ee5-b5dd-4e49-97fb-ac7a0baad388,DISK], DatanodeInfoWithStorage[127.0.0.1:34813,DS-33032501-fd62-4a56-b819-e072e2904909,DISK], DatanodeInfoWithStorage[127.0.0.1:34340,DS-f4fa70a0-2990-4154-a7e6-615766944bf4,DISK], DatanodeInfoWithStorage[127.0.0.1:35553,DS-eea839bd-0d8a-4692-ae53-5d0be61a3094,DISK]]; indices=[0, 1, 2, 4, 5, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-580050659-172.17.0.2-1590342354235:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:46264,DS-23aeafa6-35da-49ba-8f19-6ea3955c5202,DISK], DatanodeInfoWithStorage[127.0.0.1:45926,DS-e1e9ab1e-ecb8-40b2-a32f-c38365e89f23,DISK], DatanodeInfoWithStorage[127.0.0.1:41802,DS-3c144ee5-b5dd-4e49-97fb-ac7a0baad388,DISK], DatanodeInfoWithStorage[127.0.0.1:34813,DS-33032501-fd62-4a56-b819-e072e2904909,DISK], DatanodeInfoWithStorage[127.0.0.1:34340,DS-f4fa70a0-2990-4154-a7e6-615766944bf4,DISK], DatanodeInfoWithStorage[127.0.0.1:35553,DS-eea839bd-0d8a-4692-ae53-5d0be61a3094,DISK]]; indices=[0, 1, 2, 4, 5, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-580050659-172.17.0.2-1590342354235:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:46264,DS-23aeafa6-35da-49ba-8f19-6ea3955c5202,DISK], DatanodeInfoWithStorage[127.0.0.1:45926,DS-e1e9ab1e-ecb8-40b2-a32f-c38365e89f23,DISK], DatanodeInfoWithStorage[127.0.0.1:41802,DS-3c144ee5-b5dd-4e49-97fb-ac7a0baad388,DISK], DatanodeInfoWithStorage[127.0.0.1:34813,DS-33032501-fd62-4a56-b819-e072e2904909,DISK], DatanodeInfoWithStorage[127.0.0.1:34340,DS-f4fa70a0-2990-4154-a7e6-615766944bf4,DISK], DatanodeInfoWithStorage[127.0.0.1:35553,DS-eea839bd-0d8a-4692-ae53-5d0be61a3094,DISK]]; indices=[0, 1, 2, 4, 5, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-264580044-172.17.0.2-1590343029411:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:36065,DS-912e3248-0336-4539-aae3-919c56d2a7d3,DISK], DatanodeInfoWithStorage[127.0.0.1:34621,DS-abb59cf9-3676-4041-81e8-14f0b47bac59,DISK], DatanodeInfoWithStorage[127.0.0.1:41886,DS-5da79ad5-c057-4df6-92a8-e922a5d86c0c,DISK], DatanodeInfoWithStorage[127.0.0.1:34652,DS-5f5d145f-c16b-42e7-b1fb-e8ddc49df8e8,DISK], DatanodeInfoWithStorage[127.0.0.1:35642,DS-e7779e6a-79ab-465e-b96f-238dfd0051ed,DISK], DatanodeInfoWithStorage[127.0.0.1:43912,DS-5e5cbb57-c74d-40ed-aa9a-46646ed1a8b2,DISK]]; indices=[2, 3, 4, 5, 6, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-264580044-172.17.0.2-1590343029411:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:36065,DS-912e3248-0336-4539-aae3-919c56d2a7d3,DISK], DatanodeInfoWithStorage[127.0.0.1:34621,DS-abb59cf9-3676-4041-81e8-14f0b47bac59,DISK], DatanodeInfoWithStorage[127.0.0.1:41886,DS-5da79ad5-c057-4df6-92a8-e922a5d86c0c,DISK], DatanodeInfoWithStorage[127.0.0.1:34652,DS-5f5d145f-c16b-42e7-b1fb-e8ddc49df8e8,DISK], DatanodeInfoWithStorage[127.0.0.1:35642,DS-e7779e6a-79ab-465e-b96f-238dfd0051ed,DISK], DatanodeInfoWithStorage[127.0.0.1:43912,DS-5e5cbb57-c74d-40ed-aa9a-46646ed1a8b2,DISK]]; indices=[2, 3, 4, 5, 6, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-264580044-172.17.0.2-1590343029411:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:36065,DS-912e3248-0336-4539-aae3-919c56d2a7d3,DISK], DatanodeInfoWithStorage[127.0.0.1:34621,DS-abb59cf9-3676-4041-81e8-14f0b47bac59,DISK], DatanodeInfoWithStorage[127.0.0.1:41886,DS-5da79ad5-c057-4df6-92a8-e922a5d86c0c,DISK], DatanodeInfoWithStorage[127.0.0.1:34652,DS-5f5d145f-c16b-42e7-b1fb-e8ddc49df8e8,DISK], DatanodeInfoWithStorage[127.0.0.1:35642,DS-e7779e6a-79ab-465e-b96f-238dfd0051ed,DISK], DatanodeInfoWithStorage[127.0.0.1:43912,DS-5e5cbb57-c74d-40ed-aa9a-46646ed1a8b2,DISK]]; indices=[2, 3, 4, 5, 6, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-264580044-172.17.0.2-1590343029411:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:36065,DS-912e3248-0336-4539-aae3-919c56d2a7d3,DISK], DatanodeInfoWithStorage[127.0.0.1:34621,DS-abb59cf9-3676-4041-81e8-14f0b47bac59,DISK], DatanodeInfoWithStorage[127.0.0.1:41886,DS-5da79ad5-c057-4df6-92a8-e922a5d86c0c,DISK], DatanodeInfoWithStorage[127.0.0.1:34652,DS-5f5d145f-c16b-42e7-b1fb-e8ddc49df8e8,DISK], DatanodeInfoWithStorage[127.0.0.1:35642,DS-e7779e6a-79ab-465e-b96f-238dfd0051ed,DISK], DatanodeInfoWithStorage[127.0.0.1:43912,DS-5e5cbb57-c74d-40ed-aa9a-46646ed1a8b2,DISK]]; indices=[2, 3, 4, 5, 6, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is -1
+v1v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1201678687-172.17.0.2-1590343135263:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:34822,DS-66c69c6e-9bbb-4733-b3c0-af2d19f423a0,DISK], DatanodeInfoWithStorage[127.0.0.1:32985,DS-47c09a1f-c765-42d5-b6a7-8fa059c54e48,DISK], DatanodeInfoWithStorage[127.0.0.1:46659,DS-a3fd78e5-b773-4f51-86d7-6df953531cd4,DISK], DatanodeInfoWithStorage[127.0.0.1:40321,DS-a372457e-53c5-4ebe-812e-734448cf4df6,DISK], DatanodeInfoWithStorage[127.0.0.1:33377,DS-8d202071-928c-489c-818f-f4b40d700e6c,DISK], DatanodeInfoWithStorage[127.0.0.1:45130,DS-5e79fdee-4ec9-4cd1-b812-177b14dd4037,DISK]]; indices=[0, 2, 3, 4, 5, 6]}];  lastLocatedBlock=LocatedStripedBlock{BP-1201678687-172.17.0.2-1590343135263:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:34822,DS-66c69c6e-9bbb-4733-b3c0-af2d19f423a0,DISK], DatanodeInfoWithStorage[127.0.0.1:32985,DS-47c09a1f-c765-42d5-b6a7-8fa059c54e48,DISK], DatanodeInfoWithStorage[127.0.0.1:46659,DS-a3fd78e5-b773-4f51-86d7-6df953531cd4,DISK], DatanodeInfoWithStorage[127.0.0.1:40321,DS-a372457e-53c5-4ebe-812e-734448cf4df6,DISK], DatanodeInfoWithStorage[127.0.0.1:33377,DS-8d202071-928c-489c-818f-f4b40d700e6c,DISK], DatanodeInfoWithStorage[127.0.0.1:45130,DS-5e79fdee-4ec9-4cd1-b812-177b14dd4037,DISK]]; indices=[0, 2, 3, 4, 5, 6]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 4 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=4); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1201678687-172.17.0.2-1590343135263:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:34822,DS-66c69c6e-9bbb-4733-b3c0-af2d19f423a0,DISK], DatanodeInfoWithStorage[127.0.0.1:32985,DS-47c09a1f-c765-42d5-b6a7-8fa059c54e48,DISK], DatanodeInfoWithStorage[127.0.0.1:46659,DS-a3fd78e5-b773-4f51-86d7-6df953531cd4,DISK], DatanodeInfoWithStorage[127.0.0.1:40321,DS-a372457e-53c5-4ebe-812e-734448cf4df6,DISK], DatanodeInfoWithStorage[127.0.0.1:33377,DS-8d202071-928c-489c-818f-f4b40d700e6c,DISK], DatanodeInfoWithStorage[127.0.0.1:45130,DS-5e79fdee-4ec9-4cd1-b812-177b14dd4037,DISK]]; indices=[0, 2, 3, 4, 5, 6]}];  lastLocatedBlock=LocatedStripedBlock{BP-1201678687-172.17.0.2-1590343135263:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:34822,DS-66c69c6e-9bbb-4733-b3c0-af2d19f423a0,DISK], DatanodeInfoWithStorage[127.0.0.1:32985,DS-47c09a1f-c765-42d5-b6a7-8fa059c54e48,DISK], DatanodeInfoWithStorage[127.0.0.1:46659,DS-a3fd78e5-b773-4f51-86d7-6df953531cd4,DISK], DatanodeInfoWithStorage[127.0.0.1:40321,DS-a372457e-53c5-4ebe-812e-734448cf4df6,DISK], DatanodeInfoWithStorage[127.0.0.1:33377,DS-8d202071-928c-489c-818f-f4b40d700e6c,DISK], DatanodeInfoWithStorage[127.0.0.1:45130,DS-5e79fdee-4ec9-4cd1-b812-177b14dd4037,DISK]]; indices=[0, 2, 3, 4, 5, 6]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is -1
+v1v1 or v2v2 test failed !!!
+reconf_parameter: dfs.blockreport.incremental.intervalMsec
+component: DataNode
+v1: 0
+v2: 100000
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData#testReadCorruptedDataByDeleting[3]
+reconfPoint: -2
+result: -1
+failureMessage: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1150556732-172.17.0.2-1590344133603:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:41145,DS-8a434bcb-910b-4361-a11b-2c7902ab3830,DISK], DatanodeInfoWithStorage[127.0.0.1:43230,DS-377d6042-4770-4f85-ad8c-a7dba20c112b,DISK], DatanodeInfoWithStorage[127.0.0.1:41582,DS-804ce8b8-d8f0-4c19-926b-b1ef87b1a1e8,DISK], DatanodeInfoWithStorage[127.0.0.1:42624,DS-20ff04f9-c2d4-4bdc-a913-c31f0abf8561,DISK], DatanodeInfoWithStorage[127.0.0.1:41131,DS-fc276b11-bee7-40b4-a95d-8643dae1c9a3,DISK], DatanodeInfoWithStorage[127.0.0.1:39549,DS-9ebf17c9-c635-4238-81d9-563a54883c17,DISK]]; indices=[0, 1, 2, 3, 4, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1150556732-172.17.0.2-1590344133603:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:41145,DS-8a434bcb-910b-4361-a11b-2c7902ab3830,DISK], DatanodeInfoWithStorage[127.0.0.1:43230,DS-377d6042-4770-4f85-ad8c-a7dba20c112b,DISK], DatanodeInfoWithStorage[127.0.0.1:41582,DS-804ce8b8-d8f0-4c19-926b-b1ef87b1a1e8,DISK], DatanodeInfoWithStorage[127.0.0.1:42624,DS-20ff04f9-c2d4-4bdc-a913-c31f0abf8561,DISK], DatanodeInfoWithStorage[127.0.0.1:41131,DS-fc276b11-bee7-40b4-a95d-8643dae1c9a3,DISK], DatanodeInfoWithStorage[127.0.0.1:39549,DS-9ebf17c9-c635-4238-81d9-563a54883c17,DISK]]; indices=[0, 1, 2, 3, 4, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+stackTrace: java.io.IOException: 5 missing blocks, the stripe is: AlignedStripe(Offset=0, length=4194181, fetchedChunksNum=0, missingChunksNum=5); locatedBlocks is: LocatedBlocks{;  fileLength=25165701;  underConstruction=false;  blocks=[LocatedStripedBlock{BP-1150556732-172.17.0.2-1590344133603:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:41145,DS-8a434bcb-910b-4361-a11b-2c7902ab3830,DISK], DatanodeInfoWithStorage[127.0.0.1:43230,DS-377d6042-4770-4f85-ad8c-a7dba20c112b,DISK], DatanodeInfoWithStorage[127.0.0.1:41582,DS-804ce8b8-d8f0-4c19-926b-b1ef87b1a1e8,DISK], DatanodeInfoWithStorage[127.0.0.1:42624,DS-20ff04f9-c2d4-4bdc-a913-c31f0abf8561,DISK], DatanodeInfoWithStorage[127.0.0.1:41131,DS-fc276b11-bee7-40b4-a95d-8643dae1c9a3,DISK], DatanodeInfoWithStorage[127.0.0.1:39549,DS-9ebf17c9-c635-4238-81d9-563a54883c17,DISK]]; indices=[0, 1, 2, 3, 4, 8]}];  lastLocatedBlock=LocatedStripedBlock{BP-1150556732-172.17.0.2-1590344133603:blk_-9223372036854775792_1001; getBlockSize()=25165701; corrupt=false; offset=0; locs=[DatanodeInfoWithStorage[127.0.0.1:41145,DS-8a434bcb-910b-4361-a11b-2c7902ab3830,DISK], DatanodeInfoWithStorage[127.0.0.1:43230,DS-377d6042-4770-4f85-ad8c-a7dba20c112b,DISK], DatanodeInfoWithStorage[127.0.0.1:41582,DS-804ce8b8-d8f0-4c19-926b-b1ef87b1a1e8,DISK], DatanodeInfoWithStorage[127.0.0.1:42624,DS-20ff04f9-c2d4-4bdc-a913-c31f0abf8561,DISK], DatanodeInfoWithStorage[127.0.0.1:41131,DS-fc276b11-bee7-40b4-a95d-8643dae1c9a3,DISK], DatanodeInfoWithStorage[127.0.0.1:39549,DS-9ebf17c9-c635-4238-81d9-563a54883c17,DISK]]; indices=[0, 1, 2, 3, 4, 8]};  isLastBlockComplete=true;  ecPolicy=ErasureCodingPolicy=[Name=RS-6-3-1024k, Schema=[ECSchema=[Codec=rs, numDataUnits=6, numParityUnits=3]], CellSize=1048576, Id=1]}
+	at org.apache.hadoop.hdfs.StripeReader.checkMissingBlocks(StripeReader.java:179)
+	at org.apache.hadoop.hdfs.StripeReader.readParityChunks(StripeReader.java:211)
+	at org.apache.hadoop.hdfs.StripeReader.readStripe(StripeReader.java:341)
+	at org.apache.hadoop.hdfs.DFSStripedInputStream.fetchBlockByteRange(DFSStripedInputStream.java:507)
+	at org.apache.hadoop.hdfs.DFSInputStream.pread(DFSInputStream.java:1360)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:1324)
+	at org.apache.hadoop.fs.FSInputStream.readFully(FSInputStream.java:121)
+	at org.apache.hadoop.fs.FSDataInputStream.readFully(FSDataInputStream.java:111)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:106)
+	at org.apache.hadoop.hdfs.StripedFileTestUtil.verifyPread(StripedFileTestUtil.java:86)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.verifyRead(ReadStripedFileWithDecodingHelper.java:139)
+	at org.apache.hadoop.hdfs.ReadStripedFileWithDecodingHelper.testReadWithBlockCorrupted(ReadStripedFileWithDecodingHelper.java:221)
+	at org.apache.hadoop.hdfs.TestReadStripedFileWithDecodingDeletedData.testReadCorruptedDataByDeleting(TestReadStripedFileWithDecodingDeletedData.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v2 failed with probability 6 out of 50
+v1v1v2v2 failed with probability 1 out of 50
+result: might be true error
+Total execution time in seconds : 10123

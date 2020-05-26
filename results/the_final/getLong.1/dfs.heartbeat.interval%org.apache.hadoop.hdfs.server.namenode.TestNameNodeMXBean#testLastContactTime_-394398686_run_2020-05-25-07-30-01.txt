@@ -1,0 +1,59 @@
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 30ms
+v2: 1
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.server.namenode.TestNameNodeMXBean#testLastContactTime
+reconfPoint: -2
+result: -1
+
+Test vvMode=v1v2
+Warn: test org.apache.hadoop.hdfs.server.namenode.TestNameNodeMXBean#testLastContactTime has not been updated !
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.server.namenode.TestNameNodeMXBean#testLastContactTime v1 30ms v2 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: dfs.heartbeat.interval
+component: DataNode
+v1: 30ms
+v2: 1
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.server.namenode.TestNameNodeMXBean#testLastContactTime
+reconfPoint: -2
+result: -1
+failureMessage: 
+stackTrace: 
+
+Total execution time in seconds : 2568
+1

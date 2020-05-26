@@ -1,0 +1,78 @@
+reconf_parameter: dfs.heartbeat.interval
+component: NameNode
+v1: 300000s
+v2: 1
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyWriter#testRamDiskEvictionIsLru
+reconfPoint: 1
+result: -1
+
+Test vvMode=v1v2
+tr.result is -1
+fail. do 5 v1v1 v2v2 tests to filter false alarm
+failed v1v2 test: org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyWriter#testRamDiskEvictionIsLru v1 300000s v2 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+
+Test vvMode=v1v1
+tr.result is 1
+
+Test vvMode=v2v2
+tr.result is 1
+v1v1 and v2v2 succeed for 5 times, it is issue
+---------------------------------------full report---------------------------------------------
+reconf_parameter: dfs.heartbeat.interval
+component: NameNode
+v1: 300000s
+v2: 1
+testProject: hdfs
+unitTest: org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyWriter#testRamDiskEvictionIsLru
+reconfPoint: 1
+result: -1
+failureMessage: 
+Expected: is <true>
+     but: was <false>
+stackTrace: java.lang.AssertionError: 
+Expected: is <true>
+     but: was <false>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.LazyPersistTestCase.ensureFileReplicasOnStorageType(LazyPersistTestCase.java:138)
+	at org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.TestLazyWriter.testRamDiskEvictionIsLru(TestLazyWriter.java:160)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+
+
+Total execution time in seconds : 981
+1
