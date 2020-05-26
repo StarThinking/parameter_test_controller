@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -ne 7 ]; then
-    echo "./procedure.sh [parameter] [component] [v1] [v2] [testProject] [unitTest] [reconfPoint]"
+    echo "./procedure.sh [parameter] [testProject] [unitTest] [component] [reconfPoint] [v1] [v2]"
     exit -1
 fi
 
