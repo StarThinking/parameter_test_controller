@@ -11,7 +11,7 @@ for i in $(seq 0 $pm); do ssh node-$i "ps aux | grep dispatcher | awk '{print $2
 
 for i in $(seq 0 $pm); do ssh node-$i "cd ~/parameter_test_controller; git pull; cd ~/reconf_test_gen; git pull" & ppids[$i]=$!; done; for p in ${ppids[@]}; do wait $p; echo git update finished; done
 
-for i in $(seq 0 $pm); do ssh node-$i "~/parameter_test_controller/container_utility_sh/rm_all_containers.sh $vm"; done;
+for i in $(seq 0 $pm); do ssh node-$i "~/parameter_test_controller/container_utility_sh/rm_all_containers.sh $vm" & rmpids[$i]=$!; done; for p in ${rmpids[@]}; do wait $p; echo rm container finished; done
 
 for i in $(seq 0 $pm); do ssh node-$i "~/parameter_test_controller/container_utility_sh/create_containers.sh $vm $tag" & vmpids[$i]=$!; done; for p in ${vmpids[@]}; do wait $p; echo creation finished; done
 
