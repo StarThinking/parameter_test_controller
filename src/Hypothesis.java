@@ -10,17 +10,17 @@ import java.text.SimpleDateFormat;
 public class Hypothesis extends Controller {
 
     private static double adhocThreshold = 1.0;
+    private static int earlyStopThreshold = 10;
 
     public static void hypothesisTestLogic(int repeats, TestResult tr) {    
-        int v1v2Repeats = repeats; 
 	int v1v2FailedCount = 0; 
-	int v1v1v2v2Repeats = repeats; 
 	int v1v1v2v2FailedCount = 0; 
         int i = 0;
+	boolean earlyStop = false;
         
         myPrint(tr.toString());
         
-        for (i=0; i<v1v2Repeats; i++) {
+        for (i=0; i<repeats; i++) {
             TestResult v1v2Tr = new TestResult(tr);
             testCore("v1v2", v1v2Tr);
             if (v1v2Tr.result.equals("-1")) {
@@ -28,9 +28,7 @@ public class Hypothesis extends Controller {
 		myPrint(v1v2Tr.completeInfo());
                 v1v2FailedCount ++;
             }
-        }
         
-        for (i=0; i<v1v1v2v2Repeats; i++) {
             TestResult v1v1Tr = new TestResult(tr);
             testCore("v1v1", v1v1Tr);
             TestResult v2v2Tr = new TestResult(tr);
@@ -43,9 +41,19 @@ public class Hypothesis extends Controller {
 		    myPrint(v2v2Tr.completeInfo());
                 v1v1v2v2FailedCount ++;
             }
+
+	    if (v1v2FailedCount >= earlyStopThreshold && v1v1v2v2FailedCount == 0)  {
+		myPrint("early stop after " + earlyStopThreshold + " is satisfied");
+		earlyStop = true;
+		break;
+	    }
         }
-        myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + v1v2Repeats);
-        myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + v1v1v2v2Repeats);
+       
+	if (earlyStop)
+	    repeats = earlyStopThreshold;
+
+	myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + repeats);
+        myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + repeats);
 	if (v1v2FailedCount == 0) {
             myPrint("result: v1v2 failure didn't occur");
 	} else {
