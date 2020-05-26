@@ -16,6 +16,13 @@ testProject=$2
 unitTest=$3
 reconfPoint=$5
 
+# check if test is in white list
+if [ "$(grep ^"$parameter $component"$ ~/parameter_test_controller/white_list.txt)" != "" ]; then
+    echo "found in white list as $parameter $component, skip this test"
+    exit 0
+fi
+
+
 java -cp /root/parameter_test_controller/target/ ReconfTester "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
 tester_rc=$?
 
