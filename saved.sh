@@ -15,11 +15,13 @@ for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n);
 for i in *.txt; do if [ "$(grep might $i)" != "" ]; then echo $i; cat $i | tail -n 5; echo "";  fi ; done
 
 # check if hypo unfinished
-for i in *hypothesis*; do num=$(cat $i | grep vvMode | wc -l); if [ $num -ne 150 ]; then echo $i; echo $num; fi; done
+for i in *hypothesis*; do if [ "$(grep 'Total execution time' $i)" == "" ]; then echo $i; fi; done
+
+for i in $(for i in *hypothesis*; do if [ "$(grep 'Total execution time' $i)" == "" ]; then echo $i; fi; done); do echo $i; grep 'v1v2 test failed' $i | wc -l; grep 'Test vvMode=v1v2' $i | wc -l; grep 'v1v1 or v2v2 test failed' $i | wc -l; grep 'Test vvMode=v2v2\|Test vvMode=v1v1' $i | wc -l; done
 
 # save suspicious hypo log and fetch run log
 mkdir suspicious
-mv $(for i in *.txt; do ~/parameter_test_controller/hypo_analysis.sh $i; done) suspicious/
+conf=0.8; mv $(for i in *.txt; do ~/parameter_test_controller/hypo_analysis.sh $i $conf; done) suspicious/
 cd suspicious
 # fetch corresponding run logs
 for c in *.txt; do for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh "$(echo "$c" | awk -F '_hypothesis_' '{print $1}')"_run_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/"; scp node-$i:~/parameter_test_controller/target/*.txt .; done; done

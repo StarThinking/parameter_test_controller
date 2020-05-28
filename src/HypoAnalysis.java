@@ -3,17 +3,17 @@ import java.util.Arrays;
 
 public class HypoAnalysis {
     public static void main(String[] args) {
-        if (args.length != 4) {
-            System.out.println("Error: ReconfTtest reconfSampleNum reconfSampleFailureNum nonReconfSampleNum nonReconfSampleFailureNum");
+        if (args.length != 5) {
+            System.out.println("Error: ReconfTtest reconfSampleNum reconfSampleFailureNum nonReconfSampleNum nonReconfSampleFailureNum confidence");
             System.exit(-1);
         }
         final int reconfSampleNum = Integer.valueOf(args[0]);
         final int reconfSampleFailureNum = Integer.valueOf(args[1]);
         final int nonReconfSampleNum = Integer.valueOf(args[2]);
         final int nonReconfSampleFailureNum = Integer.valueOf(args[3]);
-        final double succeedValue = 0;
+	double alpha = 1.0 - Double.valueOf(args[4]); // 1.0 - 0.8 = 0.2
+	final double succeedValue = 0;
         final double failValue = 1;
-        double alpha = 0.2;
 
         double[] reconfSamples = new double[reconfSampleNum];
         Arrays.fill(reconfSamples, succeedValue);
