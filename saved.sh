@@ -4,8 +4,16 @@ for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n);
 # start hypo dispatcher
 for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/nohup.txt; ps aux | grep dispatcher | awk '{print $2}' | xargs kill -9; nohup ~/parameter_test_controller/dispatcher_hypo.sh > nohup.txt &" & pids[$i]=$!; done; for p in ${pids[@]}; do wait $p; echo "$p is done"; done
 
+###############
 # collect hypothesis .txt
 for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh _hypothesis_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/"; mkdir ~/parameter_test_controller/target/$i; scp node-$i:~/parameter_test_controller/target/*.txt ~/parameter_test_controller/target/$i; ssh node-$i "rm ~/parameter_test_controller/target/*.txt"; done
+
+# add suffix with node id
+for i in $(seq 0 5); do for j in $i/*; do mv $j ./"$(echo $j | awk -F '/' '{print $2}')"_$i; done; rm -rf $i; done
+
+# result
+find target/ -name '*_hypothesis_*' | awk -F '_hypothesis_' '{print $1}' | sort -u | while read line; do echo $line; ./hypo_analysis_parallel.sh $line 0.95; echo ""; done > tmp.txt
+################
 
 # check finish ratio
 for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do finished=$(ssh node-$i "cat ~/nohup.txt | grep assign | wc -l"); all=$(ssh node-$i "cat nohup.txt | head -n 1" | awk -F ' = ' '{print $2}'); ratio=$(echo "scale=2; $finished / $all" | bc); echo "$finished out of $all are finished $ratio"; done
