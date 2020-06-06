@@ -3,6 +3,7 @@
 if [ $# -ne 1 ]; then echo wrong; exit -1; fi
 disk=$1
 apt-get update -y
+apt-get -y install openjdk-8-jdk
 #apt-get upgrade
 
 sudo mkfs.ext4 /dev/$disk 

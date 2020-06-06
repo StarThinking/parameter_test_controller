@@ -30,5 +30,7 @@ output=$(java -cp $classpath HypoAnalysis $v1v2_num $v1v2_failed $v1v1v2v2_num $
 if [ "$output" == "null_hypothesis is false" ]; then
     echo "$hypo_file"    
 #    print_data
+elif [ $v1v1v2v2_failed -eq 0 ] && [ $v1v2_failed -ge 1 ]; then # second chane for clean sheetss
+    echo "$hypo_file"
 fi
 
