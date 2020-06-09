@@ -1,12 +1,13 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then
-    echo "./hypo_analysis.sh [hypo.txt] [confidence]"
+if [ $# -ne 3 ]; then
+    echo "./hypo_analysis.sh [hypo.txt] [confidence] [clean_sheet_enable]"
     exit -1
 fi
 
 hypo_file=$1
 confidence=$2
+clean_sheet_enable=$3
 
 v1v2_failed=$(grep 'v1v2 failed with probability' $hypo_file | awk -F ' ' '{print $5}')
 v1v2_num=$(grep 'v1v2 failed with probability' $hypo_file | awk -F ' ' '{print $8}')
@@ -30,7 +31,7 @@ output=$(java -cp $classpath HypoAnalysis $v1v2_num $v1v2_failed $v1v1v2v2_num $
 if [ "$output" == "null_hypothesis is false" ]; then
     echo "$hypo_file"    
 #    print_data
-elif [ $v1v1v2v2_failed -eq 0 ] && [ $v1v2_failed -ge 1 ]; then # second chane for clean sheetss
+elif [ $clean_sheet_enable -eq 1 ] && [ $v1v1v2v2_failed -eq 0 ] && [ $v1v2_failed -ge 1 ]; then # second chance for clean sheets
     echo "$hypo_file"
 fi
 
