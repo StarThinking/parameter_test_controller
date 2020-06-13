@@ -2,3 +2,5 @@ yarn.timeline-service.enabled yarn:ResourceManager
 hbase.hregion.memstore.mslab.enabled hbase:AbstractMemStore
 dfs.encrypt.data.transfer hdfs:NameNode
 dfs.block.access.token.enable hdfs:NameNode
+ipc.client.rpc-timeout.ms hbase:HMaster
+ipc.client.rpc-timeout.ms hdfs:DataNode
