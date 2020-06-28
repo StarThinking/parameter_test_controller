@@ -1,9 +1,0 @@
-dfs.namenode.num.checkpoints.retained JournalNode 1 2 -1 org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover
-dfs.client.failover.sleep.base.millis JournalNode 10 500 -1 org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
-dfs.client.retry.max.attempts JournalNode 1000 10 -1 org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes
-dfs.client.block.write.locateFollowingBlock.retries JournalNode 500 5 -1 org.apache.hadoop.hdfs.TestDFSInotifyEventInputStreamKerberized#testWithKerberizedCluster
-dfs.edit.log.transfer.timeout JournalNode 3000000 30000 -1 org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNformat
-dfs.client.socket.send.buffer.size JournalNode 1 0 -1 org.apache.hadoop.hdfs.server.namenode.ha.TestBootstrapStandbyWithQJM#testUpgradeWithRecover
-dfs.client.write.max-packets-in-flight JournalNode 80 1 4 org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue
-dfs.short.circuit.shared.memory.watcher.interrupt.check.ms JournalNode 6000000 60000 -1 org.apache.hadoop.hdfs.qjournal.server.TestJournalNodeSync#testSyncAfterJNdowntimeWithoutQJournalQueue
-dfs.bytes-per-checksum JournalNode 512 65536 -1 org.apache.hadoop.hdfs.server.namenode.ha.TestDFSUpgradeWithHA#testRollbackWithJournalNodes
