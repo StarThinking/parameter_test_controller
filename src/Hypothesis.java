@@ -49,8 +49,8 @@ public class Hypothesis extends Controller {
 	    }
         }
        
-	if (earlyStop)
-	    repeats = earlyStopThreshold;
+	//if (earlyStop)
+	//    repeats = earlyStopThreshold;
 
 	myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + repeats);
         myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + repeats);
