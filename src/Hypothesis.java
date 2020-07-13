@@ -21,7 +21,13 @@ public class Hypothesis extends Controller {
         myPrint(tr.toString());
         
         for (i=0; i<repeats; i++) {
-            TestResult v1v2Tr = new TestResult(tr);
+	    if (v1v2FailedCount >= earlyStopThreshold && v1v1v2v2FailedCount == 0)  {
+		myPrint("early stop after " + earlyStopThreshold + " is satisfied");
+		earlyStop = true;
+		break;
+	    }
+            
+	    TestResult v1v2Tr = new TestResult(tr);
             testCore("v1v2", v1v2Tr);
             if (v1v2Tr.result.equals("-1")) {
                 myPrint("v1v2 test failed !!!");
@@ -41,19 +47,13 @@ public class Hypothesis extends Controller {
 		    myPrint(v2v2Tr.completeInfo());
                 v1v1v2v2FailedCount ++;
             }
-
-	    if (v1v2FailedCount >= earlyStopThreshold && v1v1v2v2FailedCount == 0)  {
-		myPrint("early stop after " + earlyStopThreshold + " is satisfied");
-		earlyStop = true;
-		break;
-	    }
         }
        
 	//if (earlyStop)
 	//    repeats = earlyStopThreshold;
 
-	myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + repeats);
-        myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + repeats);
+	myPrint("v1v2 failed with probability " + v1v2FailedCount + " out of " + i);
+        myPrint("v1v1v2v2 failed with probability " + v1v1v2v2FailedCount + " out of " + i);
 	if (v1v2FailedCount == 0) {
             myPrint("result: v1v2 failure didn't occur");
 	} else {
