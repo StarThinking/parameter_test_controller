@@ -86,8 +86,7 @@ public class Controller {
     private static void runMvnCmd(TestResult tr) {
         try {
             int exitCode = -1;
-	    //String systemLogSavingDir = "/root/parameter_test_controller";
-	    String systemLogSavingDir = "none";
+	    String systemLogSavingDir = "/root/reconf_test_gen/target";
             ProcessBuilder builder = new ProcessBuilder();
    	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.testProject, tr.unitTest, systemLogSavingDir);
 	    Process process = builder.start();
@@ -103,6 +102,18 @@ public class Controller {
     		process.destroy(); // consider using destroyForcibly instead
 	    }
             exitCode = process.exitValue();
+
+	    // get exception set
+	    myPrint("Exception set:");
+	    ProcessBuilder builder1 = new ProcessBuilder();
+	    builder1.command("/root/reconf_test_gen/extract_exception.sh");
+	    Process process1 = builder1.start();
+	    BufferedReader reader1 = new BufferedReader(new InputStreamReader(process1.getInputStream()));
+	    String line1 = "";
+	    while ((line1 = reader1.readLine()) != null) {
+   	        myPrint(line1);
+	    }
+	    reader1.close();
            
             List<TestResult> testResultList = new ArrayList<TestResult>();
             testResultList.add(tr);
