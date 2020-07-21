@@ -1,0 +1,5 @@
+dfs.block.access.token.enable hdfs:NameNode
+yarn.timeline-service.enabled yarn:ResourceManager
+mapreduce.map.output.compress mapreduce:MapTask
+mapreduce.map.output.compress mapreduce:ReduceTask
+hbase.hregion.memstore.mslab.enabled hbase:AbstractMemStore
