@@ -7,3 +7,5 @@ mapreduce.map.output.compress mapreduce:ReduceTask
 mapreduce.job.encrypted-intermediate-data mapreduce:MapTask
 mapreduce.job.encrypted-intermediate-data mapreduce:ReduceTask
 hbase.hregion.memstore.mslab.enabled hbase:AbstractMemStore
+mapreduce.job.reduces mapreduce:MapTask
+mapreduce.job.reduces mapreduce:JobClient
