@@ -13,4 +13,4 @@ ipc.client.rpc-timeout.ms hbase:HMaster
 ipc.client.rpc-timeout.ms hdfs:DataNode
 dfs.client.socket-timeout hdfs:DataNode
 dfs.client.socket-timeout hdfs:NameNode
-dfs.client.socket-timeout hbase:HRegionServer
+dfs.client.socket-timeout hbase:AbstractFSWAL
