@@ -4,3 +4,5 @@ mapreduce.job.encrypted-intermediate-data mapreduce:MapTask
 mapreduce.job.encrypted-intermediate-data mapreduce:ReduceTask
 mapreduce.map.output.compress mapreduce:MapTask
 mapreduce.map.output.compress mapreduce:ReduceTask
+dfs.encrypt.data.transfer hdfs:NameNode
+dfs.encrypt.data.transfer hdfs:DataNode
