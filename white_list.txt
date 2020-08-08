@@ -6,3 +6,7 @@ mapreduce.map.output.compress mapreduce:MapTask
 mapreduce.map.output.compress mapreduce:ReduceTask
 dfs.encrypt.data.transfer hdfs:NameNode
 dfs.encrypt.data.transfer hdfs:DataNode
+ipc.client.tcpnodelay hdfs:DataNode
+ipc.client.tcpnodelay hdfs:NameNode
+ipc.client.ping hdfs:DataNode
+ipc.client.ping hdfs:NameNode

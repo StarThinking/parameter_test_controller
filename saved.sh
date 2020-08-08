@@ -22,7 +22,7 @@ for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n);
 # check hypo that contains might
 for i in *_hypothesis_*; do if [ "$(grep might $i)" != "" ]; then echo $i; cat $i | tail -n 5; echo "";  fi ; done
 
-cf=0.95; clean_sheet=1; for i in *_hypothesis_*; do ~/parameter_test_controller/hypo_analysis.sh $i $cf $clean_sheet; done | while read line; do cat $line | tail -n 5; echo ''; done
+cf=0.95; clean_sheet=1; for i in *_hypothesis_*; do ~/parameter_test_controller/hypo_analysis.sh $i $cf $clean_sheet; done | while read line; do echo "$line"; cat $line | tail -n 5; cat $line | head -n 2; echo ''; done
 
 # check if hypo unfinished
 for i in *_hypothesis_*; do if [ "$(grep 'Total execution time' $i)" == "" ]; then echo $i; fi; done
