@@ -10,3 +10,10 @@ ipc.client.tcpnodelay hdfs:DataNode
 ipc.client.tcpnodelay hdfs:NameNode
 ipc.client.ping hdfs:DataNode
 ipc.client.ping hdfs:NameNode
+ipc.ping.interval hdfs:DataNode
+ipc.ping.interval hdfs:NameNode
+ipc.client.rpc-timeout.ms hdfs:DataNode
+ipc.client.rpc-timeout.ms hdfs:NameNode
+ipc.client.connection.maxidletime hdfs:DataNode
+ipc.client.connection.maxidletime hdfs:NameNode
+dfs.client.socket-timeout hdfs:DataNode
