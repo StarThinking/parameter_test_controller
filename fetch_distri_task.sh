@@ -1,11 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then echo 'wrong [file] [task_dir]'; exit -1; fi
+if [ $# -ne 3 ]; then echo 'wrong [src_ip_path] [file] [task_dir]'; exit -1; fi
 
 pm=( $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n) )
 num=${#pm[@]}
-all_task_file=$1
-task_dir=$2
+src_ip_path=$1
+all_task_file=$2
+task_dir=$3
+
+scp $src_ip_path $all_task_file
 
 rm x*
 split -d -n l/$num $all_task_file
