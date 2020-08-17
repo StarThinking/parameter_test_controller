@@ -24,3 +24,4 @@ mapreduce.fileoutputcommitter.algorithm.version mapreduce:ReduceTask
 mapreduce.fileoutputcommitter.algorithm.version mapreduce:MapTask
 dfs.bytes-per-checksum hdfs:NameNode
 dfs.heartbeat.interval hdfs:NameNode
+dfs.blockreport.incremental.intervalMsec hdfs:DataNode
