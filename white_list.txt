@@ -5,3 +5,5 @@ mapreduce.job.encrypted-intermediate-data mapreduce:ReduceTask
 mapreduce.job.encrypted-intermediate-data mapreduce:MapTask
 mapreduce.map.output.compress mapreduce:MapTask
 yarn.timeline-service.enabled yarn:ResourceManager
+dfs.client.socket-timeout hdfs:DataNode
+mapreduce.job.reduces mapreduce:MapTask
