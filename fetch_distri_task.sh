@@ -5,7 +5,7 @@ if [ $# -ne 2 ]; then echo 'wrong [src_ip_path] [task_dir]'; exit -1; fi
 pm=( $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n) )
 num=${#pm[@]}
 src_ip_path=$1
-all_task_file=all_tasks.txt
+all_task_file=all_tasks.txt.tmp
 rm $all_task_file
 task_dir=$2
 
@@ -22,4 +22,6 @@ do
     scp x$index node-$p:"$task_dir"/task.txt
     index=$(( index + 1 ))
 done
+
 rm x*
+rm $all_task_file
