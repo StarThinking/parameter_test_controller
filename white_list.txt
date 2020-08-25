@@ -1,8 +1,0 @@
-dfs.block.access.token.enable hdfs:NameNode
-dfs.encrypt.data.transfer hdfs:NameNode
-dfs.encrypt.data.transfer hdfs:DataNode
-mapreduce.job.encrypted-intermediate-data mapreduce:ReduceTask
-mapreduce.job.encrypted-intermediate-data mapreduce:MapTask
-mapreduce.map.output.compress mapreduce:MapTask
-yarn.timeline-service.enabled yarn:ResourceManager
-mapreduce.job.reduces mapreduce:MapTask
