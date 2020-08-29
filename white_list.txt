@@ -9,3 +9,5 @@ dfs.client.socket-timeout hdfs:DataNode
 mapreduce.job.reduces mapreduce:MapTask
 yarn.scheduler.maximum-allocation-mb yarn:ResourceManager
 yarn.scheduler.maximum-allocation-vcores yarn:ResourceManager
+mapreduce.fileoutputcommitter.algorithm.version mapreduce:MapTask
+mapreduce.fileoutputcommitter.algorithm.version mapreduce:ReduceTask
