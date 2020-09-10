@@ -12,7 +12,7 @@ public class Controller {
     private static String workingRootDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/";
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
-    protected static int RECHECK_TIMES = 5;
+    protected static int RECHECK_TIMES = 1;
 
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
@@ -147,11 +147,11 @@ public class Controller {
             myPrint("succeed.");
             return null;
         } else {
-            myPrint("fail. do " + Controller.RECHECK_TIMES + " v1v1 v2v2 tests to filter false alarm");
+            //myPrint("fail. do " + Controller.RECHECK_TIMES + " v1v1 v2v2 tests to filter false alarm");
         }
       
         myPrint("failed v1v2 test: " + tr.unitTest + " v1 " + tr.v1 + " v2 " + tr.v2);
-        int i = 0;
+        /*int i = 0;
         for (; i<Controller.RECHECK_TIMES; i++) {
             TestResult v1v1Tr = new TestResult(tr);
             testCore("v1v1", v1v1Tr);
@@ -168,7 +168,7 @@ public class Controller {
         }
         if (i == Controller.RECHECK_TIMES) {
            myPrint("v1v1 and v2v2 succeed for " + Controller.RECHECK_TIMES + " times, it is issue");
-        }
+        }*/
 	return v1v2Tr;
     }
 

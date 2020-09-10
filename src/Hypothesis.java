@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 public class Hypothesis extends Controller {
 
     private static double adhocThreshold = 1.0;
-    private static int earlyStopThreshold = 10;
+    private static int earlyStopThreshold = 4;
 
     public static void hypothesisTestLogic(int repeats, TestResult tr) {    
 	int v1v2FailedCount = 0; 
@@ -21,7 +21,9 @@ public class Hypothesis extends Controller {
         myPrint(tr.toString());
         
         for (i=0; i<repeats; i++) {
-	    if (v1v2FailedCount >= earlyStopThreshold && v1v1v2v2FailedCount == 0)  {
+	    if ( (v1v2FailedCount >= earlyStopThreshold && v1v1v2v2FailedCount == 0) ||
+                    (i >= earlyStopThreshold && v1v2FailedCount == 0) || 
+                    v1v1v2v2FailedCount >= earlyStopThreshold )  {
 		myPrint("early stop after " + earlyStopThreshold + " is satisfied");
 		earlyStop = true;
 		break;
