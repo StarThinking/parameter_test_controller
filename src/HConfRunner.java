@@ -2,53 +2,16 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class HConfRunner extends Controller {
-
-    /*public static class HUnit {
-	String parameter = "";
-        String component = "";
-        String point = "";
-        String v1 = "";
-        String v2 = "";
-
-        public HUnit(String _p, String _c, String _point, String _v1, String _v2) {
-            this.parameter = _p;
-            this.component = _c;
-            this.point = _point;
-            this.v1 = _v1;
-            this.v2 = _v2;
-        }
-
-        public static List<HUnit> convertStr2List(List<String> str_list) {
-            List<HUnit> h_list = new ArrayList<HUnit>();
-            for (String one_str : str_list) {
-                String[] fields = one_str.trim().split(",");
-                if (fields.length != 5) {
-                    System.out.println("ERROR: wrong length of hunit string");
-                    System.exit(1);
-                }
-                HUnit unit = new HUnit(fields[0], fields[1], fields[2], fields[3], fields[4]);
-                h_list.add(unit);
-            }
-            return h_list;
-        }
-
-        public static String
-
-        public String toString() {
-            return parameter + "," + component + "," + point + "," + v1 + "," + v2;
-        }
-    }*/
-
     // if is not an issue, return null;
     // if is an issue, return v1v2 TestResult
     public static TestResult testLogic(TestResult tr) {
         TestResult v1v2Tr = new TestResult(tr); // clone to create v1v2 test
         testCore("v1v2", v1v2Tr);
         if (v1v2Tr.result.equals("1")) {
-            myPrint("v1v2 test succeeded.");
+            System.out.println("v1v2 test succeeded.");
             return null;
         } else {
-            myPrint("v1v2 test failed.");
+            System.out.println("v1v2 test failed.");
             return v1v2Tr;
         }
     }
@@ -81,47 +44,33 @@ public class HConfRunner extends Controller {
         h_list = sb.toString();
 
         // display arguments
-        //System.out.println("proj=" + proj + ", u_test=" + u_test);
-        //System.out.println("h_list=" + h_list);
-        //System.out.println("h_list size=" + h_list.split(" ").length);
+        System.out.println("proj=" + proj);
+        System.out.println("u_test=" + u_test);
+        System.out.println("h_list=" + h_list);
+        System.out.println("h_list size=" + h_list.split(" ").length + "\n");
        
         TestResult tr = new TestResult(proj, u_test, h_list);
 	if (!TestResult.isValid(tr)) {
-	    myPrint("ERROR: invalid TestResult");
+	    System.out.println("ERROR: invalid TestResult");
 	    System.exit(1);
 	}
-
-        // set run log
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
-        String dateTime = formatter.format(date);
-        String runLogPath = Controller.systemRootDir + "target/" + tr.getHashId() + 
-	    "_run_" + dateTime + ".txt";
-        Controller.setLogger(runLogPath);
  
 	startTime = System.nanoTime();
-        myPrint(tr.toString());
+        System.out.println(tr.toString());
         TestResult issue = testLogic(tr);
         if (issue != null) {
-            myPrint("---------------------------------------" +
-                "full report---------------------------------------------");
-            myPrint(issue.completeInfo());
+            System.out.println("---------------------------------------" +
+                "run report---------------------------------------------");
+            System.out.println(issue.completeInfo());
+            rc = 1;
         } else {
-            myPrint("no issue");
+            System.out.println("no issue");
+            rc = 0;
         }
         endTime = System.nanoTime();
         timeElapsed = endTime - startTime;
-        myPrint("Total execution time in seconds : " + timeElapsed / 1000000000);
-	if (issue == null) { // no issue
-	    myPrint("0");
-	    rc = 0;
-	} else {
-	    myPrint("1");
-	    rc = 1;
-	}
-
-        Controller.stopLogger();
-
+        System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
+	
 	System.exit(rc);
     }
 }

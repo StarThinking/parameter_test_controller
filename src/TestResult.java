@@ -42,18 +42,13 @@ public class TestResult {
             "stackTrace: " + stackTrace + "\n";
     }
 
-    public int getHashId() {
-        String str = proj + u_test + h_list;
-        return str.hashCode();
-    }
-    
     public static TestResult getTestResultByName(List<TestResult> list, String name) {
         for (TestResult t : list) {
             if (t.u_test.equals(name))
                 return t;
         }
         // error
-        Controller.myPrint("Error: name " + name + " cannot be found in the list");
+        System.out.println("Error: name " + name + " cannot be found in the list");
         return null;
     }
 
@@ -66,12 +61,12 @@ public class TestResult {
 
     public static boolean isValid(TestResult tr) {
         if (!tr.proj.equals("hdfs") && !tr.proj.equals("yarn") && !tr.proj.equals("mapreduce") && !tr.proj.equals("hadoop-tools") && !tr.proj.equals("hbase")) {
-    	Controller.myPrint("ERROR: wrong proj " + tr.proj);
+    	System.out.println("ERROR: wrong proj " + tr.proj);
     	return false;
         }
 
         if (tr.u_test == null || tr.u_test.equals("")) {
-    	Controller.myPrint("ERROR: wrong unit test " + tr.u_test);
+    	System.out.println("ERROR: wrong unit test " + tr.u_test);
             return false;
         }
         return true;

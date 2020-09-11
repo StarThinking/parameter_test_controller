@@ -26,7 +26,7 @@ public class Controller {
             List<String> updatedTests = new ArrayList<String>();
             for (File f : testResultDir.listFiles()) {
                 if (f.isFile()) {
-                    //myPrint("updating test result for " + f.getName());
+                    //System.out.println("updating test result for " + f.getName());
                     BufferedReader reader = new BufferedReader(new FileReader(f));
                     String buffer = "";
                     StringBuilder sb = new StringBuilder("");  
@@ -38,22 +38,22 @@ public class Controller {
                     reader.close();
                     String[] contents = sb.toString().trim().split(SEPERATOR);
                     if (contents.length != TestResult.NumOfFieldsFromFile) {
-                        myPrint("ERROR: the content for " + f.getName() + " is wrong, length = " + contents.length);
-                        myPrint("Content: ");
-                        myPrint(sb.toString());
+                        System.out.println("ERROR: the content for " + f.getName() + " is wrong, length = " + contents.length);
+                        System.out.println("Content: ");
+                        System.out.println(sb.toString());
                         continue;
                     } else {
                         String testName = contents[0];
                         TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
                         if (testResult == null) {
-                            myPrint("Error: cannot find testResult by test name " + testName);
+                            System.out.println("Error: cannot find testResult by test name " + testName);
                             continue;
                         } else {
                             testResult.result = contents[1];
                             testResult.failureMessage = contents[2];
                             testResult.stackTrace = contents[3];
                             updatedTests.add(testName);
-                            //myPrint(testResult.completeInfo());
+                            //System.out.println(testResult.completeInfo());
                         }
                     }
                 }
@@ -69,7 +69,7 @@ public class Controller {
                         break;
                 }
                 if (!found) {
-                    myPrint("Warn: test " + t + " has not been updated !");
+                    System.out.println("Warn: test " + t + " has not been updated !");
                     //System.exit(-1);
                 }
             }
@@ -90,11 +90,11 @@ public class Controller {
         String line = "";
         while ((line = reader.readLine()) != null) {
     	    ;
-    	    //myPrint(line);
+    	    //System.out.println(line);
         }
         reader.close();
         if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
-    	    myPrint("WARN: wait process timeout!");
+    	    System.out.println("WARN: wait process timeout!");
 		process.destroy(); // consider using destroyForcibly instead
         }
         exitCode = process.exitValue();
@@ -105,7 +105,7 @@ public class Controller {
 
         // override result with cmd exit code
         if ((exitCode == 0 && tr.result.equals("-1")) || (exitCode != 0 && tr.result.equals("1"))) {
-            myPrint("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
+            System.out.println("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
         }
        
         // update test result
@@ -122,49 +122,18 @@ public class Controller {
             cleanUpSharedFiles();
             setupTestTuple(vvMode, tr);
             runMvnCmd(tr);
-            myPrint("tr.result is " + tr.result);
+            System.out.println("tr.result is " + tr.result);
             cleanUpSharedFiles();
         } catch(Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
-
-    public static void setLogger(String logPath) {
-        try {       
-            runLogWriter = new BufferedWriter(new FileWriter(new File(logPath), true));
-        } catch(Exception e) { 
-            e.printStackTrace();
-        } 
-    }
-    
-    public static void stopLogger() {
-        try {
-            runLogWriter.close();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void myPrint(String str) {
-        System.out.println(str);
-        if (runLogWriter == null) {
-            System.out.println("runLogWriter is still null");
-            return;
-        } else {
-            try {
-                runLogWriter.write(str + System.lineSeparator());
-                runLogWriter.flush();
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-  
+ 
     private static void setupTestTuple(String vvMode, TestResult tr) throws Exception {
 	if (!vvMode.equals("v1v1") && !vvMode.equals("v2v2") && !vvMode.equals("v1v2") && 
                 !vvMode.equals("none")) {
-	    myPrint("ERROR, wrong mode " + vvMode);
+	    System.out.println("ERROR, wrong mode " + vvMode);
 	    System.exit(1);
 	} else {
             BufferedWriter writer = null;
