@@ -17,11 +17,7 @@ public class Controller {
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
     private static String vvModeFileName = systemRootDir + "shared/reconf_vvmode";
-    private static String parameterFileName = systemRootDir + "shared/reconf_parameter";
-    private static String componentFileName = systemRootDir + "shared/reconf_component";
-    private static String v1FileName = systemRootDir + "shared/reconf_v1";
-    private static String v2FileName = systemRootDir + "shared/reconf_v2";
-    private static String reconfPointFileName = systemRootDir + "shared/reconf_point";
+    private static String hListFileName = systemRootDir + "shared/reconf_h_list";
     
     private static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
@@ -42,7 +38,7 @@ public class Controller {
                     reader.close();
                     String[] contents = sb.toString().trim().split(SEPERATOR);
                     if (contents.length != TestResult.NumOfFieldsFromFile) {
-                        myPrint("Error: the content for " + f.getName() + " is wrong, length = " + contents.length);
+                        myPrint("ERROR: the content for " + f.getName() + " is wrong, length = " + contents.length);
                         myPrint("Content: ");
                         myPrint(sb.toString());
                         continue;
@@ -83,93 +79,55 @@ public class Controller {
         }
     }
     
-    private static void runMvnCmd(TestResult tr) {
-        try {
-            int exitCode = -1;
-	    //String systemLogSavingDir = "/root/reconf_test_gen/target";
-	    String systemLogSavingDir = "none";
-            ProcessBuilder builder = new ProcessBuilder();
-   	    builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.testProject, tr.unitTest, systemLogSavingDir);
-	    Process process = builder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-	    String line = "";
-	    while ((line = reader.readLine()) != null) {
-		;
-		//myPrint(line);
-	    }
-	    reader.close();
-	    if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
-		myPrint("Warn: wait process timeout!");
-    		process.destroy(); // consider using destroyForcibly instead
-	    }
-            exitCode = process.exitValue();
-           
-            List<TestResult> testResultList = new ArrayList<TestResult>();
-            testResultList.add(tr);
-            updateTestResult(testResultList);
-
-	    // override result with cmd exit code
-	    if ((exitCode == 0 && tr.result.equals("-1")) || (exitCode != 0 && tr.result.equals("1"))) {
-	        myPrint("Warn: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
-	    }
-	   
-	    if (exitCode == 0)
-		tr.result = "1";
-	    else
-		tr.result = "-1";
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
+    private static void runMvnCmd(TestResult tr) throws Exception {
+        int exitCode = -1;
+        //String systemLogSavingDir = "/root/reconf_test_gen/target";
+        String systemLogSavingDir = "none";
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
+        Process process = builder.start();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line = "";
+        while ((line = reader.readLine()) != null) {
+    	    ;
+    	    //myPrint(line);
         }
+        reader.close();
+        if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
+    	    myPrint("WARN: wait process timeout!");
+		process.destroy(); // consider using destroyForcibly instead
+        }
+        exitCode = process.exitValue();
+       
+        List<TestResult> testResultList = new ArrayList<TestResult>();
+        testResultList.add(tr);
+        updateTestResult(testResultList);
+
+        // override result with cmd exit code
+        if ((exitCode == 0 && tr.result.equals("-1")) || (exitCode != 0 && tr.result.equals("1"))) {
+            myPrint("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
+        }
+       
+        // update test result
+        if (exitCode == 0)
+    	    tr.result = "1";
+        else
+    	    tr.result = "-1";
     }
 
     // update directly at TestResult tr
     public static void testCore(String vvMode, TestResult tr) {
-        if (tr.unitTest == null || tr.unitTest.equals("")) {
+        try {
+            // clean before and after each test
+            cleanUpSharedFiles();
+            setupTestTuple(vvMode, tr);
+            runMvnCmd(tr);
+            myPrint("tr.result is " + tr.result);
+            cleanUpSharedFiles();
+        } catch(Exception e) {
+            e.printStackTrace();
             System.exit(1);
         }
-        
-        myPrint("\nTest vvMode=" + vvMode); 
-        cleanUpSharedFiles();
-        setupTestTuple(vvMode, tr);
-        runMvnCmd(tr);
-        myPrint("tr.result is " + tr.result);
-        return;
-    }
-     
-    // if succeed, return null; otherwise, return v1v2 TestResult
-    public static TestResult testLogic(TestResult tr) {
-        // do v1v2 test
-        TestResult v1v2Tr = new TestResult(tr);
-        testCore("v1v2", v1v2Tr);
-        if (v1v2Tr.result.equals("1")) {
-            myPrint("succeed.");
-            return null;
-        } else {
-            //myPrint("fail. do " + Controller.RECHECK_TIMES + " v1v1 v2v2 tests to filter false alarm");
-        }
-      
-        myPrint("failed v1v2 test: " + tr.unitTest + " v1 " + tr.v1 + " v2 " + tr.v2);
-        /*int i = 0;
-        for (; i<Controller.RECHECK_TIMES; i++) {
-            TestResult v1v1Tr = new TestResult(tr);
-            testCore("v1v1", v1v1Tr);
-            if (v1v1Tr.result.equals("-1")) {
-                myPrint("v1v1 failed with v1 " + v1v1Tr.v1 + ", no issue.");
-                return null;
-            }
-            TestResult v2v2Tr = new TestResult(tr);
-            testCore("v2v2", v2v2Tr);
-            if (v2v2Tr.result.equals("-1")) {
-                myPrint("v1v1 failed with v2 " + v2v2Tr.v2 + ", no issue.");
-                return null;
-            }
-        }
-        if (i == Controller.RECHECK_TIMES) {
-           myPrint("v1v1 and v2v2 succeed for " + Controller.RECHECK_TIMES + " times, it is issue");
-        }*/
-	return v1v2Tr;
     }
 
     public static void setLogger(String logPath) {
@@ -193,63 +151,41 @@ public class Controller {
         if (runLogWriter == null) {
             System.out.println("runLogWriter is still null");
             return;
-        }
-        try {
-            runLogWriter.write(str + System.lineSeparator());
-            runLogWriter.flush();
-        } catch(Exception e) {
-            e.printStackTrace();
+        } else {
+            try {
+                runLogWriter.write(str + System.lineSeparator());
+                runLogWriter.flush();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
         }
     }
   
-    private static void setupTestTuple(String vvMode, TestResult tr) {
-	if (!vvMode.equals("v1v1") && !vvMode.equals("v2v2") && !vvMode.equals("v1v2") && !vvMode.equals("none")) {
-	    myPrint("Error, wrong mode " + vvMode);
+    private static void setupTestTuple(String vvMode, TestResult tr) throws Exception {
+	if (!vvMode.equals("v1v1") && !vvMode.equals("v2v2") && !vvMode.equals("v1v2") && 
+                !vvMode.equals("none")) {
+	    myPrint("ERROR, wrong mode " + vvMode);
 	    System.exit(1);
-	}
-        try {
-            BufferedWriter writer1 = new BufferedWriter(new FileWriter(new File(parameterFileName)));
-            writer1.write(tr.parameter);
-            writer1.close();
+	} else {
+            BufferedWriter writer = null;
+            writer = new BufferedWriter(new FileWriter(new File(hListFileName)));
+            writer.write(tr.h_list);
+            writer.close();
             
-	    BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File(componentFileName)));
-            writer2.write(tr.component);
-            writer2.close();
-            
-            BufferedWriter writer3 = new BufferedWriter(new FileWriter(new File(vvModeFileName)));
-            writer3.write(vvMode);
-            writer3.close();
-            
-            BufferedWriter writer4 = new BufferedWriter(new FileWriter(new File(v1FileName)));
-            writer4.write(tr.v1);
-            writer4.close();
-            
-            BufferedWriter writer5 = new BufferedWriter(new FileWriter(new File(v2FileName)));
-            writer5.write(tr.v2);
-            writer5.close();
-            
-            BufferedWriter writer6 = new BufferedWriter(new FileWriter(new File(reconfPointFileName)));
-            writer6.write(tr.reconfPoint);
-            writer6.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
+            writer = new BufferedWriter(new FileWriter(new File(vvModeFileName)));
+            writer.write(vvMode);
+            writer.close();
         }
     }
 
-    private static void cleanUpSharedFiles() {
-        try {
-            File testResultDir = new File(testResultDirName);
-            for (File testResult : testResultDir.listFiles()) {
-                if (testResult.isFile()) {
-                    testResult.delete();
-                }
-            }
-            TestResult empty = new TestResult("", "", "", "", "", "", "");
-            setupTestTuple("none", empty);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+    private static void cleanUpSharedFiles() throws Exception {
+       File testResultDir = new File(testResultDirName);
+       for (File testResult : testResultDir.listFiles()) {
+           if (testResult.isFile()) {
+               testResult.delete();
+           }
+       }
+       TestResult empty = new TestResult("", "", "");
+       setupTestTuple("none", empty);
     }
 }

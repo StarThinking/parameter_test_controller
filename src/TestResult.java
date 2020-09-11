@@ -1,100 +1,80 @@
 import java.util.*;
 
 public class TestResult {
-        public String parameter = "";
-        public String component = "";
-        public String v1 = "";
-        public String v2 = "";
-	public String testProject = "";
-        public String unitTest = "";
-        public String reconfPoint = "";
-        
-	public String result = "";
-        public String failureMessage = "";
-        public String stackTrace = "";
-        
-        public static final int NumOfFieldsFromFile = 4;
+    // test info
+    public String proj = "";
+    public String u_test = "";
+    public String h_list = "";
+   
+    // test result info
+    public String result = "";
+    public String failureMessage = "";
+    public String stackTrace = "";
+    
+    public static final int NumOfFieldsFromFile = 4;
 
-        public TestResult(TestResult origin) {
-            this.parameter = origin.parameter;
-            this.component = origin.component;
-            this.v1 = origin.v1;
-            this.v2 = origin.v2;
-	    this.testProject = origin.testProject;
-            this.unitTest = origin.unitTest;
-            this.reconfPoint = origin.reconfPoint;
-            // 1: succeed -1:failed
-            this.result = origin.result; // some tests may not complete, so treat no result as failed
-        }
-
-        public TestResult(String parameter, String component, String v1, String v2, String testProject,
-			String unitTest, String reconfPoint) {
-            this.parameter = parameter;
-            this.component = component;
-            this.v1 = v1;
-            this.v2 = v2;
-	    this.testProject = testProject;
-            this.unitTest = unitTest;
-            this.reconfPoint = reconfPoint;
-            // 1: succeed -1:failed
-            this.result = "-1"; // some tests may not complete, so treat no result as failed
-        }
-
-        @Override
-        public String toString() {
-            return "reconf_parameter: " + parameter + "\n" +
-                "component: " + component + "\n" +
-                "v1: " + v1 + "\n" +
-                "v2: " + v2 + "\n" +
-                "testProject: " + testProject + "\n" +
-                "unitTest: " + unitTest + "\n" +
-                "reconfPoint: " + reconfPoint + "\n" +
-                "result: " + result;
-        }
-        
-        public String completeInfo() {
-            return this.toString() + "\n" +
-                "failureMessage: " + failureMessage + "\n" +
-                "stackTrace: " + stackTrace + "\n";
-        }
-
-        public String veryShortName() {
-            return parameter + "%" + unitTest;
-        }
-        
-        public String shortName() {
-            return parameter + "%" + testProject + "%" + unitTest + "%" + 
-		   component + "%" + reconfPoint + "%" + v1 + "%" + v2;
-        }
-        
-        public static TestResult getTestResultByName(List<TestResult> list, String name) {
-            for (TestResult t : list) {
-                if (t.unitTest.equals(name))
-                    return t;
-            }
-            // error
-            Controller.myPrint("Error: name " + name + " cannot be found in the list");
-            return null;
-        }
-
-        public static List<String> getTestNames(List<TestResult> list) {
-            List<String> names = new ArrayList<String>();
-            for (TestResult t : list)
-                names.add(t.unitTest);
-            return names;
-        }
-
-        public static boolean isValid(TestResult tr) {
-	    if (!tr.testProject.equals("hdfs") && !tr.testProject.equals("yarn") && !tr.testProject.equals("mapreduce")
-	        && !tr.testProject.equals("hadoop-tools") && !tr.testProject.equals("hbase")) {
-		Controller.myPrint("Error: wrong testProject " + tr.testProject);
-		return false;
-	    }
-            //if (!tr.component.equals("NameNode") && !tr.component.equals("DataNode") && !tr.component.equals("JournalNode")) {
-            //    Controller.myPrint("Error: wrong component " + tr.component);
-            //    return false;
-            //}
-            return true;
-        }
+    public TestResult(String p, String t, String l) {
+        this.proj = p;
+        this.u_test = t;
+        this.h_list = l;
+        // 1: succeed -1:failed, assign failed as default
+        this.result = "-1"; 
     }
+
+    public TestResult(TestResult origin) {
+        this.proj = origin.proj;
+        this.u_test = origin.u_test;
+        this.h_list = origin.h_list;
+        this.result = origin.result;
+    }
+
+    @Override
+    public String toString() {
+        return "proj: " + proj + "\n" +
+            "u_test: " + u_test + "\n" +
+            "h_list: " + h_list;
+    }
+    
+    public String completeInfo() {
+        return this.toString() + "\n" +
+            "result: " + result + "\n" +
+            "failureMessage: " + failureMessage + "\n" +
+            "stackTrace: " + stackTrace + "\n";
+    }
+
+    public int getHashId() {
+        String str = proj + u_test + h_list;
+        return str.hashCode();
+    }
+    
+    public static TestResult getTestResultByName(List<TestResult> list, String name) {
+        for (TestResult t : list) {
+            if (t.u_test.equals(name))
+                return t;
+        }
+        // error
+        Controller.myPrint("Error: name " + name + " cannot be found in the list");
+        return null;
+    }
+
+    public static List<String> getTestNames(List<TestResult> list) {
+        List<String> names = new ArrayList<String>();
+        for (TestResult t : list)
+            names.add(t.u_test);
+        return names;
+    }
+
+    public static boolean isValid(TestResult tr) {
+        if (!tr.proj.equals("hdfs") && !tr.proj.equals("yarn") && !tr.proj.equals("mapreduce") && !tr.proj.equals("hadoop-tools") && !tr.proj.equals("hbase")) {
+    	Controller.myPrint("ERROR: wrong proj " + tr.proj);
+    	return false;
+        }
+
+        if (tr.u_test == null || tr.u_test.equals("")) {
+    	Controller.myPrint("ERROR: wrong unit test " + tr.u_test);
+            return false;
+        }
+        return true;
+    }
+}
 
