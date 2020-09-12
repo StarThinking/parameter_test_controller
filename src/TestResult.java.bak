@@ -5,34 +5,36 @@ public class TestResult {
     public String proj = "";
     public String u_test = "";
     public String h_list = "";
-   
+    
+    public String vv_mode = "none";
+
     // test result info
-    public String result = "";
+    public RunnerCore.RETURN ret = RETURN.FAIL; // 1: succeed -1:failed, assign failed as default
     public String failureMessage = "";
     public String stackTrace = "";
     
     public static final int NumOfFieldsFromFile = 4;
 
+    public TestResult() {
+        this("", "", "");
+    }
+    
+    public TestResult(TestResult o) {
+        this(o.p, o.t, o.l);
+    }
+    
     public TestResult(String p, String t, String l) {
         this.proj = p;
         this.u_test = t;
         this.h_list = l;
-        // 1: succeed -1:failed, assign failed as default
-        this.result = "-1"; 
-    }
-
-    public TestResult(TestResult origin) {
-        this.proj = origin.proj;
-        this.u_test = origin.u_test;
-        this.h_list = origin.h_list;
-        this.result = origin.result;
     }
 
     @Override
     public String toString() {
         return "proj: " + proj + "\n" +
             "u_test: " + u_test + "\n" +
-            "h_list: " + h_list;
+            "h_list: " + h_list + "\n" +
+            "vv_mode: " + vv_mode;
     }
     
     public String completeInfo() {
@@ -59,14 +61,21 @@ public class TestResult {
         return names;
     }
 
-    public static boolean isValid(TestResult tr) {
-        if (!tr.proj.equals("hdfs") && !tr.proj.equals("yarn") && !tr.proj.equals("mapreduce") && !tr.proj.equals("hadoop-tools") && !tr.proj.equals("hbase")) {
-    	System.out.println("ERROR: wrong proj " + tr.proj);
-    	return false;
+    public boolean isValid() {
+        if (!proj.equals("hdfs") && !proj.equals("yarn") && !proj.equals("mapreduce") && 
+            !proj.equals("hadoop-tools") && !proj.equals("hbase")) {
+    	    System.out.println("ERROR: wrong proj " + proj);
+    	    return false;
         }
 
-        if (tr.u_test == null || tr.u_test.equals("")) {
-    	System.out.println("ERROR: wrong unit test " + tr.u_test);
+        if (u_test == null || u_test.equals("")) {
+    	    System.out.println("ERROR: wrong unit test " + u_test);
+            return false;
+        }
+
+        if (!vv_mode.equals("none") && !vv_mode.equals("v1v1") && !vv_mode.equals("v2v2") &&
+            !vv_mode.equals("v1v2")) {
+    	    System.out.println("ERROR: wrong vv_mode " + vv_mode);
             return false;
         }
         return true;

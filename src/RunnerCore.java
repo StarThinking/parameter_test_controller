@@ -7,18 +7,101 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class Controller {
-
-    private static String workingRootDir = "/root/hadoop-3.1.2-src/hadoop-hdfs-project/";
+public class RunnerCore {
     protected static String systemRootDir = "/root/parameter_test_controller/";
     protected static BufferedWriter runLogWriter = null;
-    protected static int RECHECK_TIMES = 1;
 
     /* shared files */
     private static String testResultDirName = systemRootDir + "shared/test_results";
     private static String vvModeFileName = systemRootDir + "shared/reconf_vvmode";
     private static String hListFileName = systemRootDir + "shared/reconf_h_list";
-    
+
+    public enum RETURN {
+        SUCCEED,FAIL
+    }
+
+    public static class TestResult {
+        // test info
+        public String proj = "";
+        public String u_test = "";
+        public String h_list = "";
+
+        public String vv_mode = "none";
+
+        // test result info
+        public RETURN ret = RETURN.FAIL; // 1: succeed -1:failed, assign failed as default
+        public String failureMessage = "";
+        public String stackTrace = "";
+
+        public static final int NumOfFieldsFromFile = 4;
+
+        public TestResult() {
+            this("", "", "");
+        }
+
+        public TestResult(TestResult o) {
+            this(o.proj, o.u_test, o.h_list);
+        }
+
+        public TestResult(String proj, String u_test, String h_list) {
+            this.proj = proj;
+            this.u_test = u_test;
+            this.h_list = h_list;
+        }
+
+        @Override
+        public String toString() {
+            return "proj: " + proj + "\n" +
+                "u_test: " + u_test + "\n" +
+                "h_list: " + h_list;
+        }
+
+        public String completeInfo() {
+            return this.toString() + "\n" +
+                "vv_mode: " + vv_mode + "\n" +
+                "result: " + ret + "\n" +
+                "failureMessage: " + failureMessage + "\n" +
+                "stackTrace: " + stackTrace + "\n";
+        }
+
+        public static TestResult getTestResultByName(List<TestResult> list, String name) {
+            for (TestResult t : list) {
+                if (t.u_test.equals(name))
+                    return t;
+            }
+            // error
+            System.out.println("Error: name " + name + " cannot be found in the list");
+            return null;
+        }
+
+        public static List<String> getTestNames(List<TestResult> list) {
+            List<String> names = new ArrayList<String>();
+            for (TestResult t : list)
+                names.add(t.u_test);
+            return names;
+        }
+
+        public boolean isValid() {
+            if (!proj.equals("hdfs") && !proj.equals("yarn") && !proj.equals("mapreduce") &&
+                !proj.equals("hadoop-tools") && !proj.equals("hbase")) {
+        	    System.out.println("ERROR: wrong proj " + proj);
+        	    return false;
+            }
+
+            if (u_test == null || u_test.equals("")) {
+        	    System.out.println("ERROR: wrong unit test " + u_test);
+                return false;
+            }
+
+            if (!vv_mode.equals("none") && !vv_mode.equals("v1v1") && !vv_mode.equals("v2v2") &&
+                !vv_mode.equals("v1v2")) {
+        	    System.out.println("ERROR: wrong vv_mode " + vv_mode);
+                return false;
+            }
+            return true;
+        }
+    }
+
     private static void updateTestResult(List<TestResult> testResultList) {
         String SEPERATOR = "@@@";
         try {
@@ -38,7 +121,8 @@ public class Controller {
                     reader.close();
                     String[] contents = sb.toString().trim().split(SEPERATOR);
                     if (contents.length != TestResult.NumOfFieldsFromFile) {
-                        System.out.println("ERROR: the content for " + f.getName() + " is wrong, length = " + contents.length);
+                        System.out.println("ERROR: the content for " + f.getName() + " is wrong, length = "
+                            + contents.length);
                         System.out.println("Content: ");
                         System.out.println(sb.toString());
                         continue;
@@ -46,10 +130,13 @@ public class Controller {
                         String testName = contents[0];
                         TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
                         if (testResult == null) {
-                            System.out.println("Error: cannot find testResult by test name " + testName);
+                            System.out.println("ERROR: cannot find testResult by test name " + testName);
                             continue;
                         } else {
-                            testResult.result = contents[1];
+                            if (contents[1].equals("1"))
+                                testResult.ret = RETURN.SUCCEED;
+                            else 
+                                testResult.ret = RETURN.FAIL;
                             testResult.failureMessage = contents[2];
                             testResult.stackTrace = contents[3];
                             updatedTests.add(testName);
@@ -69,7 +156,7 @@ public class Controller {
                         break;
                 }
                 if (!found) {
-                    System.out.println("Warn: test " + t + " has not been updated !");
+                    System.out.println("WARN: test " + t + " has not been updated !");
                     //System.exit(-1);
                 }
             }
@@ -104,47 +191,41 @@ public class Controller {
         updateTestResult(testResultList);
 
         // override result with cmd exit code
-        if ((exitCode == 0 && tr.result.equals("-1")) || (exitCode != 0 && tr.result.equals("1"))) {
-            System.out.println("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.result);
+        if ((exitCode == 0 && tr.ret == RETURN.FAIL) || (exitCode != 0 && tr.ret == RETURN.SUCCEED)) {
+            System.out.println("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.ret);
         }
        
         // update test result
-        if (exitCode == 0)
-    	    tr.result = "1";
-        else
-    	    tr.result = "-1";
+        if (exitCode == 0) {
+    	    tr.ret = RETURN.SUCCEED;
+        } else {
+    	    tr.ret = RETURN.FAIL;
+        }
     }
 
     // update directly at TestResult tr
-    public static void testCore(String vvMode, TestResult tr) {
+    public static void runTestCore(TestResult tr) {
         try {
             // clean before and after each test
             cleanUpSharedFiles();
-            setupTestTuple(vvMode, tr);
+            setupTestTuple(tr);
             runMvnCmd(tr);
-            System.out.println("tr.result is " + tr.result);
-            cleanUpSharedFiles();
+            //cleanUpSharedFiles();
         } catch(Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
  
-    private static void setupTestTuple(String vvMode, TestResult tr) throws Exception {
-	if (!vvMode.equals("v1v1") && !vvMode.equals("v2v2") && !vvMode.equals("v1v2") && 
-                !vvMode.equals("none")) {
-	    System.out.println("ERROR, wrong mode " + vvMode);
-	    System.exit(1);
-	} else {
-            BufferedWriter writer = null;
-            writer = new BufferedWriter(new FileWriter(new File(hListFileName)));
-            writer.write(tr.h_list);
-            writer.close();
-            
-            writer = new BufferedWriter(new FileWriter(new File(vvModeFileName)));
-            writer.write(vvMode);
-            writer.close();
-        }
+    private static void setupTestTuple(TestResult tr) throws Exception {
+        BufferedWriter writer = null;
+        writer = new BufferedWriter(new FileWriter(new File(hListFileName)));
+        writer.write(tr.h_list);
+        writer.close();
+       
+        writer = new BufferedWriter(new FileWriter(new File(vvModeFileName)));
+        writer.write(tr.vv_mode);
+        writer.close();
     }
 
     private static void cleanUpSharedFiles() throws Exception {
@@ -154,7 +235,7 @@ public class Controller {
                testResult.delete();
            }
        }
-       TestResult empty = new TestResult("", "", "");
-       setupTestTuple("none", empty);
+       TestResult empty = new TestResult();
+       setupTestTuple(empty);
     }
 }

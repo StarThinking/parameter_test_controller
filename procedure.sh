@@ -13,23 +13,54 @@ echo 'true' > ~/reconf_test_gen/lib/enable
 #    echo "found in white list as $parameter $component, skip this test"
 #    exit 0
 #fi
+
 proj=$1
 u_test=$2
 shift 2
+hypo_max_repeats=30
+LOG_TIME="$(($(date +%s%N)/1000000))"
 
-#echo $@ | tr " " "\n" | while read line; do
-#echo $line;
-#done
-#exit 0
+# argument $@ is h_list: "para,component,point,v1,v2 para,component,point,v1,v2"
+function test_procedure {   
+    echo "args: $@"
+    conbime_type=""
+    OLDIFS=$IFS
+    task_array=()
+    IFS='%%%' read -ra task_array <<< "$@"
+    IFS=$OLDIFS
+    h_list_size=$(echo ${task_array[@]} | tr ' ' '\n' | wc -l)
+    echo "h_list_size = $h_list_size"
 
-java -cp /root/parameter_test_controller/target/ HConfRunner $proj $u_test $@ > /root/parameter_test_controller/target/"$proj.$u_test.$(($(date +%s%N)/1000000)).$RANDOM.combine_run.txt"
-tester_rc=$?
+    if [ $h_list_size -eq 1 ]; then
+        conbime_type="single"
+    elif [ $h_list_size -ge 2 ]; then
+        conbime_type="combine"
+    else
+        echo "ERROR: h_list_size $h_list_size is wrong!"
+    fi
+    
+    echo "";
+    echo ">>>>>>>> running $conbime_type run_test for $(echo $@ | awk -F '@@@|%%%' '{for (i=1;i<=NF;i+=5) print $i}' | tr "\n" ",")"
+    java -cp /root/parameter_test_controller/target/ HConfRunner 'run' $proj $u_test $@ > /root/parameter_test_controller/target/"$proj.$u_test.$LOG_TIME."$conbime_type"_run_$RANDOM$RANDOM.txt"
+    run_rc=$?
+    echo "run_rc is $run_rc"
+    if [ $run_rc -eq 0 ]; then
+        echo "no issue, bye bye."
+        return 0;
+    else
+        if [ $conbime_type == "single" ] ; then
+            echo "";
+            echo ">>>>>>>> running $conbime_type hypo_test for $(echo $@ | awk -F '@@@|%%%' '{for (i=1;i<=NF;i+=5) print $i}' | tr "\n" ",")"
+            java -cp /root/parameter_test_controller/target/ HConfRunner 'hypothesis' $proj $u_test $@ > /root/parameter_test_controller/target/"$proj.$u_test.$LOG_TIME."$conbime_type"_hypothesis_$RANDOM$RANDOM.txt"
+            return 0
+        else
+            echo "";
+            echo ${task_array[@]} | tr ' ' '\n' | while read per_task; do
+                test_procedure $per_task    
+            done
+        fi
+    fi
+}
 
-echo "tester_rc is $tester_rc"
-
-if [ $tester_rc -eq 0 ]; then
-    exit 0;
-fi
-
-#repeat_times=50
-#java -cp /root/parameter_test_controller/target/ Hypothesis "$repeat_times" "$parameter" "$component" "$v1" "$v2" "$testProject" "$unitTest" "$reconfPoint"
+test_procedure $@
+echo "test_procedure returns $?"
