@@ -22,6 +22,7 @@ LOG_TIME="$(($(date +%s%N)/1000000))"
 
 # argument $@ is h_list: "para,component,point,v1,v2 para,component,point,v1,v2"
 function test_procedure {   
+    echo "";
     echo "args: $@"
     local conbime_type=""
     local OLDIFS=$IFS
@@ -54,10 +55,16 @@ function test_procedure {
             java -cp /root/parameter_test_controller/target/ HConfRunner 'hypothesis' $proj $u_test $@ > /root/parameter_test_controller/target/"$proj.$u_test.$LOG_TIME."$conbime_type"_hypothesis_$RANDOM$RANDOM.txt"
             return 0
         else
-            echo "";
-            echo ${task_array[@]} | tr ' ' '\n' | while read per_task; do
-                test_procedure $per_task    
-            done
+            local half_index=$(( h_list_size / 2))
+            echo "half_index = $half_index"
+            local first_tasks=$(echo ${task_array[@]} | awk -v first_end="$half_index" -F ' ' '{for (i=1;i<=first_end;i++) if (i != first_end) {printf "%s", $i"%%%"} else printf "%s", $i}')
+            local second_tasks=$(echo ${task_array[@]} | awk -v first_end="$half_index" -v second_end="$h_list_size" -F ' ' '{for (i=first_end+1;i<=second_end;i++) if (i != second_end) {printf "%s", $i"%%%"} else printf "%s", $i}')
+            #echo "first_tasks = $first_tasks"
+            #echo "second_tasks = $second_tasks"
+            #| awk '{for(i=0;i<2;i++) print $i}'
+            
+            test_procedure $first_tasks
+            test_procedure $second_tasks
         fi
     fi
 }
