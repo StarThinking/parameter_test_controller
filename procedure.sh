@@ -6,7 +6,7 @@ if [ $# -lt 3 ]; then
 fi
 
 # disable conf tracking
-echo 'true' > ~/reconf_test_gen/lib/enable
+echo 'false' > ~/reconf_test_gen/lib/enable
 
 # check if test is in white list
 #if [ "$(grep ^"$parameter $component"$ ~/parameter_test_controller/white_list.txt)" != "" ]; then
@@ -23,12 +23,12 @@ LOG_TIME="$(($(date +%s%N)/1000000))"
 # argument $@ is h_list: "para,component,point,v1,v2 para,component,point,v1,v2"
 function test_procedure {   
     echo "args: $@"
-    conbime_type=""
-    OLDIFS=$IFS
-    task_array=()
+    local conbime_type=""
+    local OLDIFS=$IFS
+    local task_array=()
     IFS='%%%' read -ra task_array <<< "$@"
     IFS=$OLDIFS
-    h_list_size=$(echo ${task_array[@]} | tr ' ' '\n' | wc -l)
+    local h_list_size=$(echo ${task_array[@]} | tr ' ' '\n' | wc -l)
     echo "h_list_size = $h_list_size"
 
     if [ $h_list_size -eq 1 ]; then
@@ -42,11 +42,11 @@ function test_procedure {
     echo "";
     echo ">>>>>>>> running $conbime_type run_test for $(echo $@ | awk -F '@@@|%%%' '{for (i=1;i<=NF;i+=5) print $i}' | tr "\n" ",")"
     java -cp /root/parameter_test_controller/target/ HConfRunner 'run' $proj $u_test $@ > /root/parameter_test_controller/target/"$proj.$u_test.$LOG_TIME."$conbime_type"_run_$RANDOM$RANDOM.txt"
-    run_rc=$?
+    local run_rc=$?
     echo "run_rc is $run_rc"
     if [ $run_rc -eq 0 ]; then
         echo "no issue, bye bye."
-        return 0;
+        return 0
     else
         if [ $conbime_type == "single" ] ; then
             echo "";
