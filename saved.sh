@@ -6,7 +6,7 @@ for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n);
 
 ###############
 # collect hypothesis .txt
-for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh _hypothesis_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/"; mkdir ~/parameter_test_controller/target/$i; scp node-$i:~/parameter_test_controller/target/*.txt ~/parameter_test_controller/target/$i; ssh node-$i "rm ~/parameter_test_controller/target/*.txt"; done
+for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do ssh node-$i "rm ~/parameter_test_controller/target/*.txt; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh _hypothesis_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/; ~/parameter_test_controller/container_utility_sh/docker_fetch_result.sh _run_ /root/parameter_test_controller/target/ /root/parameter_test_controller/target/;"; mkdir ~/parameter_test_controller/target/$i; scp node-$i:~/parameter_test_controller/target/*.txt ~/parameter_test_controller/target/$i; ssh node-$i "rm ~/parameter_test_controller/target/*.txt"; done
 
 # add suffix with node id
 for i in $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n); do for j in $i/*; do mv $j ./"$(echo $j | awk -F '/' '{print $2}')"_$i; done; rm -rf $i; done
