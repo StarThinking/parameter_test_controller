@@ -61,22 +61,40 @@ public class HConfRunner extends RunnerCore {
 
     private static int runTestLogic(TestResult test_basic) {
         // clone to create v1v2 test and run it
-        int rc = 0;
         TestResult v1v2Test = new TestResult(test_basic);
         v1v2Test.vv_mode = "v1v2";
         System.out.println(v1v2Test.toString());
         runTestCore(v1v2Test);
         if (v1v2Test.ret == RETURN.SUCCEED) {
             System.out.println("v1v2 test succeeded, no issue.");
-            rc = 0;
+            return 0;
         } else if (v1v2Test.ret == RETURN.FAIL) {
+            TestResult v1v1Test = new TestResult(test_basic);
+            v1v1Test.vv_mode = "v1v1";
+            runTestCore(v1v1Test);
+            if (v1v1Test.ret == RETURN.FAIL) {
+                System.out.println("v1v1 test failed, skip potential invalid value.");
+                return 0;
+            }
+            
+            TestResult v2v2Test = new TestResult(test_basic);
+            v2v2Test.vv_mode = "v2v2";
+            runTestCore(v2v2Test);
+            if (v2v2Test.ret == RETURN.FAIL) {
+                System.out.println("v2v2 test failed, skip potential invalid value.");
+                return 0;
+            }
+
+            // one-round v1v1 and v2v2 succeeded, let's do hypo test
             System.out.println("v1v2 test failed:");
             System.out.println("---------------------------------------" + MY_TYPE +
                 " report---------------------------------------------");
             System.out.println(v1v2Test.completeInfo());
-            rc = 1;
+            return 1;
         }
-        return rc;
+
+        System.out.println("ERROR: cannot reach here.");
+        return 0;
     }
 
     public static void main(String[] args) {
