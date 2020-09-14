@@ -1,0 +1,5 @@
+dfs.block.access.token.enable%hdfs:NameNode
+dfs.encrypt.data.transfer%hdfs:NameNode
+mapreduce.job.encrypted-intermediate-data%mapreduce:MapTaskRun
+mapreduce.job.encrypted-intermediate-data%mapreduce:ReduceTaskRun
+mapreduce.map.output.compress%mapreduce:MapTaskRun
