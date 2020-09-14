@@ -59,7 +59,7 @@ public class HConfRunner extends RunnerCore {
         return;
     }
 
-    private static int runTestLogic(TestResult test_basic) {
+    private static int runTestLogic(int h_list_size, TestResult test_basic) {
         // clone to create v1v2 test and run it
         TestResult v1v2Test = new TestResult(test_basic);
         v1v2Test.vv_mode = "v1v2";
@@ -69,28 +69,33 @@ public class HConfRunner extends RunnerCore {
             System.out.println("v1v2 test succeeded, no issue.");
             return 0;
         } else if (v1v2Test.ret == RETURN.FAIL) {
-            TestResult v1v1Test = new TestResult(test_basic);
-            v1v1Test.vv_mode = "v1v1";
-            runTestCore(v1v1Test);
-            if (v1v1Test.ret == RETURN.FAIL) {
-                System.out.println("v1v1 test failed, skip potential invalid value.");
-                return 0;
-            }
+            if (h_list_size > 1) { // return 1 for group test
+                System.out.println("always return 1 when group test fails");
+                return 1;
+            } else {
+                TestResult v1v1Test = new TestResult(test_basic);
+                v1v1Test.vv_mode = "v1v1";
+                runTestCore(v1v1Test);
+                if (v1v1Test.ret == RETURN.FAIL) { // invalid
+                    System.out.println("invalid value");
+                    return 0;
+                }
             
-            TestResult v2v2Test = new TestResult(test_basic);
-            v2v2Test.vv_mode = "v2v2";
-            runTestCore(v2v2Test);
-            if (v2v2Test.ret == RETURN.FAIL) {
-                System.out.println("v2v2 test failed, skip potential invalid value.");
-                return 0;
-            }
+                TestResult v2v2Test = new TestResult(test_basic);
+                v2v2Test.vv_mode = "v2v2";
+                runTestCore(v2v2Test);
+                if (v2v2Test.ret == RETURN.FAIL) { // invalid
+                    System.out.println("invalid value");
+                    return 0;
+                }
 
-            // one-round v1v1 and v2v2 succeeded, let's do hypo test
-            System.out.println("v1v2 test failed:");
-            System.out.println("---------------------------------------" + MY_TYPE +
-                " report---------------------------------------------");
-            System.out.println(v1v2Test.completeInfo());
-            return 1;
+                // one-round v1v1 and v2v2 succeeded, let's do hypo test
+                System.out.println("v1v2 test failed but v1v1&v2v2 succeeded:");
+                System.out.println("---------------------------------------" + MY_TYPE +
+                    " report---------------------------------------------");
+                System.out.println(v1v2Test.completeInfo());
+                return 1;
+            }
         }
 
         System.out.println("ERROR: cannot reach here.");
@@ -102,23 +107,25 @@ public class HConfRunner extends RunnerCore {
         long startTime, endTime, timeElapsed;
         startTime = endTime = timeElapsed = 0; 
         
-        final int minArguments = 4;
+        final int minArguments = 5;
+        int h_list_size = 0;
         String proj = "";
         String u_test = "";
         String h_list = "";
 
         if (args.length < minArguments) {
             System.out.println("Error: args length is " + args.length);
-            System.out.println("HConfRunner [run|hypothesis] [testProject] [unitTest] [parameter,component,reconfPoint,v1,v2] ...");
+            System.out.println("HConfRunner [h_list_size] [run|hypothesis] [testProject] [unitTest] [parameter,component,reconfPoint,v1,v2] ...");
             System.exit(1);
         }
       
         // assign arguments
-        MY_TYPE = args[0];
-        proj = args[1];
-        u_test = args[2];
+        h_list_size = Integer.valueOf(args[0]);
+        MY_TYPE = args[1];
+        proj = args[2];
+        u_test = args[3];
         StringBuilder sb = new StringBuilder();
-        for (int j=3; j < args.length; j++) {
+        for (int j=4; j < args.length; j++) {
             sb.append(args[j]);
             if (j < (args.length - 1))
                 sb.append(" ");
@@ -140,7 +147,7 @@ public class HConfRunner extends RunnerCore {
  
 	startTime = System.nanoTime();
         if (MY_TYPE.equals("run")) {
-            rc = runTestLogic(test_basic);
+            rc = runTestLogic(h_list_size, test_basic);
         } else if (MY_TYPE.equals("hypothesis")) {
             hypothesisTestLogic(test_basic);
         } else {
