@@ -16,7 +16,7 @@ function fetch {
     #do
 	rm -rf ~/my_tmp 
 	docker cp hadoop-$d:/"$src_dir" ~/my_tmp
-	ls ~/my_tmp/ | grep "$key" | xargs mv -t "$dst_dir"
+        find ~/my_tmp/ -name "*$key*" | xargs mv -t "$dst_dir"
     #done
 }
 
