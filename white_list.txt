@@ -6,11 +6,13 @@ mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 dfs.blockreport.incremental.intervalMsec@@@hdfs:DataNode
+dfs.bytes-per-checksum@@@hdfs:DataNode
 dfs.bytes-per-checksum@@@hdfs:NameNode
-dfs.client.socket-timeout@@@hbase:HMaster
-dfs.client.socket-timeout@@@hbase:HRegionServer
 dfs.client.socket-timeout@@@hdfs:DataNode
-dfs.datanode.du.reserved@@@hdfs:DataNode
+dfs.heartbeat.interval@@@hdfs:DataNode
+dfs.heartbeat.interval@@@hdfs:NameNode
+io.file.buffer.size@@@hdfs:DataNode
+io.file.buffer.size@@@hdfs:NameNode
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 ipc.client.rpc-timeout.ms@@@hdfs:NameNode
 ipc.ping.interval@@@hdfs:NameNode
