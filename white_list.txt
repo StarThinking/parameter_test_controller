@@ -8,5 +8,6 @@ mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 yarn.http.policy@@@yarn:NodeManager
 yarn.http.policy@@@yarn:ResourceManager
+yarn.resourcemanager.delegation.token.renew-interval@@@yarn:ResourceManager
 yarn.scheduler.maximum-allocation-mb@@@yarn:ResourceManager
 yarn.scheduler.maximum-allocation-vcores@@@yarn:ResourceManager
