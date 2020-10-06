@@ -12,9 +12,10 @@ cmd='echo /root/parameter_test_controller/procedure.sh ${entry_list[$entry_curso
 
 function is_busy {
     i=$1
-    jps_num=$(docker exec hadoop-$i bash -c "jps" | wc -l)
+    #jps_num=$(docker exec hadoop-$i bash -c "jps" | wc -l)
+    jps_num=$(docker exec hadoop-$i bash -c "ps -ef | grep procedure.sh" | wc -l)
     #sh_num=$(docker exec hadoop-$i bash -c "ps aux | grep run_mvn_test.sh" | wc -l)
-    if [ $jps_num -gt 1 ] ; then
+    if [ $jps_num -gt 2 ] ; then
 	echo "true"
     else
 	echo "false"
