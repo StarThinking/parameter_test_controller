@@ -1,3 +1,6 @@
+dfs.client.socket-timeout@@@hdfs:DataNode
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 yarn.http.policy@@@yarn:NodeManager
+yarn.http.policy@@@yarn:ResourceManager
+yarn.scheduler.maximum-allocation-vcores@@@yarn:ResourceManager
