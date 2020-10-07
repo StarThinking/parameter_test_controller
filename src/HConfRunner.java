@@ -77,7 +77,7 @@ public class HConfRunner extends RunnerCore {
                 v1v1Test.vv_mode = "v1v1";
                 runTestCore(v1v1Test);
                 if (v1v1Test.ret == RETURN.FAIL) { // invalid
-                    System.out.println("invalid value");
+                    System.out.println("invalid value v1");
                     return 0;
                 }
             
@@ -85,7 +85,7 @@ public class HConfRunner extends RunnerCore {
                 v2v2Test.vv_mode = "v2v2";
                 runTestCore(v2v2Test);
                 if (v2v2Test.ret == RETURN.FAIL) { // invalid
-                    System.out.println("invalid value");
+                    System.out.println("invalid value v2");
                     return 0;
                 }
 
