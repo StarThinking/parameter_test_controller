@@ -6,7 +6,7 @@ public class HConfRunner extends RunnerCore {
     private static String MY_TYPE = "";
     private static final int MAX_HYPO_RUN = 30;
 
-    private static void hypothesisTestLogic(TestResult test_basic) {
+    private static void hypothesisTestLogic(TestResult test_basic) throws Exception {
 	int v1v2FailedCount = 0;
 	int v1v1v2v2FailedCount = 0;
         int earlyStopThreshold = 10;
@@ -59,7 +59,7 @@ public class HConfRunner extends RunnerCore {
         return;
     }
 
-    private static int runTestLogic(int h_list_size, TestResult test_basic) {
+    private static int runTestLogic(int h_list_size, TestResult test_basic) throws Exception {
         // clone to create v1v2 test and run it
         TestResult v1v2Test = new TestResult(test_basic);
         v1v2Test.vv_mode = "v1v2";
@@ -144,20 +144,27 @@ public class HConfRunner extends RunnerCore {
 	    System.out.println("ERROR: invalid TestResult");
 	    System.exit(1);
 	}
- 
-	startTime = System.nanoTime();
-        if (MY_TYPE.equals("run")) {
-            rc = runTestLogic(h_list_size, test_basic);
-        } else if (MY_TYPE.equals("hypothesis")) {
-            hypothesisTestLogic(test_basic);
-        } else {
-            System.out.println("ERROR: wrong MY_TYPE " + MY_TYPE);
-        }
-        endTime = System.nanoTime();
-        timeElapsed = endTime - startTime;
 
-        System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
-        System.out.println(rc);
-	System.exit(rc);
+        try { 
+	    startTime = System.nanoTime();
+            if (MY_TYPE.equals("run")) {
+                rc = runTestLogic(h_list_size, test_basic);
+            } else if (MY_TYPE.equals("hypothesis")) {
+                hypothesisTestLogic(test_basic);
+            } else {
+                System.out.println("ERROR: wrong MY_TYPE " + MY_TYPE);
+            }
+            endTime = System.nanoTime();
+            timeElapsed = endTime - startTime;
+	} catch(Exception e) {
+	    System.out.println("ERROR: met exception during test:");
+	    e.printStackTrace();
+	    // set to 0 to filter out false +
+	    rc = 0;
+	} finally {
+            System.out.println("Total execution time in seconds : " + timeElapsed / 1000000000);
+            System.out.println(rc);
+	    System.exit(rc);
+        }
     }
 }

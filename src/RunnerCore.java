@@ -101,120 +101,101 @@ public class RunnerCore {
             return true;
         }
     }
-
-    private static void updateTestResult(List<TestResult> testResultList) {
+/*
+    private static void updateTestResult(List<TestResult> testResultList) throws Exception {
         String SEPERATOR = "@@@";
-        try {
-            File testResultDir = new File(testResultDirName);
-            List<String> updatedTests = new ArrayList<String>();
-            for (File f : testResultDir.listFiles()) {
-                if (f.isFile()) {
-                    //System.out.println("updating test result for " + f.getName());
-                    BufferedReader reader = new BufferedReader(new FileReader(f));
-                    String buffer = "";
-                    StringBuilder sb = new StringBuilder("");  
+        File testResultDir = new File(testResultDirName);
+        List<String> updatedTests = new ArrayList<String>();
+        for (File f : testResultDir.listFiles()) {
+            if (f.isFile()) {
+                //System.out.println("updating test result for " + f.getName());
+                BufferedReader reader = new BufferedReader(new FileReader(f));
+                String buffer = "";
+                StringBuilder sb = new StringBuilder("");  
+                buffer = reader.readLine();
+                while (buffer != null) {
+                    sb.append(buffer + System.lineSeparator());
                     buffer = reader.readLine();
-	            while (buffer != null) {
-                        sb.append(buffer + System.lineSeparator());
-	                buffer = reader.readLine();
-	            }
-                    reader.close();
-                    String[] contents = sb.toString().trim().split(SEPERATOR);
-                    if (contents.length != TestResult.NumOfFieldsFromFile) {
-                        System.out.println("ERROR: the content for " + f.getName() + " is wrong, length = "
-                            + contents.length);
-                        System.out.println("Content: ");
-                        System.out.println(sb.toString());
+                }
+                reader.close();
+                String[] contents = sb.toString().trim().split(SEPERATOR);
+                if (contents.length != TestResult.NumOfFieldsFromFile) {
+                    System.out.println("ERROR: the content for " + f.getName() + " is wrong, length = "
+                        + contents.length);
+                    System.out.println("Content: ");
+                    System.out.println(sb.toString());
+                    continue;
+                } else {
+                    String testName = contents[0];
+                    TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
+                    if (testResult == null) {
+                        System.out.println("ERROR: cannot find testResult by test name " + testName);
                         continue;
                     } else {
-                        String testName = contents[0];
-                        TestResult testResult = TestResult.getTestResultByName(testResultList, testName);
-                        if (testResult == null) {
-                            System.out.println("ERROR: cannot find testResult by test name " + testName);
-                            continue;
-                        } else {
-                            if (contents[1].equals("1"))
-                                testResult.ret = RETURN.SUCCEED;
-                            else 
-                                testResult.ret = RETURN.FAIL;
-                            testResult.failureMessage = contents[2];
-                            testResult.stackTrace = contents[3];
-                            updatedTests.add(testName);
-                            //System.out.println(testResult.completeInfo());
-                        }
+                        if (contents[1].equals("1"))
+                            testResult.ret = RETURN.SUCCEED;
+                        else 
+                            testResult.ret = RETURN.FAIL;
+                        testResult.failureMessage = contents[2];
+                        testResult.stackTrace = contents[3];
+                        updatedTests.add(testName);
+                        //System.out.println(testResult.completeInfo());
                     }
                 }
             }
-            List<String> allTestNames = TestResult.getTestNames(testResultList);
-            for (String t : allTestNames) {
-                boolean found = false;
-                for (String updated : updatedTests) {
-                    if (t.equals(updated)) {
-                        found = true;
-                    }
-                    if (found)
-                        break;
+        }
+        List<String> allTestNames = TestResult.getTestNames(testResultList);
+        for (String t : allTestNames) {
+            boolean found = false;
+            for (String updated : updatedTests) {
+                if (t.equals(updated)) {
+                    found = true;
                 }
-                if (!found) {
-                    System.out.println("WARN: test " + t + " has not been updated !");
-                    //System.exit(-1);
-                }
+                if (found)
+                    break;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
+            if (!found) {
+                System.out.println("WARN: test " + t + " has not been updated !");
+                //System.exit(-1);
+            }
         }
     }
-    
+  */  
     private static void runMvnCmd(TestResult tr) throws Exception {
         int exitCode = -1;
-        boolean isInterrupted = false;
         boolean isTimeout = false;
         Process process = null;
         //String systemLogSavingDir = "/root/reconf_test_gen/target";
-        while(true) {
-            try {
-                isInterrupted = false;
-                isTimeout = false;
-                String systemLogSavingDir = "none";
-                ProcessBuilder builder = new ProcessBuilder();
-                builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
-                process = builder.start();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                String line = "";
-                while ((line = reader.readLine()) != null) {
-    	            ;
-    	            //System.out.println(line);
-                }
-                reader.close();
-                if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
-    	            System.out.println("WARN: wait process timeout!");
-                    isTimeout = true;
-	    	    process.destroy(); // consider using destroyForcibly instead
-                }
-            } catch (InterruptedException e) {
-                isInterrupted = true;
-                System.out.println("WARN: msx interrupted");
-                process.destroy();
-            } finally {
-                if (!isInterrupted) {
-                    break;
-                }
-            }
+        String systemLogSavingDir = "none";
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
+        process = builder.start();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line = "";
+        while ((line = reader.readLine()) != null) {
+    	    ;
+    	    //System.out.println(line);
         }
-        exitCode = process.exitValue();
+        reader.close();
+        if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
+    	    System.out.println("WARN: wait process timeout!");
+            isTimeout = true;
+	    process.destroy(); // consider using destroyForcibly instead
+        }
+        
+	exitCode = process.exitValue();
         if (isTimeout) {
             exitCode = -1;
         }
        
-        List<TestResult> testResultList = new ArrayList<TestResult>();
-        testResultList.add(tr);
-        updateTestResult(testResultList);
+        //List<TestResult> testResultList = new ArrayList<TestResult>();
+        //testResultList.add(tr);
+        //updateTestResult(testResultList);
 
         // override result with cmd exit code
-        if ((exitCode == 0 && tr.ret == RETURN.FAIL) || (exitCode != 0 && tr.ret == RETURN.SUCCEED)) {
-            System.out.println("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.ret);
-        }
+        //if ((exitCode == 0 && tr.ret == RETURN.FAIL) || (exitCode != 0 && tr.ret == RETURN.SUCCEED)) {
+        //    System.out.println("WARN: conflict exitCode = " + exitCode + " but tr.result = " + tr.ret);
+        //}
        
         // update test result
         if (exitCode == 0) {
@@ -225,17 +206,18 @@ public class RunnerCore {
     }
 
     // update directly at TestResult tr
-    public static void runTestCore(TestResult tr) {
+    public static void runTestCore(TestResult tr) throws Exception {
         try {
             // clean before and after each test
             cleanUpSharedFiles();
             setupTestTuple(tr);
             runMvnCmd(tr);
-            //cleanUpSharedFiles();
-        } catch(Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+        } catch (Exception e) {
+	    if (e instanceof InterruptedException) {
+                System.out.println("ERROR: runTestCore throw InterruptedException");
+	    }
+	    throw e;
+        } 
     }
  
     private static void setupTestTuple(TestResult tr) throws Exception {
