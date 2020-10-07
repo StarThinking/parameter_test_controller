@@ -30,15 +30,16 @@ do
 	     echo hadoop-$i is busy
 	else
 	    # double check
-	    sleep 0.5
-	    if [ "$(is_busy $i)" == "true" ]; then
-		continue
-	    else
-	        echo hadoop-$i is not busy, assign entry $entry_cursor to it
-	        docker exec -d hadoop-$i bash -c "$(eval $cmd)"
-	        entry_cursor=$(( entry_cursor + 1 ))
-	        if [ $entry_cursor -ge $entry_list_length ]; then echo finish all tasks; break; fi
-	    fi
+	    for dc in 1 2 3 4 5; do
+	        if [ "$(is_busy $i)" == "true" ]; then
+		    continue
+		fi
+	    	sleep 0.1
+            done
+	    echo hadoop-$i is not busy, assign entry $entry_cursor to it
+	    docker exec -d hadoop-$i bash -c "$(eval $cmd)"
+	    entry_cursor=$(( entry_cursor + 1 ))
+	    if [ $entry_cursor -ge $entry_list_length ]; then echo finish all tasks; break; fi
 	fi
     done
 done
