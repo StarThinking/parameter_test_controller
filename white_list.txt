@@ -8,6 +8,7 @@ dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:NameNode
 dfs.ha.tail-edits.period.backoff-max@@@hdfs:NameNode
 dfs.heartbeat.interval@@@hdfs:NameNode
+dfs.namenode.replication.max-streams@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:ReduceTaskRunnable
