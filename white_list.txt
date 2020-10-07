@@ -3,6 +3,7 @@ dfs.client.socket-timeout@@@hbase:HRegionServer
 dfs.client.socket-timeout@@@hdfs:DataNode
 dfs.datanode.du.reserved@@@hdfs:DataNode
 dfs.data.transfer.protection@@@hbase:HMaster
+hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
