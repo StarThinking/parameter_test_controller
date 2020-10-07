@@ -1,7 +1,9 @@
+dfs.bytes-per-checksum@@@hdfs:NameNode
 dfs.client.socket-timeout@@@hbase:HRegionServer
 dfs.client.socket-timeout@@@hdfs:DataNode
 dfs.heartbeat.interval@@@hdfs:NameNode
 dfs.http.policy@@@hdfs:JournalNode
+dfs.image.compression.codec@@@hdfs:NameNode
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
@@ -10,7 +12,6 @@ mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
-mapreduce.output.fileoutputformat.compress@@@mapreduce:ReduceTaskRunnable
 yarn.http.policy@@@yarn:NodeManager
 yarn.http.policy@@@yarn:ResourceManager
 yarn.resourcemanager.delegation.token.renew-interval@@@yarn:ResourceManager
