@@ -168,23 +168,44 @@ public class RunnerCore {
     
     private static void runMvnCmd(TestResult tr) throws Exception {
         int exitCode = -1;
+        boolean isInterrupted = false;
+        boolean isTimeout = false;
+        Process process = null;
         //String systemLogSavingDir = "/root/reconf_test_gen/target";
-        String systemLogSavingDir = "none";
-        ProcessBuilder builder = new ProcessBuilder();
-        builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
-        Process process = builder.start();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        String line = "";
-        while ((line = reader.readLine()) != null) {
-    	    ;
-    	    //System.out.println(line);
-        }
-        reader.close();
-        if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
-    	    System.out.println("WARN: wait process timeout!");
-		process.destroy(); // consider using destroyForcibly instead
+        while(true) {
+            try {
+                isInterrupted = false;
+                isTimeout = false;
+                String systemLogSavingDir = "none";
+                ProcessBuilder builder = new ProcessBuilder();
+                builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
+                process = builder.start();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                String line = "";
+                while ((line = reader.readLine()) != null) {
+    	            ;
+    	            //System.out.println(line);
+                }
+                reader.close();
+                if(!process.waitFor(1200, TimeUnit.SECONDS)) { // timeout - kill the process.
+    	            System.out.println("WARN: wait process timeout!");
+                    isTimeout = true;
+	    	    process.destroy(); // consider using destroyForcibly instead
+                }
+            } catch (InterruptedException e) {
+                isInterrupted = true;
+                System.out.println("WARN: msx interrupted");
+                process.destroy();
+            } finally {
+                if (!isInterrupted) {
+                    break;
+                }
+            }
         }
         exitCode = process.exitValue();
+        if (isTimeout) {
+            exitCode = -1;
+        }
        
         List<TestResult> testResultList = new ArrayList<TestResult>();
         testResultList.add(tr);
