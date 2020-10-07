@@ -4,7 +4,9 @@ dfs.client.socket-timeout@@@hdfs:DataNode
 dfs.datanode.du.reserved@@@hdfs:DataNode
 dfs.data.transfer.protection@@@hbase:HMaster
 dfs.encrypt.data.transfer@@@hdfs:DataNode
+dfs.encrypt.data.transfer@@@hdfs:NameNode
 dfs.ha.tail-edits.period.backoff-max@@@hdfs:NameNode
+dfs.heartbeat.interval@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
