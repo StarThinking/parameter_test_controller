@@ -10,6 +10,7 @@ dfs.ha.tail-edits.period.backoff-max@@@hdfs:NameNode
 dfs.heartbeat.interval@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
+mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
