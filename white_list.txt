@@ -3,7 +3,10 @@ dfs.blockreport.incremental.intervalMsec@@@hdfs:DataNode
 dfs.bytes-per-checksum@@@hdfs:DataNode
 dfs.client.socket-timeout@@@hdfs:DataNode
 dfs.data.transfer.protection@@@hbase:HRegionServer
+dfs.data.transfer.protection@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:DataNode
+mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
+mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 yarn.http.policy@@@yarn:NodeManager
 yarn.http.policy@@@yarn:ResourceManager
