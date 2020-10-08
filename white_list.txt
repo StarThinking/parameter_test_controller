@@ -12,6 +12,8 @@ dfs.encrypt.data.overwrite.downstream.derived.qop@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:NameNode
 dfs.heartbeat.interval@@@hdfs:NameNode
+dfs.heartbeat.interval@@@hdfs:DataNode
+dfs.image.compress@@@hdfs:NameNode
 dfs.image.compression.codec@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 hbase.regionserver.thrift.framed@@@hbase:ThriftServer
