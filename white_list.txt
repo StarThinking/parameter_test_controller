@@ -7,6 +7,7 @@ dfs.data.transfer.protection@@@hbase:HRegionServer
 dfs.data.transfer.protection@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.image.compression.codec@@@hdfs:NameNode
+hbase.regionserver.thrift.framed@@@hbase:ThriftServer
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
