@@ -1,5 +1,7 @@
 dfs.block.access.token.enable@@@hdfs:NameNode
 dfs.blockreport.incremental.intervalMsec@@@hdfs:DataNode
+dfs.client.socket-timeout@@@hdfs:DataNode
+dfs.data.transfer.protection@@@hbase:HRegionServer
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
 yarn.http.policy@@@yarn:NodeManager
 yarn.http.policy@@@yarn:ResourceManager
