@@ -1,6 +1,7 @@
 dfs.block.access.token.enable@@@hdfs:NameNode
 dfs.blockreport.incremental.intervalMsec@@@hdfs:DataNode
 dfs.bytes-per-checksum@@@hdfs:DataNode
+dfs.bytes-per-checksum hdfs:NameNode
 dfs.client.socket-timeout@@@hbase:HMaster
 dfs.client.socket-timeout@@@hbase:HRegionServer
 dfs.client.socket-timeout@@@hdfs:DataNode
@@ -11,16 +12,21 @@ dfs.data.transfer.protection@@@hdfs:DataNode
 dfs.encrypt.data.overwrite.downstream.derived.qop@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:NameNode
+dfs.mover.retry.max.attempts hdfs:Mover
+dfs.namenode.replication.max-streams hdfs:NameNode
 dfs.ha.tail-edits.period.backoff-max@@@hdfs:NameNode
 dfs.heartbeat.interval@@@hdfs:DataNode
 dfs.heartbeat.interval@@@hdfs:NameNode
+dfs.http.policy hdfs:JournalNode
 dfs.image.compress@@@hdfs:NameNode
 dfs.image.compression.codec@@@hdfs:NameNode
 dfs.namenode.fs-limits.max-directory-items@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 hbase.regionserver.thrift.framed@@@hbase:ThriftServer
 hbase.rpc.rows.warning.threshold@@@hbase:HRegionServer
+hbase.hregion.memstore.mslab.enabled hbase:HRegionServer
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
+ipc.client.ping hdfs:NameNode
 mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:MapTaskRunnable
 mapreduce.fileoutputcommitter.algorithm.version@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
@@ -28,6 +34,7 @@ mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress.codec@@@mapreduce:ReduceTaskRunnable
+mapreduce.map.output.compress.codec mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 mapreduce.output.fileoutputformat.compress@@@mapreduce:ReduceTaskRunnable
