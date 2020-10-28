@@ -1,9 +1,11 @@
 dfs.block.access.token.enable@@@hdfs:NameNode
 dfs.client.retry.policy.enabled@@@hdfs:DFSClient
+dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:NameNode
 ipc.client.ping@@@hdfs:DFSClient
 ipc.client.tcpnodelay@@@hdfs:DFSClient
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
+mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 mapreduce.output.fileoutputformat.compress@@@mapreduce:ReduceTaskRunnable
