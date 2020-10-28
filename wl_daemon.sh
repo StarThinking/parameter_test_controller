@@ -1,7 +1,12 @@
 #!/bin/bash
 
 i=0
-THRESHOLD=2
+THRESHOLD=5
+
+addr_array+=('128.105.144.209')
+addr_array+=('128.105.144.227')
+addr_array+=('128.105.144.142')
+addr_array+=('130.127.133.21')
 
 while true
 do
@@ -9,14 +14,14 @@ do
 echo "start update for $i round"
 i=$(( i + 1 ))
 
-for addr in 128.105.144.234 128.105.144.251 128.105.144.254 128.105.144.106 128.105.144.182 128.105.144.214 130.127.133.15
+for addr in ${addr_array[@]}
 do
     ssh $addr '~/parameter_test_controller/pm_fetch_analyze_hypo.sh' 
 done
 
 sleep 2
 
-for addr in 128.105.144.234 128.105.144.251 128.105.144.254 128.105.144.106 128.105.144.182 128.105.144.214 130.127.133.15
+for addr in ${addr_array[@]}
 do
     ssh $addr 'cat ~/my_white_list.txt' > ~/extra_white_list.txt
 done
@@ -33,7 +38,7 @@ git commit -m 'update wl'
 git push origin master
 
 
-for addr in 128.105.144.234 128.105.144.251 128.105.144.254 128.105.144.106 128.105.144.182 128.105.144.214 130.127.133.15
+for addr in ${addr_array[@]}
 do
     ssh $addr '~/parameter_test_controller/container_utility_sh/whole_cluster_update_white_list.sh'
 done
