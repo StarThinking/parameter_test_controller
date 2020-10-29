@@ -13,5 +13,6 @@ mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 mapreduce.output.fileoutputformat.compress@@@mapreduce:ReduceTaskRunnable
+yarn.is.minicluster@@@yarn:ResourceManager
 yarn.resourcemanager.ha.enabled@@@yarn:ResourceManager
 yarn.resourcemanager.recovery.enabled@@@yarn:ResourceManager
