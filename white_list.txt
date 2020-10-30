@@ -4,6 +4,7 @@ dfs.client.block.write.replace-datanode-on-failure.enable@@@hdfs:DFSClient
 dfs.client.retry.policy.enabled@@@hdfs:DFSClient
 dfs.encrypt.data.transfer@@@hdfs:DataNode
 dfs.encrypt.data.transfer@@@hdfs:NameNode
+dfs.federation.router.safemode.enable@@@hdfs:Router
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 ipc.client.ping@@@hdfs:DFSClient
 ipc.client.tcpnodelay@@@hdfs:DFSClient
