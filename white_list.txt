@@ -12,6 +12,7 @@ hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 hbase.regionserver.thrift.framed@@@hbase:ThriftServer
 ipc.client.ping@@@hdfs:DFSClient
 ipc.client.tcpnodelay@@@hdfs:DFSClient
+ipc.client.tcpnodelay@@@hdfs:NameNode
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
