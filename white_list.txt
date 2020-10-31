@@ -9,6 +9,7 @@ dfs.ha.tail-edits.in-progress@@@hdfs:JournalNode
 dfs.image.compress@@@hdfs:NameNode
 dfs.image.compress@@@hdfs:SecondaryNameNode
 dfs.namenode.edits.noeditlogchannelflush@@@hdfs:JournalNode
+dfs.namenode.snapshotdiff.allow.snap-root-descendant@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 hbase.regionserver.thrift.framed@@@hbase:ThriftServer
 ipc.client.ping@@@hdfs:DFSClient
