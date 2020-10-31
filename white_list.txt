@@ -23,5 +23,6 @@ mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
 mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
 mapreduce.output.fileoutputformat.compress@@@mapreduce:ReduceTaskRunnable
 mapreduce.shuffle.ssl.enabled@@@yarn:NodeManager
+yarn.is.minicluster@@@yarn:ResourceManager
 yarn.resourcemanager.recovery.enabled@@@yarn:ResourceManager
 yarn.timeline-service.enabled@@@yarn:ResourceManager
