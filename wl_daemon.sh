@@ -8,6 +8,12 @@ addr_array+=('128.105.144.227')
 addr_array+=('128.105.144.142')
 addr_array+=('130.127.133.21')
 
+#for addr in ${addr_array[@]}
+#do
+#    ssh $addr 'ls ~'
+#done
+#exit 0
+
 while true
 do
 
