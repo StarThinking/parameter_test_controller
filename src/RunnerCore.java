@@ -32,6 +32,7 @@ public class RunnerCore {
         public RETURN ret = RETURN.FAIL; // 1: succeed -1:failed, assign failed as default
         public String failureMessage = "";
         public String stackTrace = "";
+	public long running_time = 0;
 
         public static final int NumOfFieldsFromFile = 4;
 
@@ -167,11 +168,14 @@ public class RunnerCore {
     private static void runMvnCmd(TestResult tr) throws Exception {
         int exitCode = -1;
         boolean isTimeout = false;
+	long startTime = 0, endTime = 0, totalTime = 0;
         Process process = null;
         //String systemLogSavingDir = "/root/reconf_test_gen/target";
         String systemLogSavingDir = "none";
         ProcessBuilder builder = new ProcessBuilder();
         builder.command("/root/reconf_test_gen/run_mvn_test.sh", tr.proj, tr.u_test, systemLogSavingDir);
+	// set start time
+	startTime = System.nanoTime();
         process = builder.start();
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String line = "";
@@ -206,6 +210,10 @@ public class RunnerCore {
         } else {
     	    tr.ret = RETURN.FAIL;
         }
+	// set end time
+	endTime = System.nanoTime();
+	totalTime = endTime - startTime;
+	tr.running_time = totalTime;
     }
 
     // update directly at TestResult tr

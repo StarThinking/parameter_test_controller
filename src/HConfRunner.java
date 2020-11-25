@@ -60,46 +60,56 @@ public class HConfRunner extends RunnerCore {
     }
 
     private static int runTestLogic(int h_list_size, TestResult test_basic) throws Exception {
-        // clone to create v1v2 test and run it
+        // clone to create real test job
+	TestResult v1v1Test = new TestResult(test_basic);
+        v1v1Test.vv_mode = "v1v1";
+        runTestCore(v1v1Test);
+
+	TestResult v2v2Test = new TestResult(test_basic);
+	v2v2Test.vv_mode = "v2v2";
+	runTestCore(v2v2Test);
+	
         TestResult v1v2Test = new TestResult(test_basic);
         v1v2Test.vv_mode = "v1v2";
-        System.out.println(v1v2Test.toString());
+	//System.out.println(v1v2Test.toString());
         runTestCore(v1v2Test);
-        if (v1v2Test.ret == RETURN.SUCCEED) {
-            System.out.println("v1v2 test succeeded, no issue.");
-            return 0;
-        } else if (v1v2Test.ret == RETURN.FAIL) {
-            if (h_list_size > 1) { // return 1 for group test
-                System.out.println("always return 1 when group test fails");
-                return 1;
-            } else {
-                TestResult v1v1Test = new TestResult(test_basic);
-                v1v1Test.vv_mode = "v1v1";
-                runTestCore(v1v1Test);
-                if (v1v1Test.ret == RETURN.FAIL) { // invalid
-                    System.out.println("invalid value v1");
-                    return 0;
-                }
-            
-                TestResult v2v2Test = new TestResult(test_basic);
-                v2v2Test.vv_mode = "v2v2";
-                runTestCore(v2v2Test);
-                if (v2v2Test.ret == RETURN.FAIL) { // invalid
-                    System.out.println("invalid value v2");
-                    return 0;
-                }
 
-                // one-round v1v1 and v2v2 succeeded, let's do hypo test
-                System.out.println("v1v2 test failed but v1v1&v2v2 succeeded:");
+	if (v1v2Test.ret == RETURN.SUCCEED && v1v2Test.running_time < (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+	    System.out.println("v1v2 test succeeded, no issue.");
+	    return 0;
+	} else {
+	    if (h_list_size > 1) { // return 1 for group test
+		System.out.println("always return 1 when group test fails");
+		return 1;
+	    } else {
+		if (v1v1Test.ret == RETURN.FAIL) {
+		    System.out.println("invalid value v1");
+		    return 0;
+		}
+		
+		if (v2v2Test.ret == RETURN.FAIL) {
+		    System.out.println("invalid value v2");
+		    return 0;
+		}
+
+		int failed_reason = 0;
+		if (v1v2Test.ret != RETURN.SUCCEED) {
+		    failed_reason += 1;
+		}
+
+		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+		    failed_reason += 2;
+		}
+
+	      	// one-round v1v1 and v2v2 succeeded, let's do hypo test
+                System.out.println("v1v2 test failed because of reason " + failed_reason + " but v1v1&v2v2 succeeded:");
                 System.out.println("---------------------------------------" + MY_TYPE +
                     " report---------------------------------------------");
                 System.out.println(v1v2Test.completeInfo());
                 return 1;
-            }
-        }
-
-        System.out.println("ERROR: cannot reach here.");
-        return 0;
+		
+	    }
+	}
     }
 
     public static void main(String[] args) {
