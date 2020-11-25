@@ -24,17 +24,6 @@ public class HConfRunner extends RunnerCore {
 		break;
 	    }
 
-	    TestResult v1v2Test = new TestResult(test_basic);
-            v1v2Test.vv_mode = "v1v2";
-            runTestCore(v1v2Test);
-            if (v1v2Test.ret == RETURN.FAIL) {
-                System.out.println("---> v1v2 test failed.");
-		System.out.println(v1v2Test.completeInfo());
-                v1v2FailedCount ++;
-            } else {
-                System.out.println("---> v1v2 test suceeded.");
-            }
-
             TestResult v1v1Test = new TestResult(test_basic);
             v1v1Test.vv_mode = "v1v1";
             runTestCore(v1v1Test);
@@ -50,6 +39,25 @@ public class HConfRunner extends RunnerCore {
                 v1v1v2v2FailedCount ++;
             } else {
                 System.out.println("---> v1v1 and v2v2 test test suceeded.");
+            }
+	    
+            TestResult v1v2Test = new TestResult(test_basic);
+            v1v2Test.vv_mode = "v1v2";
+            runTestCore(v1v2Test);
+            if (v1v2Test.ret == RETURN.FAIL || v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+		int failed_reason = 0;
+		if (v1v2Test.ret != RETURN.SUCCEED) {
+		    failed_reason += 1;
+		}
+
+		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+		    failed_reason += 2;
+		}
+                System.out.println("---> v1v2 test failed because of reason " + failed_reason);
+		System.out.println(v1v2Test.completeInfo());
+                v1v2FailedCount ++;
+            } else {
+                System.out.println("---> v1v2 test suceeded.");
             }
         }
 
