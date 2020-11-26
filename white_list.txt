@@ -5,6 +5,7 @@ dfs.namenode.replication.max-streams@@@hdfs:NameNode
 ipc.client.connection.maxidletime@@@hdfs:DFSClient
 ipc.client.rpc-timeout.ms@@@hdfs:DataNode
 ipc.client.rpc-timeout.ms@@@hdfs:DFSClient
+ipc.client.rpc-timeout.ms@@@hdfs:NameNode
 ipc.ping.interval@@@hdfs:DFSClient
 mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
