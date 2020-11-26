@@ -1,15 +1,2 @@
-
-dfs.client.socket-timeout@@@hdfs:DataNode
-dfs.client.socket-timeout@@@hdfs:DFSClient
-dfs.namenode.fs-limits.max-directory-items@@@hdfs:NameNode
-dfs.namenode.replication.max-streams@@@hdfs:NameNode
 ipc.client.connection.maxidletime@@@hdfs:DFSClient
-ipc.client.rpc-timeout.ms@@@hdfs:DataNode
-ipc.client.rpc-timeout.ms@@@hdfs:DFSClient
-ipc.client.rpc-timeout.ms@@@hdfs:NameNode
 ipc.ping.interval@@@hdfs:DFSClient
-mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
-mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
-yarn.scheduler.maximum-allocation-mb@@@yarn:ResourceManager
-yarn.scheduler.maximum-allocation-vcores@@@yarn:ResourceManager
-yarn.scheduler.minimum-allocation-mb@@@yarn:ResourceManager
