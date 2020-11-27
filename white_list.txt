@@ -3,5 +3,6 @@ dfs.client.socket-timeout@@@hdfs:DFSClient
 ipc.client.connection.maxidletime@@@hdfs:DFSClient
 ipc.client.rpc-timeout.ms@@@hdfs:DFSClient
 ipc.ping.interval@@@hdfs:DFSClient
+mapreduce.job.maps@@@mapreduce:ReduceTaskRunnable
 mapreduce.job.reduces@@@mapreduce:MapTaskRunnable
 yarn.scheduler.maximum-allocation-vcores@@@yarn:ResourceManager
