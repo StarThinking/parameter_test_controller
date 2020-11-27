@@ -51,6 +51,9 @@ public class HConfRunner extends RunnerCore {
 		}
 
 		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+                    System.out.println("v1v2 running time: " + v1v2Test.running_time);
+                    System.out.println("v1v1 running time: " + v1v1Test.running_time);
+                    System.out.println("v2v2 running time: " + v2v2Test.running_time);
 		    failed_reason += 2;
 		}
                 System.out.println("---> v1v2 test failed because of reason " + failed_reason);
@@ -106,6 +109,9 @@ public class HConfRunner extends RunnerCore {
 		}
 
 		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+                    System.out.println("v1v2 running time: " + v1v2Test.running_time);
+                    System.out.println("v1v1 running time: " + v1v1Test.running_time);
+                    System.out.println("v2v2 running time: " + v2v2Test.running_time);
 		    failed_reason += 2;
 		}
 
