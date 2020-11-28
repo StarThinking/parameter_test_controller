@@ -4,6 +4,7 @@ if [ $# -ne 1 ]; then echo "wrong [tag]"; exit -1; fi
 pm=( $(grep -oP "node-[0-9]{1,2}$" /etc/hosts | sed 's/node-//g' | sort -n) )
 vm=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
 if [ $vm -gt 20 ]; then vm=10; fi
+vm=10
 vm=$(( vm -1 ))
 tag=$1
 

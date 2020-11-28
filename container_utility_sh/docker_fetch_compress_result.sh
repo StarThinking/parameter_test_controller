@@ -2,9 +2,10 @@
 
 if [ $# -ne 3 ]; then echo 'wrong: [key] [src_dir] [dst_dir']; exit -1; fi
 
-num=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
-if [ $num -gt 20 ]; then num=10; fi
-num=$(( num -1 ))
+vm=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
+if [ $vm -gt 20 ]; then vm=10; fi
+vm=10
+vm=$(( vm -1 ))
 key=$1
 src_dir=$2
 dst_dir=$3
@@ -26,13 +27,13 @@ function fetch {
     done
 }
 
-for i in $(seq 0 $num)
+for i in $(seq 0 $vm)
 do
     fetch $i &
     pids[$i]=$!
 done
 
-for i in $(seq 0 $num)
+for i in $(seq 0 $vm)
 do
     wait ${pids[$i]}
 done
