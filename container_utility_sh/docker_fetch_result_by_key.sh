@@ -3,7 +3,7 @@
 if [ $# -ne 3 ]; then echo 'wrong: [key] [src_dir] [dst_dir']; exit -1; fi
 
 num=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
-if [ $num -gt 20 ]; then num=20; fi
+if [ $num -gt 20 ]; then num=10; fi
 num=$(( num -1 ))
 key=$1
 src_dir=$2

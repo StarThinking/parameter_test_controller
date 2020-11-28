@@ -1,7 +1,7 @@
 #!/bin/bash
 date 
 vm_num=$(( $(cat /proc/cpuinfo | grep 'processor' | wc -l) / 2 ))
-if [ $vm_num -gt 20 ]; then vm_num=20; fi
+if [ $vm_num -gt 20 ]; then vm_num=10; fi
 vm_num=$(( vm_num -1 ))
 IFS=$'\n' 
 entry_list=( $(cat /root/parameter_test_controller/task.txt) )
