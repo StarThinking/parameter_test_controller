@@ -4,13 +4,13 @@ import java.text.SimpleDateFormat;
 public class HConfRunner extends RunnerCore {
     // run or hypothesis
     private static String MY_TYPE = "";
-    private static final int MAX_HYPO_RUN = 30;
+    private static final int MAX_HYPO_RUN = 20;
     private static final LONG_TIME_MUL = 2.0;
 
     private static void hypothesisTestLogic(TestResult test_basic) throws Exception {
 	int v1v2FailedCount = 0;
 	int v1v1v2v2FailedCount = 0;
-        int earlyStopThreshold = 10;
+        int earlyStopThreshold = 7;
 	boolean earlyStop = false;
         int i = 0;
 
