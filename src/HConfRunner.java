@@ -5,7 +5,7 @@ public class HConfRunner extends RunnerCore {
     // run or hypothesis
     private static String MY_TYPE = "";
     private static final int MAX_HYPO_RUN = 20;
-    private static final LONG_TIME_MUL = 2.0;
+    private static final double LONG_TIME_MUL = 2.0;
 
     private static void hypothesisTestLogic(TestResult test_basic) throws Exception {
 	int v1v2FailedCount = 0;
