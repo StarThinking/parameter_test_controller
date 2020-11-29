@@ -5,6 +5,7 @@ public class HConfRunner extends RunnerCore {
     // run or hypothesis
     private static String MY_TYPE = "";
     private static final int MAX_HYPO_RUN = 30;
+    private static final LONG_TIME_MUL = 2.0;
 
     private static void hypothesisTestLogic(TestResult test_basic) throws Exception {
 	int v1v2FailedCount = 0;
@@ -44,13 +45,13 @@ public class HConfRunner extends RunnerCore {
             TestResult v1v2Test = new TestResult(test_basic);
             v1v2Test.vv_mode = "v1v2";
             runTestCore(v1v2Test);
-            if (v1v2Test.ret == RETURN.FAIL || v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+            if (v1v2Test.ret == RETURN.FAIL || v1v2Test.running_time >= (LONG_TIME_MUL * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
 		int failed_reason = 0;
 		if (v1v2Test.ret != RETURN.SUCCEED) {
 		    failed_reason += 1;
 		}
 
-		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+		if (v1v2Test.running_time >= (LONG_TIME_MUL * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
                     System.out.println("v1v2 running time: " + v1v2Test.running_time);
                     System.out.println("v1v1 running time: " + v1v1Test.running_time);
                     System.out.println("v2v2 running time: " + v2v2Test.running_time);
@@ -85,7 +86,7 @@ public class HConfRunner extends RunnerCore {
 	//System.out.println(v1v2Test.toString());
         runTestCore(v1v2Test);
 
-	if (v1v2Test.ret == RETURN.SUCCEED && v1v2Test.running_time < (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+	if (v1v2Test.ret == RETURN.SUCCEED && v1v2Test.running_time < (LONG_TIME_MUL * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
 	    System.out.println("v1v2 test succeeded, no issue.");
 	    return 0;
 	} else {
@@ -108,7 +109,7 @@ public class HConfRunner extends RunnerCore {
 		    failed_reason += 1;
 		}
 
-		if (v1v2Test.running_time >= (1.5 * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
+		if (v1v2Test.running_time >= (LONG_TIME_MUL * Math.max(v1v1Test.running_time, v2v2Test.running_time))) {
                     System.out.println("v1v2 running time: " + v1v2Test.running_time);
                     System.out.println("v1v1 running time: " + v1v1Test.running_time);
                     System.out.println("v2v2 running time: " + v2v2Test.running_time);

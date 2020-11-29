@@ -213,6 +213,7 @@ public class RunnerCore {
 	// set end time
 	endTime = System.nanoTime();
 	totalTime = endTime - startTime;
+	System.out.println(tr.vv_mode + " running time = " + totalTime);
 	tr.running_time = totalTime;
     }
 
