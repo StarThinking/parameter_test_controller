@@ -4,6 +4,8 @@ i=0
 #THRESHOLD=5
 
 addr_array+=('128.105.144.39')
+addr_array+=('130.127.134.5')
+addr_array+=('128.105.145.156')
 
 #for addr in ${addr_array[@]}
 #do
@@ -24,9 +26,10 @@ done
 
 sleep 2
 
+rm ~/extra_white_list.txt
 for addr in ${addr_array[@]}
 do
-    ssh $addr 'cat ~/my_white_list.txt' > ~/extra_white_list.txt
+    ssh $addr 'cat ~/my_white_list.txt' >> ~/extra_white_list.txt
 done
 
 cat ~/extra_white_list.txt | sort | uniq -c | awk '{if($1 >= 5) print $0}' | awk '{print $2}' > ~/extra_white_list_thres.txt
