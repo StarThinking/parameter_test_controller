@@ -1,1 +1,5 @@
+dfs.block.access.token.enable@@@hdfs:NameNode
 ipc.client.ping@@@hdfs:DFSClient
+ipc.client.tcpnodelay@@@hdfs:DFSClient
+mapreduce.map.output.compress@@@mapreduce:MapTaskRunnable
+mapreduce.map.output.compress@@@mapreduce:ReduceTaskRunnable
