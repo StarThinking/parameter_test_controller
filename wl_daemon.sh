@@ -3,7 +3,6 @@
 i=0
 #THRESHOLD=5
 
-addr_array+=('128.105.144.39')
 addr_array+=('130.127.134.5')
 addr_array+=('128.105.145.156')
 
