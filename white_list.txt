@@ -6,6 +6,7 @@ dfs.encrypt.data.transfer@@@hdfs:NameNode
 hbase.regionserver.thrift.compact@@@hbase:ThriftServer
 hbase.regionserver.thrift.framed@@@hbase:ThriftServer
 ipc.client.ping@@@hdfs:DFSClient
+ipc.client.rpc-timeout.ms@@@hdfs:DFSClient
 ipc.client.tcpnodelay@@@hdfs:DFSClient
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:MapTaskRunnable
 mapreduce.job.encrypted-intermediate-data@@@mapreduce:ReduceTaskRunnable
