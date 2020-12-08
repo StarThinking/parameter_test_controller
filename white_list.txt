@@ -3,6 +3,7 @@ dfs.bytes-per-checksum@@@hdfs:DFSClient
 dfs.client.block.write.replace-datanode-on-failure.enable@@@hdfs:DFSClient
 dfs.client.retry.policy.enabled@@@hdfs:DFSClient
 dfs.client.socket-timeout@@@hbase:HMaster
+dfs.client.socket-timeout@@@hbase:HRegionServer
 dfs.client.socket-timeout@@@hdfs:DataNode
 dfs.client.socket-timeout@@@hdfs:DFSClient
 dfs.encrypt.data.transfer@@@hdfs:DataNode
