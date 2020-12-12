@@ -1,6 +1,7 @@
 dfs.block.access.token.enable@@@hdfs:NameNode
 dfs.bytes-per-checksum@@@hdfs:DataNode
 dfs.bytes-per-checksum@@@hdfs:DFSClient
+dfs.bytes-per-checksum@@@hdfs:NameNode
 dfs.client.block.write.replace-datanode-on-failure.enable@@@hdfs:DFSClient
 dfs.client.retry.policy.enabled@@@hdfs:DFSClient
 dfs.client.socket-timeout@@@hbase:HMaster
